@@ -43,14 +43,13 @@ section a {
 /*NavBar*/
 .navbar {
     width: 100%;
-    height: auto;
+    height: 75px;
     background-color: #fff;
     padding: 10px;
     /*Line Shadow under Navbar*/
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 
     0 2px 2px rgb(0 0 0 / 6%),
     0 0 2px rgb(0 0 0 / 7%) ;
-
 }
 
 .navbarContainer {
@@ -284,6 +283,105 @@ button {
     padding: 40px;
 }
 
+/* Menu Icon */
+.corner-menu {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 10; /*always on top*/
+    transition: all 0.25s;
+    display: none;
+}
+
+.corner-menu-top,
+.corner-menu-middle,
+.corner-menu-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.corner-menu-middle {
+    transform: translateY(7px)
+}
+
+.corner-menu-bottom {
+    transform: translateY(14px)
+}
+
+.open .corner-menu-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .corner-menu-middle {
+    display: none;
+}
+.open .corner-menu-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* Mobile Menu */
+.hidden {
+    transform: translateX(100%); /*moves it from the right*/
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    box-shadow: inset 0 4px 3px -3px rgb(0 0 0 / 10%), 
+    inset 0 4px 2px -2px rgb(0 0 0 / 7%);
+    transition: all 0.3s;
+}
+
+.mobile-menu ul {
+    line-height: 3;
+    border-bottom: #7777 solid 1px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.mobile-menu a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.mobile-menu a:hover {
+    color: var(--color-primary);
+}
+
+.mobile-menu div{
+    margin-top: 20px;
+}
+
+.mobile-menu div a{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.mobile-menu img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
 /* Media Query; Only applies to smaller screens */
 @media(max-width: 960px) {
     .textXL {
@@ -300,6 +398,10 @@ button {
 }
 
 @media(max-width: 768px){
+    .corner-menu {
+        display: block;
+    }
+
     .grid-col-2{
         grid-template-columns: 1fr;
     }
