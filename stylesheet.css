@@ -2,9 +2,9 @@
 
 /*Custom properties/set variables for colors. need '--' before each*/
 :root {
-    --color-primary: #006241;
-    --color-secondary: #d50032;
-    --color-extra: #d4e9e2;
+    --color-primary: #2b2d42;
+    --color-secondary: #8d99ae;
+    --color-extra: #edf2f4;
 }
 
 *{
@@ -113,6 +113,37 @@ section a {
 }
 */
 
+/* Footer & Social */
+.footer-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 30px 30px;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.social img{
+    width: 35px;
+    height: 35px;
+}
+
+.social a {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.divider {
+    width: 95%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 40px auto;
+}
+
 /* Box */
 .box {
     margin-bottom: 30px;
@@ -121,6 +152,31 @@ section a {
 .boxInner {
     max-width: 700px;
     margin: 0 auto; /*sets it to auto center*/
+}
+
+.box-text {
+    max-width: 500px;
+    text-align: center;
+    justify-self: center;
+    padding: 20px 0;
+}
+
+.box-text .buttonLight {
+    margin-top: 20px;
+}
+
+/* Grid Styles */
+.grid-col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-reversed :first-child{
+    order: 2;
+
 }
 
 /*Buttons*/
@@ -141,7 +197,8 @@ button {
     color: #000;
 }
 
-.buttonDarkOutline:hover {
+.buttonDarkOutline:hover,
+.buttonLightOutline:hover {
     background: rgba(0, 0, 0, 0, 6%);
 }
 
@@ -187,7 +244,7 @@ button {
 
 /* Text Styling */
 .text-center {
-    text-align: : center;
+    text-align: center;
 }
 
 .textXL {
@@ -242,11 +299,39 @@ button {
     }
 }
 
+@media(max-width: 768px){
+    .grid-col-2{
+        grid-template-columns: 1fr;
+    }
+
+    .grid-reversed :first-child{
+        order: 0; /*puts image first*/
+    }
+
+    .navbarLogo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar .navbarLeft,
+    .navbar .navbarRight {
+        display: none;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
+
 /* Limits background */
 @media(min-width: 1440px) {
     .box {
      max-width: 1440px;
      margin-right: auto;
      margin-left: auto;
+    }
+
+    .divider {
+    max-width: 1440px;
     }
 }
