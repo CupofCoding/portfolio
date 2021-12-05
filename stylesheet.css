@@ -5,12 +5,54 @@
     --color-primary: #2b2d42;
     --color-secondary: #8d99ae;
     --color-extra: #edf2f4;
+
+    --color-primary-light: ;
+    --color-secondary-light: ;
+    --color-extra-light: ;
+
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #AB61E4;
+    min-height: 100vh;
+    overflow: hidden;
+    
+    color: #fff;
+  } */
+  
+  .calculator {
+    --header-bg:                    rgba(255,255,255,.2);
+    --body-bg:                      rgba(255,255,255,.3);
+    --button-bg:                    rgba(255,255,255,.2);
+    --button-bg-hover:              rgba(255,255,255,.3);
+    --button-highlight-bg:          rgba(255,255,255,.5);
+    --button-highlight-bg-hover:    rgba(255,255,255,.3);
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  
+    position: relative;
+    width: 280px;
+    box-shadow: rgb(24 32 79 / 25%) 0px 40px 80px, rgb(255 255 255 / 50%) 0px 0px 0px 0.5px inset;
+    border-radius: 15px;
+    z-index: 10;
+  }
+  
+.dark {
+    --header-bg:                    rgba(2,14,39,.2);
+    --body-bg:                      rgba(2,14,39,.3);
+    --button-bg:                    rgba(2,14,39,.2);
+    --button-bg-hover:              rgba(255,255,255,.1);
+    --button-highlight-bg:          rgba(2,14,39,.5);
+    --button-highlight-bg-hover:    rgba(255,255,255,.15);
 }
 
 html, body {
@@ -86,8 +128,8 @@ section a {
 
 .navbarLeft {
     text-transform: uppercase;
-    flex: 1;
-    margin-left: 20px;
+    flex: right; 
+    margin-right: 20px;
 }
 
 .navbarRight li:first-child a {
@@ -128,7 +170,7 @@ section a {
 
 .social img{
     width: 35px;
-    height: 35px;
+    height: 35px;    
 }
 
 .social a {
@@ -148,7 +190,7 @@ section a {
     margin-bottom: 30px;
 }
 
-.boxInner {
+.box-inner {
     max-width: 700px;
     margin: 0 auto; /*sets it to auto center*/
 }
@@ -160,7 +202,7 @@ section a {
     padding: 20px 0;
 }
 
-.box-text .buttonLight {
+.box-text .button-light {
     margin-top: 20px;
 }
 
@@ -191,33 +233,37 @@ button {
     text-decoration: none;
 }
 
-.buttonDarkOutline {
+.button-dark-outline {
     border-color: #000;
     color: #000;
 }
 
-.buttonDarkOutline:hover,
-.buttonLightOutline:hover {
+.button-dark-outline:hover,
+.button-light-outline:hover {
     background: rgba(0, 0, 0, 0, 6%);
 }
 
-.buttonDark {
+.button-dark {
     background-color: gray;
     color: #fff;
 }
 
-.buttonDark:hover {
+.button-dark:hover {
     background: #333;
 }
 
-.buttonLightOutline {
+.button-light-outline {
     border-color: #fff;
     color: #fff;
 }
 
-.buttonLight {
+.button-light {
     background-color: #fff;
     color: #000;
+}
+
+.button-light:hover {
+    background: #333;
 }
 
 /* Text Box */
@@ -246,7 +292,7 @@ button {
     text-align: center;
 }
 
-.textXL {
+.text-xl {
     font-size: 50px;
     text-transform: uppercase;
     letter-spacing: 1.5x;
@@ -254,18 +300,18 @@ button {
     margin-bottom: 20px;
 }
 
-.textLG {
+.text-lg {
     font-size: 40px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-.textMD {
+.text-med {
     font-size: 24px;    
     margin-bottom: 20px;
 }
 
-.textSM {
+.text-sm {
     font-size: 19px;
     margin-bottom: 20px;
 }
@@ -384,15 +430,15 @@ button {
 
 /* Media Query; Only applies to smaller screens */
 @media(max-width: 960px) {
-    .textXL {
+    .text-xl {
         font-size: 30px;
     }
 
-    .textLG {
+    .text-lg {
         font-size: 25px;
     }
 
-    .textMD {
+    .text-med {
         font-size: 19px;
     }
 }
