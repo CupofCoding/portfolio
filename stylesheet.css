@@ -320,17 +320,61 @@ button {
     padding: 40px;
 }
 
+/*Left Side Menu */
+.side-menu {
+cursor: pointer;
+align-self: left;
+height: 50%;
+top: 40%;
+position: fixed;
+background: none;
+border: none;
+z-index: 10; /*always on top*/
+transition: all 0.25s;
+display: flex;
+justify-content: center;
+padding: 50px 0;
+line-height: 150px;
+}
+
+.side-menu-first,
+.side-menu-second,
+.side-menu-third,
+.side-menu-fourth,
+.side-menu-fifth {
+position: absolute;
+left: 30px;
+width: 30px;
+height: 2px;
+background: #000;
+transform: rotate(0);
+transition: all 0.5s;
+
+}
+
+.side-menu-second{
+    transform: translateY(20px)
+}
+.side-menu-third{
+    transform: translateY(40px)
+}
+.side-menu-fourth{
+    transform: translateY(60px)
+}
+.side-menu-fifth {
+    transform: translateY(80px)
+}
+
 /* Menu Icon */
 .corner-menu {
-        cursor: pointer;
+    cursor: pointer;
     width: 24px;
     height: 24px;
     position: relative;
     background: none;
     border: none;
-    z-index: 10; /*always on top*/
-    transition: all 0.25s;
-    display: none;
+    z-index: 10; /*always on top*/    
+    display: none;    
 }
 
 .corner-menu-top,
@@ -433,6 +477,10 @@ button {
     .text-med {
         font-size: 19px;
     }
+
+    .side-menu{
+        display: none;
+    }
 }
 
 @media(max-width: 768px){
@@ -454,7 +502,7 @@ button {
     }
 
     /* .navbar .navbarRight, */
-    .navbar .navbarLeft{
+    .navbar .navbarLeft,{
         display: none;
     }
 
@@ -478,4 +526,5 @@ button {
     .divider {
     max-width: 1440px;
     }
+    
 }
