@@ -70,16 +70,18 @@ section a {
     color: #fff;
 }
 
+
 /*NavBar*/
 .navbar {
     width: 100%;
     height: 75px;
     background-color: #fff;
+    /* opacity: .5; */
     padding: 10px;
     /*Line Shadow under Navbar*/
-    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 
+    /* box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 
     0 2px 2px rgb(0 0 0 / 6%),
-    0 0 2px rgb(0 0 0 / 7%) ;
+    0 0 2px rgb(0 0 0 / 7%) ; */
     position: fixed;
 }
 
@@ -87,7 +89,7 @@ section a {
     display: flex; /*Puts it in a line*/
     justify-content: space-between; /*divides items evenly*/
     align-items: center;
-
+    
 }
 
 .navbar ul {
@@ -98,7 +100,7 @@ section a {
 .navbar li {
     margin: 0 15px;
     font-weight: bold;
-
+    
 }
 
 .navbar a {
@@ -144,6 +146,78 @@ section a {
     margin: 0 5px;
 }
 */
+
+/* Drop Down Menu */
+.header {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: baseline;
+    padding: .5rem;
+    gap: 1.5rem;
+    text-transform: uppercase;
+    flex: right;
+    margin-right: auto;
+}
+
+.link{
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #777;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+/* any link that is in direct focus */
+.drop-down.active > .link,
+.link:hover{    
+    color: black;
+}
+
+.drop-down {
+    position: relative;
+}
+
+.drop-down-menu{
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
+    background-color: white;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+/* select class then select the child from that class when we focus on the link and select class that's sibling  */
+.drop-down.active > .link + .drop-down-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.information-grid {
+    display:  grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+}
+
+.drop-down-links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.contact-form > input {
+    margin-bottom: .5rem;
+}
+
 
 /* Footer & Social */
 .footer-container {
@@ -320,7 +394,8 @@ button {
     padding: 40px;
 }
 
-/*Left Side Menu */
+/*
+Left Side Menu
 .side-menu {
 cursor: pointer;
 align-self: left;
@@ -329,7 +404,7 @@ top: 40%;
 position: fixed;
 background: none;
 border: none;
-z-index: 10; /*always on top*/
+z-index: 10;
 transition: all 0.25s;
 display: flex;
 justify-content: center;
@@ -364,8 +439,9 @@ transition: all 0.5s;
 .side-menu-fifth {
     transform: translateY(80px)
 }
+*/
 
-/* Menu Icon */
+/* Hamburger/Menu Icon */
 .corner-menu {
     cursor: pointer;
     width: 24px;
@@ -413,9 +489,10 @@ transition: all 0.5s;
     transform: translateX(100%); /*moves it from the right*/
 }
 
-.no-scroll{
+/* Caps the Navigation Bar */
+/* .no-scroll{
     overflow: hidden;
-}
+} */
 
 .mobile-menu {
     position: fixed;
@@ -502,7 +579,7 @@ transition: all 0.5s;
     }
 
     /* .navbar .navbarRight, */
-    .navbar .navbarLeft,{
+    .navbar .navbarLeft{
         display: none;
     }
 
