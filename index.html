@@ -14,15 +14,19 @@
                     <a href="index.html"><img src="images/CoC Placeholder.png"
                             alt="navbarLogo"></a>
                 </div>
-                <ul class="navbarLeft">
+                <!-- <ul class="navbarLeft">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Documentation</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Contact Me </a></li>
-                </ul>
+                </ul> -->
                 <!-- Drop Down Menu -->
                 <div>
-                    <div class="header">
+                    <div class="header navbarLeft">
+                        <div class="drop-down" data-drop-down>
+                            <a href="#" class="link" data-drop-down-button>About
+                                Me</a>
+                        </div>
                         <div class="drop-down" data-drop-down>
                             <button class="link" data-drop-down-button>Documentation</button>
                             <div class="drop-down-menu information-grid">
@@ -49,17 +53,16 @@
                             <button class="link" data-drop-down-button>Contact
                                 Me</button>
                             <div class="drop-down-menu">
-                                <form action="" class="contact-form"></form>
-                                <label for="name">Name:</label>
-                                <input type="name" name="name" id="name">
-                                <label for="phone">Number:</label>
-                                <input type="phone" name="phone" id="phone">
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" id="email">
-                                <label for="message">Message:</label>
-                                <input type="message" name="message"
-                                    id="message">
-                                <button type='submit'>Send</button>
+                                <form action="" class="contact-form">
+                                    <label for="name">Name:</label>
+                                    <input type="name" name="name" id="name">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" id="email">
+                                    <label for="message">Message:</label>
+                                    <input type="message" name="message"
+                                        id="message"></form>
+                                <button type='submit'
+                                    class="button-dark">Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -103,7 +106,7 @@
                 <li><a href="#">Contact Me </a>
                 </li>
             </ul>
-            <div class="mobile-menu-bottom">
+            <!-- <div class="mobile-menu-bottom">
                 <button class="button-dark-outline">Sign In</button>
                 <button class="button-dark">Join Now</button>
                 <div>
@@ -112,11 +115,11 @@
                         <span>Find a Store</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!--Box One-->
-        <section class="box box-one bg-primary text-center py-md">
+        <section class="box box-one bg-primary text-center">
             <div class="box-inner">
                 <h2 class="text-xl">About Me</h2>
                 <p class="text-med">
@@ -130,7 +133,7 @@
         </section>
 
         <!-- Box Two -->
-        <section class="box box-two bg-secondary grid-col-2">
+        <section class="box box-two bg-secondary grid-col-2 pad-md">
             <img src="img/box-b.png" alt="">
             <div class="boxtext">
                 <h2 class="text-xl">Documentation</h2>
@@ -140,7 +143,8 @@
         </section>
 
         <!-- Box Three -->
-        <section class="box box-two bg-secondary grid-col-2 grid-reversed">
+        <section class="box box-two bg-secondary grid-col-2 grid-reversed
+            pad-lg">
             <img src="img/box-c.png" alt="">
             <div class="boxtext">
                 <h2 class="text-xl">Projects</h2>

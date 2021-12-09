@@ -18,9 +18,9 @@ document.addEventListener('click', e => {
     }
 
     //removes all other open dropdowns 
-    document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
+    document.querySelectorAll('[data-drop-down].active').forEach(dropdown => {
         if (dropdown === currentDropdown) return
-        dropdown.classList.remove('active')
+        dropdown.classList.remove("active")
     })
 })
 

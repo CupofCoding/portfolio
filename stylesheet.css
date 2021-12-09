@@ -75,13 +75,13 @@ section a {
 .navbar {
     width: 100%;
     height: 75px;
-    background-color: #fff;
-    /* opacity: .5; */
+    background-color: white;
+    opacity: .9;
     padding: 10px;
     /*Line Shadow under Navbar*/
-    /* box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 
     0 2px 2px rgb(0 0 0 / 6%),
-    0 0 2px rgb(0 0 0 / 7%) ; */
+    0 0 2px rgb(0 0 0 / 7%);
     position: fixed;
 }
 
@@ -141,21 +141,21 @@ section a {
     margin-right: auto;    
 }
 
-/* to reference the list items
+/* to reference the list items */
 .navbarRight li:nth-child(2) {
     margin: 0 5px;
 }
-*/
+
 
 /* Drop Down Menu */
 .header {
-    background-color: #f3f3f3;
+    background-color: none;
     display: flex;
     align-items: baseline;
     padding: .5rem;
-    gap: 1.5rem;
+    gap: 1.75rem;
     text-transform: uppercase;
-    flex: right;
+    flex: center;
     margin-right: auto;
 }
 
@@ -163,7 +163,7 @@ section a {
     background: none;
     border: none;
     text-decoration: none;
-    color: #777;
+    color: none;
     font-family: inherit;
     font-size: inherit;
     cursor: pointer;
@@ -179,10 +179,13 @@ section a {
 
 .drop-down {
     position: relative;
+    float: right;
 }
 
 .drop-down-menu{
+    transform: translateX(-50%);
     position: absolute;
+    float: right;
     left: 0;
     top: calc(100% + .25rem);
     background-color: white;
@@ -191,8 +194,8 @@ section a {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    transform: translateY(0px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;    
 }
 
 /* select class then select the child from that class when we focus on the link and select class that's sibling  */
@@ -212,6 +215,7 @@ section a {
     display: flex;
     flex-direction: column;
     gap: .25rem;
+    float: right
 }
 
 .contact-form > input {
@@ -269,6 +273,10 @@ section a {
 
 .box-text .button-light {
     margin-top: 20px;
+}
+
+.box-one {
+    padding-top: 85px;
 }
 
 /* Grid Styles */
@@ -382,15 +390,15 @@ button {
 }
 
 /* Padding */
-.py-sm {
+.pad-sm {
     padding: 10px;
 }
 
-.py-md {
+.pad-md {
     padding: 20px;
 }
 
-.py-lg {
+.pad-lg {
     padding: 40px;
 }
 
@@ -595,7 +603,7 @@ transition: all 0.5s;
 /* Limits background */
 @media(min-width: 1440px) {
     .box {
-     max-width: 1440px;
+     /* max-width: 1440px; */
      margin-right: auto;
      margin-left: auto;
     }
