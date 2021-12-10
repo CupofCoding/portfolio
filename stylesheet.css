@@ -222,6 +222,13 @@ section a {
     margin-bottom: .5rem;
 }
 
+/* Test */
+/* .contact-form {
+max-width: 1440px;
+margin-right: auto;
+margin-left: auto;    
+} */
+
 
 /* Footer & Social */
 .footer-container {
@@ -256,7 +263,7 @@ section a {
 
 /* Box */
 .box {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .box-inner {
@@ -277,6 +284,13 @@ section a {
 
 .box-one {
     padding-top: 85px;
+}
+
+.box img {
+    height: 80%;
+    padding: 0px;
+    margin: 0px;
+    justify-self: auto;    
 }
 
 /* Grid Styles */
@@ -571,6 +585,7 @@ transition: all 0.5s;
 @media(max-width: 768px){
     .corner-menu {
         display: block;
+        margin-right: 0px;
     }
 
     .grid-col-2{
