@@ -28,7 +28,7 @@
                                 Me</a>
                         </div>
                         <div class="drop-down" data-drop-down>
-                            <button class="link" data-drop-down-button>Documentation</button>
+                            <button class="link" data-drop-down-button>Documentation&#9660;</button>
                             <div class="drop-down-menu information-grid">
                                 <div>
                                     <div class="drop-down-heading">Information</div>
@@ -42,42 +42,45 @@
                                 <div>
                                     <div class="drop-down-heading">Free
                                         Tutorials</div>
-                                    <div class="drop-down-links">All</div>
-                                    <a href="#" class="links">Latest</a>
-                                    <a href="#" class="links">Popular</a>
+                                    <div class="drop-down-links">
+                                        <a href="#" class="links">All</a>
+                                        <a href="#" class="links">Latest</a>
+                                        <a href="#" class="links">Popular</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">Projects&#9660;</a>
+                            <div class="drop-down" data-drop-down="">
+                                <button class="link" data-drop-down-button>Contact
+                                    Me</button>
+                                <div class="drop-down-menu">
+                                    <form action="" class="contact-form">
+                                        <label for="name">Name:</label>
+                                        <input type="name" name="name"
+                                            id="name">
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email"
+                                            id="email">
+                                        <label for="message">Message:</label>
+                                        <input type="message" name="message"
+                                            id="message"></form>
+                                    <button type='submit'
+                                        class="button-dark">Send Message</button>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">Projects</a>
-                        <div class="drop-down" data-drop-down="">
-                            <button class="link" data-drop-down-button>Contact
-                                Me</button>
-                            <div class="drop-down-menu">
-                                <form action="" class="contact-form">
-                                    <label for="name">Name:</label>
-                                    <input type="name" name="name" id="name">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email">
-                                    <label for="message">Message:</label>
-                                    <input type="message" name="message"
-                                        id="message"></form>
-                                <button type='submit'
-                                    class="button-dark">Send Message</button>
-                            </div>
-                        </div>
                     </div>
+                    <!-- Hamburger Corner Menu -->
+                    <button type="button" class="corner-menu" id="menu-button">
+                        <span class="corner-menu-top"></span>
+                        <span class="corner-menu-middle"></span>
+                        <span class="corner-menu-bottom"></span>
+                    </button>
                 </div>
-                <!-- Hamburger Corner Menu -->
-                <button type="button" class="corner-menu" id="menu-button">
-                    <span class="corner-menu-top"></span>
-                    <span class="corner-menu-middle"></span>
-                    <span class="corner-menu-bottom"></span>
-                </button>
-            </div>
-        </nav>
+            </nav>
 
-        <!-- Side Menu-->
-        <!-- <div>
+            <!-- Side Menu-->
+            <!-- <div>
             <button type="button" class="side-menu" id="side-menu-first">
                 <span class="side-menu-first"></span>
                 <span class="side-menu-second"></span>
@@ -94,19 +97,19 @@
                 </ul>
             </button>
         </div> -->
-        <!-- Mobile Menu -->
-        <div class="mobile-menu hidden" id="menu">
-            <ul>
-                <li><a href="#">Menu</a>
-                </li>
-                <li><a href="#">Documentation</a>
-                </li>
-                <li><a href="#">Projects</a>
-                </li>
-                <li><a href="#">Contact Me </a>
-                </li>
-            </ul>
-            <!-- <div class="mobile-menu-bottom">
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden" id="menu">
+                <ul>
+                    <li><a href="#">Menu</a>
+                    </li>
+                    <li><a href="#">Documentation</a>
+                    </li>
+                    <li><a href="#">Projects</a>
+                    </li>
+                    <li><a href="#">Contact Me </a>
+                    </li>
+                </ul>
+                <!-- <div class="mobile-menu-bottom">
                 <button class="button-dark-outline">Sign In</button>
                 <button class="button-dark">Join Now</button>
                 <div>
@@ -116,74 +119,87 @@
                     </a>
                 </div>
             </div> -->
-        </div>
-
-        <!--Box One-->
-        <section class="box box-one bg-primary text-center">
-            <div class="box-inner">
-                <h2 class="text-xl">About Me</h2>
-                <p class="text-med">
-                    Business professional with various technical skills and 10+
-                    years of experience maintaining discretion and
-                    confidentiality in various fields. Looking to further my
-                    career and gain industry experience.
-                    <br><a href="#" class="button button-light-outline">Learn
-                        more</a>
-                </p>
             </div>
-        </section>
 
-        <!-- Box Two -->
-        <section class="box box-two bg-secondary grid-col-2 pad-md">
-            <img src="./images/rizky-subagja-IBhJivtPqHQ-unsplash.jpg"
-                alt="rizky-subagja-IBhJivtPqHQ-unsplash">
-            <div class="boxtext">
-                <h2 class="text-xl">Documentation</h2>
-                <p class="text-med">Learn more about the following topics.</p>
-                <a href="" class="button button-light-outline">Documentation</a>
-            </div>
-        </section>
-
-        <!-- Box Three -->
-        <section class="box box-two bg-secondary grid-col-2 grid-reversed
-            pad-lg">
-            <img src="./images/nathan-dumlao-ikU3J1nr52w-unsplash.jpg"
-                alt="nathan-dumlao-ikU3J1nr52w-unsplash">
-            <div class="boxtext">
-                <h2 class="text-xl">Projects</h2>
-                <p class="text-med">Done in whatever code using whatever
-                    framework.</p>
-                <a href="" class="button button-light-outline">Projects</a>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="social">
-                    <a href="https://twitter.com/CupofCoding" class="twitter">
-                        <img src="./images/twitter.png" alt=""><br>Twitter</a>
-                    <a href="https://www.facebook.com/cupofcoding/"
-                        class="facebook">
-                        <img src="./images/facebook.png" alt=""><br>Facebook</a>
-                    <a href="https://www.instagram.com/cupofcoding/"
-                        class="instagram">
-                        <img src="./images/instagram.png" alt=""><br>Instagram</a>
-                    <a
-                        href="https://www.youtube.com/channel/UCXQkQPGWLVE1EOzmd6ZUUGg"
-                        class="youtube">
-                        <img src="./images/youtube.png" alt=""><br>Youtube</a>
-                    <a href="https://www.linkedin.com/in/avan/"
-                        class="linkedin">
-                        <img src="./images/linkedin.png" alt=""><br>LinkedIn</a>
-                    <a href="https://github.com/CupofCoding" class="github">
-                        <img src="./images/github.png" alt=""><br>Github</a>
+            <section class="box box-intro bg-primary">
+                <div class="box-inner">
+                    <h2 class="text-lg">"A journey of a thousand miles must
+                        begin
+                        with a single step." - Lao Tsu</h2>
                 </div>
-                <p>© 2021 CupofCoding. All rights reserved.</p>
-            </div>
-        </footer>
+            </section>
 
-        <script src="script.js" defer></script>
-    </body>
-</html>
+            <!--Box One-->
+            <section class="box box-one bg-primary text-center">
+                <div class="box-inner">
+                    <h2 class="text-xl">About Me</h2>
+                    <p class="text-med">
+                        Business professional with various technical skills and
+                        10+
+                        years of experience maintaining discretion and
+                        confidentiality in various fields. Looking to further my
+                        career and gain industry experience.
+                        <br><a href="#" class="button button-light-outline">Learn
+                            more</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Box Two -->
+            <!-- include I have no memory of this place cause meme / hover over panels for flipping and text -->
+            <section class="box box-two bg-secondary grid-col-2 pad-md">
+                <img src="./images/rizky-subagja-IBhJivtPqHQ-unsplash.jpg"
+                    alt="rizky-subagja-IBhJivtPqHQ-unsplash">
+                <div class="boxtext">
+                    <h2 class="text-xl">Documentation</h2>
+                    <p class="text-med">Learn more about the following topics.
+                    </p>
+                    <a href="" class="button button-light-outline">Documentation</a>
+                </div>
+            </section>
+
+            <!-- Box Three -->
+            <!-- hover over panels for flipping and text -->
+            <section class="box box-two bg-secondary grid-col-2 grid-reversed
+                pad-lg">
+                <img src="./images/nathan-dumlao-ikU3J1nr52w-unsplash.jpg"
+                    alt="nathan-dumlao-ikU3J1nr52w-unsplash">
+                <div class="boxtext">
+                    <h2 class="text-xl">Projects</h2>
+                    <p class="text-med">Done in whatever code using whatever
+                        framework.</p>
+                    <a href="" class="button button-light-outline">Projects</a>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="social">
+                        <a href="https://twitter.com/CupofCoding"
+                            class="twitter">
+                            <img src="./images/social/twitter.png" alt=""><br>Twitter</a>
+                        <a href="https://www.facebook.com/cupofcoding/"
+                            class="facebook">
+                            <img src="./images/social/facebook.png" alt=""><br>Facebook</a>
+                        <a href="https://www.instagram.com/cupofcoding/"
+                            class="instagram">
+                            <img src="./images/social/instagram.png" alt=""><br>Instagram</a>
+                        <a
+                            href="https://www.youtube.com/channel/UCXQkQPGWLVE1EOzmd6ZUUGg"
+                            class="youtube">
+                            <img src="./images/social/youtube.png" alt=""><br>Youtube</a>
+                        <a href="https://www.linkedin.com/in/avan/"
+                            class="linkedin">
+                            <img src="./images/social/linkedin.png" alt=""><br>LinkedIn</a>
+                        <a href="https://github.com/CupofCoding" class="github">
+                            <img src="./images/social/github.png" alt=""><br>Github</a>
+                    </div>
+                    <p>© 2021 CupofCoding. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src="script.js" defer></script>
+        </body>
+    </html>

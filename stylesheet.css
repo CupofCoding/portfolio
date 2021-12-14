@@ -152,8 +152,8 @@ section a {
     background-color: none;
     display: flex;
     align-items: baseline;
-    padding: .5rem;
-    gap: 1.75rem;
+    /* padding: .5rem;
+    gap: 1.75rem; */
     text-transform: uppercase;
     flex: center;
     margin-right: auto;
@@ -168,6 +168,7 @@ section a {
     font-size: inherit;
     cursor: pointer;
     padding: 0;
+    margin: auto 25px;
     text-transform: uppercase;
 }
 
