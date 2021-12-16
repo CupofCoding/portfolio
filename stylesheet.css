@@ -469,7 +469,7 @@ transition: all 0.5s;
     cursor: pointer;
     width: 24px;
     height: 24px;
-    position: relative;
+    position: sticky;
     background: none;
     border: none;
     z-index: 10; /*always on top*/    
