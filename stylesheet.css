@@ -88,7 +88,8 @@ section a {
 .navbarContainer {
     display: flex; /*Puts it in a line*/
     justify-content: space-between; /*divides items evenly*/
-    align-items: center;
+    align-items: center; /*Centers the links to logo*/
+    text-decoration: none;
     
 }
 
