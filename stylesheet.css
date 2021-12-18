@@ -70,6 +70,30 @@ section a {
     color: #fff;
 }
 
+body, html {
+    height: 100%;
+  }
+
+.parallax {
+    /* The image used */
+    background-image: url("/images/1920x1080.png");
+  
+    /* Set a specific height */
+    min-height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ .para-quote {
+     text-align: left;
+     position: fixed;
+     top: 85%;
+     left: 5%;
+  }
 
 /*NavBar*/
 .navbar {
@@ -261,6 +285,7 @@ margin-left: auto;
     height: 1px;
     background-color: #ccc;
     margin: 40px auto;
+    opacity: 0;
 }
 
 /* Box */
@@ -269,7 +294,7 @@ margin-left: auto;
 }
 
 .box-inner {
-    max-width: 700px;
+    max-width: 100%;
     margin: 0 auto; /*sets it to auto center*/
 }
 
@@ -277,7 +302,8 @@ margin-left: auto;
     max-width: 500px;
     text-align: center;
     justify-self: center;
-    padding: 20px 0;
+    margin: 20% 0;
+    padding: 20% 0;
 }
 
 .box-text .button-light {
@@ -418,22 +444,21 @@ button {
     padding: 40px;
 }
 
-/*
-Left Side Menu
+
+/* Left Side Menu */
 .side-menu {
 cursor: pointer;
 align-self: left;
-height: 50%;
-top: 40%;
+top: 45%;
+left: 0;
 position: fixed;
 background: none;
 border: none;
 z-index: 10;
-transition: all 0.25s;
+transition: all 0.15s;
 display: flex;
-justify-content: center;
-padding: 50px 0;
-line-height: 150px;
+padding: 20px 0;
+line-height: 15px;
 }
 
 .side-menu-first,
@@ -444,7 +469,7 @@ line-height: 150px;
 position: absolute;
 left: 30px;
 width: 30px;
-height: 2px;
+height: 3px;
 background: #000;
 transform: rotate(0);
 transition: all 0.5s;
@@ -452,18 +477,18 @@ transition: all 0.5s;
 }
 
 .side-menu-second{
-    transform: translateY(20px)
+    transform: translateY(15px)
 }
 .side-menu-third{
-    transform: translateY(40px)
+    transform: translateY(30px)
 }
 .side-menu-fourth{
-    transform: translateY(60px)
+    transform: translateY(45px)
 }
 .side-menu-fifth {
-    transform: translateY(80px)
+    transform: translateY(60px)
 }
-*/
+
 
 /* Hamburger/Menu Icon */
 .corner-menu {
