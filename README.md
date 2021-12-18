@@ -46,6 +46,7 @@ Box 2 - Documentation
     Tutorials/How To - Text written documentation 
     Vids - Pop up w/ embedded vids 
     View All - Pop up w/ all subcategories 
+    Mobile version/smaller screen side scrolls
 
 Box 3 - Projects
   Text Content; Description w/ experiences using whatever language & frameworks
@@ -55,6 +56,7 @@ Box 3 - Projects
     Project 3; pop up w/ link to github
     Project 4; pop up w/ link to github
     Project List - Pop up w/ list of projects based on complexity  w/ small description
+    Mobile version/smaller screen side scrolls
 
 Footer
   Social Bar - text or icons. In line. 
