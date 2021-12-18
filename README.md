@@ -14,7 +14,8 @@ User experience should leave a lasting impression using innovative/reactive UI D
 
 -----------
 Implementation: What we need to achieve; Present Solutions: 
-Add wireframe using resource(app) here for each of the requirements to represent how it will possibly look at the end. 
+Add wireframe using resource(app) here for each of the requirements to represent how it will possibly look at the end.
+https://miro.com/app/board/uXjVOaSEPVc=/?invite_link_id=194288773928
 
 
 Tech Specs?
