@@ -109,7 +109,7 @@ html {
   box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
     0 0 2px rgb(0 0 0 / 7%);
   position: fixed;
-  z-index: 1000;
+  z-index: 900;
 }
 
 .navbarContainer {
@@ -177,11 +177,11 @@ html {
   background-color: none;
   display: flex;
   align-items: baseline;
-  /* padding: .5rem;
-    gap: 1.75rem; */
+  padding: 0;
   text-transform: uppercase;
   flex: center;
-  margin-right: auto;
+  margin: 0;
+  margin-right: 10em;
 }
 
 .link {
@@ -193,8 +193,14 @@ html {
   font-size: inherit;
   cursor: pointer;
   padding: 0;
-  margin: auto 25px;
+  margin: 0 25px;
   text-transform: uppercase;
+  font-weight: bold;
+}
+
+.arrow {
+  margin: 0;
+  padding: 0;
 }
 
 /* any link that is in direct focus */
@@ -206,6 +212,8 @@ html {
 .drop-down {
   position: relative;
   float: right;
+  margin: 0;
+  padding: 0;
 }
 
 .drop-down-menu {
@@ -512,7 +520,7 @@ button {
   position: sticky;
   background: none;
   border: none;
-  z-index: 10; /*always on top*/
+  z-index: 1000; /*always on top*/
   display: none;
 }
 
@@ -552,9 +560,9 @@ button {
   transform: translateX(100%); /*moves it from the right*/
 }
 
-/* Caps the Navigation Bar */
-/* .no-scroll{
-    overflow: hidden;
+/* Caps the Navigation Bar
+.no-scroll {
+  overflow: hidden;
 } */
 
 .mobile-menu {
