@@ -35,8 +35,7 @@
                                 <div>
                                     <div class="drop-down-heading">Information</div>
                                     <div class="drop-down-links">
-                                        <a href="#" class="links">Programming
-                                            Concepts</a>
+                                        <a href="#" class="links">Programming Concepts</a>
                                         <a href="#" class="links">HTML</a>
                                         <a href="#" class="links">CSS</a>
                                         <a href="#" class="links">Javascript</a>
@@ -107,13 +106,26 @@
                 <!-- Mobile Menu -->
                 <div class="mobile-menu hidden" id="menu">
                     <ul>
-                        <li><a href="#">Menu</a>
+                        <li><a href="#about">About Me</a>
                         </li>
-                        <li><a href="#">Documentation</a>
+                        <li><a href="#documentation">Documentation</a>
                         </li>
-                        <li><a href="#">Projects</a>
+                        <li><a href="#projects">Projects</a>
                         </li>
                         <li><a href="#">Contact Me </a>
+                            <div class="drop-down-menu">
+                                <form action="" class="contact-form">
+                                    <label for="name">Name:</label>
+                                        <input type="name" name="name" id="name">
+                                    <label for="email">Email:</label>
+                                        <input type="email" name="email" id="email">
+                                    <label for="subject">Subject:</label>
+                                        <input type="subject" name="subject" id="subject">
+                                    <label for="message">Message:</label>
+                                        <textarea for="message"></textarea>
+                                    <form type="message" name="message" id="message"></form>
+                                    <button type='submit' class="button-dark">Send Message</button>
+                            </div>
                         </li>
                     </ul>
                     <!-- <div class="mobile-menu-bottom">
@@ -131,11 +143,11 @@
                 <!-- Side Menu-->
                 <div>
                     <button type="button" class="side-menu" id="side-menu-first">
-                        <span class="side-menu-first" ><a href="#top"></a></span>
-                        <span class="side-menu-second" ><a href="#about"></span>
-                            <span class="side-menu-third" ><a href="#documentation"></span>
-                                <span class="side-menu-fourth" ><a href="#projects"></span>
-                                    <span class="side-menu-fifth" ><a href="#footer"></span>
+                        <span class="side-menu-first"><a href="#"></a></span>
+                        <span class="side-menu-second"><a href="#about"></span>
+                            <span class="side-menu-third"><a href="#documentation"></span>
+                                <span class="side-menu-fourth"><a href="#projects"></span>
+                                    <span class="side-menu-fifth"><a href="#bottom"></span>
                                         <!-- <ul class="side-menu toggler" id="toggler">
                                             <li><a href="#">
                                                 <button class="button-dark"> <img
@@ -208,6 +220,7 @@
                                             <p>© 2021 CupofCoding. All rights reserved.</p>
                                         </div>
                                     </footer>
+                                    <a href="" class="bottom" id="bottom"></a>
 
                 <script src="script.js" defer></script>
             </body>
