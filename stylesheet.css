@@ -113,7 +113,7 @@ html {
   z-index: 900;
 }
 
-.navbarContainer {
+.navbar-container {
   display: flex; /*Puts it in a line*/
   justify-content: space-between; /*divides items evenly*/
   align-items: center; /*Centers the links to logo*/
@@ -144,34 +144,34 @@ html {
   height: 50px;
 }
 
-.navbarLeft {
+.navbar-left {
   text-transform: uppercase;
-  flex: right;
-  margin-right: auto;
+  /* flex: right;
+  margin-right: auto; */
 }
 
-.navbarRight li:first-child a {
+/* .navbar-right li:first-child a {
   display: flex;
   align-items: right;
   text-decoration: none;
   margin-right: 30px;
 }
 
-.navbarRight img {
+.navbar-right img {
   height: 20px;
   width: 20px;
   margin-right: 5px;
 }
 
-.navbarRight li {
+.navbar-right li {
   text-decoration: none;
   margin-right: auto;
 }
 
-/* to reference the list items */
-.navbarRight li:nth-child(2) {
+to reference the list items
+.navbar-right li:nth-child(2) {
   margin: 0 5px;
-}
+} */
 
 /* Drop Down Menu */
 .header {
@@ -182,7 +182,7 @@ html {
   text-transform: uppercase;
   flex: center;
   margin: 0;
-  margin-right: 10em;
+  margin-right: 1em;
 }
 
 .link {
@@ -194,7 +194,7 @@ html {
   font-size: inherit;
   cursor: pointer;
   padding: 0;
-  margin: 0 25px;
+  margin: 0 0 0 3.5em;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -651,8 +651,8 @@ button {
     height: 40px;
   }
 
-  .navbar .navbarRight,
-  .navbar .navbarLeft {
+  .navbar .navbar-right,
+  .navbar .navbar-left {
     display: none;
   }
 
