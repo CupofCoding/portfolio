@@ -146,11 +146,11 @@ html {
 
 .navbar-left {
   text-transform: uppercase;
-  /* flex: right;
-  margin-right: auto; */
+  flex: right;
+  margin-right: auto;
 }
 
-/* .navbar-right li:first-child a {
+.navbar-right li:first-child a {
   display: flex;
   align-items: right;
   text-decoration: none;
@@ -168,10 +168,10 @@ html {
   margin-right: auto;
 }
 
-to reference the list items
+/* to reference the list items  */
 .navbar-right li:nth-child(2) {
   margin: 0 5px;
-} */
+}
 
 /* Drop Down Menu */
 .header {
