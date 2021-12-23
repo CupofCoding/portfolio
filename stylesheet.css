@@ -194,7 +194,7 @@ to reference the list items
   font-size: inherit;
   cursor: pointer;
   padding: 0;
-  margin: 0 0 0 3.5em;
+  margin: 0 0.25em 0 3.5em;
   text-transform: uppercase;
   font-weight: bold;
 }
