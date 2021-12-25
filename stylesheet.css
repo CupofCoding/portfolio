@@ -279,9 +279,6 @@ html {
 
 .footer-container {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 30px 30px;
   display: flex;
   text-align: center;
   display: flex;
@@ -339,7 +336,7 @@ html {
 
 .box-inner {
   min-height: 100vh;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   max-width: 85%;
   margin: 0 auto; /*sets it to auto center*/
 }
@@ -361,7 +358,6 @@ html {
   height: 80%;
   padding: 0px;
   margin: 0px;
-  justify-self: auto;
 }
 
 #about {
@@ -742,8 +738,8 @@ button {
     margin-right: auto;
     margin-left: auto;
   }
-
+  /* 
   .divider {
     max-width: 1440px;
-  }
+  } */
 }
