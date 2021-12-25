@@ -83,7 +83,7 @@ html {
   background-image: url("/images/1920x1080.png");
 
   /* Set a specific height */
-  min-height: 100%;
+  min-height: 100vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -281,12 +281,21 @@ html {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 30px 30px;
+  display: flex;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  text-align: center;
 }
 
 .social {
   display: flex;
   align-items: center;
   margin: 20px 0;
+  gap: 2.5em;
 }
 
 .social img {
@@ -313,16 +322,14 @@ html {
 }
 
 .box-inner {
-  max-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 85%;
   margin: 0 auto; /*sets it to auto center*/
 }
 
 .box-text {
-  max-width: 500px;
-  text-align: center;
-  justify-self: center;
-  margin: 20% 0;
-  padding: 20% 0;
+  max-width: 80vw;
 }
 
 .box-text .button-light {
@@ -342,9 +349,10 @@ html {
 }
 
 #about {
-  height: max-content;
-  margin: auto;
-  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*Changes it to vertical center instead of inline horizontal*/
 }
 
 /* Grid Styles */
@@ -613,24 +621,6 @@ button {
 }
 
 /* Media Query; Only applies to smaller screens */
-@media (max-width: 960px) {
-  .text-xl {
-    font-size: 30px;
-  }
-
-  .text-lg {
-    font-size: 25px;
-  }
-
-  .text-med {
-    font-size: 19px;
-  }
-
-  .side-menu {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .corner-menu {
     display: block;
@@ -656,19 +646,43 @@ button {
     display: none;
   }
 
+  .box-inner {
+    max-width: 90%;
+    max-height: auto;
+  }
+
   .toggler {
     display: auto;
   }
 
   .footer {
     text-align: center;
+    max-width: 80vw;
+    gap: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .text-xl {
+    font-size: 30px;
+  }
+
+  .text-lg {
+    font-size: 25px;
+  }
+
+  .text-med {
+    font-size: 19px;
+  }
+
+  .side-menu {
+    display: none;
   }
 }
 
 /* Limits background */
 @media (min-width: 1440px) {
   .box {
-    /* max-width: 1440px; */
     margin-right: auto;
     margin-left: auto;
   }
