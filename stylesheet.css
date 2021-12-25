@@ -140,7 +140,7 @@ html {
   color: var(--color-primary);
 }
 
-.navbarLogo img {
+.navbar-logo img {
   width: 50px;
   height: 50px;
 }
@@ -659,7 +659,7 @@ button {
     order: 0; /*puts image first*/
   }
 
-  .navbarLogo img {
+  .navbar-logo img {
     width: 40px;
     height: 40px;
   }
