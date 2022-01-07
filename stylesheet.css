@@ -683,52 +683,6 @@ button {
   grid-row-start: 2;
 }
 
-/* Refactor Footer due to browser compatibility */
-/* 
-.footer-container {
-  width: 100%;
-  display: flex;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-logo {
-  padding: 2.5em 2em;
-}
-
-.footer-logo img {
-  height: 50px;
-  width: 50px;
-  border: none;
-  border-radius: 150%;
-  background: lightgray;
-}
-
-.footer p {
-  text-align: left;
-  padding: 0;
-  margin: 0 0 0 5px;
-  position: relative;
-}
-
-.social {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  gap: 2.5em;
-}
-
-.social img {
-  width: 35px;
-  height: 35px;
-}
-
-.social a {
-  text-decoration: none;
-  margin-right: 20px;
-} */
-
 .bottom {
   height: 0;
   width: 0;
