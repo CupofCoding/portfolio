@@ -19,10 +19,10 @@
                 <div>
                     <div class="header navbar-left">
                         <div class="drop-down" data-drop-down>
-                            <a href="/#about" class="link" data-drop-down-button>About Me</a>
+                            <a href="/#about" class="link transform-link" data-drop-down-button>About Me</a>
                         </div>
                         <div class="drop-down" data-drop-down>
-                            <a href="/#documentation" class="link" data-drop-down-button>Documentation</a>
+                            <a href="/#documentation" class="link transform-link" data-drop-down-button>Documentation</a>
                         </div>
                         <div class="drop-down" data-drop-down>
                             <button class="link arrow" data-drop-down-button>&#9660;</button>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                             <div class="drop-down" data-drop-down>
-                                <a href="/#projects" class="link" data-drop-down-button>Projects</a>
+                                <a href="/#projects" class="link transform-link" data-drop-down-button>Projects</a>
                             </div>
                             <div class="drop-down" data-drop-down>
                                 <button class="link arrow" data-drop-down-button>&#9660;</button>
@@ -72,17 +72,17 @@
                                 </div>
                             </div>
                             <div class="drop-down" data-drop-down>
-                                <button class="link" data-drop-down-button>Contact ✉️</button>
-                                <div class="drop-down-menu">
+                                <button class="link contact-link" data-drop-down-button>Contact ✉️</button>
+                                <div class="drop-down-menu contact-me">
                                     <form action="" class="contact-form">
-                                    <label for="name">Name:</label>
-                                        <input type="name" name="name" id="name">
-                                    <label for="email">Email:</label>
-                                        <input type="email" name="email" id="email">
-                                    <label for="subject">Subject:</label>
-                                        <input type="subject" name="subject" id="subject">
-                                    <label for="message">Message:</label>
-                                        <textarea for="message"></textarea>
+                                    <label for="name">Name:</label><br>
+                                        <input type="name" name="name" id="name"><br>
+                                    <label for="email">Email:</label><br>
+                                        <input type="email" name="email" id="email"><br>
+                                    <label for="subject">Subject:</label><br>
+                                        <input type="subject" name="subject" id="subject"><br>
+                                    <label for="message">Message:</label><br>
+                                        <textarea for="message" class="message-field"></textarea>
                                     <form type="message" name="message" id="message"></form>
                                 <button type='submit' class="button-dark">Send Message</button>
                                 </div>
@@ -168,76 +168,76 @@
                 <div>
                     <div class="parallax box-intro">
                         <h2 class="text-med para-quote">"Ideas are cheap. Execution is everything." - Fireship.io &#10142; 
-                            Goals: Figure out how to make it work. There's more than one way to solve a problem.</h2>
+                            <br>Goals: Figure out how to make it work. There's more than one way to solve a problem.</h2>
                         </div>
                     </div>
                     <!--Box One-->
-                                    <section class="box box-one bg-primary text-center">
-                                        <div class="box-inner" id="about">
-                                            <h2 class="text-xl">About Me</h2>
-                                            <p class="text-med">The design process has always been enjoyable for me. I see myself as a story teller when going through the creation process.  </p>
-                                            <p class="text-med">I prioritize quality of life and efficiency in order to come up with innovative solutions. I believe balance between functionality and aesthetics is necessary for a pleasant design and user experience. </p>
-                                            <p class="text-med"> Business professional with various technical skills and 10+ years of experience maintaining discretion and confidentiality in various fields. </p>
-                                            <p class="text-med"> Self-taught programmer enrolled in a MERN fullstack bootcamp. Looking to further my career and gain industry experience. </p>                                            
-                                        </div>
-                                    </section>
-                                    
-                                    <!-- Box Two -->
-                                    <!-- include I have no memory of this place cause meme / hover over panels for flipping and text -->
-                                    <section class="box box-two bg-secondary grid-col-2 pad-md">
-                                        <div class="box-inner" id="documentation">
-                                            <img src="./images/rizky-subagja-IBhJivtPqHQ-unsplash.jpg" alt="rizky-subagja-IBhJivtPqHQ-unsplash">
-                                            <div class="boxtext">
-                                                <h2 class="text-xl">Documentation</h2>
-                                                <p class="text-med">Learn more about the following topics. </p>
-                                                <a href="" class="button button-light-outline">Documentation</a>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    
-                                    <!-- Box Three -->
-                                    <!-- hover over panels for flipping and text -->
-                                    <section class="box box-two bg-secondary grid-col-2 grid-reversed pad-lg">
-                                        <div class="box-inner" id="projects">
-                                            <img src="./images/nathan-dumlao-ikU3J1nr52w-unsplash.jpg" alt="nathan-dumlao-ikU3J1nr52w-unsplash">
-                                            <div class="boxtext">
-                                                <h2 class="text-xl">Projects</h2>
-                                                <p class="text-med">Done in whatever code using whatever framework.</p>
-                                                <a href="" class="button button-light-outline">Projects</a>
-                                            </div>
-                                        </div>
-                                    </section>
+                    <section class="box box-one bg-primary text-center">
+                        <div class="box-inner" id="about">
+                            <h2 class="text-xl">About Me</h2>
+                            <p class="text-med">The design process has always been enjoyable for me. I see myself as a story teller when going through the creation process.  </p>
+                            <p class="text-med">I prioritize quality of life and efficiency in order to come up with innovative solutions. I believe balance between functionality and aesthetics is necessary for a pleasant user experience. </p>
+                            <p class="text-med"> Business professional with various technical skills and 10+ years of experience maintaining discretion and confidentiality in various fields. </p>
+                            <p class="text-med"> Self-taught programmer enrolled in a MERN fullstack bootcamp. Looking to further my career and gain industry experience. </p>                                            
+                        </div>
+                    </section>
+                    
+                    <!-- Box Two -->
+                    <!-- include I have no memory of this place cause meme / hover over panels for flipping and text -->
+                    <section class="box box-two bg-secondary grid-col-2 pad-md">
+                        <div class="box-inner" id="documentation">
+                            <img src="./images/rizky-subagja-IBhJivtPqHQ-unsplash.jpg" alt="rizky-subagja-IBhJivtPqHQ-unsplash">
+                            <div class="boxtext">
+                                <h2 class="text-xl">Documentation</h2>
+                                <p class="text-med">Learn more about the following topics. </p>
+                                <a href="" class="button button-light-outline">Documentation</a>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Box Three -->
+                    <!-- hover over panels for flipping and text -->
+                    <section class="box box-two bg-secondary grid-col-2 grid-reversed pad-lg">
+                        <div class="box-inner" id="projects">
+                            <img src="./images/nathan-dumlao-ikU3J1nr52w-unsplash.jpg" alt="nathan-dumlao-ikU3J1nr52w-unsplash">
+                            <div class="boxtext">
+                                <h2 class="text-xl">Projects</h2>
+                                <p class="text-med">Done in whatever code using whatever framework.</p>
+                                <a href="" class="button button-light-outline">Projects</a>
+                            </div>
+                        </div>
+                    </section>
 
-                                    <!-- <div class="divider"></div> -->
-                                    <footer class="footer-container">                                        
-                                        <div class="footer-grid">
-                                            <div class="social-grid">
-                                                <a href="https://twitter.com/CupofCoding" class="twitter social-icon social-left social-grid-1">
-                                                    <img src="./images/social/twitter.png" alt="">
-                                                    <br>Twitter</a>
-                                                <a href="https://www.facebook.com/cupofcoding/" class="facebook social-icon social-left social-grid-2">
-                                                    <img src="./images/social/facebook.png" alt="">
-                                                    <br>Facebook</a>
-                                                <a href="https://www.instagram.com/cupofcoding/" class="instagram social-icon social-left social-grid-3">
-                                                    <img src="./images/social/instagram.png" alt="">
-                                                    <br>Instagram</a>
-                                                <a href="/#profile-card" class="footer-logo social-grid-4"> 
-                                                    <img src="images/CoC Placeholder.png" alt="Cup of Coding Logo">
-                                                    <br>Cup of Coding</a>
-                                                <a href="https://www.youtube.com/channel/UCXQkQPGWLVE1EOzmd6ZUUGg" class="youtube social-icon social-right social-grid-5">
-                                                    <img src="./images/social/youtube.png" alt="">
-                                                    <br>Youtube</a>
-                                                <a href="https://www.linkedin.com/in/avan/" class="linkedin social-icon social-right social-grid-6">
-                                                    <img src="./images/social/linkedin.png" alt="">
-                                                    <br>LinkedIn</a>
-                                                <a href="https://github.com/CupofCoding" class="github social-icon social-right social-grid-7">
-                                                    <img src="./images/social/github.png" alt="">
-                                                    <br>Github</a>
-                                            </div>
-                                        </div>
-                                        <p class="footer-copyright social-grid-8">© 2021 CupofCoding. All rights reserved.</p>
-                                        <a href="" class="bottom" id="bottom"></a>
-                                    </footer>
+                    <!-- <div class="divider"></div> -->
+                    <footer class="footer-container">                                        
+                        <div class="footer-grid">
+                            <div class="social-grid">
+                                <a href="https://twitter.com/CupofCoding" class="twitter social-icon social-left social-grid-1 transform-link">
+                                    <img src="./images/social/twitter.png" alt="">
+                                    <br>Twitter</a>
+                                <a href="https://www.facebook.com/cupofcoding/" class="facebook social-icon social-left social-grid-2 transform-link">
+                                    <img src="./images/social/facebook.png" alt="">
+                                    <br>Facebook</a>
+                                <a href="https://www.instagram.com/cupofcoding/" class="instagram social-icon social-left social-grid-3 transform-link">
+                                    <img src="./images/social/instagram.png" alt="">
+                                    <br>Instagram</a>
+                                <a href="/#profile-card" class="footer-logo social-grid-4 transform-link"> 
+                                    <img src="images/CoC Placeholder.png" alt="Cup of Coding Logo">
+                                    <br>Cup of Coding</a>
+                                <a href="https://www.youtube.com/channel/UCXQkQPGWLVE1EOzmd6ZUUGg" class="youtube social-icon social-right social-grid-5 transform-link">
+                                    <img src="./images/social/youtube.png" alt="">
+                                    <br>Youtube</a>
+                                <a href="https://www.linkedin.com/in/avan/" class="linkedin social-icon social-right social-grid-6 transform-link">
+                                    <img src="./images/social/linkedin.png" alt="">
+                                    <br>LinkedIn</a>
+                                <a href="https://github.com/CupofCoding" class="github social-icon social-right social-grid-7 transform-link">
+                                    <img src="./images/social/github.png" alt="">
+                                    <br>Github</a>
+                            </div>
+                        </div>
+                        <p class="footer-copyright social-grid-8">© 2021 CupofCoding. All rights reserved.</p>
+                        <a href="" class="bottom" id="bottom"></a>
+                    </footer>
                 <script src="script.js" defer></script>
             </body>
         </html>

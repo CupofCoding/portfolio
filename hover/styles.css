@@ -1,6 +1,6 @@
 :root {
   --background-primary: #00704a;
-  --background-secondary: #b3b3b3;
+  --background-secondary: #e6e6e6;
 
   --text-primary: #fff;
   --text-secondary: #333;
@@ -20,7 +20,7 @@
 }
 
 .transform-link::after {
-  content: "";
+  content: ""; /*if no content then ':after' doesn't work*/
   position: absolute;
   left: 0;
   bottom: 0;
@@ -102,15 +102,15 @@
   /* placeholder image */
   background-size: cover;
   background-color: var(--background-secondary);
-  background-blend-mode: multiply;
+  background-blend-mode: multiply; /*blends background with color and makes text legible*/
   color: var(--text-primary);
   text-align: left;
 }
 
 .card__title {
   position: relative;
-  z-index: 1;
-  display: inline-block;
+  z-index: 1; /*sets stacking index so it's in front*/
+  display: inline-block; /*adjusts parent size for the children*/
   margin-bottom: 1rem;
 }
 
@@ -118,11 +118,11 @@
   content: "";
   position: absolute;
   top: -0.25rem;
-  left: -2rem;
+  left: -2rem; /*flush against the side*/
   bottom: -0.25rem;
-  width: calc(100% + 4rem);
-  background: var(--color-primary);
-  z-index: -1;
+  width: calc(100% + 4rem); /*2 rem on each side because of parent*/
+  background: var(--background-primary);
+  z-index: -1; /*sets it behind text*/
   transform: scaleX(0.075);
   transform-origin: left;
   transition: transform 250ms ease-in;
@@ -135,7 +135,7 @@
 .card__body {
   position: relative;
   z-index: 1;
-  color: transparent;
+  color: transparent; /*essentially hidden until hovered over*/
   margin: 0;
   transition: color 150ms 350ms;
 }
@@ -163,7 +163,8 @@
 }
 
 body {
-  font-family: basic-sans, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

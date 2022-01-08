@@ -211,6 +211,54 @@ html {
   font-weight: bold;
 }
 
+.transform-link {
+  text-decoration: none;
+  color: var(--background-primary);
+  position: relative;
+}
+
+.transform-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.transform-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--background-primary);
+  position: relative;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 75%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.contact-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .arrow {
   margin: 0;
   padding: 0;
@@ -231,10 +279,11 @@ html {
 
 .drop-down-menu {
   transform: translateX(-50%);
-  position: absolute;
-  float: inline-end;
-  left: 0;
-  top: calc(100% + 0.25rem);
+  position: fixed;
+  right: 0;
+  width: 95vw;
+  height: 85vh;
+  top: calc(nav + 0.75rem);
   background-color: white;
   padding: 0.75rem;
   border-radius: 0.25rem;
@@ -243,6 +292,12 @@ html {
   pointer-events: none;
   transform: translateY(0px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.contact-me {
+  position: fixed;
+  right: 0;
+  width: 66vw;
 }
 
 /* select class then select the child from that class when we focus on the link and select class that's sibling  */
@@ -265,20 +320,14 @@ html {
 }
 
 .contact-form {
-  /* max-width: 300px; */
-  /* position: sticky left;     */
-  justify-content: center;
-  padding: 10px;
+  position: relative;
   background-color: white;
-  width: 100%;
-  height: 100%;
+  width: 80vw;
   padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
 }
 
 .contact-form > input {
-  width: 100%; /* Full width */
+  width: 80%; /* Full width */
   padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
@@ -286,6 +335,13 @@ html {
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.message-field {
+  height: 45vh;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .divider {
@@ -601,12 +657,12 @@ button {
 
 /*Footer*/
 .social-grid a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-weight: 700;
 }
 
 .social-grid {
-  width: 80%;
+  width: 70%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr) 2fr repeat(3, 1fr);
