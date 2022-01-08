@@ -13,13 +13,13 @@
 }
 
 /*links*/
-.fancy-link {
+.transform-link {
   text-decoration: none;
   color: var(--background-primary);
   position: relative;
 }
 
-.fancy-link::after {
+.transform-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -32,7 +32,7 @@
   transition: transform 250ms ease-in;
 }
 
-.fancy-link:hover::after {
+.transform-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
