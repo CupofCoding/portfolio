@@ -1,16 +1,16 @@
-:root {
-  /* --background-primary: #00704a;
+/* :root {
+  --background-primary: #00704a;
   --background-secondary: #e6e6e6;
 
   --text-primary: #fff;
-  --text-secondary: #333; */
+  --text-secondary: #333;
 }
 
 *,
 *::before,
 *::after {
-  /* box-sizing: border-box; */
-}
+  box-sizing: border-box;
+} */
 
 /*links*/
 .transform-link {
@@ -192,4 +192,16 @@ body-links {
   font-size: 3rem;
   color: var(--background-primary);
   line-height: 0.8;
+}
+
+@media (max-width: 360px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 960px) {
+}
+
+@media (min-width: 1440px) {
 }

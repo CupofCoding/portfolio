@@ -1,0 +1,57 @@
+/* Left Side Menu */
+.side-menu {
+  cursor: pointer;
+  align-self: left;
+  top: 45%;
+  left: 0;
+  position: fixed;
+  background: none;
+  border: none;
+  z-index: 1000;
+  transition: all 0.15s;
+  display: flex;
+  padding: 20px 0;
+  line-height: 15px;
+}
+
+.side-menu-first,
+.side-menu-second,
+.side-menu-third,
+.side-menu-fourth,
+.side-menu-fifth {
+  position: absolute;
+  left: 30px;
+  width: 30px;
+  height: 3px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.side-menu-second {
+  transform: translateY(15px);
+}
+.side-menu-third {
+  transform: translateY(30px);
+}
+.side-menu-fourth {
+  transform: translateY(45px);
+}
+.side-menu-fifth {
+  transform: translateY(60px);
+}
+
+@media (max-width: 360px) {
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+}
+
+@media (min-width: 1440px) {
+}
