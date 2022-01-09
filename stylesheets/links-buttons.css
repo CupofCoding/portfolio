@@ -1,15 +1,15 @@
 :root {
-  --background-primary: #00704a;
+  /* --background-primary: #00704a;
   --background-secondary: #e6e6e6;
 
   --text-primary: #fff;
-  --text-secondary: #333;
+  --text-secondary: #333; */
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 /*links*/
@@ -20,7 +20,7 @@
 }
 
 .transform-link::after {
-  content: ""; /*if no content then ':after' doesn't work*/
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -29,7 +29,7 @@
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 250ms ease-in;
+  transition: transform 200ms ease-in;
 }
 
 .transform-link:hover::after {
@@ -38,7 +38,7 @@
 }
 
 /*Buttons*/
-.button {
+.button-links {
   cursor: pointer;
   border: 0;
   background: var(--background-primary);
@@ -48,11 +48,11 @@
   z-index: 1;
 }
 
-.button + .button {
+.button-links + .button-links {
   margin-left: 1em;
 }
 
-.button::after {
+.button-links::after {
   content: "";
   position: absolute;
   top: 0;
@@ -65,32 +65,32 @@
   transition: transform 200ms ease-in;
 }
 
-.button-one::after {
+.button-links-one::after {
   transform: scaleX(0);
   transform-origin: right;
 }
 
-.button-one:hover::after {
+.button-links-one:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.button-two::after {
+.button-links-two::after {
   transform: scaleY(0);
   transform-origin: bottom;
 }
 
-.button-two:hover::after {
+.button-links-two:hover::after {
   transform: scaleY(1);
   transform-origin: top;
 }
 
-.button-three::after {
+.button-links-three::after {
   transform: scale(0);
   transform-origin: bottom right;
 }
 
-.button-three:hover::after {
+.button-links-three:hover::after {
   transform: scale(1);
   transform-origin: top left;
 }
@@ -98,8 +98,7 @@
 /*Card*/
 .card {
   padding: 2rem;
-  background-image: url(https://unsplash.it/600);
-  /* placeholder image */
+  background-image: url(https://unsplash.it/600); /* placeholder image */
   background-size: cover;
   background-color: var(--background-secondary);
   background-blend-mode: multiply; /*blends background with color and makes text legible*/
@@ -162,7 +161,7 @@
   transform: scaleY(1);
 }
 
-body {
+body-links {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   min-height: 100vh;
@@ -176,7 +175,7 @@ body {
   background: #ddd;
 }
 
-.content {
+.content-links {
   background: var(--text-primary);
   width: 70vw;
   padding: 3em;
@@ -185,7 +184,7 @@ body {
   margin-bottom: 1em;
 }
 
-.title {
+.title-links {
   margin: 0 0 0.5em;
   text-transform: uppercase;
   font-weight: 900;

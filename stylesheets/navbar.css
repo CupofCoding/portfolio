@@ -1,0 +1,214 @@
+/*NavBar*/
+.navbar {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  opacity: 0.9;
+  padding: 10px;
+  /*Line Shadow under Navbar*/
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+  position: fixed;
+  z-index: 900;
+}
+
+.navbar-container {
+  display: flex; /*Puts it in a line*/
+  justify-content: space-between; /*divides items evenly*/
+  align-items: center; /*Centers the links to logo*/
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: var(--default-text);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--color-primary);
+}
+
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-left {
+  text-transform: uppercase;
+  flex: right;
+  margin-right: auto;
+}
+
+.navbar-right li:first-child a {
+  display: flex;
+  align-items: right;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.navbar-right img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.navbar-right li {
+  text-decoration: none;
+  margin-right: auto;
+}
+
+/* to reference the list items  */
+.navbar-right li:nth-child(2) {
+  margin: 0 5px;
+}
+
+/* Drop Down Menu */
+.header {
+  background-color: none;
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+  text-transform: uppercase;
+  flex: center;
+  margin: 0;
+  margin-right: 1em;
+}
+
+.link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0.25em 0 3.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--background-primary);
+  position: relative;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 75%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.contact-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.arrow {
+  margin: 0;
+  padding: 0;
+}
+
+/* any link that is in direct focus */
+.drop-down.active > .link,
+.link:hover {
+  color: black;
+}
+
+.drop-down {
+  position: relative;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.drop-down-menu {
+  transform: translateX(-50%);
+  position: fixed;
+  left: 90px;
+  width: 95vw;
+  height: 85vh;
+  top: calc(nav + 0.75rem);
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.contact-me {
+  align-items: center;
+}
+
+/* select class then select the child from that class when we focus on the link and select class that's sibling  */
+.drop-down.active > .link + .drop-down-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2rem;
+}
+
+.drop-down-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-form {
+  position: relative;
+  background-color: white;
+  width: 80vw;
+  padding: 15px;
+}
+
+.contact-form > input {
+  width: 80%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.message-field {
+  height: 45vh;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.divider {
+  width: 95%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 40px auto;
+  opacity: 0;
+}
