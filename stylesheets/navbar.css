@@ -125,6 +125,7 @@
 .arrow {
   margin: 0;
   padding: 0;
+  padding
 }
 
 /* any link that is in direct focus */
@@ -334,9 +335,6 @@
   }
 }
 @media (max-width: 960px) {
-  .side-menu {
-    display: none;
-  }
 }
 
 @media (min-width: 1440px) {
