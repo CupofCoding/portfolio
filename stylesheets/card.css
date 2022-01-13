@@ -3,6 +3,7 @@
   max-width: 300px;
   margin: auto;
   text-align: center;
+  border-radius: 0.5em;
 }
 
 .card .title {
@@ -27,6 +28,10 @@
   text-decoration: none;
   font-size: 22px;
   color: black;
+}
+
+.card i {
+  padding: 1.5em;
 }
 
 .card button:hover,
