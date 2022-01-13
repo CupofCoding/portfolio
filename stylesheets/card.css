@@ -4,11 +4,16 @@
   margin: auto;
   text-align: center;
   border-radius: 0.5em;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
 }
 
 .card .title {
-  color: grey;
-  color: sl;
+  padding-top: 0.5em;
+  color: dimgray;
   font-size: 18px;
 }
 
