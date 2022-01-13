@@ -4,11 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="/stylesheets/fa-icons.css">
         <link rel="stylesheet" href="/stylesheets/styles.css">
         <link rel="stylesheet" href="/stylesheets/links-buttons.css">
         <link rel="stylesheet" href="/stylesheets/navbar.css">
         <link rel="stylesheet" href="/stylesheets/sidebars.css">
         <link rel="stylesheet" href="/stylesheets/footer.css">
+        <link rel="stylesheet" href="/stylesheets/card.css">
         <title>Just a Cup of Coding</title>
     </head>
     <body>
@@ -76,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="drop-down" data-drop-down>
-                                <button class="link contact-link " data-drop-down-button>Contact ✉️</button>
+                                <button class="link contact-link " data-drop-down-button>Contact <i class="fa fa-envelope" data-drop-down-button></i></button>
                                 <div class="drop-down-menu contact-me">
                                     <form action="" class="contact-form">
                                     <label for="name">Name:</label><br>
@@ -195,8 +198,15 @@
                                 <h2 class="text-xl">Documentation</h2>
                                 <p class="text-med">Learn more about the following topics. </p>
                                 <a href="" class="button button-light-outline">Documentation</a>
-                            </div>
+                            </div>                            
                         </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/300/200" alt="John"> <!--300x200-->                            
+                            <h3 class="title">Project Name</h3>
+                            <p>Project Description; ie whatever code/frameworks used.</p>
+                            <a href="#"><i class="fa fa-github grow"></i></a>
+                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>                        
                     </section>
                     
                     <!-- Box Three -->
@@ -212,36 +222,48 @@
                         </div>
                     </section>
 
+                    <!-- <div class="card">
+                        <img src="https://picsum.photos/300/200" alt="John">
+                        <h1>Anne Van</h1>
+                        <p class="title">Fullstack Web Developer</p>
+                        <p>CSLUB Coding Bootcamp</p>                                
+                        <a href="#" class="grow"><i class="fa fa-github"></i></a>
+                        <a href="#" class="grow"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"class="grow"><i class="fa fa-facebook"></i></a>
+                        <p><button>Contact</button></p>
+                    </div> -->
                     <!-- <div class="divider"></div> -->
                     <footer class="footer-container">                                        
                         <div class="footer-grid">
                             <div class="social-grid">
                                 <a href="https://twitter.com/CupofCoding" class="twitter social-icon social-left social-grid-1 transform-link">
-                                    <img class="grow" src="./images/social/twitter.png" alt="">
+                                    <i class="fab fa-twitter-square fa-3x grow"></i>
                                     <br>Twitter</a>
                                 <a href="https://www.facebook.com/cupofcoding/" class="facebook social-icon social-left social-grid-2 transform-link">
-                                    <img class="grow"  src="./images/social/facebook.png" alt="">
+                                    <i class="fab fa-facebook-square fa-3x grow"></i>
                                     <br>Facebook</a>
-                                <a href="https://www.instagram.com/cupofcoding/" class="instagram social-icon social-left social-grid-3 transform-link">
-                                    <img class="grow"  src="./images/social/instagram.png" alt="">
+                                <a href="https://www.instagram.com/cupofcoding/" class="instagram social-icon social-left social-grid-3 transform-link">                                    
+                                    <i class="fab fa-instagram-square fa-3x grow"></i>
                                     <br>Instagram</a>
-                                <a href="/#profile-card" class="footer-logo social-grid-4 transform-link"> 
-                                    <img class="grow" src="images/CoC Placeholder.png" alt="Cup of Coding Logo">
-                                    <br>Cup of Coding</a>
+                                    <a href="/#profile-card" class="footer-logo social-grid-4 transform-link"> 
+                                        <img class="grow" src="images/CoC Placeholder.png" alt="Cup of Coding Logo">
+                                        <br>Cup of Coding</a>
                                 <a href="https://www.youtube.com/channel/UCXQkQPGWLVE1EOzmd6ZUUGg" class="youtube social-icon social-right social-grid-5 transform-link">
-                                    <img class="grow"  src="./images/social/youtube.png" alt="">
+                                    <i class="fab fa-youtube-square fa-3x grow"></i>
                                     <br>Youtube</a>
                                 <a href="https://www.linkedin.com/in/avan/" class="linkedin social-icon social-right social-grid-6 transform-link">
-                                    <img class="grow"  src="./images/social/linkedin.png" alt="">
+                                    <i class="fa fa-linkedin-square fa-3x grow"></i>
                                     <br>LinkedIn</a>
                                 <a href="https://github.com/CupofCoding" class="github social-icon social-right social-grid-7 transform-link">
-                                    <img class="grow"  src="./images/social/github.png" alt="">
+                                    <i class="fab fa-github-square fa-3x grow"></i>
                                     <br>Github</a>
                             </div>
+
                         </div>
                         <p class="footer-copyright social-grid-8">© 2021 CupofCoding. All rights reserved.</p>
                         <a href="" class="bottom" id="bottom"></a>
                     </footer>
                 <script src="script.js" defer></script>
+                <script src="https://kit.fontawesome.com/0d5548277b.js" crossorigin="anonymous"></script>
             </body>
         </html>
