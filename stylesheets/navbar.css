@@ -157,6 +157,7 @@
   justify-content: center;
   left: 5em;
   width: 95vw;
+  max-height: 100vh;
   top: calc(4em + 0.75rem);
   background-color: white;
   padding: 0.75rem;
@@ -171,7 +172,9 @@
 .contact-me {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
 }
 
 .submit-button {
@@ -220,7 +223,7 @@
 }
 
 .message-field {
-  height: 45vh;
+  height: 27em;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -285,15 +288,16 @@
   position: fixed;
   top: 75px;
   right: 0;
-  width: 80%;
-  height: auto;
+  width: 50%;
+  height: 18em;
   background-color: #fff;
   color: #000;
-  padding: 30px;
+  padding: 3em;
   box-shadow: inset 0 4px 3px -3px rgb(0 0 0 / 10%),
     inset 0 4px 2px -2px rgb(0 0 0 / 7%);
   transition: all 0.3s;
   z-index: 1000;
+  border-radius: 0 0 0 0.5em;
 }
 
 .mobile-menu ul {
@@ -328,7 +332,32 @@
   margin-right: 10px;
 }
 
-@media (max-width: 360px) {
+/*Contact Mobile */
+#menu > ul > div > li:nth-child(4) > div {
+  position: absolute;
+  left: 0;
+  margin-right: auto;
+  padding-left: 3em;
+}
+
+#menu > ul > div > li:nth-child(4) > div > button {
+  margin-left: 0;
+}
+
+.contact-form-mobile {
+  position: fixed;
+  width: 100vw;
+  height: 85vh;
+  left: 0;
+  margin-top: 0px;
+}
+
+@media (max-width: 375px) {
+  .mobile-menu {
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 @media (max-width: 768px) {
@@ -337,17 +366,31 @@
     height: 40px;
   }
 
+  .navbar-logo {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 0.25em;
+  }
+
   .navbar .navbar-right,
   .navbar .navbar-left {
     display: none;
   }
 
   .corner-menu {
-    display: block;
-    margin-right: 0px;
-    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-form-mobile {
+    top: 3.5em;
+  }
+
+  .message-field {
+    height: 15em;
   }
 }
+
 @media (max-width: 960px) {
 }
 

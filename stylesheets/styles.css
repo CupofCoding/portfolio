@@ -114,7 +114,7 @@ html {
 
 .divider {
   width: 95%;
-  height: 11vh;
+  height: 8em;
   background-color: transparent;
   margin-top: 5px;
   opacity: 0;
@@ -166,7 +166,7 @@ html {
 
 .box-intro {
   padding-top: 100%;
-  position: sticky;
+  max-height: 80%;
 }
 
 .box img {
@@ -178,7 +178,7 @@ html {
 div[class^="text"],
 div[class*="text"],
 section[class*="text"] {
-  /* color: black; */
+  color: var(--default-text);
   text-shadow: 6px, 6px, black;
 }
 
@@ -321,10 +321,33 @@ button {
 
 /* Media Query; Only applies to smaller screens */
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
+  .box {
+    width: 100vw;
+  }
+
+  .text-xl {
+    font-size: 30px;
+  }
+
+  .text-lg {
+    font-size: 25px;
+  }
+
+  .text-med {
+    font-size: 19px;
+  }
+
+  .divider {
+    padding: 3em;
+  }
 }
 
 @media (max-width: 768px) {
+  .box-intro {
+    height: 100vh;
+  }
+
   body {
     max-width: 100vw;
   }
@@ -345,6 +368,16 @@ button {
   .toggler {
     display: auto;
   }
+
+  .parallax {
+    background-attachment: scroll;
+    background-repeat: repeat;
+    position: absolute;
+  }
+
+  .divider {
+    padding: 3.5em;
+  }
 }
 
 @media (max-width: 960px) {
@@ -358,6 +391,10 @@ button {
 
   .text-med {
     font-size: 19px;
+  }
+
+  .divider {
+    padding: 3em;
   }
 }
 

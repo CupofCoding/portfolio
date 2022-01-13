@@ -92,8 +92,7 @@
                                         <textarea for="message" class="message-field"></textarea>
                                     <form type="message" name="message" id="message"><br>
                                 <button type='submit' class="button-dark submit-button">Send Message</button>
-                            </div>
-                        </form>
+                                </div></form>
                             </div>
                         </div>
                     </div>
@@ -109,28 +108,31 @@
                 <!-- Mobile Menu -->
                 <div class="mobile-menu hidden " id="menu">
                     <ul>
-                        <li><a href="/#about">About Me</a>
-                        </li>
-                        <li><a href="/#documentation">Documentation</a>
-                        </li>
-                        <li><a href="/#projects">Projects</a>
-                        </li>
-                        <li><a href="/#">Contact Me </a>
-                            <div class="drop-down-menu">
-                                <form action="" class="contact-form">
-                                    <label for="name">Name:</label>
-                                        <input type="name" name="name" id="name">
-                                    <label for="email">Email:</label>
-                                        <input type="email" name="email" id="email">
-                                    <label for="subject">Subject:</label>
-                                        <input type="subject" name="subject" id="subject">
-                                    <label for="message">Message:</label>
-                                        <textarea for="message"></textarea>
-                                    <form type="message" name="message" id="message"></form>
-                                    <button type='submit' class="button-dark">Send Message</button>
+                    <div>
+                        <li><a href="/#about">About Me</a></li>
+                        <li><a href="/#documentation">Documentation</a></li>
+                        <li><a href="/#projects">Projects</a></li>
+                        <li>
+                            <div class="drop-down" data-drop-down>
+                            <button class="link contact-link contact-mobile-menu" data-drop-down-button>Contact Me <i class="fa fa-envelope" data-drop-down-button></i></button>                                
+                                <div class="drop-down-menu contact-me contact-form-mobile">
+                                    <form action="" class="contact-form ">
+                                    <label for="name">Name:</label><br>
+                                        <input type="name" name="name" id="name"><br>
+                                    <label for="email">Email:</label><br>
+                                        <input type="email" name="email" id="email"><br>
+                                    <label for="subject">Subject:</label><br>
+                                        <input type="subject" name="subject" id="subject"><br>
+                                    <label for="message">Message:</label><br>
+                                        <textarea for="message" class="message-field"></textarea>
+                                    <form type="message" name="message" id="message"><br>
+                                <button type='submit' class="button-dark submit-button">Send Message</button>
+                                </div></form>
                             </div>
                         </li>
+                    </div>
                     </ul>
+                </div>
                     <!-- <div class="mobile-menu-bottom">
                         <button class="button-dark-outline">Sign In</button>
                         <button class="button-dark">Join Now</button>
@@ -185,8 +187,8 @@
                     <section class="box box-one bg-primary text-center" >
                         <div class="box-inner" >
                             <h2 class="text-xl">About Me</h2>
-                            <p class="text-med">The design process has always been enjoyable for me. I see myself as a story teller when going through the creation process.  </p>
-                            <p class="text-med">I prioritize quality of life and efficiency in order to come up with innovative solutions. I believe balance between functionality and aesthetics is necessary for a pleasant user experience. </p>
+                            <p class="text-med"> The design process has always been enjoyable for me. I prioritize quality of life and efficiency in order to come up with innovative solutions. </p>
+                            <p class="text-med"> I believe balance between functionality and aesthetics is necessary for a pleasant user experience. </p>
                             <p class="text-med"> Business professional with various technical skills and 10+ years of experience maintaining discretion and confidentiality in various fields. </p>
                             <p class="text-med"> Self-taught programmer enrolled in a MERN fullstack bootcamp. Looking to further my career and gain industry experience. </p>                                            
                         </div>
