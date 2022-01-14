@@ -63,8 +63,11 @@ html,
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
-  scroll-behavior: smooth;
   color: var(--default-text);
+}
+
+html {
+  /* scroll-behavior: smooth; */
 }
 
 a {
