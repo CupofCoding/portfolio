@@ -105,16 +105,31 @@ footer {
 }
 
 @media (max-width: 375px) {
+  .footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
   .social-grid {
-    margin-left: 15%;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+    .social-grid a{
+      margin: 0;
+    }
+
+  .social-grid-4 {
+    width: 115px;
+    padding: 0 10px;    
   }
 
+
   .social-grid-8 {
-    text-align: center;
-    margin: left;
+    text-align: center;    
   }
 }
 
