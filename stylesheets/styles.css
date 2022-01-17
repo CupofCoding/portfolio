@@ -372,11 +372,11 @@ button {
     display: auto;
   }
 
-  .parallax {
+  /* .parallax {
     background-attachment: scroll;
     background-repeat: repeat;
     position: absolute;
-  }
+  } */
 
   .divider {
     padding: 3.5em;
