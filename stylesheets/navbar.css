@@ -230,11 +230,12 @@
 }
 
 .contact-form > button {
-  height: 3em;;
+  height: 3em;
+  margin-top: 10px;
 }
 
 .message-field {
-  height: 20vh;
+  height: 30%;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -361,10 +362,10 @@
 .contact-form-mobile {
   position: fixed;
   width: 100vw;
-  height: 90vh;
+  height: calc(90vh - 15px);
   left: 0;
   margin-top: 1px;
-  padding: 0;
+  padding: 0;  
 }
 
 @media (max-width: 375px) {
@@ -400,14 +401,14 @@
   .contact-form-mobile {
     top: 75px;
   }
-
-  .message-field {
-    height: 10vh;
-  }
 }
 
 @media (max-width: 960px) {
 }
 
 @media (min-width: 1440px) {
+}
+
+@media (min-height: 700px){
+
 }
