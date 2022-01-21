@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guide to Basic Javascript</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
+</head>
+<body>
+    <h2>Javascript Fundamentals</h2>
+    <p>Javascript is a High level, interpreted programming language that doesn't have to run through a compilier. The language controls the interactivity of a page such as showing or hiding objects, scrolling, pop ups, whatever you can click or control or animate objects on a page, submit info or respond to small queries such as form validation. Javascript is case sensitive. Keep the javascript content at the bottom before the &lt;/body&gt; part of the document so the HTML portion can load faster. syntax follows [prompt ();] would be the verbs.</p>
+    <p>It doesn't take consideration of any memory manage on the machine. It's multi-paradigm, meaning that you can write your code in many different ways and is flexible in how you write your code. It can run on the client/bbrowser or on a server(javascript runtime Node.js) to interact with databases.</p>
+    <p>Javascript is the programming langauge of the browser and is a good focus if you want to learn client-side programming. Other languages generally don't run things clientside unless there's a library for the language to reference that generates the code for the browser. Generally used to build interactive user interfaces with frameworks like React, Angular, VueJS.</p>
+    <p>The language can be used to build very fast server side and full stack applications using Node.JS. Can be used to build mobile apps like React Native, NativeScript, or Ionic or build desktop apps with frameworks like Electron JS. </p>
+    <p>Javascript functions different from other languages as its arrays are not statically typed, as in it doesn't differentiate between data types. You can have the data type is a strings or numbers and you don't have to categorize them like other languages unless you're using Typescript.</p>
+    <p>Javascript can be placed internally inside an HTML document using &lt;script&gt; tag </p>
+    <p>Javascript Linting Tools; code quality checking tools. Brackets text editor uses JSLint and ESLint. Will highlight errors, could be syntax errors. </p>
+    <p>Javascript Events are things a browser or user does to have HTML elements have interactivity to occur. 
+	<br>Event listeners wait for an event to occur to respond. Could be onclick.</p>
+    
+    <p>** A good place to learn about Javascript is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a></p>
+    
+    <h4>Commands &amp; Commenting in Javascript:</h4> 
+    <p>Console commands are formatted as console.<i>command</i>('String');</p>
+    <p>'Properties' do not have parenthesis, if there is parenthesis than it is a 'method'. Methods are functions associated with an object.
+        <br>console.log(var.length); only has a property while console.log(var.toUpperCase()); includes a method</p>
+    <p>Syntax for the console log is as follows:    
+        <br>console.log(container.varName.embeddedObject[index#]
+        <br> or you can do the following 'destructuring' method to create a variable out of existing object: const {firstName, lastName, address: { city }} = person; </p>
+    <p>You can add properties that weren't included in container:
+        <br>Ex: varName.email = 'johndoe@mail.com';</p> 
+    
+    <ul>
+        <li>In line commenting is started with ‘//’</li>
+        <li>Multi Line Comment /* Enclosed text */</li>
+    </ul>
+    
+    <ul>
+        <h3>Basic Syntax</h3>        
+        <pre>Syntax Example; 
+        var firstNumber = 7;
+        var secondNumber = 8;
+        var addNumbers = firstNumber+secondNumber;
+        </pre>
+        <p>Variables are containers for storing data values. var is a globally scoped keyword used to declare variables. This means that if you have a conditional <i>if</i> statement and you set a variable in the statement and then outside of the block there's another variable with the same name, it can cause a conflict. 
+        <br>let is a keyword that was added later that lets you reassign values; For example: let age = 30; then you can reassign the variable to age = 32; without an error. 
+        <br>'const' is short for constant which means that the value cannot be reassigned. Always use 'const' unless you know you're going to reassign the value. 
+        <br>'=' is an assignment operator to assign value. value 7 is stored in the container firstNumber.
+        <br>var x = 7; number 
+        <br>var myCar=’Porche’; you need ‘’ to indicate that it’s a string</p>
+        <p>Undefined statements; myCar =’Range Rover’; will change the value of the variable moving forward.</p>
+        <p>Variable names cannot start with a number or punctuation mark. You can not use operators such as =,+, or - variable names cannot contain spaces and they’re case-sensitive. You cannot use JavaScript Keywords because it’s a part of the language.
+        <br>Example; Window; open, string but you can have myWindow or myString</p>
+        
+        <p>An example for when 'let' is better to use instead of const:</p>
+        <pre>let score;
+        
+        score = 7;
+        
+        console.log(score);</pre>
+        
+        <p>let score; initializes the program, but if you're unable to do so if you use 'const' as it will return a SyntaxError as it is missing an initializer in the const declaration and you need to have a declared value such as 'const score = 10;'. </p>
+        <p>Generally when you're working with arrays and objects, the values within them can be reassigned.</p>
+        
+        <pre>Example: 
+&lt;script&gt;
+
+    var myHeading = document.querySelector('h1')
+    
+    myHeading.textContent= "Be Smart!"
+					
+&lt;/script&gt; <!-- variable stored inside a container = method that searches for the h1 element. Call the Variable then add element property. The script replaces the h1 tag quote with the new content-->
+        </pre>
+        <p>or externally with a .js file extension. You need to create a reference.
+        <br>For Example: &lt;script src="scripts/myscript.js"&gt;&lt;/script&gt;
+            
+        <p>In Javascript; in the command console; a popup box is created in an alert function.</p>
+        <p>Developer Tool Console; powerful free tools for debugging your code. You can experiment with JavaScript in the console. Most web browsers have a developer console. There are different ways to access the tool. Right-click on a space on a webpage and choose to inspect the element. Or Alt+Command+I for Mac; Ctrl + Shift + i for windows. Or F12</p>
+        
+        <pre>Example: 
+var firstNumber = 27;
+
+var secondNumber = 47;
+
+var addNumbers = firstNumber + secondNumber;
+
+alert(addNumbers);
+        </pre>
+        <p>This will have return the value of 74 in an alert popup: This page says 74 with an OK button. You can have console.log(addNumbers); will have it display in the console.</p>
+        
+        <p>prompt(); is a function that can be used to get data from the user.
+            <br>You can get the computer to enter the variable.</p>
+            <pre>Ex:  
+            var firstName = prompt(“Enter your first name:)”
+            var greeting = “Hello ” + firstName;</pre>
+        <p>This will prompt you to input your name.</p>
+
+        <h3>Arrays &amp; Object Literals</h3>
+        <p>Arrays are a structure that allows you to store multiple values in a single reference. You can have different data types in an array. This is fine in javascript but in other languages it's generally better to have the same data type included in the array and possibly assign it with a number. Javascript is not statically typed (Ex name:string) like Typescript which is like a superset of Javascript with added features.</p>
+        <p>Object literals are key value pairs</p>
+
+        <p>'New' is an array constructor using the old method.</p>
+        <pre> const numbers = new Array(1,2,3,4);
+        
+        console.log(numbers); 
+        
+        This will generate an array with values 1-4. </pre>
+        
+        <pre>You don't need a data constructor to create an array when using brackets. Example: 
+        const myData = [7, 'John', 'Jane', 17];
+        </pre>
+        <p>This will return 4 lines in the console with the index values in the brackets starting with 0. </p>
+        <p>Adding an array is a method called ‘pushing’ and ‘popping’ will remove the last value in the array. You can also use 'unshift' to add a value to the start of the array.</p>
+        <pre>Example: 
+        const fruits = ['apples', 'bananas', 'oranges'];
+        
+        fruits.push('pineapples');</pre>
+        <p>this function adds 'pineapples' to the container 'fruits'. You can also use the following method to add and assign a value to the array:</p>
+        <pre>fruits[4] = 'grapes'</pre>
+        
+        <pre>Example: fruits.pop();</pre>
+        <p>this function will remove the last value entered</p>
+        <pre>console.log(fruits[1]);</pre>
+        <p>This will call the value 'bananas' as index numbers count from 0.</p>
+        <p>**Reminder: You cannot reassign an array using the 'const' otherwise you get returned an error. Generally you manipulate data in an array and you don't reassign it. In order reassign the array, the array has to be created using 'var'.
+        <br>Ex: var fruits = ['apples', 'bananas', 'oranges']; 
+        <br>fruits  = [];</p>
+        
+        <p>In order to check the index of a value, you would use the following console command:</p>
+        <pre>console.log(fruits.indexOf('oranges;);</pre>
+        <p>This will return the index value of 3 based on the location of the string in the array.</p>
+        
+        <p>In order to check of an array is in an array, use the following console command:</p>
+        <pre>console.log(Array.isArray(variableName));</pre>
+        <p>This creates a boolean that will return a true or false value. Generally used in conjuctions with conditionals.</p>
+        
+        <h3>Data Types &amp; Methods for Strings, Arrays, Objects, etc</h3>
+        <p>Data types are types of data assigned to variables. There are primitive data types where the data is directly assigned to memory and not a resource.</p>
+        <ul>
+        <li>String - Sequence of text, must be enclosed in quotes.
+        <br> Ex: myData=’Cars’;
+            <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
+            <p>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+        <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
+        <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+        <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
+        <pre>const greeting = `My name is ${name} and I am ${age}`;
+        
+        console.log(greeting);</pre>
+        <p>'Substring' is a method used to call the range of letters within the string. Multiple methods can be applied.</p>
+            <pre>const var = 'Hello World!';
+            console.log(var.substring(0,5).toUpperCase());
+            
+            This returns: HELLO</pre>
+        </li>
+            
+        <li>Number - Numerical number. No quotes required. There are no float or decimal data types in javascript. It's just a number.
+        <br>Ex: myData = 7</li>
+            
+        <li>Boolean - True of false value. No quotes required.
+        <br>4 > 3 will evaluate as true</li>
+        
+        <li>Object - Everything in JavaScript is an object. An object within an object is called an embedded object.
+        <br>Ex: var person = {firstName:”John”,lastName:”Doe”};</li>            
+            
+        <li>Array - Object/Structure that stores multiple values as one
+        <br>Ex: var myCars=[“Ford”,”Toyota”]
+        <br>Ex: var x = [“john”,7]; 
+        
+        <p>Often times, you will be using arrays of objects.</p>
+            
+            <pre> For Example: 
+            const todos = [
+            {
+                id: 1,
+                text: 'Pick up dry cleaning',
+                isCompleted: true
+            },
+            {
+                id: 2,
+                text: 'Pick up groceries',
+                isCompleted: true
+            },
+            {
+                id: 3,
+                text: 'Return borrowed gym equipment',
+                isCompleted: false
+            },
+            ];</pre>
+        <p>This creates an array with 3 objects that can be checked in the console using the following: 
+            
+            <br>console.log(todos); - if you want to list all the objects
+            <br>console.log(todos[1].text); - if you want to display only the text 'Pick up groceries' for the second object</p>
+        
+        <p>JSON is a data format that is used a lot in Full Stack developement when using API's when sending data to a server. It's sent and recieved in JSON format. Very similar to <i>Object Literals</i> There are multiple online resources you can use to find JSON online formatters. JSON uses only double quotes(") instead of single quotes(') around the ids and the object names.</p>
+            
+            <pre>The following converts the Object Literal array so that it's ready to send the data to a server.
+            const todoJSON = JSON.stringify(todos);
+            console.log(todoJSON);</pre>
+    
+
+            
+            
+        <p>'Split' method is used to create an array based on a string</p>
+            <pre>const var = 'startDate, endDate, payRate'
+            console.log(var.split(', '));
+            
+            This will return an array with 4 values and each word is in each array value and this can to insert data into a database or search the values.</pre>
+            
+            </li>
+            
+        <li>**Note: When mixing data types, it’s outcome can be different.
+        <br>var x = “7” + 7; will return the value 77 when you call “x” as a string 
+        <br>var y = 7 + 7; will return 14 as both data types are number values </li>    
+        
+        <li>Null - container that does that exist however the data is missing or empty; 
+        <br>Ex: var name = null; </li>
+            
+        <li>Undefined - Identical to null in value but differs in data type; not an object data type
+        <br>Ex: 'var name' for undefined or 'let z;' to initialize something but it's still undefined </li>
+            
+        <li>Symbol - a built-in object or value </li>
+        </ul>
+        
+        <p>In order to test and identify data types in javascript use the following:</p>
+        <pre>console.log(typeof variablename);</pre>
+        <p>**the only exception is that NULL values are defined as an object data type due to it being a typetag and objects being 0. As a result, null had 0 as a type tag which returns it as an object in the console. </p>
+        
+        <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
+        <br>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+        <p>Template Stings or Literals were introduced as a new method during ES6 or ES2015
+        <br>Newer Method Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+        <p>This can also be used to define a variable.</p>
+        <pre>const greeting = `My name is ${name} and I am ${age}`;
+        
+        console.log(greeting);</pre>
+            
+            
+        <p>
+        <br>Ex: </p>
+        
+        <h3>Operators</h3>
+        <ul>
+            <li>Arithmetic - The usual +, -, *, /; </li>
+            <li>% is a modulus operator that returns the remainder from a division. 5 % 2 will return 1</li>
+            <li>++ Increment - increases the value of a number or variable; var x = 7; x++ will return 8</li>
+            <li>-- Decrement decreases the value of a number or variable; var y = 7; y-- will return 6</li>
+            <li>*** there is operator precedence when there is multiplication and division involved before </li>
+            <li>+ or - but you can use the () to edit that order. </li>
+        </ul>
+        <ul>
+            <li>Assignment is used to assign a value to a variable; = or + = </li>
+            <li>String Operators are used to add strings together using + or += for concatenation operators. </li>
+            <li>Comparison Operators - function as true or false values returned; Booleans
+            <pre>
+            Equal == 	Checks if values are equal
+            Ex: 2 ==2;</pre></li>
+            <li>Strictly equal ===	Checks if values are equal in value and type
+            <pre>
+            Ex: 4 ===4;</pre>
+            <pre>Example: 	
+            var a = 7; assigns value 
+            var b = '7'; assigns string value
+            a == b; will return true value 
+            a === b; will return false value due to data type. </pre>
+            
+                <pre>
+            Not equal !=	Checks if values are not equal
+            Ex: 7 !=3;</pre>
+            </li>
+            <pre>
+            Strictly not equal !== 	Checks if value is not equal in value and type
+            Ex: 7 !==7;</pre>
+            
+            <pre>
+            Greater Than > 	Checks if value is greater
+            Ex: 5 > 2</pre>
+            
+            <pre>
+            Less Than &lt; 	Checks if value is less
+            Ex: 3 &lt; 4</pre>
+            
+            <pre>
+            Greater than or equal >=	checks if value is greater than or equal to 
+            Ex: </pre>
+            
+            <pre>
+            Less than or equal to &lt;=	checks if value is less than or equal to
+            Ex: </pre>
+            
+            <li>Logical - will also return true or false using the &amp; and or | pipe symbols
+            <pre>
+            And &amp;&amp; 	checks if all conditions are met
+            Ex: x &lt; 10 &amp;&amp; y > 6;</pre>
+            <pre>
+            Or ||	checks if any condition is met
+            Ex: x &lt; 10 || y > 6;</pre>
+            </li>
+            
+            <li>Type - used to find the type of data or variable 
+                <pre>      typeof “john”; will return “string”</pre>
+                <pre>      typeof 7; will return “number”</pre>
+                <pre>      typeof false; will return “boolean” </pre>
+                <pre>      typeof myCar; will return “undefined” if there is no assigned value</pre>
+                <pre>      typeof null; will return “object.” same with any arrays. </pre>
+            </li>
+            
+            
+            <li>Conditional statements - code structures which allow you to test if an expression returns true or not. 
+            <p>If statements - specifies if a block of code to be executed provided a specified condition is true </p>
+            <p>Else statements - specifies a block of code to be executed and provided a specified condition is false.</p> 
+            <pre>
+            Ex: var myNum = 7; 
+            if(myNum = 7) {
+            console.log(“Lucky 7”);
+            }else{
+            
+            console.log(“You’re not very lucky today…”); </pre>
+            </li>
+            
+            
+            <li>Functions are a way of packaging functionality that you wish to reuse. To activate a function you invoke/call it by it’s name. 
+            <p>JavaScript has built in functions like the ‘alert’ that enables you to create a pop-up box message. You can create your own functions using the ‘function’ word. They generally use arguments, bits of data that the functions need to do their job. They go inside parentheses and are separated by commas if there is more than one argument. </p>
+            <p>When you create a variable outside of a function the function will be global, if the variable is inside a function it will be scope variable and will be stored locally and accessed inside the function. Once the function has been called the variable has served its purpose. </p>
+            <pre>
+            Ex: function addNum(num1,num2)	{
+            var result = num1 + num2;
+            return result;
+            }</pre>
+            
+            <p>* this creates the function addNum; Ex: addNum(10,20); to get 30
+            <br>**num1 &amp; num2 are scope variables, they won’t be stored. ‘return’ will call the result variable out of the function so that it’s available to use. </p>
+            </li>            
+        
+        </ul>
+        
+        <h3>Loops - for, while, for...of, forEach, map</h3>
+        <li>'For' loops exist in may different languages. You include 3 parameters within the () that will assign the iterator or the variable and separated by ';' instead of ',', followed by the condition that needs to be met, then followed by the increment.
+        <pre>Example: 
+        for(let a = 0; a &lt; 10; a++) {
+            console.log(`For Loop Number: ${a}`);
+        }</pre>
+        <p>This example sets the starting variable 'a' as '0'. i++ will add 1 to the 'a' value and the condition 'a &lt; 10;' will run the loop until the value is equal to 9 because the condition is no longer true at 10. Console Log will display 'For Loop Number: #'</p>
+        </li>
+        
+        <li>'While' Loops are an older method. The major difference is that the variable is defined outside of the loop. 
+        <pre>Example: 
+        let a = 0; 
+        while(a &lt; 10) {
+            console.log(`For Loop Number: ${a}`);
+            a++;        
+        }</pre>
+            
+        <p>It's very important to include the line 'a++' to set the increment otherwise it will keep looping the same value. Also important to have the condition to limit the amount of times the loop is run.</p>
+        </li>
+         
+        <li>Looping through Arrays</li>        
+            
+            <pre> For Example: 
+            const todos = [
+            {
+                id: 1,
+                text: 'Pick up dry cleaning',
+                isCompleted: true
+            },
+            {
+                id: 2,
+                text: 'Pick up groceries',
+                isCompleted: true
+            },
+            {
+                id: 3,
+                text: 'Return borrowed gym equipment',
+                isCompleted: false
+            },
+            ];
+            
+            for(let a = 0; a &lt;todos.length; a++) {
+                console.log(todos[a].text);            
+            }
+            
+            </pre>
+        
+        <p>This will display the number of items and the using the <i>For</i> loop option.</p>
+        
+        <p>There is the <i>For...Of</i> loop that is structured similar to the <i>For</i> loop but it is easier to read in comparison.</p>
+        
+        <pre>
+        for(let todo of todos) {
+            console.log(todo.text);
+        }
+        </pre>
+        
+        <p>todo could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
+    </ul>
+    
+    <li>High Order Array Methods</li>
+    <p><i>forEach</i></p>
+    
+    <p><i>map</i> allows us to create a new array from an array</p>
+    
+    <p><i>filter</i> allows us to create a new array based on a condition.</p>
+        
+        
+        
+    <ul>
+        <li>Conditionials (if, ternary &amp; switch)</li>
+        <li>Functions (normal &amp; arrow)</li>
+        <li>OOP - Object oriented programming (protypes &amp; classes)</li>
+        <li>DOM - Document Object Model Selection</li>
+        <li>DOM - Document Object Model Manipulation</li>
+        <li>Events</li>
+        <li>Basic Form Validation</li>
+    </ul>
+    
+    <h3>Modules</h3>
+    <p>Used to bring everything together and import files, packets, or pieces of code into another file. They are not supported in browsers directly so you have to use tools such as Parcel or Webpack with Babel.</p>
+    <ul>
+        <li>ES6 Modules, TypeScript (Angular)</li>
+        <li>Parcel, Webpack &amp; Babel</li>
+        <li>Export &amp; Export Default</li>
+    </ul>
+    
+    <h3>Classes</h3>
+    <p>Classes are a term used in multiple languages. Used mostly in React &amp; Angular</p>
+    <ul>
+        <li>Structuring a class</li>
+        <li>Constructors</li>
+        <li>Methods &amp; properties</li>
+        <li>Instantiation - creating objects from the class</li>
+        <li>Extending classes &amp; inheritance</li>
+    </ul>
+    
+    <h3>Arrow Functions</h3>
+    <p>Makes code look much more compact and clean. There's less lines of code and is the standard for modern Javascript. Gives advantages when it comes to scope in certain situations and "lexical this"</p>
+    
+    <h3>Promises/Asynchronus Requests</h3>
+    <p>ES6 utilizes promises as a solution instead of callbacks for asynchronous coding. This allows you to make a request for a server and anything that could take a while, you are able to perform other processes on the application without having to wait for a response.</p>
+    <ul>
+        <li>Learn how to create and recieve promises</li>
+        <li>Standard .then() to get the data back after making the request and .catch() syntax to catch any possible errors</li>
+        <li>Async/Await was introduced in ES7 which can handle promises in more of a synchronus function</li>
+        <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
+    </ul>
+    
+    <h3>Destructuring</h3>
+    <p>Preferred when you look at most frameworks, makes for cleaner and more readable code. Unpack values from objects and arrays.</p>
+    <pre>Examples: 
+    const { name, email } = user;
+    
+    const { name, email, address: {city} } = user;
+    </pre>
+    <p>We have a user object with some fields to put into a variable. The first example is done so you can get a name and email for a variable in the user object. The second is done so you can pull the address object and you can pull the city which is the property of the address object within the 'user'</p>
+        
+    <h3>Concept of Components &amp; State</h3>
+    <p>UIs are broken up into individual components which has some sort of state associated with them. You are taught about separation of concerns for the HTML mark up, CSS stying, and the Javascript for any dynamic type functionality where you select elements from the DOM. The difference for mindsets using Frameworks is that you start thinking of each user interface as individual components that are encapsulated entities that include both markup/disply and the functionality. Each component can have its own data and state of being.</p>
+    <p>Application level states are usually implement using a state manager like Redux, Vuex, etc</p>
+    <p>Nested components (Parent &amp; children)</p>
+    <p>Can be directly inserted or used in a router</p>
+    
+    <p>For example, if you look at a website, there can be a search bar as a component, another one that tracks statistics, another one that tracks activities, or suggestions for other users for UI when dealing with frameworks. When you share state you look into something like React for Redux or Vuex for Vue for state level management when sharing data for a single source of truth or context API, Graph QL &amp; Apollo. There are different technologies to use.</p>
+    
+    <h3>Spread Operator (...)</h3>
+    <p>State is usually unchangeable or immutable so it cannot be direclty changed. The spread operator allows us to make a copy to add what we want and change what we want and then send it to the application or component.</p>
+    
+    <pre>Examples: 
+    const userState = {
+        name: 'Jane'
+    }
+    
+    const newUserState = {
+        ...userState,
+        age: 28
+    }
+    
+    </pre>
+    <p>This user state has one property of 'name' that represented by Jane and you add a new user state using the spread operator (...) to make a copy of the userState then add the age property.</p>
+    
+    <h3>High Order Array Functions</h3>
+     <p>Function that takes another function as a parameter. There following are commonly used functions that apply to arrays and are used oten to iterate through and manipulate data.</p>
+    <ul>
+        <li>forEach() - Basic iteration/looping; similar to a for loop, doesn't return any data.</li>
+        <li>map() - Manipulating data to create a new array. Used in react to create an array from another array with specific manipulations. For example, you can have a 'User' as an object and there is a specific property you want to create an array for such as age or location.</li>
+        <li>filter()- Used in a lot of state reducers. Used to filter out certain pieces of data based on a condition.</li>
+    </ul>
+    
+    <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
+    
+</body>
+</html>

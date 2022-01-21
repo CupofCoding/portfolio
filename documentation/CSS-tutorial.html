@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guide to Basic CSS</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
+</head>
+<body>
+    <h2>Guide to Basic CSS</h2>
+    <p>CSS stands for Cascading Style Sheet;  Generally used for website layout and design and can be extended with Sass/Less that allow you to use variables and conditionals. Provides additional options/rules for how images and text is displayed. It is a style language and not a programming language. They use Class followed but Subclass.</p>
+    <p>The syntax follows [p {color:blue;}] and would function like adjectives.</p>
+    <p>Flexbox is a CSS3 layout mode that allows you to allign elements really quickly.</p>
+    
+    <h3>Basic Selectors</h3>
+    <ul>
+        <li>Element Selector - specified HTMLelement; p{ color:blue:}</li>
+        <li>ID selector - element on page with specified ID, only one element per ID on page; #heading{ font-size:35px:}
+            <pre>&lt;p id=”quote”&gt; - you need to assign the id as an attribute in the html file</pre></li>
+        <li>Class Selector - specified class element. Multiple instances allowed; 
+            <pre>.para{ fontsize: 17px:}
+            &lt; class=”para”&gt; needs to be in the html element. </pre></li>
+        <li>Grouping selectors - multiple elements separated by a comma
+            <br></li>
+        <li><u>*</u> symbol implies <u>ALL</u> elements; *{background-color: yellow;}</li>
+    </ul>
+    
+    <h3>CSS Box Model</h3>
+    <p>The box that wraps around every HTML element, box model refers to design and layout. You can right click the elements and inspect them. 
+        <br>Padding Properties: generates space around the element. Everything is the same except you cannot use auto or negative values. </p>
+    <ul>
+        <li>Components: Margin - space around outside of the element</li>
+        <li>Border - solid line that sits outside the padding</li>
+        <li>Padding - the space around the content</li>
+        <li>Content - the text images and content that appear</li>
+    </ul>
+
+    <p>How Margin Values are applied: </p>
+    <ul>
+        <li>One - all four sides</li>
+        <li>Two - first applies to top and bottom, second applies to right and left</li>
+        <li>Three - first goes to top, second to left &amp; right, third to bottom</li>
+        <li>Four - apply in this order: top, right, bottom, left</li>
+    </ul>
+    <p>You can set the margin value to <i>auto</i> and it will adjust and react with the website.</p>
+    <h4>Example:</h4>    
+    <pre>
+        p{
+            margin-top:5px;
+            margin-bottom:10px;
+            margin-right;15px;
+            margin-left:20px;        
+        }        
+    </pre>
+    <p>which is the same as the following:</p>
+    <pre>
+        p{
+            margin: 5px 15px 10px 20px;        
+        }
+    </pre>
+
+    <p>Margin Properties: can be positive, zero, or negative</p>
+    <ul>
+        <li>Length - size of the margin as a fixed value</li>
+        <li>Percentage - margin size relative to the width of the containing block</li>
+        <li>Interit - specifies that the margin inherits from the parent element</li>
+        <li>Auto - browser selects a suitable margin to use</li>
+    </ul>
+    
+    <h3>Methods for Adding CSS</h3>
+    <p>Styles - attributes that add styles to an element such as color, font, size and more.</p>
+    <p>You can apply CSS externally, internally, and inline.</p>
+    <ul>
+        <li>Inline - by using the style attribute inside HTML elements. This method is not generally used by developers and is considered bad practice as the code is not clean, scalable, or practical. 
+            <pre> Example: 
+            &lt;h1 style="color:blue;"&gt;A Blue Heading&lt;/h1&gt;
+            </pre>
+        </li>
+            
+        <li>Internal - by using a &lt;style&gt; element in the &lt;head&gt; section. These make the code messy but its good if you have a single webpage. To make an internal CSS;
+            <pre>
+            &lt;style&gt;
+			p {
+                color: blue;
+            }
+            &lt;/style&gt;
+            </pre>
+            
+            <pre> Example: 
+            &lt;head&gt;
+            &lt;style&gt;
+            body {background-color: powderblue;}
+            h1   {color: blue;}
+            p    {color: red;}
+            &lt;/style&gt;
+            &lt;/head&gt;
+            </pre>
+        </li>
+
+        <li>External - by using a &lt;link&gt; element to link to an external CSS file referenced and located generally in a stylesheets folder directory. This is a good one to use when you have to do multiple web pages and want to use only one style sheet to affect the relevant pages. 
+            
+            <p>Example: Create a .css file in stylesheets with at least the following</p>
+            <pre>
+            p {     - Selector for type 
+            color: blue;    - Property: property value; This is considered a declaration.
+            }            
+            </pre>
+            
+            <pre>Example External CSS
+            p,li {      - Separate multiple elements with a “,”
+            color: blue;
+            font-size:30px;
+            border: 1px solid red;
+            }            
+            </pre>
+            
+            <p>In the actual html index file, the following needs to be included in the header; &lt;link href="stylesheets/mystyle.css" rel="stylesheet" type="text/css"&gt;</p> 
+                <p>Note*: To link a external style sheet, you need to create a link, reference it, define the relationship, then define the type; This always has to be in the head section so it will load with the page. This is a good one to use when you have to do multiple web pages and want to use only one style sheet to affect the relevant pages.</p>
+                <p>Note**: To add <i>comments</i> to the CSS file, enclose it with a '/*' &amp; '*/'</p>
+            
+            <pre> Example: 
+            &lt;head&gt;
+                &lt;link rel="stylesheet" href="styles.css"&gt;
+            &lt;/head&gt;
+            </pre>
+            External “styles.css” reference file. 
+            <pre>
+            body {background-color: powderblue;}
+            h1 {color: blue;}
+            p {color: red;}
+            </pre>
+        </li>
+    </ul>        
+        <h3>CSS Background-color Property</h3>
+            <p>Used to change or specify the background color of an element. Valid color name or Hex value: #ff0000</p>
+            <pre>
+            &lt;body style="background-color:powderblue;"&gt;
+                &lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+                &lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;
+            </pre>
+      
+            <p>Text color is used for headings and paragraphs.</p>
+                <p>Example 1:</p>
+                <pre>&lt;h3 style="color:blue;"&gt;This is a heading&lt;/h3&gt;</pre>
+                <p>Which displays the following:</p>
+                <h3 style="color:blue;">This is a heading</h3>
+
+                <p>Example 2:</p>
+                <pre>&lt;p style="color:DodgerBlue;"&gt;Lorem ipsum...&lt;/p&gt;</pre>
+                <p>Which displays the following:</p>
+                <p style="color:mediumseagreen;">Lorem ipsum...</p>
+        
+        <h3>CSS Border Style property</h3>                
+            <p>Allows you to define the border for an element by specifying the style, width, and color.
+                <br>Border-Style specifies what kind of border to display; dotted, dashes, solid
+                <br>Border - set width of border and type of border and color.</p>
+            <p>Examples:</p>
+            <ul>
+                <li><pre>&lt;h1 style="border:2px solid Tomato;"&gt;Hello World&lt;/h1&gt;</pre></li>
+                <li><pre>&lt;h1 style="border:2px solid DodgerBlue;"&gt;Hello World&lt;/h1&gt;</pre></li>
+                <li><pre>&lt;h1 style="border:2px solid Violet;"&gt;Hello World&lt;/h1&gt;</pre></li>            
+            </ul>
+            <p>Which displays the following</p>
+                <h1 style="border:2px solid Tomato;">Hello World</h1>
+                <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+                <h1 style="border:2px solid Violet;">Hello World</h1>
+            
+        <h3>CSS Positioning &amp; Styling Page Title</h3>
+            <p>padding: 0px 10px;
+                <br>margin: 0px;
+                <br>text-shadow: 5px 4px 8px gray; 
+                <br>**the order is horizontal position, vertical position, then blurr then shadow color. 
+            </p>
+            <p>text-align and font-family follow the same formatting as setting text color.</p>
+            <p>text size is based on percentage and defines the text size for the HTML element.</p>
+                
+                <p>Which displays the following</p>
+                <p style="font-size:160%;">This is a paragraph.</p>
+                
+            <p>Color Values -  In HTML, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values.</p>
+            <ul>
+                <li><p>RGB - rgb(255, 99, 71)</p>
+                    <pre>&lt;h1 style="background-color:rgb(255, 99, 71);"&gt;...&lt;/h1&gt;</pre>
+                <p>Which displays the following</p>
+                    <h1 style="background-color:rgb(255, 99, 71);">...</h1>
+                </li>
+                
+                <li><p>HEX - #ff6347</p>
+                    <pre>&lt;h1 style="background-color:#ff6347;"&gt;...&lt;/h1&gt;</pre>
+                <p>Which displays the following</p>
+                     <h1 style="background-color:#ff6347;">...</h1>
+                </li> 
+                
+                <li><p> HSL - hsl(9, 100%, 64%)</p>
+                    <pre>&lt;h1 style="background-color:hsl(9, 100%, 64%);"&gt;...&lt;/h1&gt;</pre>
+                <p>Which displays the following</p>
+                    <h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+                </li>
+                
+                <li><p>RGBA - rgba(255, 99, 71, 0.5)</p>
+                    <pre>&lt;h1 style="background-color:rgba(255, 99, 71, 0.5);"&gt;...&lt;/h1&gt;</pre>
+                <p>Which displays the following</p>
+                    <h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+                </li>
+                
+                <li><p> HSLA - hsla(9, 100%, 64%, 0.5)</p>
+                    <pre>&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.5);"&gt;...&lt;/h1&gt;</pre>
+                <p>Which displays the following</p>
+                    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+                </li>                
+            </ul>
+        <h3>CSS Display property</h3>
+            <p>Display property specifies how an element is displayed, can be used to control layout. Every HTML element has a default display value depending on the type of element. Default display for most elements are block or inline</p>
+            <p>Block level elements will always start on a new line and occupies the full width available. &lt;p&gt;, &lt;div&gt;, &lt;h1-h6&gt;</p>
+            <p>Inline elements do not start on a new line and only occupies width required. &lt;a&gt; &amp; &lt;img&gt;</p>
+        <h3>CSS Font Property</h3>
+            <p>font-style is mainly used to make text italic</p>
+            <p>font-weight is to set the text to bold. Values are typically 100s or bold presets</p>
+            <p>font-size is to set the size of the text</p>
+            <p>font-family - when doing font-family, you would want more than just the default font in case the default font is not available and separate it by commas, such as: Arial, Helvetica, Times;
+            <br>The main difference between serif and sans-serif is that serif letter text have hooks on their letters and sans-serif outputs flat or smooth letters</p>
+            <ul>
+                <li>Arial (sans-serif), which displays as; 
+                    <p style="font-family: Arial, sans-serif;">Example: Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p></li>
+                <li>Verdana (sans-serif), which displays as; 
+                    <p style="font-family: Verdana, sans-serif;">Example: sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+                <li>Helvetica (sans-serif), which displays as; 
+                    <p style="font-family: Helvetica, sans-serif;">Example: Ut enim ad minim veniam, quis nostrud exercitation </p></li>
+                <li>Tahoma (sans-serif), which displays as; 
+                    <p style="font-family: Tahoma, sans-serif;">Example: ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></li>
+                <li>Trebuchet MS (sans-serif), which displays as; 
+                    <p style="font-family: Trebuchet MS, sans-serif;">Example: Duis aute irure dolor in reprehenderit</p></li>
+                <li>Times New Roman (serif), which displays as; 
+                    <p style="font-family: Times New Roman, serif;">Example: in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></li>
+                <li>Georgia (serif), which displays as; 
+                    <p style="font-family: Georgia, serif;">Example: Excepteur sint occaecat cupidatat non proident,</p></li>
+                <li>Garamond (serif), which displays as; 
+                    <p style="font-family: Garamond, serif;">Example: sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+                <li>Courier New (monospace), which displays as; 
+                    <p style="font-family: Courier New, monospace;">Example: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></li>
+                <li>Brush Script MT (cursive), which displays as; 
+                    <p style="font-family: Brush Script MT, cursive;">Example: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></li>
+            </ul>
+            <h3>Other fonts include:</h3>
+            <ul>
+                <li style="font-family: Arial Black, Gadget, sans-serif;">Arial Black, Gadget, sans-serif</li>
+                <li style="font-family: Bookman Old Style, serif";>Bookman Old Style, serif</li>
+                <li style="font-family: Comic Sans MS, cursive,, sans-seif;">Comic Sans MS, cursive,, sans-seif</li>
+                <li style="font-family: Courier, monospace;">Courier, monospace</li>
+                <li style="font-family: Courier New, Courier, monospace;">Courier New, Courier, monospace</li>
+                <li style="font-family: Garamond, serif;">Garamond, serif</li>
+                <li style="font-family: Georgia, serif;">Georgia, serif</li>
+                <li style="font-family: Impact, Charcoal, sans-serif;">Impact, Charcoal, sans-serif</li>
+                <li style="font-family: Lucida Console, Monaco, monospace;">Lucida Console, Monaco, monospace</li>
+                <li style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Lucida Sans Unicode, Lucida Grande, sans-serif</li>
+                <li style="font-family: MS Sans Serif, Geneva, sans-serif;">MS Sans Serif, Geneva, sans-serif</li>
+                <li style="font-family: MS Serif, New York, sans-seif;">MS Serif, New York, sans-seif</li>
+                <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif;">Palatino Linotype, Book Antiqua, Palatino, serif</li>
+                <li style="font-family: Geneva, Tahoma, sans-serif;">Geneva, Tahoma, sans-serif</li>
+            </ul>
+            
+            <p>**Note** fonts.google.com; has you use the google API to access the fonts. Open Sans is commonly used; developers.google.com/fonts/docs/getting_started for instructions. 
+            <br>You add the link to your head section before the &lt;body&gt; but you would have to be online to add the font. </p>
+    
+        <h3>Syntax Recap</h3>
+        <pre>Example: 
+        a { background-color: green; }</pre>
+    <ul>
+        <li>'p' woould be the selector that specifies which html element the styling applies to if there is no class or id to override it.</li>
+        <li>'{' &amp; '}' would indicate where the declaration starts and finishes.</li>
+        <li>'background-color' would be the property that's always paired with specific key values.</li>
+        <li>':' represents the property/value separator.</li>
+        <li>'yellow' would be the value.</li>
+        <li>';' represents the declaration separator.</li>
+    </ul>
+    
+    <h3>Basic CSS Example</h3>
+    <pre>
+    body{
+        background-color:#e0dfda;
+        color:#a1a1a1;
+        
+        font-family: Geneva, Tahoma, sans-serif;
+        font-size:16px;
+        font-weight:normal;
+    }
+    </pre>
+    <p>or</p>
+    <pre>
+    body{
+        font: normal 16px Geneva, Tahoma, sans-serif;
+    }
+    </pre>
+    
+    <h3></h3>
+    line-height:1.6em;      -adjusts the line spacing between the lines. 'em' represents a unit of measurement. Used for  more responsive type websites unless you want to use 'px' for pixels. 
+    
+    <h3>Classes &amp; ID</h3>
+    <p>To call a class you use a '.' followed by the class name in the CSS file.</p>
+    <p>To call an ID tag, you would use a '#' followed by the ID tag.</p>
+    
+    <h3>Positioning in CSS</h3>
+    <ul>
+        <li>Static - default positioning rendered in the order of the document flow.</li>
+        <li>Relative - element that is positioned relative to its normal position. So this means top, left, right, bottom.</li>
+        <li>Absolute - target whatever position we want inside of a relatiive element.</li>
+        <li>Fixed - Fixed position to the browser window.</li>
+        <li>Initial - to its default position</li>
+        <li>Inherit - inherits the property of its parent element.</li>    
+    </ul>   
+    
+    
+<!-- Example Layout -->
+    <div class="container">
+    <div class="codesample-1">
+        <p><b>Example Layout:</b></p>
+        <pre>
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Blogs for Days&lt;/title&gt;
+                &lt;meta name="description" content="simple sample blog"&gt;
+                &lt;meta name="keywords" content="simple sample blog company name"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header id="main-header"&gt;
+                    &lt;h2&gt;My Very Own Blog Website&lt;/h2&gt;
+                &lt;/header&gt;
+                
+                &lt;a href="index.html">Go to Home Page&lt;/a&gt;
+                
+                &lt;section&gt;
+                    &lt;article class="post"&gt;
+                        &lt;h3&gt;First Post: Day 1&lt;/h3&gt;
+                        &lt;small&gt;Posted by John Doe on May 4, 2021&lt;/small&gt;
+                        &lt;p&gt;Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class="post"&gt;
+                        &lt;h3&gt;Second Post: Week 1&lt;/h3&gt;
+                        &lt;small&gt;Posted by John Doe on May 11, 2021&lt;/small&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article class="post"&gt;
+                        &lt;h3&gt;Third Post: Week 3&lt;/h3&gt;
+                        &lt;small&gt;Posted by John Doe on May 24, 2021&lt;/small&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                    &lt;/article&gt;
+                &lt;/section&gt;
+                
+                &lt;aside&gt;
+                    &lt;h2&gt;Categories&lt;/h2&gt; <!--This part would generally be customized using CSS and alligned to the side-->
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li>&lt;a href="#">Category 1&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Category 2&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Category 3&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/nav>
+                &lt;/aside>
+                
+                &lt;footer id="main-footer">
+                    &lt;p>Copyright &copy; 2021&lt;/p>
+                &lt;/footer>
+        &lt;/body>
+        &lt;/html> 
+        </pre> <!-- HTML5 Syntax Example-->
+    </div>
+    </div>
+    
+        <p>This displays the following:</p>
+        <html>
+            <head>
+                <title>Blogs for Days</title>
+                <meta name="description" content="simple sample blog">
+                <meta name="keywords" content="simple sample blog company name">
+            </head>
+            <body>
+                <div class="container">
+                <header id="main-header">
+                    <h2>My Very Own Blog Website</h2>
+                </header>
+                
+                <a href="index.html">Go to Home Page</a>
+                
+                <section>
+                    <article class="post">
+                        <h3>First Post: Day 1</h3>
+                        <small>Posted by John Doe on May 4, 2021</small>
+                        <p>Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <small><a href="post.html">Read more...</a></small>
+                    </article>
+                    
+                    <article class="post">
+                        <h3>Second Post: Week 1</h3>
+                        <small>Posted by John Doe on May 11, 2021</small>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <small><a href="post.html">Read more...</a></small>
+                    </article>
+                    
+                    <article class="post">
+                        <h3>Third Post: Week 3</h3>
+                        <small>Posted by John Doe on May 24, 2021</small>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <small><a href="post.html">Read more...</a></small>
+                    </article>
+                </section>
+                
+                <div class="categories">
+                <aside>
+                    <h2>Categories</h2> <!--This part would generally be customized using CSS and alligned to the side-->
+                    <nav>
+                        <ul>
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 2</a></li>
+                            <li><a href="#">Category 3</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                </div>
+                <footer id="main-footer">
+                    <p>Copyright &copy; 2021</p>
+                </footer>
+                </div> <!--./container-->
+                
+        <h3> Form Example </h3>
+        <p>A common class used for forms in bootstrap would be 'form-group'</p>
+        <div class="form-group">
+        <p> Below is an example of some basic form options</p>
+        <form class="userSubmit" action="process.css" method="POST">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" name="firstName" placeholder="Enter first name">
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" name="lastName" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="emailAddress">
+            </div>
+            <div class="form-group">
+                <label>Birthday:</label>
+                <input type="date" name="birthday">
+            </div>
+            <div class="form-group">
+                <label>Quantity:</label>
+                <input type="number" name="quantity" value="1">
+            </div>
+            <div class="form-group">
+                <label>Topic:</label>
+                <select name ="emailTopic">
+                    <option value ="newOrder">New Order</option>
+                    <option value ="customerService">General Customer Service</option>
+                    <option value ="productSupport">Order Support</option>
+                    <option value ="suggestiions">Suggestions</option>
+                    <option value ="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Message:</label>
+                <textarea name="message"></textarea>
+            </div>
+            <input class="button" type="submit" name="submit" value="Submit" name="">
+        </form>
+        </div> <!-- Form Example-->
+
+        <div>
+        <p>The form is generated using the following HTML5 code:</p>
+        <pre>
+        &lt;form action="process.css" method="POST"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;First Name:&lt;/label&gt;
+                &lt;input type="text" name="firstName" placeholder="Enter first name"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;Last Name:&lt;/label&gt;
+                &lt;input type="text" name="lastName" placeholder="Enter last name"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;Email:&lt;/label&gt;
+                &lt;input type="email" name="emailAddress"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;Birthday:&lt;/label&gt;
+                &lt;input type="date" name="birthday&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label>Quantity&lt;/label&gt;
+                &lt;input type="number" name="quantity" value="1"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label&gt;Topic:&lt;/label&gt;
+                &lt;select name ="emailTopic"&gt;
+                    &lt;option value ="newOrder">New Order&lt;/option&gt;
+                    &lt;option value ="customerService">General Customer Service&lt;/option&gt;
+                    &lt;option value ="productSupport">Order Support&lt;/option&gt;
+                    &lt;option value ="suggestiions">Suggestions&lt;/option&gt;
+                    &lt;option value ="other">Other&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label&gt;Message:&lt;/label&gt;
+                &lt;textarea name="message"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;input type="submit" name="submit" value="Submit"&gt;
+        &lt;/form&gt;</pre>
+        </div> <!-- Form Code Example-->
+        </body>
+        </html> <!-- HTML5 Syntax Display-->
+
+        <!--Floating Block Example-->
+        <h3>Floating Block Example:</h3>
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+        </div>
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+        </div>
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+        </div>
+        
+        <div class="clr"></div> <!--Clear Styles-->
+
+        <!--Sidebar-->
+        <div id="main-block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
+        </div>
+                
+        <div id="sidebar">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
+        </div>
+    
+        <div class="clr"></div> <!--Clear Styles-->
+    
+        <!--Position box example-->
+        <h3>Position Box Example</h3>
+        <p>Following HTML code: </p>
+        <pre>
+        
+        </pre>
+        <p>paired with this CSS code: </p>
+        <pre>
+        
+        </pre>
+        <p>displays the following:</p>
+        <div class="p-box"> <!--position box-->
+            <h1>Hello</h1>
+            <h2>Goodbye</h2>
+        </div>
+        <div style="margin-top: 150px;"></div>
+            
+    <p>Positioned as static by default if there is no position specified.</p>        
+    <p>Absolute allows you to move the element around the webpage and not within the element box model as it's not positioned as relative. Uses the following line after being called. 
+    <br>position: absolute;</p>
+    <p>Relative position is in relation to how element that is positioned relative to its normal position. So this means top, left, right, bottom.
+    <br>position: relative;</p>
+    <p>In order to use an image as an element background, you would edit the css element and add the background-image attribute with a url to the image source. The background repeats as a default unless you set it to otherwise. You can also position the image to the center position with use of the background-position.</p>
+    
+    
+    <h3>Psuedo Classes</h3>
+    <p>Pseudo classes are set in the CSS file following the element and class selector while seperated by a colon in the CSS file.</p>
+    <ul class="generic-list">
+        <li>List Item:  first-child</li>
+        <li>List Item:  nth-child(even)</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item:  nth-child(5)</li>
+        <li>List Item </li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item:  last child</li>        
+    </ul>
+    
+    <p>list has a class named "generic-list" and the following CSS format to apply colors or properties to the list.</p>
+    <pre>.generic-list li:nth-child(even){
+    background: grey;
+    }</pre>
+    
+    <h3>Creating a Fixed Button</h3>
+    
+    <a class="fix-position button" href="">Home</a>
+    <p>Using the following code: 
+        <br>&lt;a class="fix-position button" href=""&gt;Home&lt;/a&gt;</p>
+    
+    <pre>with the following CSS: 
+    .fix-position{
+    position: fixed;
+    top: 0%;
+    }</pre>    
+    <p>will create a home button that stays fixed to the upper left of the screen. </p>            
+</body>
+</html>
+
+<html>
+<head>
+    <title>Sample Site</title>
+    <link rel="samplestyle" type="text/css" href="css/samplestyle.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+        <h1>Sample Site</h1>
+        </div>
+    </header>
+    
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>        
+        </div>
+    </nav>
+    
+    <!--Showcase Area-->
+    <section id="showcase">
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+    </div>
+    </section>
+    
+    <!--Main Area-->
+    <div class="container">
+    <section id="main-header">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section> 
+    <!--Side Bar-->
+    <aside id="sidebar">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </aside>
+    </div>
+    
+    <footer id="main-footer">
+            <p>Copyright &copy;2021: My Website</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,279 @@
+body{
+    background-color:darkgrey;
+    color:darkslategrey;
+    
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size:16px;
+    font-weight:normal;
+    /* Same as above*/
+    font: normal 16px Geneva, Tahoma, sans-serif;
+    
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.button{
+    background-color: darkslategray; 
+    color:#fff;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover{
+    background:darkred;
+    color:#fff;
+}
+
+/*Edit Link Styles*/
+a{ /*default link color*/
+    text-decoration: : none;
+    color:#000;
+}
+
+a:hover{ /*mouse over color*/
+    color:red;
+}
+
+a:active{ /*color the link flashes when clicked*/
+    color:green;
+}
+
+a:visited{ /*changes the color of the links after you've viewed the site*/
+    color:gray;
+}
+
+.container{ /*Common class name used with bootstrap or other frameworks*/
+    width:100%;/* 960px is popular website width however your website will not be responsive and move when you resize the browser. For the most part, using % is better when dealing with containers*/
+    margin: auto;
+}
+
+.codesample-1{
+    background-color: #333; /* darkgrey*/
+    color: #fff; /* white */
+    
+    border-right:5px black solid;
+}
+
+.codesample-1 h3{ /*styles specific element within the set class*/
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: capitalize;
+    letter-spacing: 0.2em;
+    word-spacing: 0.5em;     
+}
+
+.codesample-2{
+    border: 3px dotted #ccc; /*light gray*/
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.categories{
+    border:1px #ccc solid;
+    padding: 10px;
+    border-radius: 15px; /*gives the border rounded corners*/
+}
+
+.categories h3{
+    text-align: :center;
+}
+.categories ul{
+    padding: 0;
+    list-style:square; /*changes the bullet shapes to square*/
+    list-style:none; /*removes the bullet points*/
+}
+
+.categories li{
+    padding-bottom: 7px; 
+    border-bottom: 1px #333;
+    list-style-image: url('/images/MiniArrows.png'); /*if you use an image then you have to resize the image otherwise the image shows up with original sizing*/
+}
+
+.userSubmit{
+    padding: 20px;
+}
+
+.userSubmit .form-group{
+    padding-bottom: 15px
+}
+
+.userSubmit label{
+    display: block;
+}
+
+.userSubmit input [type="text"], .my-form textarea{
+    padding: 8px;
+    width: 100%;
+}
+
+.block{ /*floating boxes*/
+    float: left;
+    width: 33.3%;
+    border: 1px dotted black;
+    padding: 10px;
+    box-sizing: border-box; /*this causes the rest of the style class to have element display according to the width itself instead of outside of the element. Flexbox does this really well*/
+}
+
+.clr{ /*following the floating boxes have a line in the html document: <div class="clr"></div> to avoid having the elements overlapping*/
+    clear: both
+}
+
+#main-block{
+    float: left;
+    width: 70%;
+    padding: 15px; 
+    box-sizing: border-box;
+}
+
+#sidebar{
+    float: right;
+    width: 30%;
+    background-color: azure;
+    color: cadetblue;
+    padding: 15px; 
+    box-sizing: border-box;
+}
+
+.p-box{
+    width: 70%;
+    height: 250px;
+    border: 1px solid #000;
+    margin-top: 5%;
+    position: relative;
+    background-image: url('../images/CoffeeCake.jpg');
+    background-size: 100%;
+    background background-repeat: no-repeat;
+    background-position: center center;
+    
+}
+
+.p-box h1{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+.p-box h2{
+    position: absolute;
+    bottom: 20%;
+    right: 40%;
+}
+
+.fix-position{
+    position: fixed;
+    top: 0%;
+    right: 0%;
+}
+
+.generic-list li:first-child{
+    background: red;
+}
+
+.generic-list li:last-child{
+    background: blue;
+}
+
+.generic-list li:nth-child(5){
+    background: yellow;
+}
+
+.generic-list li:nth-child(even){
+    background: grey;
+}
+
+body{
+    background: #f4f4f4f4;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;    
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-header{
+    background: Gray;
+    color: #fff;
+}
+
+#navbar{
+    background: #333;
+    color: #fff;
+}
+
+#navbar ul{
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li{
+    display: inline;
+}
+
+#navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; 
+    padding-right: 24px; 
+}
+
+#showcase{
+    background-image: url(../images/CoffeeCake.jpg);
+    background-size: 100%;
+    background-position: center;
+    min-height: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/*Floating text boxes*/
+#showcase h1{
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.6em;
+    padding-top: 60px;    
+}
+
+#main-header{
+    float: left;
+    width: 70%;
+    padding: 0 30px; 
+    box-sizing: border-box;
+}
+
+#sidebar{
+    float: right;
+    width: 30%;
+    background: #333;
+    color: #fff;
+    padding: 10px; 
+    box-sizing: border-box;
+}
+
+#main-footer{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/*Adding a Media Query to remove the float and will only be in effect if the max-width*/
+@media(max-width:600px){    
+    #main-header{
+        width: 100%;
+        float: none;
+    }
+    
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+}

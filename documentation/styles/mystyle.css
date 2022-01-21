@@ -1,0 +1,48 @@
+/* for comments or you can use the /* in front of the code to omit the code to test it*/
+h1,h2 {
+	font-size: 60px;
+	text-align: center;
+	padding: 0px 10px;
+	margin: 0px;
+	text-shadow: 5px 4px 8px black;
+
+}
+	
+#quote {
+	font-style:italic;
+	text-align: center;
+}
+
+.para {
+	font-size: 16px;
+	color: black;
+	text-align: center;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	border: 6px solid black;
+}
+
+button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+li {
+	color: gray;
+	font-size:17px;
+	line-height: 2;
+	letter-spacing: 1px;
+	/*border: 2px solid red;*/
+	text-align: center;
+	font-family: Arial,Helvetica,Times;
+}
+
+html{
+	background-color: #DCDCDC;
+	}
