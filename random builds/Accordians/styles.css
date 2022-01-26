@@ -1,0 +1,43 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+.label-toggle {
+  text-align: right;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.label-toggle :active {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.content-inner {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-inner a {
+  padding: 6px 14px;
+  line-height: 1.25;
+}
+
+/* needed to toggle display*/
+.toggle:checked + .label-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+.toggle:checked + .label-toggle::before {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}

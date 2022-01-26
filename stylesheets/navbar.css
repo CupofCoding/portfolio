@@ -117,8 +117,8 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.2rem;
-  width: 75%;
+  bottom: -0.25em;
+  width: 80%;
   height: 2px;
   background: currentColor;
   transform: scaleX(0);
@@ -129,6 +129,11 @@
 .contact-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+#mobile-contact::after {
+  bottom: 10px;
+  width: 85%;
 }
 
 .arrow {
@@ -176,7 +181,7 @@
   align-items: center;
   justify-content: center;
   max-height: 100vh;
-  top: 75px; 
+  top: 75px;
 }
 
 .submit-button {
@@ -211,7 +216,7 @@
   position: relative;
   background-color: white;
   width: 80vw;
-  padding-top: 2em;  
+  padding-top: 2em;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -365,7 +370,7 @@
   height: calc(90vh - 15px);
   left: 0;
   margin-top: 1px;
-  padding: 0;  
+  padding: 0;
 }
 
 @media (max-width: 375px) {
@@ -409,6 +414,5 @@
 @media (min-width: 1440px) {
 }
 
-@media (min-height: 700px){
-
+@media (min-height: 700px) {
 }
