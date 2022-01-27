@@ -71,7 +71,14 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/*Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .divider {
