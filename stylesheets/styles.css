@@ -64,11 +64,19 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.4;
   color: var(--default-text);
+  height: 100%;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+  scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
+  overflow-y: hidden;
+}
+
+.divider {
+  scroll-snap-align: start;
+}
 
 a {
   color: var(--default-text);
@@ -89,11 +97,6 @@ img {
 
 section a {
   color: var(--text-color);
-}
-
-body,
-html {
-  height: 100%;
 }
 
 .parallax {

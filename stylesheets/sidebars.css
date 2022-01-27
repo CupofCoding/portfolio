@@ -17,8 +17,7 @@
 .side-menu-first,
 .side-menu-second,
 .side-menu-third,
-.side-menu-fourth,
-.side-menu-fifth {
+.side-menu-fourth {
   position: absolute;
   left: 30px;
   width: 30px;
@@ -44,9 +43,6 @@
 .side-menu-fourth {
   transform: translateY(45px);
 }
-.side-menu-fifth {
-  transform: translateY(60px);
-}
 
 .side-menu-second:hover {
   transition: all 0.2s ease-out;
@@ -57,9 +53,6 @@
 }
 .side-menu-fourth:hover {
   transform: translateY(45px);
-}
-.side-menu-fifth:hover {
-  transform: translateY(60px);
 }
 
 @media (max-width: 360px) {

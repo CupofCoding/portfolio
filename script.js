@@ -1,3 +1,4 @@
+// mobile menu toggle
 const button = document.getElementById('menu-button')
 const nav = document.getElementById('menu')
 
@@ -7,6 +8,9 @@ function navToggle() {
     document.body.classList.toggle('no-scroll')
 }
 
+button.addEventListener('click', navToggle)
+
+//pull-down menu 
 document.addEventListener('click', e => {
     const isDropdownButton = e.target.matches("[data-drop-down-button]")
     if (!isDropdownButton && e.target.closest('[data-drop-down]') != null) return
@@ -24,7 +28,7 @@ document.addEventListener('click', e => {
     })
 })
 
-button.addEventListener('click', navToggle)
+//forced scrolling
 
 
 // let $toggler = document.getElementById('toggler'),
