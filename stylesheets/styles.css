@@ -71,7 +71,7 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
-  /* overflow-y: hidden; */
+  /*Scroll Bar visibility*/
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -110,6 +110,7 @@ section a {
   position: relative;
   background-image: url("https://picsum.photos/2560/1440");
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   /* scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -361,6 +362,7 @@ button {
   .box {
     width: 100vw;
     height: calc(100vh - 75px);
+    min-height: calc(-webkit-fill-available - 75px);
     margin: 0;
   }
 
@@ -380,6 +382,7 @@ button {
 @media (max-width: 768px) {
   .box-intro {
     height: 100vh;
+    min-height: -webkit-fill-available;
   }
 
   body {

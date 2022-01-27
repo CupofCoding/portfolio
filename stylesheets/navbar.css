@@ -169,6 +169,7 @@
   left: 100px;
   width: 85vw;
   max-height: 100vh;
+  min-height: -webkit-fill-available;
   height: 95vh;
   top: 75px;
   background-color: white;
@@ -187,6 +188,7 @@
   align-items: center;
   justify-content: center;
   max-height: 100vh;
+  min-height: -webkit-fill-available;
   top: 75px;
 }
 
@@ -224,6 +226,7 @@
   width: 75vw;
   padding-top: 2em;
   height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   flex-shrink: 1;

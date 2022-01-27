@@ -28,7 +28,13 @@ document.addEventListener('click', e => {
     })
 })
 
-//forced scrolling
+//disable mobile scrolling url bar
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 
 
 // let $toggler = document.getElementById('toggler'),
