@@ -35,24 +35,46 @@
 }
 
 .side-menu-second {
-  transform: translateY(15px);
+  transform: translateY(20px);
 }
 .side-menu-third {
-  transform: translateY(30px);
+  transform: translateY(40px);
 }
 .side-menu-fourth {
-  transform: translateY(45px);
+  transform: translateY(60px);
 }
 
 .side-menu-second:hover {
   transition: all 0.2s ease-out;
   /* transform: scaleX(1.1); */
 }
-.side-menu-third:hover {
-  transform: translateY(30px);
+
+.scroll-down-text {
+  pointer-events: none;
+  position: fixed;
+  font-size: 1.5em;
+  bottom: 80px;
+  left: 30px;
+  writing-mode: vertical-rl;
+  transform: translateY(0%);
+  color: #000;
 }
-.side-menu-fourth:hover {
-  transform: translateY(45px);
+
+.scroll-down-text p {
+  display: block;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-down-text::after {
+  content: "";
+  width: 2px;
+  height: 75px;
+  background: #000;
+  position: absolute;
+  top: 110%;
+  left: 45%;
 }
 
 @media (max-width: 360px) {
