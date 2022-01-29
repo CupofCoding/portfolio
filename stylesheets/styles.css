@@ -120,15 +120,45 @@ section a {
   background-size: cover;
 }
 
-
-
-.para-quote {
-  text-align: left;
-  position: fixed;
-  top: 85%;
-  left: 5%;
-  display: none;
+#company-name{
+  position: absolute;
+  left: 18vw;
+  top: 46vh;
+  text-transform: uppercase;
+  font-family: 'league gothic', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* font-family: helvetica, cursive Verdana, Geneva, Tahoma, sans-serif; */
+  font-size: var(--size-1000);
+  letter-spacing: 2px;
+  word-spacing: 10px;
+  color: white;
+  opacity: .8;
+  text-shadow: 0px -2px 2px black;
 }
+
+
+#intro-quote {
+  text-align: left;
+  position: absolute;
+  top: 61vh;
+  left: 18vw;
+  font-size: var(--size-400);
+  /* display: none; */
+  color: black;
+  /* mix-blend-mode: multiply; */
+  /* text-shadow: 1px 0px 1px white; */
+  padding: 2em;  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+  margin: auto;
+  text-align: center;
+  border-radius: 0.5em;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+    );    
+}
+
+.box-intro {}
 
 .divider {
   width: 100%;
