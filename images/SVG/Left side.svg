@@ -1,0 +1,47 @@
+<svg width="500" height="600" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Left side">
+<path id="Polygon 6" d="M415 187L479.952 299.5H350.048L415 187Z" fill="#B8E1DF" fill-opacity="0.2"/>
+<path id="Polygon 28" d="M65.5 206.25L119.627 300H11.3734L65.5 206.25Z" fill="black" fill-opacity="0.2"/>
+<path id="Polygon 11" d="M220 75L349.904 300H90.0962L220 75Z" fill="black"/>
+<path id="Polygon 17" d="M127.661 299.5L300 1L472.339 299.5H127.661Z" stroke="black"/>
+<path id="Polygon 33" d="M127.661 300.5L300 599L472.339 300.5H127.661Z" stroke="black"/>
+<path id="Polygon 12" d="M275 525L145.096 300L404.904 300L275 525Z" fill="#D8D7D7"/>
+<path id="Polygon 16" d="M145 450.5L101.699 375.5L188.301 375.5L145 450.5Z" fill="#C4C4C4"/>
+<path id="Polygon 15" d="M91 393.75L36.8734 300L145.127 300L91 393.75Z" fill="#80A3A0"/>
+<path id="Polygon 9" d="M350 300L306.699 225L393.301 225L350 300Z" fill="#C4C4C4"/>
+<path id="Polygon 5" d="M415 224.75L458.301 299.75H371.699L415 224.75Z" fill="#C4C4C4"/>
+<g id="Polygon 7" filter="url(#filter0_d_3_79)">
+<path d="M393.25 224.5L436.551 299.5H349.949L393.25 224.5Z" fill="#B8E1DF" fill-opacity="0.4" shape-rendering="crispEdges"/>
+</g>
+<path id="Polygon 10" d="M350 150L393.301 225H306.699L350 150Z" fill="black"/>
+<path id="Polygon 14" d="M145 300L166.651 337.5H123.349L145 300Z" fill="black"/>
+<path id="Polygon 32" d="M25 262.5L46.6506 300H3.34937L25 262.5Z" fill="black"/>
+<path id="Polygon 25" d="M70 377L48.3494 339.5H91.6506L70 377Z" fill="black"/>
+<path id="Polygon 27" d="M90 300L68.3494 262.5H111.651L90 300Z" fill="#C4C4C4"/>
+<path id="Polygon 19" d="M123 338L144.651 375.5H101.349L123 338Z" fill="black"/>
+<path id="Polygon 20" d="M167 338L188.651 375.5H145.349L167 338Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 26" d="M68.25 262.5L89.9006 300H46.5994L68.25 262.5Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 31" d="M46.5 225L68.1506 262.5H24.8494L46.5 225Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 29" d="M90 225L111.651 262.5H68.3494L90 225Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 23" d="M112.5 356.25L144.976 300H80.024L112.5 356.25Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 24" d="M38.3901 355.75L70 301L101.61 355.75H38.3901Z" stroke="#C4C4C4"/>
+<path id="Polygon 3" d="M415 412.5L350.048 300L479.952 300L415 412.5Z" fill="black"/>
+<path id="Polygon 4" d="M415 375L371.699 300L458.301 300L415 375Z" fill="#C4C4C4"/>
+<path id="Polygon 13" opacity="0.4" d="M350 450L263.397 300L436.603 300L350 450Z" fill="black"/>
+<path id="Polygon 30" d="M68.25 225L89.9006 262.5H46.5994L68.25 225Z" fill="black"/>
+<path id="Polygon 60" d="M321 525L450.904 300H191.096L321 525Z" fill="black" fill-opacity="0.25"/>
+<path id="Polygon 61 - Bridge Cover" d="M469.25 280.75L480.075 299.5H458.425L469.25 280.75Z" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_d_3_79" x="349.949" y="224.5" width="97.6025" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="10" dy="4"/>
+<feGaussianBlur stdDeviation="0.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_79"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_79" result="shape"/>
+</filter>
+</defs>
+</svg>

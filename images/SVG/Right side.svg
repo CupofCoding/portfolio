@@ -1,0 +1,48 @@
+<svg width="553" height="600" viewBox="0 0 553 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Right side">
+<path id="Polygon 22" opacity="0.4" d="M81 393.75L135.127 300H26.8734L81 393.75Z" fill="#B8E1DF"/>
+<path id="Polygon 43" d="M175 450L88.3975 300L261.603 300L175 450Z" fill="#80A3A0"/>
+<path id="Polygon 48" d="M428 112.5L536.253 300H319.747L428 112.5Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 18" d="M57.6609 300.5L230 599L402.339 300.5H57.6609Z" stroke="black"/>
+<path id="Polygon 34" d="M230 0L56.7949 300H403.205L230 0Z" fill="#B8E1DF"/>
+<path id="Polygon 2" d="M75 187.5L139.952 300H10.0481L75 187.5Z" fill="black"/>
+<path id="Polygon 1" opacity="0.4" d="M75 225L118.301 300H31.6987L75 225Z" fill="#C4C4C4"/>
+<path id="Polygon 8" opacity="0.4" d="M75 375L31.6987 300L118.301 300L75 375Z" fill="#C4C4C4"/>
+<path id="Polygon 41" d="M122 375L78.6987 300L165.301 300L122 375Z" fill="#C4C4C4"/>
+<path id="Polygon 42" d="M165 450L121.699 375L208.301 375L165 450Z" fill="black"/>
+<g id="Polygon 40" opacity="0.4" filter="url(#filter0_d_3_78)">
+<path d="M154 450L67.3975 300L240.603 300L154 450Z" fill="#B8E1DF" fill-opacity="0.4" shape-rendering="crispEdges"/>
+</g>
+<path id="Polygon 44" opacity="0.4" d="M446.596 209.5L395.5 121L344.405 209.5L446.596 209.5Z" stroke="black"/>
+<path id="Polygon 49" d="M478 393.5L423.873 299.75H532.127L478 393.5Z" fill="black" fill-opacity="0.2"/>
+<path id="Polygon 50" d="M460 187.5L524.952 300L395.048 300L460 187.5Z" fill="#80A3A0"/>
+<path id="Polygon 51" d="M518.5 337.25L496.849 299.75H540.151L518.5 337.25Z" fill="black"/>
+<path id="Polygon 52" d="M473.5 222.75L495.151 260.25H451.849L473.5 222.75Z" fill="black"/>
+<path id="Polygon 53" d="M475.25 337.25L453.599 299.75H496.901L475.25 337.25Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 54" d="M497 374.75L475.349 337.25H518.651L497 374.75Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 55" d="M453.5 374.75L431.849 337.25H475.151L453.5 374.75Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 56" d="M431 243.5L398.524 299.75H463.476L431 243.5Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 57" d="M505.11 244L473.5 298.75L441.89 244H505.11Z" stroke="#C4C4C4"/>
+<path id="Polygon 58" d="M475.25 374.75L453.599 337.25H496.901L475.25 374.75Z" fill="black"/>
+<path id="Polygon 35" d="M275 0L101.795 300H448.205L275 0Z" fill="#B8E1DF" fill-opacity="0.2"/>
+<path id="Polygon 37" d="M265 75L394.904 300H135.096L265 75Z" fill="black"/>
+<path id="Polygon 39" d="M294.5 525L424.404 300H164.596L294.5 525Z" fill="black" fill-opacity="0.25"/>
+<path id="Polygon 59" d="M220 525L349.904 300H90.0962L220 525Z" fill="black" fill-opacity="0.25"/>
+<path id="Polygon 38" d="M339 75L468.904 300H209.096L339 75Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 45" d="M395.5 300L369.519 255L421.481 255L395.5 300Z" fill="black"/>
+<path id="Polygon 47" d="M369.5 255L343.519 210L395.481 210L369.5 255Z" fill="#B8E1DF" fill-opacity="0.4"/>
+<path id="Polygon 46" d="M421.5 255L395.519 210L447.481 210L421.5 255Z" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_d_3_78" x="56.3975" y="299" width="184.205" height="152" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-10"/>
+<feGaussianBlur stdDeviation="0.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_78"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_78" result="shape"/>
+</filter>
+</defs>
+</svg>

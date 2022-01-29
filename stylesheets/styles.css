@@ -109,14 +109,18 @@ section a {
 .parallax {
   position: relative;
   background-image: url("https://picsum.photos/2560/1440");
+  background-image: url("../images/SVG/61-triangles.svg");
+  background-color: lightsalmon;
   min-height: 100vh;
   min-height: -webkit-fill-available;
   /* scrolling effect */
   background-attachment: fixed;
-  background-position: center;
+  background-position: 100px -25px;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 
 .para-quote {
   text-align: left;
