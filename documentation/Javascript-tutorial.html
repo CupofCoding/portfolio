@@ -398,12 +398,174 @@ alert(addNumbers);
     <p><i>map</i> allows us to create a new array from an array</p>
     
     <p><i>filter</i> allows us to create a new array based on a condition.</p>
-        
-        
-        
+
+    <h3>Conditional Statements (if, ternary &amp; switch)</h3>
     <ul>
-        <li>Conditionials (if, ternary &amp; switch)</li>
+        <li>
+            <ul><h2>if, else if, else</h2>
+                <li>'if' is used to set up a '(condition)', generally a boolean</li>
+                <li>'else if' is used to execute if the condition is met and when there is supposed to be multiple outcomes for that specific branch</li>
+                <li>'else' is used to execute the conditon that is met or you have one at the end as a default or catch-all result. </li>
+            </ul>
+            <pre>
+                let apples = 10;
+                let oranges = 20;
+
+                if (apples > oranges) {
+                    console.log('More apples');
+                } else if(apples===oranges) {
+                    console.log('same amount of fruit');
+                } else {
+                    console.log('More oranges');
+                }
+            </pre>
+        </li>
+        <li><h2>switch, case, default</h2>
+            <ul>
+                <li>'switch' functions the same as 'if'</li>
+                <li>'case' has to have a 'break;' and functions like 'else' conditionals.</li>
+                <li>'default' functions like a catch all for the switch conditional statement.</li>
+            </ul>
+            <pre>
+                switch(carMaker){
+                    case 'chevy':
+                    console.log('you drive a chevy');
+                    break;
+                    case 'ford':
+                    console.log('you drive a ford');
+                    break;case 'tesla':
+                    console.log('you drive a tesla');
+                    break;
+                    default:
+                    console.log('you drive something unlisted');
+                    break;
+                }
+            </pre>
+        </li>
+        <li><p>Things to take note of: '=' functions as an operator and will just redeclare a value, so in order to do comparisons, you would have to use '==' for a loose comparison that doesn't take the primitive type into consideration or '===' that will strictly compare and needs the object types to be the same.</p></li>
+    </ul>
+
+    <h3>Loops in jJavascript</h3>
+    <p>JavaScript Loops are used to run a block of code repeatedly until a certain condition is met</p>
+    <ul>
+        <li>
+            <h3>While Loops</h3>
+            <p>while loops have a condition set and the statements run while an action is being run. They will check a condition first then check if the statement inside the loop is true or false.</p>
+            <pre>
+                let i =0;
+                while (i < 5) {
+                    console.log(i)
+                    i++;
+                }
+                console.log(go to the end)
+
+                this will print 1; 2; 3; 4; 5;
+                note: '++' functions the same is +1 and is called 'incrementing'
+            </pre>
+            <p>An example of a while loop:</p>
+            <pre>
+                let numbers = [2, 4, 6, 8];
+                var counter = 0
+                var sum = 0;
+                while (counter < numbers.length) {
+                    sum += numbers[counter];
+                    counter++;
+                }
+
+                console.log(sum);
+                
+                Follows logic: 
+                Loop 1: (0+2)->
+                Loop 2: (2+4)->
+                Loop 3: (6+6)->
+                Loop 4: (12+8) RESULT = 20
+            </pre>
+        </li>
+        <li>
+            <h3>Do While Loops</h3>
+            <p>while loops have a condition set and the statements run while an action is being run. They will run the loop around statements inside the loop then check if the condition is true or false.</p>
+            <pre>
+                let value = '';
+                let x = 0;
+
+                do {
+                    x = x + 1;
+                    value = value + x;
+                    console.log("current do value: " + value)
+                } while (x < 5); 
+
+                console.log("the final value is: " + value);
+
+                this will print out 12345
+
+                note: the first loop will always run the first block of code. not used very often.
+            </pre>
+            <p>An example of 'Do While'</p>
+            <pre>
+                var sum = 0;
+                var number = 1; 
+                do {
+                    sum += number;
+                    number++;
+                } while (number <= 10);
+                console.log("Sum = " + sum);
+
+                Logic will follow: 
+                Loop 1: (1+0)->​
+                Loop 2: (2+1)->​
+                Loop 3: (3+3)->​
+                Loop 4: (4+6)->​
+                Loop 5: (5+10)->​
+                Loop 6: (6+15)->​
+                Loop 7: (7+21)->​
+                Loop 8: (8+28)->​
+                Loop 9: (9+36)->​
+                Loop 10: (10+45) RESULT = 55
+            </pre>
+        </li>
+
+        <h3>For Loops</h3>
+        <ul>
+            <li>For Loops are comprised of the following: 
+                <ul>
+                    <li>termination condition</li>
+                    <li>checks condition</li>
+                    <li>incrementing loop control variable</li>
+                </ul>
+                <pre>
+                    for (let i=0; x < 5; i++) {
+                        console.log(x)
+                    }
+                </pre>
+                <p>Outputs: 0; 1; 2; 3; 4; </p>
+            </li>
+            
+        </ul>
+    </ul>
+    
+            
+    
+        
+    <ul>        
         <li>Functions (normal &amp; arrow)</li>
+        <p>keyword, functionName, parenthesis for parameters, followed by the function body.</p>
+        <pre>
+        function functionName ('parameter') {
+            console.log(functionName('parameter query'));
+        }</pre>
+
+        function declaration - have priority
+            function sayHello(){}
+
+        function expression - will run when it arrives at this line
+            const varName = functionName() {}
+
+        arrow function - will run when it arrives at this line
+            const functionName = () => {}
+
+            <h3>Arrow Functions</h3>
+            <p>Makes code look much more compact and clean. There's less lines of code and is the standard for modern Javascript. Gives advantages when it comes to scope in certain situations and "lexical this"</p>
+
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
         <li>DOM - Document Object Model Selection</li>
         <li>DOM - Document Object Model Manipulation</li>
@@ -428,9 +590,6 @@ alert(addNumbers);
         <li>Instantiation - creating objects from the class</li>
         <li>Extending classes &amp; inheritance</li>
     </ul>
-    
-    <h3>Arrow Functions</h3>
-    <p>Makes code look much more compact and clean. There's less lines of code and is the standard for modern Javascript. Gives advantages when it comes to scope in certain situations and "lexical this"</p>
     
     <h3>Promises/Asynchronus Requests</h3>
     <p>ES6 utilizes promises as a solution instead of callbacks for asynchronous coding. This allows you to make a request for a server and anything that could take a while, you are able to perform other processes on the application without having to wait for a response.</p>
@@ -481,8 +640,14 @@ alert(addNumbers);
         <li>map() - Manipulating data to create a new array. Used in react to create an array from another array with specific manipulations. For example, you can have a 'User' as an object and there is a specific property you want to create an array for such as age or location.</li>
         <li>filter()- Used in a lot of state reducers. Used to filter out certain pieces of data based on a condition.</li>
     </ul>
+
+    <h3></h3>
     
+ 
+
     <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
+
+
     
 </body>
 </html>
