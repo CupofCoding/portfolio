@@ -17,10 +17,12 @@
     <ul>
         <li>Element Selector - specified HTMLelement; p{ color:blue:}</li>
         <li>ID selector - element on page with specified ID, only one element per ID on page; #heading{ font-size:35px:}
-            <pre>&lt;p id=”quote”&gt; - you need to assign the id as an attribute in the html file</pre></li>
+            <pre>&lt;p id=”quote”&gt; - you need to assign the id as an attribute in the html file</pre>
+        </li>
         <li>Class Selector - specified class element. Multiple instances allowed; 
             <pre>.para{ fontsize: 17px:}
-            &lt; class=”para”&gt; needs to be in the html element. </pre></li>
+            &lt; class=”para”&gt; needs to be in the html element. </pre>
+        </li>
         <li>Grouping selectors - multiple elements separated by a comma
             <br></li>
         <li><u>*</u> symbol implies <u>ALL</u> elements; *{background-color: yellow;}</li>
@@ -80,21 +82,22 @@
             
         <li>Internal - by using a &lt;style&gt; element in the &lt;head&gt; section. These make the code messy but its good if you have a single webpage. To make an internal CSS;
             <pre>
-            &lt;style&gt;
-			p {
-                color: blue;
-            }
-            &lt;/style&gt;
+                &lt;style&gt;
+                p {
+                    color: blue;
+                }
+                &lt;/style&gt;
             </pre>
             
-            <pre> Example: 
-            &lt;head&gt;
-            &lt;style&gt;
-            body {background-color: powderblue;}
-            h1   {color: blue;}
-            p    {color: red;}
-            &lt;/style&gt;
-            &lt;/head&gt;
+            <pre> 
+                Example: 
+                    &lt;head&gt;
+                    &lt;style&gt;
+                    body {background-color: powderblue;}
+                    h1   {color: blue;}
+                    p    {color: red;}
+                    &lt;/style&gt;
+                    &lt;/head&gt;
             </pre>
         </li>
 
@@ -102,42 +105,44 @@
             
             <p>Example: Create a .css file in stylesheets with at least the following</p>
             <pre>
-            p {     - Selector for type 
-            color: blue;    - Property: property value; This is considered a declaration.
-            }            
+                p {     - Selector for type 
+                color: blue;    - Property: property value; This is considered a declaration.
+                }            
             </pre>
             
-            <pre>Example External CSS
-            p,li {      - Separate multiple elements with a “,”
-            color: blue;
-            font-size:30px;
-            border: 1px solid red;
-            }            
+            <pre>
+                Example External CSS
+                    p,li {      - Separate multiple elements with a “,”
+                    color: blue;
+                    font-size:30px;
+                    border: 1px solid red;
+                    }            
             </pre>
             
             <p>In the actual html index file, the following needs to be included in the header; &lt;link href="stylesheets/mystyle.css" rel="stylesheet" type="text/css"&gt;</p> 
                 <p>Note*: To link a external style sheet, you need to create a link, reference it, define the relationship, then define the type; This always has to be in the head section so it will load with the page. This is a good one to use when you have to do multiple web pages and want to use only one style sheet to affect the relevant pages.</p>
                 <p>Note**: To add <i>comments</i> to the CSS file, enclose it with a '/*' &amp; '*/'</p>
             
-            <pre> Example: 
-            &lt;head&gt;
-                &lt;link rel="stylesheet" href="styles.css"&gt;
-            &lt;/head&gt;
+            <pre> 
+                Example: 
+                    &lt;head&gt;
+                        &lt;link rel="stylesheet" href="styles.css"&gt;
+                    &lt;/head&gt;
             </pre>
             External “styles.css” reference file. 
             <pre>
-            body {background-color: powderblue;}
-            h1 {color: blue;}
-            p {color: red;}
+                body {background-color: powderblue;}
+                h1 {color: blue;}
+                p {color: red;}
             </pre>
         </li>
     </ul>        
         <h3>CSS Background-color Property</h3>
             <p>Used to change or specify the background color of an element. Valid color name or Hex value: #ff0000</p>
             <pre>
-            &lt;body style="background-color:powderblue;"&gt;
-                &lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
-                &lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;
+                &lt;body style="background-color:powderblue;"&gt;
+                    &lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+                    &lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;
             </pre>
       
             <p>Text color is used for headings and paragraphs.</p>
@@ -264,8 +269,10 @@
             <br>You add the link to your head section before the &lt;body&gt; but you would have to be online to add the font. </p>
     
         <h3>Syntax Recap</h3>
-        <pre>Example: 
-        a { background-color: green; }</pre>
+        <pre>
+            Example: 
+            a { background-color: green; }
+        </pre>
     <ul>
         <li>'p' woould be the selector that specifies which html element the styling applies to if there is no class or id to override it.</li>
         <li>'{' &amp; '}' would indicate where the declaration starts and finishes.</li>
@@ -277,20 +284,20 @@
     
     <h3>Basic CSS Example</h3>
     <pre>
-    body{
-        background-color:#e0dfda;
-        color:#a1a1a1;
-        
-        font-family: Geneva, Tahoma, sans-serif;
-        font-size:16px;
-        font-weight:normal;
-    }
+        body{
+            background-color:#e0dfda;
+            color:#a1a1a1;
+            
+            font-family: Geneva, Tahoma, sans-serif;
+            font-size:16px;
+            font-weight:normal;
+        }
     </pre>
     <p>or</p>
     <pre>
-    body{
-        font: normal 16px Geneva, Tahoma, sans-serif;
-    }
+        body{
+            font: normal 16px Geneva, Tahoma, sans-serif;
+        }
     </pre>
     
     <h3></h3>
@@ -316,58 +323,58 @@
     <div class="codesample-1">
         <p><b>Example Layout:</b></p>
         <pre>
-        &lt;html&gt;
-            &lt;head&gt;
-                &lt;title&gt;Blogs for Days&lt;/title&gt;
-                &lt;meta name="description" content="simple sample blog"&gt;
-                &lt;meta name="keywords" content="simple sample blog company name"&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-                &lt;header id="main-header"&gt;
-                    &lt;h2&gt;My Very Own Blog Website&lt;/h2&gt;
-                &lt;/header&gt;
-                
-                &lt;a href="index.html">Go to Home Page&lt;/a&gt;
-                
-                &lt;section&gt;
-                    &lt;article class="post"&gt;
-                        &lt;h3&gt;First Post: Day 1&lt;/h3&gt;
-                        &lt;small&gt;Posted by John Doe on May 4, 2021&lt;/small&gt;
-                        &lt;p&gt;Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
-                    &lt;/article&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Blogs for Days&lt;/title&gt;
+                    &lt;meta name="description" content="simple sample blog"&gt;
+                    &lt;meta name="keywords" content="simple sample blog company name"&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;header id="main-header"&gt;
+                        &lt;h2&gt;My Very Own Blog Website&lt;/h2&gt;
+                    &lt;/header&gt;
                     
-                    &lt;article class="post"&gt;
-                        &lt;h3&gt;Second Post: Week 1&lt;/h3&gt;
-                        &lt;small&gt;Posted by John Doe on May 11, 2021&lt;/small&gt;
-                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
-                    &lt;/article&gt;
+                    &lt;a href="index.html">Go to Home Page&lt;/a&gt;
                     
-                    &lt;article class="post"&gt;
-                        &lt;h3&gt;Third Post: Week 3&lt;/h3&gt;
-                        &lt;small&gt;Posted by John Doe on May 24, 2021&lt;/small&gt;
-                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-                        &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
-                    &lt;/article&gt;
-                &lt;/section&gt;
-                
-                &lt;aside&gt;
-                    &lt;h2&gt;Categories&lt;/h2&gt; <!--This part would generally be customized using CSS and alligned to the side-->
-                    &lt;nav&gt;
-                        &lt;ul&gt;
-                            &lt;li>&lt;a href="#">Category 1&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="#">Category 2&lt;/a>&lt;/li>
-                            &lt;li>&lt;a href="#">Category 3&lt;/a>&lt;/li>
-                        &lt;/ul>
-                    &lt;/nav>
-                &lt;/aside>
-                
-                &lt;footer id="main-footer">
-                    &lt;p>Copyright &copy; 2021&lt;/p>
-                &lt;/footer>
-        &lt;/body>
-        &lt;/html> 
+                    &lt;section&gt;
+                        &lt;article class="post"&gt;
+                            &lt;h3&gt;First Post: Day 1&lt;/h3&gt;
+                            &lt;small&gt;Posted by John Doe on May 4, 2021&lt;/small&gt;
+                            &lt;p&gt;Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                            &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                        &lt;/article&gt;
+                        
+                        &lt;article class="post"&gt;
+                            &lt;h3&gt;Second Post: Week 1&lt;/h3&gt;
+                            &lt;small&gt;Posted by John Doe on May 11, 2021&lt;/small&gt;
+                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                            &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                        &lt;/article&gt;
+                        
+                        &lt;article class="post"&gt;
+                            &lt;h3&gt;Third Post: Week 3&lt;/h3&gt;
+                            &lt;small&gt;Posted by John Doe on May 24, 2021&lt;/small&gt;
+                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                            &lt;small&gt;&lt;a href="post.html">Read more...&lt;/a&gt;&lt;/small&gt;
+                        &lt;/article&gt;
+                    &lt;/section&gt;
+                    
+                    &lt;aside&gt;
+                        &lt;h2&gt;Categories&lt;/h2&gt; <!--This part would generally be customized using CSS and alligned to the side-->
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li>&lt;a href="#">Category 1&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="#">Category 2&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="#">Category 3&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                    &lt;/aside>
+                    
+                    &lt;footer id="main-footer">
+                        &lt;p>Copyright &copy; 2021&lt;/p>
+                    &lt;/footer>
+            &lt;/body>
+            &lt;/html> 
         </pre> <!-- HTML5 Syntax Example-->
     </div>
     </div>
@@ -473,43 +480,44 @@
         <div>
         <p>The form is generated using the following HTML5 code:</p>
         <pre>
-        &lt;form action="process.css" method="POST"&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label&gt;First Name:&lt;/label&gt;
-                &lt;input type="text" name="firstName" placeholder="Enter first name"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label&gt;Last Name:&lt;/label&gt;
-                &lt;input type="text" name="lastName" placeholder="Enter last name"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label&gt;Email:&lt;/label&gt;
-                &lt;input type="email" name="emailAddress"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label&gt;Birthday:&lt;/label&gt;
-                &lt;input type="date" name="birthday&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label>Quantity&lt;/label&gt;
-                &lt;input type="number" name="quantity" value="1"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label&gt;Topic:&lt;/label&gt;
-                &lt;select name ="emailTopic"&gt;
-                    &lt;option value ="newOrder">New Order&lt;/option&gt;
-                    &lt;option value ="customerService">General Customer Service&lt;/option&gt;
-                    &lt;option value ="productSupport">Order Support&lt;/option&gt;
-                    &lt;option value ="suggestiions">Suggestions&lt;/option&gt;
-                    &lt;option value ="other">Other&lt;/option&gt;
-                &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;label&gt;Message:&lt;/label&gt;
-                &lt;textarea name="message"&gt;&lt;/textarea&gt;
-            &lt;/div&gt;
-            &lt;input type="submit" name="submit" value="Submit"&gt;
-        &lt;/form&gt;</pre>
+            &lt;form action="process.css" method="POST"&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;First Name:&lt;/label&gt;
+                    &lt;input type="text" name="firstName" placeholder="Enter first name"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Last Name:&lt;/label&gt;
+                    &lt;input type="text" name="lastName" placeholder="Enter last name"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Email:&lt;/label&gt;
+                    &lt;input type="email" name="emailAddress"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Birthday:&lt;/label&gt;
+                    &lt;input type="date" name="birthday&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label>Quantity&lt;/label&gt;
+                    &lt;input type="number" name="quantity" value="1"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label&gt;Topic:&lt;/label&gt;
+                    &lt;select name ="emailTopic"&gt;
+                        &lt;option value ="newOrder">New Order&lt;/option&gt;
+                        &lt;option value ="customerService">General Customer Service&lt;/option&gt;
+                        &lt;option value ="productSupport">Order Support&lt;/option&gt;
+                        &lt;option value ="suggestiions">Suggestions&lt;/option&gt;
+                        &lt;option value ="other">Other&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label&gt;Message:&lt;/label&gt;
+                    &lt;textarea name="message"&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;input type="submit" name="submit" value="Submit"&gt;
+            &lt;/form&gt;
+        </pre>
         </div> <!-- Form Code Example-->
         </body>
         </html> <!-- HTML5 Syntax Display-->
@@ -588,9 +596,11 @@
     </ul>
     
     <p>list has a class named "generic-list" and the following CSS format to apply colors or properties to the list.</p>
-    <pre>.generic-list li:nth-child(even){
-    background: grey;
-    }</pre>
+    <pre>
+        .generic-list li:nth-child(even){
+            background: grey;
+        }
+    </pre>
     
     <h3>Creating a Fixed Button</h3>
     
@@ -599,10 +609,11 @@
         <br>&lt;a class="fix-position button" href=""&gt;Home&lt;/a&gt;</p>
     
     <pre>with the following CSS: 
-    .fix-position{
-    position: fixed;
-    top: 0%;
-    }</pre>    
+        .fix-position{
+        position: fixed;
+        top: 0%;
+        }
+    </pre>    
     <p>will create a home button that stays fixed to the upper left of the screen. </p>            
 </body>
 </html>
