@@ -137,8 +137,8 @@ alert(addNumbers);
         <ul>
         <li>String - Sequence of text, must be enclosed in quotes.
         <br> Ex: myData='Cars';
-            <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
-            <p>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+            <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings from end to end.
+            <p>Old Method uses the '+' operator. Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
         <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
         <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
         <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
@@ -635,6 +635,94 @@ alert(addNumbers);
                 console.log(sum2) //will return a value of 30
             </pre>
         </li>
+        <li>
+            <h3>Nested Code Blocks & Scope</h3>
+            <p>In JavaScript, functions are considered objects that inherit from the initial object(.prototype) and can be assigned key-value pairs.</p>
+            <p>Key-value pairs consist of two related data elements where the key defines a data set. In the context of mapping, depending on the usage you need the keys in the set to be unique for 1-to-1 mapping and the the key-value pair would be constrained based on the properties.</p>
+            <p>An array could be considered mapping from a set of indexes to values, but keys can be any other data type. You can also store functions in an object and iterate through an array of functions in the form of loops.</p>
+            <p>Recognize that variable declarations can be accessed based on where it has been declared. The declaration of a variable can be moved to affect it's scope and range.</p>
+            <p>'var', 'let', and 'const' are keywords that define variables. using a variable name and a '=' to redeclare a variable doesn't co unt as variable assignment even though it's using an assignment operator.</p>
+            <p>The location of the variable declaration impacts the scope of the variable and may affect the function or loop as it will be prioritized if it's within a block or chunk of code. </p>
+            <pre>
+                if(12 &lt; age && age &lt; 18) {
+                    let isTeen = true;
+                } else {
+                    let isTeen = false;
+                }
+                
+                console.log(isTeen) //will provide an undefined value as the ''.log' function is outside of the loop and nothing is indicating age. So there was no variable accessed.
+            </pre>
+            <pre>
+                let isTeen;
+                if(12 &lt; age && age &lt; 18) {
+                    let isTeen = true;
+                } else {
+                    let isTeen = false;
+                }
+                
+                console.log(isTeen) //will provide a true or false value based on variable location.
+            </pre>
+            <p>A variable in a function cannot refer to or call a variable that has been nested in another function unless that function is nested inside the main function. This is similar to parent/child relationships. It would have to be a stand alone or global variable in order to be called into a function.</p>
+            <p>The 'if' statement is used to specify a block of JavaScript code to be executed if a condition is true or false. Functions are more like strings rather than 'if' statements since they're assigned to variables.</p>
+            <p>Strings are objects that can be declared within a variable, so when comparing with a ==, you are comparing references rather than values. You can use a string and compare it against other values to check if the objects are of the same type or value using '==' or '===' respectively.</p>
+            <pre>
+                function createFood (innerIngredient, outterIngredient) {
+                    return {Filling: innerIngredient, Outside: outterIngredient}
+                }
+
+                const makeFood = createFood;
+                const food = makeFood('Chicken', 'Sandwhich')
+
+                console.log(food); //will return value Chicken Sandwhich
+            </pre>
+
+            <pre>Example of a string contained in an object:
+
+                function logFilling () {
+                    console.log('Apple')
+                }
+
+                const bakedGood = {
+                    type: 'Pie'
+                    filling: logFilling
+                }
+
+                bakedGood.filling() // will return Apple
+            </pre>
+
+            <pre>Example of Inline function same as above function to replace string contained in an object:
+
+                const bakedGood = {
+                    type: 'Pie'
+                    filling: function() {
+                        console.log('Apple')
+                    } 
+                }
+
+                bakedGood.filling() // will return Apple
+            </pre>
+            <p>Functions can be stored in an array and can be called when referenced as an index</p>
+            <pre>
+                function logFilling () {
+                    console.log('Apple')
+                }
+
+                function logType () {
+                    console.log('Pie')
+                }
+
+                const bakedGood = {logFilling, logType}
+
+                for(let i = 0; i &lt; bakedGood.length; i++) {
+                    bakedGood[i]() // will return 'Apple' then 'Pie'
+                }
+            </pre>
+        </li>
+        <h3>Callback Functions</h3>
+        <p>'callback' functions are 
+            pass a function as an argument
+            receive a function as a parameter
+        </p>
     </ul>
 
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
