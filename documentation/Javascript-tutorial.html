@@ -718,11 +718,59 @@ alert(addNumbers);
                 }
             </pre>
         </li>
-        <h3>Callback Functions</h3>
-        <p>'callback' functions are 
-            pass a function as an argument
-            receive a function as a parameter
-        </p>
+        <h3>Callback Functions & Event Listeners</h3>
+        <p>'callback' functions are functions that have been nested into another function as an argument which is then called inside the outter or parent function to complete. </p> 
+        <p>When you want to create a 'callback' function, you pass the function inside another function as a parameter. Javascript loads the full script first then runs code sequentially from top to bottom.</p>
+        <p>Callbacks make sure that a function will not run before a task is completed and will run after a task or condition is met. This is called asynchronous programming.</p>
+        <pre>
+            function first () {} //declares the function name
+            function second (callback) {  //received first function as a parameter
+                console.log(callback){}  //logs function first () {}
+            }
+
+            second(first)
+        </pre>
+
+        <pre>
+            function logWord () {
+                console.log('Something')
+            }
+            run(logWord)
+
+            is the same as: 
+            run(function() {
+                console.log('Something')
+            })
+        </pre>
+        
+        <p>'Anonymous' functions are functions that have been defined in another function that don't require calling.</p>
+        <pre>
+            setTimeout(function() {
+                console.log('Response not received from server. Request timed out (30 seconds)');
+            }, 30000);
+
+            which is the same as: 
+            setTimeout(() => {
+                console.log('Response not received from server. Request timed out (30 seconds)');
+            }, 30000);
+        </pre>
+
+        <pre>Another Example: 
+            function name(first, last) {
+                return first + ' ' + last
+            }
+            let first = 'John'
+            let last = 'Doe'
+            console.log('My name is ' + (name(first, last)));
+        </pre>
+        <p>Event-listeners are methods or functions that exist generally pending user input or activity.</p>
+        <p>Callback functions can be used in conjunction with event-listeners.</p>
+        <pre>
+            document.queryselector('#button-clicked')
+            .addEventListener('click', function() { // function() would be the callback function.
+                console.log('User clicked button.');
+            });
+        </pre>
     </ul>
 
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
