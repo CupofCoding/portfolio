@@ -1,10 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guide to Basic Javascript</title>
-  </head>
-  <body></body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Guide to Basic Javascript</title>
+	</head>
+	<body>
+		Terminal Notes; 
+		Commands follow '$' in the terminal. Use Windows + R to run cmd.exe or use GitBash
+		
+		ls - list and displays the specific level our command line is sitting at. Directory is a collection of files. 
+			$ls -a displays the hidden files as well. 
+			
+		cd Documents/ - stands for change directory. You can tab to find an existing directory or it will prompt you to be more specific. 
+			$cd .. - brings you to the prior folder. 
+			$cd ../.. - brings you up 2 levels. 
+			
+		mkdir 'directory name' - creates a folder if the name doesn't exist. You can move into the directory using the && filepath
+		
+		code . opens vs code with the directory you're in; you can directly type the directory path also.
+			If there's an error for the code; code command not found; 
+
+		touch index.html  - creates a file based on the file name and extension
+		
+			Tell Your Computer to Serve Your Webpage. Return to your terminal, then type in npx 
+		
+		npx serve . - this allows your computer to act as a server and respond to requests from other computers with the file you just created. CTRL + C to exit. Make sure that there is a space before the . to confirm it's the current file folder.
+
+		mv - is move one or more files or directories; mv dir/file destination
+			Ex $ mv middle_earth/the_shire/one.ring middle_earth/the_shire/frodo/one.ring
+				You can use mv to rename your files
+					Ex $ mv middle_earth/ Middle_Earth/
+		
+					rm -  command to delete one or more files or directories
+					
+		Git Notes
+		Useful Terms:
+		Directory - Folder, location, or address
+		
+		Terminal or Command Line - Interface for text commands
+		
+		CLI - Command Line Interface
+
+		cd - Change Directory
+		
+		Code Editor - Word processor for writing code
+		
+		Repository - Project or the folder/place where your project is kept
+		
+		Github - a website to host your repositories online. 
+		
+		clone - bring a repository that is hosted somewhere like Github into a folder on your local machine
+		
+		add - track your files and see changes in Git
+		
+		commit - save your files in Git
+		
+		push - upload git commits to a remote repository like Github. 
+		
+		pull - download changes from remote repository to your local machine and the opposite of push
+
+		
+		Using GitBash Tool or command line; at project directory, run following commands
+		git init
+		code cd my_project
+		my_project git init
+		
+		This creates a git repository master branch. 
+		echo “hello world” 				displays hello world on the console
+		echo “hello world” >> 	my_project.txt		puts this after whatever  you made. 
+
+		git status 	gets the status on branch, it's red if there's no commits for everything untracked. 
+
+		git add -A	or * commits everything and adds pending changes to be committed 
+		
+		git commit -m “string Add my file”	returns 1 file changed, 1 insertion(+)
+		Create mode 10644 my_file.txt
+		
+		Use git status to check if there are any pending changes to the master to confirm the changes went through. 
+		
+		Remote Addresses; determines the location of where the repository is going. It can go to “main” or “master” depending on if you make the repository with the command line or the website direct. 
+			Might have to create a Personal Access Token. Github has the instructions. Make sure to SAVE THE TOKEN SOMEWHERE; you will not be able to see it again and will have to generate a new token. 
+
+		git remote add origin https://github.com/username/repository.
+			creates link to origin repository
+			
+		git remote -v 	will display the (fetch) and (push) urls
+
+		git branch 	lists the total git branches. 
+		
+		git branch -M main	main is the new name for the master. 
+
+		git push origin main	command lists the details for the repository. 
+
+		
+		git config --global user.name “USERNAME” 		to change username
+		
+		Example: 
+		This will ask for a Personal Access Token when making changes uploaded on GitHub. 
+
+		$git init
+		
+		$ ls -a 		shows invisible files; 
+		
+		$ git add -A	adds everything into a package to ship
+		
+		$git status 	pending changes
+		
+		$git commit -m “First commit - change comments”
+		
+		$ git remote add origin https://github.com/CupofCoding/portfolio_school.git
+		
+			IF you get the following error, just go to your settings and account/email and uncheck the make email private box. 
+			
+		$ git push origin master	this gets the current master file/syncs with GitHub
+		$code . 	open editor & change index.html file
+		$ git add -A 	adds everything into a package to ship if you've made changes
+		
+		$ git commit -m "Adding new placeholder text"
+
+		$git status 	check if changes went through/committed
+
+		$git push origin master	this gets the current master file/syncs with GitHub
+
+		
+		git clone	clones repository to local machine;
+			don't make clones inside of other clones where you run the possibility of running into errors. 
+
+		git pull origin master 		this gets the current master file/syncs
+			Note: If you make changes directly from Github, then your local files will be out of sync. 
+
+		Making sure Repository is current: 
+		git stash save			put the changes aside/last saved point with no changes
+
+		git pull origin master 		get current code
+
+		git stash pop 			add changes that were “stashed”
+
+		git stash list			if you have made more than one stash save
+			Returns: stash@{0}: WIP on dev: 1f6f8bb Commit message A
+			stash@{1}: WIP on master: 50cf63b Commit message B
+			
+		git stash pop stash@{1}	to apply specific stash changes
+
+		Pull request is done against the original fork; Pull requests add in your work later. Allows other developers to see changes that exist and approve the changes before merging. Fork is your remote copy of the main repository, you work on your “branch” then you add in your work against the main branch. 
+
+		Example 2: GitHub Collaboration Exercise
+		cd to default directory where you want your cloned repository then run command in terminal: 
+		git clone https://github.com/YOUR-OWN-GITHUB-ACCOUNT-HERE/group-project.git
+		
+		git pull origin master 		syncs your file with the repository
+
+		code .		 to bring up the code editor; 
+
+		Select the index.html, look for the comment and add your own <div>&<h3> per the exercise. Make sure to save.
+
+		Select style.css and do the same thing with the class name used in the <div>. Save changes.
+
+		git status 		to check current status
+
+		git add -A followed by git status to confirm changes to be committed
+
+		git commit -m "comment"
+
+		git push origin master	
+			It will ask for your username/key. 
+			Check GitHub to confirm that the repository was added. 
+
+			This stops around Part Seven: Making Your First Pull Request. Whenever your group catches up then go through the merging process.
+			
+		Random Bits: 
+		SourceTree; log server. Program that tracks branching.
+	</body>
 </html>
