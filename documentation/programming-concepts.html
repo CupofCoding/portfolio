@@ -1,188 +1,190 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Programming Concepts &amp; Terms</title>
-    </head>
-    <body>
-        <!-- Heading -->
-    <h2>Programming Concepts &amp; Terms</h2>
-        <p>There are 3 core web developer languages:</p>
-            <ul>
-                <li>HTML - Hypertext Markup Language; The syntax follows [&lt;p&gt;&lt;/p&gt;] and would function like nouns in language structure. HTML provides the basic text that would display on the webpage. You can only edit the text style that's shown on the site. More advanced editing will use CSS for additional display or location formats.</li> 
-                <li>CSS - Cascading Style Sheet; The syntax follows [p {color:blue;}] and would function like adjectives. Provides additional options/rules for how images and text is displayed. It is a style language and not a programming language. They use Class followed but Subclass. </li>
-                <li>JS - Javascript; controls the interactivity of a page; show or hide objects, scrolling, pop ups, whatever you can click or control or animate objects on a page, submit info or respond to small queries. Javascript is case sensitive. Keep the javascript content at the bottom before the &lt;/body&gt; part of the document so the HTML portion can load faster. syntax follows [prompt ();] would be the verbs</li>
-            </ul>
-        
-    <h3>Programming language levels; high level, assembly code, machine language,  hardware</h3>
-        <ul>
-            <li>High level languages have to be compiled or interpreted by an engine for the computer to understand. They use more resources and are slower in execution since the code has to be interpreted compared to the more difficult to learn low level languages</li>
-            <li>Compilers translate the entire source code into machine language before the code is executed. <br>Process follows: high level language ->compiler->machine code ->cpu ->display output result</li>
-            <li>Interpreter translates or converts one line of code at a time into machine language before the code is executed; Ex Python or Perl<br>Process follows: Source File -> [Interpreter -> CPU] line by line -> display result</li>
-            <li>Compilers use more memory, compiled once and can run anytime, they’re more difficult to debug but they run faster. </li>
-        </ul>
-        
-    <h3>Tools needed &amp; Considerations</h3>
-        <ul>
-            <li>Computer - pick the operation system you would need to focus on for compatibility</li>
-            <li>Text editor - Notepad - Windows, TextEdit - Mac, Gedit - Ubuntu/Linux, or multi platform Atom, SublimeText, Brackets</li>
-            <li>Web Browsers - Chrome, Firefox, Safari, Opera, Edge, Internet explorer</li>
-            <li>Text, Code, Stylesheets, Media content, ETC before you upload it to a Server. </li>
-            <li>Assets: text, theme color (color picker), images, fonts</li>            
-        </ul>
-        
-    <h3>Web Development vs software engineering vs hackers vs Fullstack design</h3>
-        <p>Web Development - someone who has a strong competency in front end design with basic competency in backend programming. Focuses on blogs or websites. Websites don't focus on back end with lots of calculations, information, and processing. Focuses more on how it looks with basic functions. Graphic and user interface design. LAMP stack or WordPress development. </p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Programming Concepts &amp; Terms</title>
+	</head>
+	<body>
+		<!-- Heading -->
+		<h2>Programming Concepts &amp; Terms</h2>
+		<p>There are 3 core web developer languages:</p>
+		<ul>
+			<li>HTML - Hypertext Markup Language; The syntax follows [&lt;p&gt;&lt;/p&gt;] and would function like nouns in language structure. HTML provides the basic text that would display on the webpage. You can only edit the text style that's shown on the site. More advanced editing will use CSS for additional display or location formats.</li>
+			<li>CSS - Cascading Style Sheet; The syntax follows [p {color:blue;}] and would function like adjectives. Provides additional options/rules for how images and text is displayed. It is a style language and not a programming language. They use Class followed but Subclass.</li>
+			<li>JS - Javascript; controls the interactivity of a page; show or hide objects, scrolling, pop ups, whatever you can click or control or animate objects on a page, submit info or respond to small queries. Javascript is case sensitive. Keep the javascript content at the bottom before the &lt;/body&gt; part of the document so the HTML portion can load faster. syntax follows [prompt ();] would be the verbs</li>
+		</ul>
 
-        <p>Software Engineering - heavy on back end development and some front-end. No UI or graphic design. </p>
-    
-        <p>Fullstack developers - very rare; good at both front and back end development. </p>
-    
-        <p>Full Stack Designer - A graphic designer that can also program. Less people on your team as they can do more; Design can be better captured in the final product; </p>
-        
-        <p>Hackers - implying that someone knows basic back end/front end. No traditional backgrounds. Not focused on usability. Opposite of production developers. Ugly but it works. </p>
-            
-    <h3>How to learn Front End Development</h3>
-        <p>HTML, CSS, Javascript. Setting up feedback loops and able to see it. Interaction with Ajax Calls. Learn HTML first, then download websites and change the CSS. Understand nesting and inheritance. Be able to create it from scratch and be able to edit existing sites. CodeAcademy helps with learning javascript. Javascript is all about action and events and interaction. Bento is also a good resource. Learn jQuery, Angular, React </p>
-    
-    <h3>How to learn Back End Development</h3>
-        <p>Pick the language you want to learn. Python, Ruby, PHP, Java; Pick it based on the industry or the company you want to work for; </p>
-        <ul>
-            <li>Python is for Google or flexibility to program on desktop, on the web, or in large data sets; Use the google course, codecademy or coursera; Learn Django (framework)</li>
-            <li>PHP is best for your own thing or freelancing; limited budget. Opensource; Make sure you’re learning the most recent PHP; You need to understand HTML &amp; CSS. Learn how to use PHP as object oriented programming. </li>
-            <li>Java is good if you want to work at a large company or Android Platform. </li>
-            <li>Ruby - Use CodeAcademy; Codewars; Learn Rails (framework) </li>
-        </ul>
-    
-    <h3>Frameworks &amp; APIs</h3>
-        <p>Frameworks are a predefined structure that programmers can build upon by changing existing code or adding on code; Programming is an instructions list and Frameworks are essentially pre-made code. Essentially the Frameworks function is similar to coding templates for specific languages. </p>
-        
-        <p>Front-end Frameworks; HTML, CSS, Javascript - Template websites provide a CSS sheet and a Grid system/Layout (style sheet that lets you put objects such as buttons or images into columns), UI pack/kit (buttons &amp; objects) will give a premade set of buttons, headers, sliders, components, frames, submitting forms, popups, search boxes, error messages. Interaction snippets are pieces of action code or bits of javascript. Bootstrap is a very popular front end framework. </p>
-        
-        <p>Back-end Frameworks - When you set up the server side files, frameworks help set up the file and folder structure. CSS, Images, APIs, Models, Themes; They will give pre-made code for functions. Example, every time you pull from a database you have to write a query to pull the information. The frameworks will provide you with a template for that. Frameworks might index the information and give the system where you can search it. Downloading files. Optimizing images, saving and recalling them. Setting up APIs or setting up a payment terminal. Frameworks will provide structure. Full frameworks give a lot of premade functions and support for a wide variety of use cases. Micro-frameworks focus on core functions, smaller and easier to maintain. </p>
-                
-    <h3>Development Environment and the IntegratedDEs;</h3>
-        <p>IDEs provide a template system so that you can program faster; They’re similar to frameworks; programs that programmers use to write programs. They include tools that make it easier, has spell check for code or autocomplete features. They help developers organize and structure files before they’re uploaded to a webserver; sometimes it includes version control. They’re an automatic development environment where you can write code and test it before you can upload it to a website. IDEs can be expensive or adds extra code based on a template.</p>
-        <p>Framework Examples: Visual Studio for low level programming; Xcode for iOS; Java Netbeans; PHPStorm</p>
-        <p>**Libraries function similar as an IDE or Framework; ReactJS and JQuery; HandleBars &amp; Mustache.</p>
-        
-    <h3>API Application Programing Interface</h3>
-        <p>Layer that runs outside of your normal code; basically a mini application that runs on top of the larger application that you’re building and used to facilitate the transfer of information to external apps that ask for them; they can handle transfers &amp; fulfill info requests; they limit what other apps can ask for; APIs give out details in the best way to access the information you have so it doesn’t make a mess or slow down the system of the host.  There social media APIs function to let you login to the account of a website and provide the extra data from the social media sites; Less building, more information requests; APIs can be a business model; crunchbase is a business model that has a bunch of API’s that you can use; Menu = API, placing an order = Executing an API Call, Food = Systems response. You still need the switch code to reference the API </p>
-        
-    <h3>CMS - Content Management Systems</h3>
-        <p>Massive applications that can be installed on a web server and then let a website owner create and manage their website through intuitive and non-programmatic administration panels. Wordpress &amp; Drupal focus on newspapers, blogs, forums, Magento focuses on E-Commerce including Inventory management, SKUs, product imagery; all 3 are built in PHP. Allows the owner to use template websites that can easily add and manage functions such as tracking analytics, sharing information, commenting, storing user submitted content. Site owner &amp; Site contributors</p>
-        
-        <p>WordPress focuses on Themes. Themes affect the overall look. <br>Plugins are miniature application that plugs into WordPress. They mostly focus on popups. <br>Extensions - a large piece of another code base you’re attaching.</p>
-        
-        <p>The Free CMS Websites acted like platforms while using their site and everything made was stored on their servers or sometimes listed directly on their domain. </p>
-                
-    <h3>OOP - Object oriented programming</h3>
-        <p>A collection of functions and data that can be grouped into what is called an “object.”  Then when you are programming and you need to access some of the information in a class (not object), it’s called “instantiation.” It means that the program being written has access to a large chunk of code stored somewhere else. Save time by grouping data and functions together; apply attributes broadly across objects. You create a <i>class</i> and everything in this object is going to be output in a certain way or format. You make mega functions that you call in later to save time programming. </p>
-        <li>Examples of class; Color, Font, Height.</li>
-        <p>The group of classes would apply to the object for each product. In eCommerce, it would be the item for sale, if it’s social media then the object = person.  </p>
-        <p>OOP scales better than Procedural paradigm (the standard way of developing something; Do this, send this, call this, send this, output this; scale is growth based on users.)</p>
-        
-        <p>Other Programming Paradigms; Functional, Imperative, Logical, Procedural</p>
-        <p>Programming Language Concepts; Execution Order, Design Space, Language Design, Higher Order Programming and Functions, Implementation Advantages and Drawbacks. Other related topics would be Process Management, Process Scheduling, Concurrency Issues, CPU Scheduling, Memory Management, Virtual Memory, Mass Storage Systems, Input/Output System</p>
-        
-                
-    <h3>Integration</h3>
-        <p>Integration refers to when you merge/collaborate code with multiple people or large existing code like a CMS. It’s meant for efficiency. </p>
-        <p>Generally you make an elaborate server setup that can automatically do all of the integrations for you. It allows you to pretty much check progress and make sure that all the parts function together from a technical perspective. 2 different servers; one is called a version control server and the other is a build server. People will take what they’ve been working on throughout the day and upload it onto the version control server. The build server then checks the version control server and sees if the code executes properly or if there are errors or general issues. Then everyone gets together and troubleshoots it. Generally done with larger companies. </p>
-            <li>Continuous delivery -> Continuous deployment -> Continuous integration</li>        
-        <p>With smaller companies you put it on the test and see how it operates in a browser and with users and if it works then you move it over in batches to the live server which is what people see when they go to the URL. </p>
-        
-    <h3>Responsive Design</h3>
-        <p>What people used to do is to give separate instructions depending on what screen is loading. There’s an app that detects the size of the screen that’s viewing it and it automatically stretches or contracts to fit the screen. You can tell responsive design has been used based on the sites usage of white space. There’s a lot more buffer zone between objects; Floating code is used; Lots of bug testing; 5 major browsers in different interpretations. </p>
-        
-    <h4>Absolute vs Relative. </h4>
-        <p>Absolute has fixed object positions based on pixels.</p>
-        <p>Relative is based on where the other elements on the page are.</p>
-        
-    <h3>Hybrid App</h3>
-        <p>Native app is written in the code that the mobile OS recognizes and accepts; native spp for iOS would be in Objective C; Android is written in Java. </p>
-        <p>Web Apps are websites shrunk down to fit and work on a smaller screen that is packaged to look like an app.</p>
-        <p>Hybrid App is an app written in basic web code that goes into a system like Adobe PhoneGap which functions as a compiler that takes that code, compiles it and interprets it in a way that every mobile OS can understand. Downsides are that it lacks interactivity. Harder to control interactivity, less core functions as it’s underdeveloped. Netflix uses Hybrid</p>
-        <p>Like Adobe PhoneGap; Adobe Air takes the web apps and compiles it for your desktop.</p>
-        
-    <h3>Server Types</h3>
-        <p>You can have Saas on PaaS and then Iaas as a stack. Difference between software and a product; product you own, service you don’t. Data that is stored and accessed on a different device or server is considered cloud based. </p>
-        
-        <p>SaaS - Software as a Service; the company houses it for them, maintains it for them and leases it out to the user. Web version of the system. Some companies like Adobe make logging into the software only accessible through the web and have the software downloaded to check if you paid to use it. If you have it, shut it off and prevents you from using it. Canva is a simplified version of photoshop. Charge less, but more often and for longer. Access your files anywhere. Continuous updating</p>
-        
-        <p>PaaS - Platform as a Service; Set of tools, resources, software that come together to let you build software on top of it. ie Facebook or Slack; designed to assist in building software; AWS, Microsoft Azure (.NET framework, Microsoft SQL, Live Services), Heroku.</p>
-        
-        <p>IaaS - Infrastructure as a service - 90% Web Storage like Amazon EC2; Security and firewalling;  Routing and network services; Maintenance and load balancing; services like that automatically scale based on your users so that you don’t go offline instead of your server overloading. </p>
-                
-    <h3>Tech Stacks; Refers to Web and Mobile apps</h3>
-        <p>You reference technology in the form of stacks and you have things on platforms. So first floor would be the OS that’s acting as an interpreter, next level would be a browser, then the websites would be the next level. That’s how programs would work. When you have technologies that reference each other, that would be called a stack. Stacks are a specific series of technologies. </p>
-        <ul>Tech stacks are comprised of the following: 
-            <li>User Interface (Browser) -> Front End</li>
-            <li>The Internet</li>
-            <li>API ->Back End</li>
-            <li>Web Server/Web Framework ->Back End</li>
-            <li>Database ->Back End</li>
-            <li>Operating System ->Back End</li>
-        </ul>
-        <p>General Stack format would be Operating System -> Server System -> Database -> Back-end Language; by default everyone uses HTML, JS, CSS as front end so that doesn’t need to be specified. </p>
-        <p>LAMP Stack; Linux - OS, Apache - server software, MySQL - database (user form data or profile info), PHP; Used most often and easiest to learn. </p>
-        <p>WINS; Windows server -> IIS server (host) -> .NET -> Microsoft SQL Server; good for companies that have security concerns or finance. Great for big companies, expensive but slow.</p>
-        <p>MEAN Stack; Mongo DB (database system) , Express (back-end web) , Angular.js (front end framework), Node.js  (back-end runtime environment); learn for personal preference</p>
-        <p>FullStack Javascript - Interaction Technology that works on your browser but not your server. Node.js is a system that allows you to create an environment on your browser and then test your javascript. It’s not a library or a framework. This allows you to do Front-End and Back-end functions like querying databases, or making calculations, or pulling information from APIs. <br>Asynchronous Javascript; multi-threading, the javascript will be running processes simultaneously so you can be pulling information from the back-end and checking basic validation from the front end. It doesn’t work very well with databases as it will be pulling information all the time. Updates pages instantly.</p>
+		<h3>Programming language levels; high level, assembly code, machine language, hardware</h3>
+		<ul>
+			<li>High level languages have to be compiled or interpreted by an engine for the computer to understand. They use more resources and are slower in execution since the code has to be interpreted compared to the more difficult to learn low level languages</li>
+			<li>Compilers translate the entire source code into machine language before the code is executed. <br />Process follows: high level language ->compiler->machine code ->cpu ->display output result</li>
+			<li>Interpreter translates or converts one line of code at a time into machine language before the code is executed; Ex Python or Perl<br />Process follows: Source File -> [Interpreter -> CPU] line by line -> display result</li>
+			<li>Compilers use more memory, compiled once and can run anytime, they're more difficult to debug but they run faster.</li>
+		</ul>
 
-        
-    <h3>Languages</h3>
-        <li>Python - High level programming language that would need a program to convert the language so web browsers or OS can understand it. Uses frameworks like Django &amp; Flask. Used with Web or Desktop platforms.. Better used for technologies like Artificial Intelligence, Machine Learning, Data Analytics. Python also proves to be useful for web development, creating enterprise applications, and GUIs for applications.</li>
-        <li>PHP - PHP Hypertext Processor; Easy to learn general purpose scripting language used for server-side web development but has inefficiencies. Open source language(free). Facebook is built via PHP. Word Press also uses PHP. Cross-platform for destop, mobile, web, and provides a way to do back-end web scripting. Used for CMS (Content Management Systems), eCommerce platforms, and web applications.</li>
-        <li>Ruby - Fast and time saving. Small community, expensive. Poor performance in larger systems; Esty and Groupon use it. </li>
-        <li>SWIFT - New programming language designed by Apple for their iOS. Uses frameworks like Alamofire, RxSwift, &amp; Snapkit. It’s more forgiving than Objective C since Objective C is a low level language and it’s very strict. Learning SWIFT without Objective C is harder. Paired with Apple’s Cocoa and Cocoa Touch framework, Swift can be used to create apps for virtually every Apple device, such as iPhones, iPads, Mac, Watch, and other devices.</li>
-        <li>Java - good if you want to work at a large company or Android Platform. Uses frameworks like Spring, Hibernate, Strut. Used with Web, Mobile, &amp; Desktop. Used extensively on Android, it's a necessity for Andriod Developers. Allows developers to create apps for banking, electronic trading, e-commerce, as well as apps for distributed computing. </li>
-        <li>C &amp; C++ - very low level programming languages that allow for fast performance. Used to create system applications, real-time systems, IoT, embeded systems, games, cloud, containers, and more. Mostly focused for operating systems and system tools.</li>
-        <li>C# -  Focuses on application and webdevelopment using .NET. Uses frameworks like .NET, Xamarin. Used on cross-platform, mobile and enterprise software applications. Designed with the focus of the .NET ecosystem so developers can access the large rage of libraries and frameworks offered by Microsoft.</li>
-        <li>Javascript - a high-level programing language that functions as the top frontend programming language for the web. Used with Frontend Scripting or Web &amp; Desktop platforms. Uses frameworks like Node.js, Angular, React.js, Vue, Metor. Handles all the interactions offered by webpages, such as; alerts, events, popups, and etc. Mostly used for enterprise application development. Mostly used for interactive web developement</li>
-        <li>R - Mostly used for data analysis, data science, behavior analysys, or Machine learning projects, it's an intermediate level language. Mostly used on Desktop platforms. Language works well with C, C++, Python, Java, and .NET.  </li>
-        <li> Go or Golang - Focused mainly on server-side programming. Used for crossplatform but mostly desktop. Used with frameworks liek Revel or Beego. Fast and simple syntax that is easy and efficient to use. Mostly used for back-end technologies, cloud services, distributed networks, IoT, console utilities, GUI applications, and web applications.</li>
-        <li>SQL - Back-end database management. Allows storing and access to vast amounts of data. Enables developers to create and manage tables and databases for storing relational data over hundreds and thousands of data fields. Databases use SQL through an RDBMS.</li>
-        
-    <h3>Miscellaneous Terms &amp; Concepts</h3>
-        <li>Developer Tool Console; powerful free tools for debugging your code. You can experiment with JavaScript in the console. Most web browsers have a developer console. There are different ways to access the tool. Right-click on a space on a webpage and choose to inspect the element. Or Alt+Command+I for Mac; Ctrl + Shift + i for windows. Or F12</li>
-        <li>Javascript Linting Tools are code quality checking tools. Brackets text editor uses JSLint and ESLint. Will highlight errors, could be syntax errors. </li>
-        <li>Output is how you display the results or statements; can be screen, console, or window after the program is run or executed. </li>
-        <li>Input - used to receive information from the user in order to output a result. Forms and text boxes are methods of input that are entered from HTML and javascript reads the data and inputs it into  your program. </li>
-        <li>Printing - will take all of the work done so far and present it on the screen. </li>
-        <li>Commenting - How well documented is the code? It’s additional explanations about the code; if there’s a specific symbol assigned per each language that excludes it from the rest of the code. For example, python has a # followed by a space then anything after “# “ will be excluded from being run. It doesn’t have to be in front of a line. For PHP is /* with */ ended for what to ignore.</li>
-        <li>Javascript Events are things a browser or user does to have HTML elements have interactivity to occur. <br>	Event listeners wait for an event to occur to respond. Could be onclick.</li>
-        
-        
-        <li>Variables - stored information that can be manipulated later. For example, you would have items on a menu, the name of the item would be the variable and then the cost would be the value assigned to the variable. Formulas are then associated based on a subtotal = combined variables selected with the amount and then tip = another amount, then you would have a total variable defined by (subtotal*tip)+subtotal. If variables were not an option then you would have to manually enter the cost each time. It would also be easier to adjust the value that was assigned instead of going through each item and manually adjusting the prices since they’re referencing the same variable. <br>Standalone statements are called literal variables; </li>
-        <li>Strings -  Have to be stored in a variable so that the defined variable isn’t confused as a command; example variable = “string shows text from here”; Escape commands are for variables that have confusing text that can be confused for code. </li>
-        <li>Arrays - Series of pieces of information that are all formatted the same; for example, it would be all numbers, strings, or variables.  The “Pointer” is essentially the position of the variable in the array. This will essentially reflect back the data based on the position or order it’s in.</li>
-            <pre>$value = array (‘string1’ ‘string2’ ‘string3’)
-            If input () == value; == means is equal to
-            Print $value; this will return ‘string1’ ‘string2’ ‘string3’ on the screen
-            </pre>
-        <li>Statements - instructions written to tell the computer what to do; group of words, numbers, and operators that perform a specific task. Statements are composed of Values, operators, Expressions, Keywords, comments. Values are the data, they can be numbers, string, or text. Statements are executed from top to bottom, left to right, one by one. </li>
-        <li>Expressions are any reference to a variable or value or a set of variables or set of variables and values combined with operators. Ex a = b * 7; has 4 expressions. 7 is a literal value expression. B is a variable expression. b * 7 is an arithmetic expression. a = b * 2 is assignment expression where the b * 7; is an expression statement.</li>
-        <li>Algorithm - the written set of instructions </li>
-        <li>Source code - refers to the plain text instructions in the text editor</li>
-        <li>Pair programming - Two people write one piece of code. Designed to increase quality; architecture makes a big difference in programming. Code quality improves, pairing generally has a senior developer with a junior and they learn an enormous amount from the senior. </li>
-        
-        <br>
-        <li>User Flow Charts</li>
-        <li></li>
-        <li>Loops</li>
-        <li>Functions</li>
-        <li>Conditionals</li>
-        <li>New Guard; WYSIWYG; What You See Is What You Get - Build your site visually and you grab what you want and place it where you want.</li>
-        <li>GIT - repository for storing project code; it’s a process that allows version tracking.</li>
-        <li>GITHUB - Online host that stores repositories for branching and version control. It has Forking that allows for creating versions of the code that’s already been uploaded. </li>
-                
-        <ul>
-            <li>Squarespace</li>
-            <li>Weebly/Wix.com - limited use cases/customizing</li>
-            <li>Shopify - focuses a lot more on e-commerce but they take a percentage of your store’s sales as well as a weekly subscription. Shopify is written in Ruby on Rails; Started off as startups first instead of open source.</li>
-        </ul>        
-        <p>**Things to consider for eCommerce: Accepting payment in a different currency, How to detect user fraud or pick up on a bad credit card, Routinely offer sales on certain items to boost sales.</p>
-        
-        
-    </body>
+		<h3>Tools needed &amp; Considerations</h3>
+		<ul>
+			<li>Computer - pick the operation system you would need to focus on for compatibility</li>
+			<li>Text editor - Notepad - Windows, TextEdit - Mac, Gedit - Ubuntu/Linux, or multi platform Atom, SublimeText, Brackets</li>
+			<li>Web Browsers - Chrome, Firefox, Safari, Opera, Edge, Internet explorer</li>
+			<li>Text, Code, Stylesheets, Media content, ETC before you upload it to a Server.</li>
+			<li>Assets: text, theme color (color picker), images, fonts</li>
+		</ul>
+
+		<h3>Web Development vs software engineering vs hackers vs Fullstack design</h3>
+		<p>Web Development - someone who has a strong competency in front end design with basic competency in backend programming. Focuses on blogs or websites. Websites don't focus on back end with lots of calculations, information, and processing. Focuses more on how it looks with basic functions. Graphic and user interface design. LAMP stack or WordPress development.</p>
+
+		<p>Software Engineering - heavy on back end development and some front-end. No UI or graphic design.</p>
+
+		<p>Fullstack developers - very rare; good at both front and back end development.</p>
+
+		<p>Full Stack Designer - A graphic designer that can also program. Less people on your team as they can do more; Design can be better captured in the final product;</p>
+
+		<p>Hackers - implying that someone knows basic back end/front end. No traditional backgrounds. Not focused on usability. Opposite of production developers. Ugly but it works.</p>
+
+		<h3>How to learn Front End Development</h3>
+		<p>HTML, CSS, Javascript. Setting up feedback loops and able to see it. Interaction with Ajax Calls. Learn HTML first, then download websites and change the CSS. Understand nesting and inheritance. Be able to create it from scratch and be able to edit existing sites. CodeAcademy helps with learning javascript. Javascript is all about action and events and interaction. Bento is also a good resource. Learn jQuery, Angular, React</p>
+
+		<h3>How to learn Back End Development</h3>
+		<p>Pick the language you want to learn. Python, Ruby, PHP, Java; Pick it based on the industry or the company you want to work for;</p>
+		<ul>
+			<li>Python is for Google or flexibility to program on desktop, on the web, or in large data sets; Use the google course, codecademy or coursera; Learn Django (framework)</li>
+			<li>PHP is best for your own thing or freelancing; limited budget. Opensource; Make sure you're learning the most recent PHP; You need to understand HTML &amp; CSS. Learn how to use PHP as object oriented programming.</li>
+			<li>Java is good if you want to work at a large company or Android Platform.</li>
+			<li>Ruby - Use CodeAcademy; Codewars; Learn Rails (framework)</li>
+		</ul>
+
+		<h3>Frameworks &amp; APIs</h3>
+		<p>Frameworks are a predefined structure that programmers can build upon by changing existing code or adding on code; Programming is an instructions list and Frameworks are essentially pre-made code. Essentially the Frameworks function is similar to coding templates for specific languages.</p>
+
+		<p>Front-end Frameworks; HTML, CSS, Javascript - Template websites provide a CSS sheet and a Grid system/Layout (style sheet that lets you put objects such as buttons or images into columns), UI pack/kit (buttons &amp; objects) will give a premade set of buttons, headers, sliders, components, frames, submitting forms, popups, search boxes, error messages. Interaction snippets are pieces of action code or bits of javascript. Bootstrap is a very popular front end framework.</p>
+
+		<p>Back-end Frameworks - When you set up the server side files, frameworks help set up the file and folder structure. CSS, Images, APIs, Models, Themes; They will give pre-made code for functions. Example, every time you pull from a database you have to write a query to pull the information. The frameworks will provide you with a template for that. Frameworks might index the information and give the system where you can search it. Downloading files. Optimizing images, saving and recalling them. Setting up APIs or setting up a payment terminal. Frameworks will provide structure. Full frameworks give a lot of premade functions and support for a wide variety of use cases. Micro-frameworks focus on core functions, smaller and easier to maintain.</p>
+
+		<h3>Development Environment and the IntegratedDEs;</h3>
+		<p>IDEs provide a template system so that you can program faster; They're similar to frameworks; programs that programmers use to write programs. They include tools that make it easier, has spell check for code or autocomplete features. They help developers organize and structure files before they're uploaded to a webserver; sometimes it includes version control. They're an automatic development environment where you can write code and test it before you can upload it to a website. IDEs can be expensive or adds extra code based on a template.</p>
+		<p>Framework Examples: Visual Studio for low level programming; Xcode for iOS; Java Netbeans; PHPStorm</p>
+		<p>**Libraries function similar as an IDE or Framework; ReactJS and JQuery; HandleBars &amp; Mustache.</p>
+
+		<h3>API Application Programing Interface</h3>
+		<p>Layer that runs outside of your normal code; basically a mini application that runs on top of the larger application that you're building and used to facilitate the transfer of information to external apps that ask for them; they can handle transfers &amp; fulfill info requests; they limit what other apps can ask for; APIs give out details in the best way to access the information you have so it doesn't make a mess or slow down the system of the host. There social media APIs function to let you login to the account of a website and provide the extra data from the social media sites; Less building, more information requests; APIs can be a business model; crunchbase is a business model that has a bunch of API's that you can use; Menu = API, placing an order = Executing an API Call, Food = Systems response. You still need the switch code to reference the API</p>
+
+		<h3>CMS - Content Management Systems</h3>
+		<p>Massive applications that can be installed on a web server and then let a website owner create and manage their website through intuitive and non-programmatic administration panels. Wordpress &amp; Drupal focus on newspapers, blogs, forums, Magento focuses on E-Commerce including Inventory management, SKUs, product imagery; all 3 are built in PHP. Allows the owner to use template websites that can easily add and manage functions such as tracking analytics, sharing information, commenting, storing user submitted content. Site owner &amp; Site contributors</p>
+
+		<p>WordPress focuses on Themes. Themes affect the overall look. <br />Plugins are miniature application that plugs into WordPress. They mostly focus on popups. <br />Extensions - a large piece of another code base you're attaching.</p>
+
+		<p>The Free CMS Websites acted like platforms while using their site and everything made was stored on their servers or sometimes listed directly on their domain.</p>
+
+		<h3>OOP - Object oriented programming</h3>
+		<p>A collection of functions and data that can be grouped into what is called an “object.” Then when you are programming and you need to access some of the information in a class (not object), it's called “instantiation.” It means that the program being written has access to a large chunk of code stored somewhere else. Save time by grouping data and functions together; apply attributes broadly across objects. You create a <i>class</i> and everything in this object is going to be output in a certain way or format. You make mega functions that you call in later to save time programming.</p>
+		<li>Examples of class; Color, Font, Height.</li>
+		<p>The group of classes would apply to the object for each product. In eCommerce, it would be the item for sale, if it's social media then the object = person.</p>
+		<p>OOP scales better than Procedural paradigm (the standard way of developing something; Do this, send this, call this, send this, output this; scale is growth based on users.)</p>
+
+		<p>Other Programming Paradigms; Functional, Imperative, Logical, Procedural</p>
+		<p>Programming Language Concepts; Execution Order, Design Space, Language Design, Higher Order Programming and Functions, Implementation Advantages and Drawbacks. Other related topics would be Process Management, Process Scheduling, Concurrency Issues, CPU Scheduling, Memory Management, Virtual Memory, Mass Storage Systems, Input/Output System</p>
+
+		<h3>Integration</h3>
+		<p>Integration refers to when you merge/collaborate code with multiple people or large existing code like a CMS. It's meant for efficiency.</p>
+		<p>Generally you make an elaborate server setup that can automatically do all of the integrations for you. It allows you to pretty much check progress and make sure that all the parts function together from a technical perspective. 2 different servers; one is called a version control server and the other is a build server. People will take what they've been working on throughout the day and upload it onto the version control server. The build server then checks the version control server and sees if the code executes properly or if there are errors or general issues. Then everyone gets together and troubleshoots it. Generally done with larger companies.</p>
+		<li>Continuous delivery -> Continuous deployment -> Continuous integration</li>
+		<p>With smaller companies you put it on the test and see how it operates in a browser and with users and if it works then you move it over in batches to the live server which is what people see when they go to the URL.</p>
+
+		<h3>Responsive Design</h3>
+		<p>What people used to do is to give separate instructions depending on what screen is loading. There's an app that detects the size of the screen that's viewing it and it automatically stretches or contracts to fit the screen. You can tell responsive design has been used based on the sites usage of white space. There's a lot more buffer zone between objects; Floating code is used; Lots of bug testing; 5 major browsers in different interpretations.</p>
+
+		<h4>Absolute vs Relative.</h4>
+		<p>Absolute has fixed object positions based on pixels.</p>
+		<p>Relative is based on where the other elements on the page are.</p>
+
+		<h3>Hybrid App</h3>
+		<p>Native app is written in the code that the mobile OS recognizes and accepts; native spp for iOS would be in Objective C; Android is written in Java.</p>
+		<p>Web Apps are websites shrunk down to fit and work on a smaller screen that is packaged to look like an app.</p>
+		<p>Hybrid App is an app written in basic web code that goes into a system like Adobe PhoneGap which functions as a compiler that takes that code, compiles it and interprets it in a way that every mobile OS can understand. Downsides are that it lacks interactivity. Harder to control interactivity, less core functions as it's underdeveloped. Netflix uses Hybrid</p>
+		<p>Like Adobe PhoneGap; Adobe Air takes the web apps and compiles it for your desktop.</p>
+
+		<h3>Server Types</h3>
+		<p>You can have Saas on PaaS and then Iaas as a stack. Difference between software and a product; product you own, service you don't. Data that is stored and accessed on a different device or server is considered cloud based.</p>
+
+		<p>SaaS - Software as a Service; the company houses it for them, maintains it for them and leases it out to the user. Web version of the system. Some companies like Adobe make logging into the software only accessible through the web and have the software downloaded to check if you paid to use it. If you have it, shut it off and prevents you from using it. Canva is a simplified version of photoshop. Charge less, but more often and for longer. Access your files anywhere. Continuous updating</p>
+
+		<p>PaaS - Platform as a Service; Set of tools, resources, software that come together to let you build software on top of it. ie Facebook or Slack; designed to assist in building software; AWS, Microsoft Azure (.NET framework, Microsoft SQL, Live Services), Heroku.</p>
+
+		<p>IaaS - Infrastructure as a service - 90% Web Storage like Amazon EC2; Security and firewalling; Routing and network services; Maintenance and load balancing; services like that automatically scale based on your users so that you don't go offline instead of your server overloading.</p>
+
+		<h3>Tech Stacks; Refers to Web and Mobile apps</h3>
+		<p>You reference technology in the form of stacks and you have things on platforms. So first floor would be the OS that's acting as an interpreter, next level would be a browser, then the websites would be the next level. That's how programs would work. When you have technologies that reference each other, that would be called a stack. Stacks are a specific series of technologies.</p>
+		<ul>
+			Tech stacks are comprised of the following:
+			<li>User Interface (Browser) -> Front End</li>
+			<li>The Internet</li>
+			<li>API ->Back End</li>
+			<li>Web Server/Web Framework ->Back End</li>
+			<li>Database ->Back End</li>
+			<li>Operating System ->Back End</li>
+		</ul>
+		<p>General Stack format would be Operating System -> Server System -> Database -> Back-end Language; by default everyone uses HTML, JS, CSS as front end so that doesn't need to be specified.</p>
+		<p>LAMP Stack; Linux - OS, Apache - server software, MySQL - database (user form data or profile info), PHP; Used most often and easiest to learn.</p>
+		<p>WINS; Windows server -> IIS server (host) -> .NET -> Microsoft SQL Server; good for companies that have security concerns or finance. Great for big companies, expensive but slow.</p>
+		<p>MEAN Stack; Mongo DB (database system) , Express (back-end web) , Angular.js (front end framework), Node.js (back-end runtime environment); learn for personal preference</p>
+		<p>FullStack Javascript - Interaction Technology that works on your browser but not your server. Node.js is a system that allows you to create an environment on your browser and then test your javascript. It's not a library or a framework. This allows you to do Front-End and Back-end functions like querying databases, or making calculations, or pulling information from APIs. <br />Asynchronous Javascript; multi-threading, the javascript will be running processes simultaneously so you can be pulling information from the back-end and checking basic validation from the front end. It doesn't work very well with databases as it will be pulling information all the time. Updates pages instantly.</p>
+
+		<h3>Languages</h3>
+		<li>Python - High level programming language that would need a program to convert the language so web browsers or OS can understand it. Uses frameworks like Django &amp; Flask. Used with Web or Desktop platforms.. Better used for technologies like Artificial Intelligence, Machine Learning, Data Analytics. Python also proves to be useful for web development, creating enterprise applications, and GUIs for applications.</li>
+		<li>PHP - PHP Hypertext Processor; Easy to learn general purpose scripting language used for server-side web development but has inefficiencies. Open source language(free). Facebook is built via PHP. Word Press also uses PHP. Cross-platform for destop, mobile, web, and provides a way to do back-end web scripting. Used for CMS (Content Management Systems), eCommerce platforms, and web applications.</li>
+		<li>Ruby - Fast and time saving. Small community, expensive. Poor performance in larger systems; Esty and Groupon use it.</li>
+		<li>SWIFT - New programming language designed by Apple for their iOS. Uses frameworks like Alamofire, RxSwift, &amp; Snapkit. It's more forgiving than Objective C since Objective C is a low level language and it's very strict. Learning SWIFT without Objective C is harder. Paired with Apple's Cocoa and Cocoa Touch framework, Swift can be used to create apps for virtually every Apple device, such as iPhones, iPads, Mac, Watch, and other devices.</li>
+		<li>Java - good if you want to work at a large company or Android Platform. Uses frameworks like Spring, Hibernate, Strut. Used with Web, Mobile, &amp; Desktop. Used extensively on Android, it's a necessity for Andriod Developers. Allows developers to create apps for banking, electronic trading, e-commerce, as well as apps for distributed computing.</li>
+		<li>C &amp; C++ - very low level programming languages that allow for fast performance. Used to create system applications, real-time systems, IoT, embeded systems, games, cloud, containers, and more. Mostly focused for operating systems and system tools.</li>
+		<li>C# - Focuses on application and webdevelopment using .NET. Uses frameworks like .NET, Xamarin. Used on cross-platform, mobile and enterprise software applications. Designed with the focus of the .NET ecosystem so developers can access the large rage of libraries and frameworks offered by Microsoft.</li>
+		<li>Javascript - a high-level programing language that functions as the top frontend programming language for the web. Used with Frontend Scripting or Web &amp; Desktop platforms. Uses frameworks like Node.js, Angular, React.js, Vue, Metor. Handles all the interactions offered by webpages, such as; alerts, events, popups, and etc. Mostly used for enterprise application development. Mostly used for interactive web developement</li>
+		<li>R - Mostly used for data analysis, data science, behavior analysys, or Machine learning projects, it's an intermediate level language. Mostly used on Desktop platforms. Language works well with C, C++, Python, Java, and .NET.</li>
+		<li>Go or Golang - Focused mainly on server-side programming. Used for crossplatform but mostly desktop. Used with frameworks liek Revel or Beego. Fast and simple syntax that is easy and efficient to use. Mostly used for back-end technologies, cloud services, distributed networks, IoT, console utilities, GUI applications, and web applications.</li>
+		<li>SQL - Back-end database management. Allows storing and access to vast amounts of data. Enables developers to create and manage tables and databases for storing relational data over hundreds and thousands of data fields. Databases use SQL through an RDBMS.</li>
+
+		<h3>Miscellaneous Terms &amp; Concepts</h3>
+		<li>Developer Tool Console; powerful free tools for debugging your code. You can experiment with JavaScript in the console. Most web browsers have a developer console. There are different ways to access the tool. Right-click on a space on a webpage and choose to inspect the element. Or Alt+Command+I for Mac; Ctrl + Shift + i for windows. Or F12</li>
+		<li>Javascript Linting Tools are code quality checking tools. Brackets text editor uses JSLint and ESLint. Will highlight errors, could be syntax errors.</li>
+		<li>Output is how you display the results or statements; can be screen, console, or window after the program is run or executed.</li>
+		<li>Input - used to receive information from the user in order to output a result. Forms and text boxes are methods of input that are entered from HTML and javascript reads the data and inputs it into your program.</li>
+		<li>Printing - will take all of the work done so far and present it on the screen.</li>
+		<li>Commenting - How well documented is the code? It's additional explanations about the code; if there's a specific symbol assigned per each language that excludes it from the rest of the code. For example, python has a # followed by a space then anything after “# “ will be excluded from being run. It doesn't have to be in front of a line. For PHP is /* with */ ended for what to ignore.</li>
+		<li>
+			Javascript Events are things a browser or user does to have HTML elements have interactivity to occur. <br />
+			Event listeners wait for an event to occur to respond. Could be onclick.
+		</li>
+
+		<li>Variables - stored information that can be manipulated later. For example, you would have items on a menu, the name of the item would be the variable and then the cost would be the value assigned to the variable. Formulas are then associated based on a subtotal = combined variables selected with the amount and then tip = another amount, then you would have a total variable defined by (subtotal*tip)+subtotal. If variables were not an option then you would have to manually enter the cost each time. It would also be easier to adjust the value that was assigned instead of going through each item and manually adjusting the prices since they're referencing the same variable. <br />Standalone statements are called literal variables;</li>
+		<li>Strings - Have to be stored in a variable so that the defined variable isn't confused as a command; example variable = “string shows text from here”; Escape commands are for variables that have confusing text that can be confused for code.</li>
+		<li>Arrays - Series of pieces of information that are all formatted the same; for example, it would be all numbers, strings, or variables. The “Pointer” is essentially the position of the variable in the array. This will essentially reflect back the data based on the position or order it's in.</li>
+		<pre>
+            $value = array ('string1' 'string2' 'string3')
+            If input () == value; == means i equal toPrint $value; 
+            this will return 'string1' 'string2' 'string3' on the screen</pre>
+		<li>Statements - instructions written to tell the computer what to do; group of words, numbers, and operators that perform a specific task. Statements are composed of Values, operators, Expressions, Keywords, comments. Values are the data, they can be numbers, string, or text. Statements are executed from top to bottom, left to right, one by one.</li>
+		<li>Expressions are any reference to a variable or value or a set of variables or set of variables and values combined with operators. Ex a = b * 7; has 4 expressions. 7 is a literal value expression. B is a variable expression. b * 7 is an arithmetic expression. a = b * 2 is assignment expression where the b * 7; is an expression statement.</li>
+		<li>Algorithm - the written set of instructions</li>
+		<li>Source code - refers to the plain text instructions in the text editor</li>
+		<li>Pair programming - Two people write one piece of code. Designed to increase quality; architecture makes a big difference in programming. Code quality improves, pairing generally has a senior developer with a junior and they learn an enormous amount from the senior.</li>
+
+		<br />
+		<li>User Flow Charts</li>
+		<li></li>
+		<li>Loops</li>
+		<li>Functions</li>
+		<li>Conditionals</li>
+		<li>New Guard; WYSIWYG; What You See Is What You Get - Build your site visually and you grab what you want and place it where you want.</li>
+		<li>GIT - repository for storing project code; it's a process that allows version tracking.</li>
+		<li>GITHUB - Online host that stores repositories for branching and version control. It has Forking that allows for creating versions of the code that's already been uploaded.</li>
+
+		<ul>
+			<li>Squarespace</li>
+			<li>Weebly/Wix.com - limited use cases/customizing</li>
+			<li>Shopify - focuses a lot more on e-commerce but they take a percentage of your store's sales as well as a weekly subscription. Shopify is written in Ruby on Rails; Started off as startups first instead of open source.</li>
+		</ul>
+		<p>**Things to consider for eCommerce: Accepting payment in a different currency, How to detect user fraud or pick up on a bad credit card, Routinely offer sales on certain items to boost sales.</p>
+	</body>
 </html>

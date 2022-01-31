@@ -1,200 +1,197 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Basic HTML Format</title>
-    </head>
-    <body>
-        <!-- Headings -->
-    <h2>Basics to HTML</h2>
-        
-        <!-- Paragraph --> 
-        <p>HTML is Hypertext Markup Language. It provides the basic text that would display on the webpage. You can only edit the text style that's shown on the site. More advanced editing will use CSS for additional display or location formats.</p>
-        <p>HTML consists of a series of elements and the elements are represented by tags. Each tag with a closing tag is essentially is an element. Inline elements do not start on a new line; they take only the necessary width. Block elements will start on a new line and take the full width available. </p>
-        <p>Block Level: &lt;div&gt;, &lt;h1&gt; - &lt;h6&gt;, &lt;p&gt;, &lt;form&gt;</p>
-        <p>Inline level: &lt;span&gt;, &lt;img&gt;, &lt;a&gt;</p>
-        <p>To open a  page in a new tab use target = <a href="http://google.com" target="_blank"> "_blank"</a>. Generally used for external sites</p>
-        <p>HTML tag syntax format is generally set up as &lt;tagname&gt; attributename="attributevalue"&gt;content&lt;/tagname&gt;</p>
-        
-        <!-- Attributes -->
-        <h4>Attributes</h4>
-        <p><i>Attributes</i> go inside opening tags. They could be global attributes like <i>class</i> &amp; <i>id</i>. Class attribute lets us style elements with CSS or selectors with JavaScript.</p>
-        <ul>
-            <li>'src' - image source or directory</li>
-            <li>'width' or 'height' defines the image size in pixels or relative to percentage</li>
-            <li>'alt' - provides alternate text for an image when it cannot be displayed properly for some reason</li>
-            <li>'style' - add styles to the element such as color, font, or size.</li>
-            <li>'lang' - located inside the &lt;html&gt; tag, it declares what language the webpage uses. Ex: &lt;html lang="en-US"&gt;</li>
-            <li>'title' - value of the attribute will be displayed as a tooltip when hovering mouse over the element.
-                <br>Ex: &lt;h2 title="this is a header!"&gt;TitleBlock&lt;/h2&gt;
-                <br>This will display 'TitleBlock' and will display 'this is a header' in small text only when you hover over it with the mouse.</li>
-        </ul> <!-- Attributes-->
-        <p> All  tags can have attributes, they provide informatioon about an element. They can  have 'key' or value pairs or ID tags. (id="someID")</p>
-        
-        <!-- Troubleshooting --> 
-        <h4> Miscellaneous Display Tips </h4>
-        <p>For special characters that would trigger code and not display properly, you would use the '&amp;' symbol followed for the character code. 
-            <br>For example, to display &amp; symbol you would use '&amp;amp;'. 
-            <br>For the '&lt;' you would use '&amp;lt' and the for '&lt;' symbol, you would use '&amp;gt;'.</p> <!--Special Characters -->
-        
-        <p>Inserting Tabs or Spaces</p>
-        <ul>
-            <li>&amp;nbsp; - perceived to be twice the space of a normal space in a line that cannot be broken by a word wrap. Displays as: '&nbsp;'</li>
-            <li>&amp;ensp; - perceived to also be twice the space of a normal space. Displays as: '&ensp;'</li>
-            <li>&amp;emsp; - percieved to be four times the space of a normal space. Displays as: '&emsp;'</li>
-        
-        </ul> <!--Spacing Characters -->
-        <p>Lorem ipsum in visual studio will automatically fill it, or lorem10 for 10 words to test it. </p>
-        
-        <!--Text Tags-->
-        <h3>Text Formatting</h3>
-        <p>Text formatting elements were designed to display special types of text.</p>
-        <ul>
-            <li>&lt;b&gt; - bold
-            <br>&ensp;<b>Bold</b> Text Example</li>
-            
-            <li>&lt;strong&gt; - important text
-            <br>&ensp;<strong>Strong</strong> Text Example</li>
-            
-            <li>&lt;i&gt; - italic 
-            <br>&ensp;<i>Italic</i> Text Example</li>
-            
-            <li>&lt;em&gt; - emphasized text; displays like italic
-            <br>&ensp;<em>Emphasized</em> Text Example</li>
-            
-            <li>&lt;mark&gt; - marked text / highlighted
-            <br>&ensp;<mark>Marked</mark> Text Example</li>
-            
-            <li>&lt;small&gt; - smaller text
-            <br>&ensp;<small>Small</small> Text Example</li>
-            
-            <li>&lt;del&gt; - deleted text / line goes through text
-            <br>&ensp;<del>Deleted</del> Text Example</li>
-            
-            <li>&lt;ins&gt; - inserted text / underlined text
-            <br>&ensp;<ins>Inserted</ins> Text Example</li>
-            
-            <li>&lt;sub&gt; - subscript text; Subscript text can be used for chemical formulas, like H2O:
-            <br>&ensp;Example: CO<sub>2</sub></li>
-            
-            <li>&lt;sup&gt; - superscript text; like squared formula or footnotes.
-            <br>&ensp; Text Example<sup>[2]</sup></li>
-        </ul>
-        
-        <!-- Quotations --> 
-        
-        <h4>Block Quote, Abbreviations, Citing</h4>
-        <p>Quotation and Citation Elements - &lt;blockquote&gt;,&lt;q&gt;, &lt;abbr&gt;, &lt;address&gt;, &lt;cite&gt;, and &lt;bdo&gt;</p>
-        <ul>
-            <li>&lt;blockquote&gt; tag defines a section that is quoted from another source. It’s usually indented.
-                <br>Example: 
-                <pre>&lt;blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum"&gt; <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>&lt;/blockquote&gt;
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Basic HTML Format</title>
+	</head>
+	<body>
+		<!-- Headings -->
+		<h2>Basics to HTML</h2>
+
+		<!-- Paragraph -->
+		<p>HTML is Hypertext Markup Language. It provides the basic text that would display on the webpage. You can only edit the text style that's shown on the site. More advanced editing will use CSS for additional display or location formats.</p>
+		<p>HTML consists of a series of elements and the elements are represented by tags. Each tag with a closing tag is essentially is an element. Inline elements do not start on a new line; they take only the necessary width. Block elements will start on a new line and take the full width available.</p>
+		<p>Block Level: &lt;div&gt;, &lt;h1&gt; - &lt;h6&gt;, &lt;p&gt;, &lt;form&gt;</p>
+		<p>Inline level: &lt;span&gt;, &lt;img&gt;, &lt;a&gt;</p>
+		<p>To open a page in a new tab use target = <a href="http://google.com" target="_blank"> "_blank"</a>. Generally used for external sites</p>
+		<p>HTML tag syntax format is generally set up as &lt;tagname&gt; attributename="attributevalue"&gt;content&lt;/tagname&gt;</p>
+
+		<!-- Attributes -->
+		<h4>Attributes</h4>
+		<p><i>Attributes</i> go inside opening tags. They could be global attributes like <i>class</i> &amp; <i>id</i>. Class attribute lets us style elements with CSS or selectors with JavaScript.</p>
+		<ul>
+			<li>'src' - image source or directory</li>
+			<li>'width' or 'height' defines the image size in pixels or relative to percentage</li>
+			<li>'alt' - provides alternate text for an image when it cannot be displayed properly for some reason</li>
+			<li>'style' - add styles to the element such as color, font, or size.</li>
+			<li>'lang' - located inside the &lt;html&gt; tag, it declares what language the webpage uses. Ex: &lt;html lang="en-US"&gt;</li>
+			<li>'title' - value of the attribute will be displayed as a tooltip when hovering mouse over the element. <br />Ex: &lt;h2 title="this is a header!"&gt;TitleBlock&lt;/h2&gt; <br />This will display 'TitleBlock' and will display 'this is a header' in small text only when you hover over it with the mouse.</li>
+		</ul>
+		<!-- Attributes-->
+		<p>All tags can have attributes, they provide informatioon about an element. They can have 'key' or value pairs or ID tags. (id="someID")</p>
+
+		<!-- Troubleshooting -->
+		<h4>Miscellaneous Display Tips</h4>
+		<p>For special characters that would trigger code and not display properly, you would use the '&amp;' symbol followed for the character code. <br />For example, to display &amp; symbol you would use '&amp;amp;'. <br />For the '&lt;' you would use '&amp;lt' and the for '&lt;' symbol, you would use '&amp;gt;'.</p>
+		<!--Special Characters -->
+
+		<p>Inserting Tabs or Spaces</p>
+		<ul>
+			<li>&amp;nbsp; - perceived to be twice the space of a normal space in a line that cannot be broken by a word wrap. Displays as: '&nbsp;'</li>
+			<li>&amp;ensp; - perceived to also be twice the space of a normal space. Displays as: '&ensp;'</li>
+			<li>&amp;emsp; - percieved to be four times the space of a normal space. Displays as: '&emsp;'</li>
+		</ul>
+		<!--Spacing Characters -->
+		<p>Lorem ipsum in visual studio will automatically fill it, or lorem10 for 10 words to test it.</p>
+
+		<!--Text Tags-->
+		<h3>Text Formatting</h3>
+		<p>Text formatting elements were designed to display special types of text.</p>
+		<ul>
+			<li>&lt;b&gt; - bold <br />&ensp;<b>Bold</b> Text Example</li>
+
+			<li>&lt;strong&gt; - important text <br />&ensp;<strong>Strong</strong> Text Example</li>
+
+			<li>&lt;i&gt; - italic <br />&ensp;<i>Italic</i> Text Example</li>
+
+			<li>&lt;em&gt; - emphasized text; displays like italic <br />&ensp;<em>Emphasized</em> Text Example</li>
+
+			<li>&lt;mark&gt; - marked text / highlighted <br />&ensp;<mark>Marked</mark> Text Example</li>
+
+			<li>&lt;small&gt; - smaller text <br />&ensp;<small>Small</small> Text Example</li>
+
+			<li>&lt;del&gt; - deleted text / line goes through text <br />&ensp;<del>Deleted</del> Text Example</li>
+
+			<li>&lt;ins&gt; - inserted text / underlined text <br />&ensp;<ins>Inserted</ins> Text Example</li>
+
+			<li>&lt;sub&gt; - subscript text; Subscript text can be used for chemical formulas, like H2O: <br />&ensp;Example: CO<sub>2</sub></li>
+
+			<li>&lt;sup&gt; - superscript text; like squared formula or footnotes. <br />&ensp; Text Example<sup>[2]</sup></li>
+		</ul>
+
+		<!-- Quotations -->
+
+		<h4>Block Quote, Abbreviations, Citing</h4>
+		<p>Quotation and Citation Elements - &lt;blockquote&gt;,&lt;q&gt;, &lt;abbr&gt;, &lt;address&gt;, &lt;cite&gt;, and &lt;bdo&gt;</p>
+		<ul>
+			<li>
+				&lt;blockquote&gt; tag defines a section that is quoted from another source. It’s usually indented. <br />Example:
+				<pre>&lt;blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum"&gt; <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>&lt;/blockquote&gt;
                 </pre>
-                <p>Which displays the following: </p>
-                <blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum"> 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </blockquote>
-            </li> <!--<blockquote> -->
-            
-            <li>&lt;q&gt; tag defines short quotes. Browsers add quotation marks around the quote. Browsers usually insert quotation marks around the q element.
-                <br>Example: 
-            <pre>&lt;p&gt;The most common webdeveloper phrase on youtube videos: &lt;q&gt;I have no idea what I'm doing...&lt;/q&gt;&lt;/p&gt;</pre>
-                <p>Which displays the following: </p>
-                <p>The most common webdeveloper phrase on youtube videos: <q>I have no idea what I'm doing...</q></p>
-            </li> <!--<q> -->
-            
-            <li>&lt;abbr&gt; tag defines abbreviation or acronyms like "HTML", "CSS", "WHO", "OSHA", "CDC".
-                <pre>&lt;p&gt;The &lt;abbr title="Centers for Disease Control and Prevention"&gt;CDC&lt;/abbr&gt; was founded on July 1, 1946.&lt;/p&gt;</pre>
-                <p>Which displays the following: </p>
-                <p>The <abbr title="Centers for Disease Control and Prevention">CDC</abbr> was founded on July 1, 1946.</p>
-            </li> <!--<abbr> -->
-            
-            <li>&lt;address&gt; defines the contact information for author/owner of document or article. The text in the element usually renders in italic and browsers will always add a line break before the tag. The contact information can be an email address, URL, physical address, phone number, social media handle, etc.
-                <p>Address Tag Example:</p>
-                <pre>
+				<p>Which displays the following:</p>
+				<blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+			</li>
+			<!--<blockquote> -->
+
+			<li>
+				&lt;q&gt; tag defines short quotes. Browsers add quotation marks around the quote. Browsers usually insert quotation marks around the q element. <br />Example:
+				<pre>&lt;p&gt;The most common webdeveloper phrase on youtube videos: &lt;q&gt;I have no idea what I'm doing...&lt;/q&gt;&lt;/p&gt;</pre>
+				<p>Which displays the following:</p>
+				<p>The most common webdeveloper phrase on youtube videos: <q>I have no idea what I'm doing...</q></p>
+			</li>
+			<!--<q> -->
+
+			<li>
+				&lt;abbr&gt; tag defines abbreviation or acronyms like "HTML", "CSS", "WHO", "OSHA", "CDC".
+				<pre>&lt;p&gt;The &lt;abbr title="Centers for Disease Control and Prevention"&gt;CDC&lt;/abbr&gt; was founded on July 1, 1946.&lt;/p&gt;</pre>
+				<p>Which displays the following:</p>
+				<p>The <abbr title="Centers for Disease Control and Prevention">CDC</abbr> was founded on July 1, 1946.</p>
+			</li>
+			<!--<abbr> -->
+
+			<li>
+				&lt;address&gt; defines the contact information for author/owner of document or article. The text in the element usually renders in italic and browsers will always add a line break before the tag. The contact information can be an email address, URL, physical address, phone number, social media handle, etc.
+				<p>Address Tag Example:</p>
+				<pre>
                 &lt;address&gt;Written by Dr. John Watson
                 &lt;br&gt;Visit us at: https://en.wikipedia.org/wiki/221B_Baker_Street
                 &lt;br&gt;221B Baker Street, 
                 &lt;br&gt;London, UK
                 &lt;/address&gt;
-                </pre>
-                
-                <p>Which displays the following: </p>
-                <address>Written by Dr. John Watson
-                <br>Visit us at: https://en.wikipedia.org/wiki/221B_Baker_Street
-                <br>221B Baker Street, 
-                <br>London, UK
-                </address>
-                
-            </li> <!-- <address>-->
-            
-            <li>&lt;cite&gt;tag defines the title of creative work.
-                <p>Following us an example of using a <i>cite</i> tag:</p>
-                <pre>
+                </pre
+				>
+
+				<p>Which displays the following:</p>
+				<address>Written by Dr. John Watson <br />Visit us at: https://en.wikipedia.org/wiki/221B_Baker_Street <br />221B Baker Street, <br />London, UK</address>
+			</li>
+			<!-- <address>-->
+
+			<li>
+				&lt;cite&gt;tag defines the title of creative work.
+				<p>Following us an example of using a <i>cite</i> tag:</p>
+				<pre>
                 &lt;img src="https://www.vangoghgallery.com/img/starry_night_full.jpg" width="300" alt="Starry Night"&gt;
                 &lt;p&gt;&lt;cite&gt;Starry Night&lt;/cite&gt; by Vincent van Gogh. Painted in 1889.&lt;/p&gt;
                 
-                </pre>
-                <p>Which displays the following: </p>
-                <img src="https://www.vangoghgallery.com/img/starry_night_full.jpg" width="300" alt="Starry Night">
-                <p><cite>Starry Night</cite> by Vincent van Gogh. Painted in 1889.</p>
-                
-            </li> <!--<cite>-->
-            
-            <li>&lt;bdo&gt; is used to override the current text direction: BDO stands for Bi-Directional Override.
-                <p>Example:</p>
-                <pre>&lt;bdo dir="rtl"&gt;This text will be written from right to left&lt;/bdo&gt;</pre>
-                <p>Which displays the following: </p>
-                <bdo dir="rtl">Text will go from right to left.</bdo>
-            </li> <!--<bdo> or Bi-Directional Override-->
-            
-        </ul>
-        
-         <!-- Images -->
-        <h3>Images</h3>
-        <p>The &lt;img&gt; tag is used to insert images. Images are self closing and do not require a closing tag. They always include a 'src' or source attribute to define where the image directory is located. </p>
-        <p>The file path is case sensitive, so if there is a typo then the image will show the alt text. Src attributes can go to either another website/absolute URL or relative URL. Relative URLs are better so they will not break if you change domains.</p>
-        <p>The 'alt' attribute will provides alternate text for an image when it cannot be displayed properly.</p>
-        <p>The following is an example of using the image tag: </p>
-        <pre>         
+                </pre
+				>
+				<p>Which displays the following:</p>
+				<img src="https://www.vangoghgallery.com/img/starry_night_full.jpg" width="300" alt="Starry Night" />
+				<p><cite>Starry Night</cite> by Vincent van Gogh. Painted in 1889.</p>
+			</li>
+			<!--<cite>-->
+
+			<li>
+				&lt;bdo&gt; is used to override the current text direction: BDO stands for Bi-Directional Override.
+				<p>Example:</p>
+				<pre>&lt;bdo dir="rtl"&gt;This text will be written from right to left&lt;/bdo&gt;</pre>
+				<p>Which displays the following:</p>
+				<bdo dir="rtl">Text will go from right to left.</bdo>
+			</li>
+			<!--<bdo> or Bi-Directional Override-->
+		</ul>
+
+		<!-- Images -->
+		<h3>Images</h3>
+		<p>The &lt;img&gt; tag is used to insert images. Images are self closing and do not require a closing tag. They always include a 'src' or source attribute to define where the image directory is located.</p>
+		<p>The file path is case sensitive, so if there is a typo then the image will show the alt text. Src attributes can go to either another website/absolute URL or relative URL. Relative URLs are better so they will not break if you change domains.</p>
+		<p>The 'alt' attribute will provides alternate text for an image when it cannot be displayed properly.</p>
+		<p>The following is an example of using the image tag:</p>
+		<pre>
+         
         &lt;a href="/sample-site/images/example.jpg"&gt;
             &lt;website-project/sample-site/images/CupAdventure.jpg" alt="Simple Sample Image" width="300"&gt;
         &lt;/a&gt;
-        </pre>
+        </pre
+		>
 
-        <p>Which displays the following: </p>
-        <a href="website-project/sample-site/images/CupAdventure.jpg">
-            <img src="website-project/sample-site/images/CupAdventure.jpg" alt="Simple Sample Image" width="300">
-        </a>
-        
-        <p>The &lt;a&gt; tag is used to create hyperlinks. When you have the directory for the image as a the hyperlink, it essentially functions like viewing the image from your web browser.</p>
-        <p>Images are not technically inserted into a web page but are linked to web pages. The &lt;img&gt; tag creates a holding space for the referenced image. HTML allows animated gifs</p>
-        <ul><b>Types of Images:</b>
-            <li>APNG - Portable Network Graphics;	.apng</li>
-            <li>GIF	- Graphics Interchange Format;	.gif</li>
-            <li>ICO	- Microsoft Icon;	.ico, .cur</li>
-            <li>JPEG - Joint Photographic Expert Group image;	.jpg, .jpeg, .jfif, .pjpeg, .pjp</li>
-            <li>PNG	- Portable Network Graphics;	.png</li>
-            <li>SVG	- Scalable Vector Graphics;	.svg</li>           
-        </ul>
-        <!-- Lists --> 
-        <h3>List Items</h3>
-        <ul>
-            <li> List items are items using the &lt;li&gt; tag. They are enclosed in either the &lt;ul&gt; or &lt;ol&gt; tag</li>
-            <li> &lt;ul&gt; tag represents <i>Unordered Lists</i> and they're generally used in the navigation bar that are styled to flow to the right and displayed in line.</li>
-            <li>By default, the list item tags are set as a block. These lists items are displayed with disc bullet points but you can edit it in the style sheet by editing the 'list-style-type: disc;' attribute.</li>
-            <li>On the other hand, when using the &lt;ol&gt; tag or <i>ordered lists</i> will show bullets as numbers.</li>                        
-        </ul>
-        
-        <!--Table -->
-        <h4>Creating Tables</h4>
-        <p>Generated by using the &lt;table&gt; element tag.</p>
-        <p>Enclosed in the tag is the &lt;thead&gt; tag the which represents the heading row which includes all of the column names. You need to create the &lt;tr&gt; tag which is represented by table row followed by &lt;th&gt; tag to display column names.</p>
-        <p>Like the rest of HTML, the &lt;body&gt; tag follows the &lt;head&gt; tag. Tables use the &lt;tbody&gt; element tag. Instead of using &lt;tr&gt; tag, the &lt;tbody&gt; tag utilizes &lt;td&gt; tag for table data.</p>
-        <p>In order you create additional rows, you would just use another line with the &lt;td&gt; tag nested in between the <i>table row</i> &lt;tr&gt; tag.</p>
-        
-        <h4>Table Example</h4>
-        <p> Below is an example of a simple table. </p>
-        <pre>
+		<p>Which displays the following:</p>
+		<a href="website-project/sample-site/images/CupAdventure.jpg">
+			<img src="website-project/sample-site/images/CupAdventure.jpg" alt="Simple Sample Image" width="300" />
+		</a>
+
+		<p>The &lt;a&gt; tag is used to create hyperlinks. When you have the directory for the image as a the hyperlink, it essentially functions like viewing the image from your web browser.</p>
+		<p>Images are not technically inserted into a web page but are linked to web pages. The &lt;img&gt; tag creates a holding space for the referenced image. HTML allows animated gifs</p>
+		<ul>
+			<b>Types of Images:</b>
+			<li>APNG - Portable Network Graphics; .apng</li>
+			<li>GIF - Graphics Interchange Format; .gif</li>
+			<li>ICO - Microsoft Icon; .ico, .cur</li>
+			<li>JPEG - Joint Photographic Expert Group image; .jpg, .jpeg, .jfif, .pjpeg, .pjp</li>
+			<li>PNG - Portable Network Graphics; .png</li>
+			<li>SVG - Scalable Vector Graphics; .svg</li>
+		</ul>
+		<!-- Lists -->
+		<h3>List Items</h3>
+		<ul>
+			<li>List items are items using the &lt;li&gt; tag. They are enclosed in either the &lt;ul&gt; or &lt;ol&gt; tag</li>
+			<li>&lt;ul&gt; tag represents <i>Unordered Lists</i> and they're generally used in the navigation bar that are styled to flow to the right and displayed in line.</li>
+			<li>By default, the list item tags are set as a block. These lists items are displayed with disc bullet points but you can edit it in the style sheet by editing the 'list-style-type: disc;' attribute.</li>
+			<li>On the other hand, when using the &lt;ol&gt; tag or <i>ordered lists</i> will show bullets as numbers.</li>
+		</ul>
+
+		<!--Table -->
+		<h4>Creating Tables</h4>
+		<p>Generated by using the &lt;table&gt; element tag.</p>
+		<p>Enclosed in the tag is the &lt;thead&gt; tag the which represents the heading row which includes all of the column names. You need to create the &lt;tr&gt; tag which is represented by table row followed by &lt;th&gt; tag to display column names.</p>
+		<p>Like the rest of HTML, the &lt;body&gt; tag follows the &lt;head&gt; tag. Tables use the &lt;tbody&gt; element tag. Instead of using &lt;tr&gt; tag, the &lt;tbody&gt; tag utilizes &lt;td&gt; tag for table data.</p>
+		<p>In order you create additional rows, you would just use another line with the &lt;td&gt; tag nested in between the <i>table row</i> &lt;tr&gt; tag.</p>
+
+		<h4>Table Example</h4>
+		<p>Below is an example of a simple table.</p>
+		<pre>
         
         &lt;table&gt;
             &lt;thead&gt;
@@ -220,90 +217,90 @@
                     &lt;td&gt;777-555-8787&lt;/td&gt;
                     &lt;td&gt;1stwed@webdomain.com&lt;/td&gt;
                 &lt;/tbody&gt;
-       &lt;/table&gt;        
-        </pre> <p> This code displays the following:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>Email </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>777-888-9999</td>
-                    <td>jdoe@webdomain.com</td>
-                </tr>
-                <tr>
-                    <td>Jane Doe</td>
-                    <td>777-878-7878</td>
-                    <td>janedoe@webdomain.com</td>
-                </tr>
-                <tr>
-                    <td>First Wednesday</td>
-                    <td>777-555-8787</td>
-                    <td>1stwed@webdomain.com</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Forms --> 
-        <h4>Creating Forms</h4>
-        <p>You can create forms on HTML, however you cannot add functions to it. You can build the actual output display however it requires another language with dynamic functionality to store or use the data.
-        <br>Usually with a form, it will have an attribute called action that references another file to submit the form to another page like a news form or register form followed by a post method. 
+				&lt;/table&gt;        
+        </pre
+		>
+		<p>This code displays the following:</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>John Doe</td>
+					<td>777-888-9999</td>
+					<td>jdoe@webdomain.com</td>
+				</tr>
+				<tr>
+					<td>Jane Doe</td>
+					<td>777-878-7878</td>
+					<td>janedoe@webdomain.com</td>
+				</tr>
+				<tr>
+					<td>First Wednesday</td>
+					<td>777-555-8787</td>
+					<td>1stwed@webdomain.com</td>
+				</tr>
+			</tbody>
+		</table>
 
-            <p><i>Syntax Example:</i> &lt;form action="process.css" method="POST"&gt; </p> 
-        
-        <p>Methods are generally  requests to a server using POST action which adds data to a database without displaying the data submitted in the URL as opposed to the GET action that does display it in the URL. The GET action is usually used by search functions where you do not enter any data to a server.</p>
-        <p>The &lt;label&gt; tag is used to create a label that doesn't have any fields to insert data. You would generally use the &lt;input&gt; tag to create a field.
-        <br>Both &lt;label&gt; and &lt;input&gt; tags are both inline by default. In order to separate them, you would use the &lt;div&gt; tag to put each field into it's own block.</p>
-        
-        <p> Below is an example of a simple table. </p>     
-        
-        <h4> Form Example </h4>
-        <p> Below is an example of some basic form options</p>
-        <form action="process.css" method="POST">
-            <div>
-                <label>First Name:</label>
-                <input type="text" name="firstName" placeholder="Enter first name">
-            </div>
-            <div>
-                <label>Last Name:</label>
-                <input type="text" name="lastName" placeholder="Enter last name">
-            </div>
-            <div>
-                <label>Email:</label>
-                <input type="email" name="emailAddress">
-            </div>
-            <div>
-                <label>Birthday:</label>
-                <input type="date" name="birthday">
-            </div>
-            <div>
-                <label>Quantity:</label>
-                <input type="number" name="quantity" value="1">
-            </div>
-            <div>
-                <label>Topic:</label>
-                <select name ="emailTopic">
-                    <option value ="newOrder">New Order</option>
-                    <option value ="customerService">General Customer Service</option>
-                    <option value ="productSupport">Order Support</option>
-                    <option value ="suggestiions">Suggestions</option>
-                    <option value ="other">Other</option>
-                </select>
-            </div>
-            <div>
-                <label>Message:</label>
-                <textarea name="message"></textarea>
-            </div>
-            <input type="submit" name="submit" value="Submit">
-        </form>
-        
-        <p>The form is generated using the following HTML5 code:</p>
-        <pre>
+		<!-- Forms -->
+		<h4>Creating Forms</h4>
+		<p>You can create forms on HTML, however you cannot add functions to it. You can build the actual output display however it requires another language with dynamic functionality to store or use the data. <br />Usually with a form, it will have an attribute called action that references another file to submit the form to another page like a news form or register form followed by a post method.</p>
+
+		<p><i>Syntax Example:</i> &lt;form action="process.css" method="POST"&gt;</p>
+
+		<p>Methods are generally requests to a server using POST action which adds data to a database without displaying the data submitted in the URL as opposed to the GET action that does display it in the URL. The GET action is usually used by search functions where you do not enter any data to a server.</p>
+		<p>The &lt;label&gt; tag is used to create a label that doesn't have any fields to insert data. You would generally use the &lt;input&gt; tag to create a field. <br />Both &lt;label&gt; and &lt;input&gt; tags are both inline by default. In order to separate them, you would use the &lt;div&gt; tag to put each field into it's own block.</p>
+
+		<p>Below is an example of a simple table.</p>
+
+		<h4>Form Example</h4>
+		<p>Below is an example of some basic form options</p>
+		<form action="process.css" method="POST">
+			<div>
+				<label>First Name:</label>
+				<input type="text" name="firstName" placeholder="Enter first name" />
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type="text" name="lastName" placeholder="Enter last name" />
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="email" name="emailAddress" />
+			</div>
+			<div>
+				<label>Birthday:</label>
+				<input type="date" name="birthday" />
+			</div>
+			<div>
+				<label>Quantity:</label>
+				<input type="number" name="quantity" value="1" />
+			</div>
+			<div>
+				<label>Topic:</label>
+				<select name="emailTopic">
+					<option value="newOrder">New Order</option>
+					<option value="customerService">General Customer Service</option>
+					<option value="productSupport">Order Support</option>
+					<option value="suggestiions">Suggestions</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<div>
+				<label>Message:</label>
+				<textarea name="message"></textarea>
+			</div>
+			<input type="submit" name="submit" value="Submit" />
+		</form>
+
+		<p>The form is generated using the following HTML5 code:</p>
+		<pre>
         &lt;form action="process.css" method="POST"&gt;
             &lt;div&gt;
                 &lt;label&gt;First Name:&lt;/label&gt;
@@ -340,50 +337,50 @@
                 &lt;textarea name="message"&gt;&lt;/textarea&gt;
             &lt;/div&gt;
             &lt;input type="submit" name="submit" value="Submit"&gt;
-        &lt;/form&gt;</pre>
-                
-        <p>The <i>type</i> input attribute in the example defines what type of data is being submitted. There are various type attributes: </p>
-            <ul>
-                <li>"text" attribute" allows text values too be entered.</li>
-                <li>"email" attribute will check if the email address is valid and display an error alert if it isn't. </li>
-                <li>"date" attribute only allows date entries or brings up a calendar to select dates</li>
-                <li>"number" attribute only allows number values to be  entered</li>
-            </ul>
-        <p>The <i>name</i> input attribute is meant for serverside programming and the attribute is how we would call the value from the form.
-        <p>The &lt;textarea&gt; tag with the <i>name</i> textarea attribute is used to create the message field where you can click  and drag the corner to edit the size of the text box.</p>
-        <p>The <i>"value"</i> input attribute displays black text in the field. Use the <i>"placeholder"</i> input attribute instead in order to display faded gray text.</p>
-        <p>**The &lt;input type="submit  name="submit"  value="Submit"&gt; before the &lt;<i>/form</i>&gt; closing tag creates a button that submits the form to a process the action defined in the form tag.</p>
-        
-        <!-- Buttons -->
-        <h3>Buttons</h3>
-        <p>&lt;Button&gt; tags are just as the tag name implies, they create a button but function but to have to be added using javascript or other functions</p>
-        <button>Click This!</button>
-                    
-        <!--HTML5 Semantic Tags-->
-        <h4>HTML5 Semantic Tags</h4>
-        <p>A semantic element clearly describes it's meaning to both the developer and the browser. Generally used to lay out your website.</p>
-        <ul>
-            <li>&lt;header&gt; tags include your logo and social media links</li>
-            
-            <li>&lt;footer&gt; tags are generally for your copyright or privacy policy links</li>
-            
-            <li>&lt;aside&gt; side bar content.</li>
-            
-            <li>&lt;main&gt;</li>
-            
-            <li>&lt;article&gt; generally used for blogs and you can have an article tag around each post.</li>
-            
-            <li>&lt;nav&gt; as the tag implies is meant for your navigation bar.</li>
-            
-            <li>&lt;section&gt; the copy text that's generally displayed on your home page.</li>
-            
-            <li>&lt;details&gt;</li>
-        
-        </ul>
-        <img src="https://www.w3schools.com/html/img_sem_elements.gif">
-        
-        <p><b>Example Layout</b></p>
-        <pre>
+        &lt;/form&gt;</pre
+		>
+
+		<p>The <i>type</i> input attribute in the example defines what type of data is being submitted. There are various type attributes:</p>
+		<ul>
+			<li>"text" attribute" allows text values too be entered.</li>
+			<li>"email" attribute will check if the email address is valid and display an error alert if it isn't.</li>
+			<li>"date" attribute only allows date entries or brings up a calendar to select dates</li>
+			<li>"number" attribute only allows number values to be entered</li>
+		</ul>
+		<p>The <i>name</i> input attribute is meant for serverside programming and the attribute is how we would call the value from the form.</p>
+		<p>The &lt;textarea&gt; tag with the <i>name</i> textarea attribute is used to create the message field where you can click and drag the corner to edit the size of the text box.</p>
+		<p>The <i>"value"</i> input attribute displays black text in the field. Use the <i>"placeholder"</i> input attribute instead in order to display faded gray text.</p>
+		<p>**The &lt;input type="submit name="submit" value="Submit"&gt; before the &lt;<i>/form</i>&gt; closing tag creates a button that submits the form to a process the action defined in the form tag.</p>
+
+		<!-- Buttons -->
+		<h3>Buttons</h3>
+		<p>&lt;Button&gt; tags are just as the tag name implies, they create a button but function but to have to be added using javascript or other functions</p>
+		<button>Click This!</button>
+
+		<!--HTML5 Semantic Tags-->
+		<h4>HTML5 Semantic Tags</h4>
+		<p>A semantic element clearly describes it's meaning to both the developer and the browser. Generally used to lay out your website.</p>
+		<ul>
+			<li>&lt;header&gt; tags include your logo and social media links</li>
+
+			<li>&lt;footer&gt; tags are generally for your copyright or privacy policy links</li>
+
+			<li>&lt;aside&gt; side bar content.</li>
+
+			<li>&lt;main&gt;</li>
+
+			<li>&lt;article&gt; generally used for blogs and you can have an article tag around each post.</li>
+
+			<li>&lt;nav&gt; as the tag implies is meant for your navigation bar.</li>
+
+			<li>&lt;section&gt; the copy text that's generally displayed on your home page.</li>
+
+			<li>&lt;details&gt;</li>
+		</ul>
+		<img src="https://www.w3schools.com/html/img_sem_elements.gif" />
+
+		<p><b>Example Layout</b></p>
+		<pre>
         &lt;html&gt;
             &lt;head&gt;
                 &lt;title&gt;Blogs for Days&lt;/title&gt;
@@ -436,60 +433,62 @@
                 &lt;/footer>
         &lt;/body>
         &lt;/html> 
-        </pre> <!-- HTML5 Syntax Example-->
-        <p>This displays the following:</p>
-        <html>
-            <head>
-                <title>Blogs for Days</title>
-                <meta name="description" content="simple sample blog">
-                <meta name="keywords" content="simple sample blog company name">
-            </head>
-            <body>
-                <header id="main-header">
-                    <h2>My Very Own Blog Website</h2>
-                </header>
-                
-                <a href="index.html">Go to Home Page</a>
-                
-                <section>
-                    <article class="post">
-                        <h3>First Post: Day 1</h3>
-                        <small>Posted by John Doe on May 4, 2021</small>
-                        <p>Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <small><a href="post.html">Read more...</a></small>
-                    </article>
-                    
-                    <article class="post">
-                        <h3>Second Post: Week 1</h3>
-                        <small>Posted by John Doe on May 11, 2021</small>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <small><a href="post.html">Read more...</a></small>
-                    </article>
-                    
-                    <article class="post">
-                        <h3>Third Post: Week 3</h3>
-                        <small>Posted by John Doe on May 24, 2021</small>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <small><a href="post.html">Read more...</a></small>
-                    </article>
-                </section>
-                
-                <aside>
-                    <h2>Categories</h2> <!--This part would generally be customized using CSS and alligned to the side-->
-                    <nav>
-                        <ul>
-                            <li><a href="#">Category 1</a></li>
-                            <li><a href="#">Category 1</a></li>
-                            <li><a href="#">Category 1</a></li>
-                        </ul>
-                    </nav>
-                </aside>
-                
-                <footer id="main-footer">
-                    <p>Copyright &copy; 2021</p>
-                </footer>
-        </body>
-        </html> <!-- HTML5 Syntax Display-->
-        
-    </body>
+        </pre>
+		<!-- HTML5 Syntax Example-->
+		<p>This displays the following:</p>
+		<html>
+			<head>
+				<title>Blogs for Days</title>
+				<meta name="description" content="simple sample blog" />
+				<meta name="keywords" content="simple sample blog company name" />
+			</head>
+			<body>
+				<header id="main-header">
+					<h2>My Very Own Blog Website</h2>
+				</header>
+
+				<a href="index.html">Go to Home Page</a>
+
+				<section>
+					<article class="post">
+						<h3>First Post: Day 1</h3>
+						<small>Posted by John Doe on May 4, 2021</small>
+						<p>Each article that goes here will be a blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<small><a href="post.html">Read more...</a></small>
+					</article>
+
+					<article class="post">
+						<h3>Second Post: Week 1</h3>
+						<small>Posted by John Doe on May 11, 2021</small>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<small><a href="post.html">Read more...</a></small>
+					</article>
+
+					<article class="post">
+						<h3>Third Post: Week 3</h3>
+						<small>Posted by John Doe on May 24, 2021</small>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<small><a href="post.html">Read more...</a></small>
+					</article>
+				</section>
+
+				<aside>
+					<h2>Categories</h2>
+					<!--This part would generally be customized using CSS and alligned to the side-->
+					<nav>
+						<ul>
+							<li><a href="#">Category 1</a></li>
+							<li><a href="#">Category 1</a></li>
+							<li><a href="#">Category 1</a></li>
+						</ul>
+					</nav>
+				</aside>
+
+				<footer id="main-footer">
+					<p>Copyright &copy; 2021</p>
+				</footer>
+			</body>
+		</html>
+		<!-- HTML5 Syntax Display-->
+	</body>
 </html>
