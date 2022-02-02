@@ -967,6 +967,21 @@
         console.log(solution(inputString)); //confirmed result
     </pre>
 
+    <p>Regular expressions are expressions that define a specific or match a search pattern.</p>
+    <pre>
+        function palindrome(string) {
+            var reg = /[\W_]/g    // '/' initiates the regular expression. '[]' is the container, '\W_' stands for non-alphanumeric values, '/g' for global to go through the whole string.
+            var smallString = string.toLowerCase().replace(reg, "");    //removes all non-alphanumeric characters and replaces it with nothing ("").
+
+            var reversed = smallString.split("").reverse().join("");    //splits parameter, reverses string, recombines it.
+            if (reversed === smallString) return true;       // if type & value is equal, return true
+
+            return false;       //else return false
+        }
+        
+        palindrome("racecar");
+    </pre>
+
     <h3>Mutation Array</h3>
     <p>n is a number; a is an array; mutation = changes to the array. Need b to be sum of a[i-1], a[0], a[i+1]. In the case where one of those is not true, then b[0] needs to be 0.</p>
 
@@ -1011,6 +1026,51 @@
         n = 5
         a = [4, 0, 1, -2, 3]
         console.log(solution(n,a))
+    </pre>
+
+    <h3>Finding the length of the longest word</h3>
+    <p>Return the length of the longest word in the provided sentence. Response should be a number.</p>
+
+    <pre>
+        function findLongestWord(string) {
+            var words = string.split(" ");   //creates an array of words as a string based on spaces.
+            var longest ="";    //indicates empty string
+          
+            for (var word of words) {   //of goes over the elements without indexing.
+              if (word.length > longest.length) longest = word;
+              }
+              return longest.length;
+            }
+    </pre>
+
+    <h3>Title Case</h3>
+    <p>Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case. </p>
+    <pre>
+        function titleCase(string) {
+            var words = string.toLowerCase().split(" ");  //converts to lowercase then splits each word seperated by a space.
+          
+            for (i=0; i&lt;words.length; i++) {
+              words[i] = words[i][0].toUpperCase() + words[i].slice(1)  //Sets each word to select first letter and convert it to Uppercase with a method then rejoins it with the rest of the word.
+            }
+          
+            return words.join(" "); //joins array back together as a string with a space in between. 
+          }
+          
+          console.log(titleCase("I'm a little tea pot"))
+    </pre>
+
+    <pre>
+        function titleCase(string) {
+            var titled = string.toLowerCase().split(' ').map(function(elem) {
+              return elem[0].toUpperCase() + elem.slice(1);
+            })
+          
+          //converts everything to lower case then splits each word seperated by a space. Map method then takes the function then goes through an array and loops through an array of elements and returns the changes specified in the return 
+          
+            return titled.join(" "); //joins array back together as a string with a space in between. 
+          }
+          
+          console.log(titleCase("I'm a little tea pot"))
     </pre>
     
 </body>
