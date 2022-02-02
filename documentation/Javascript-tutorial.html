@@ -934,22 +934,17 @@
     <p>Note: remove all non-alphanumeric characters(punctuation, spaces, and symbols) and turn everything to lowercase in order to check for palindromes</p>
 
     <pre>
-        function palindrome(string){
-
-            function reverseString(string) {
-                var final; 
-                for(var i = string.length - 1; i >=0; i--) {    // done in a bit differently to get the descending values as we need to start from the end. loop control has the '-1' is there since javascript index's start at 0 so you need to subtract 1 to get the last index. condition is going down so '>='' for the condition and '--' for the increments.
-                    final += string[i];
-                }
-                return final; 
+        function solution(inputString) {
+            const length = inputString.length;
+            const center = length / 2;     //starting point and end point should meet in the center
+          
+            for (let i = 0; i &lt; center; i++) {     
+              if (inputString[i] !== inputString[length - 1 - i]) {        //if start and end do not equal each other 
+                return false;      //return !true value for false
+              }
             }
-            if (reverseString === string) return true;        // can be on the same line as it's only one argument.
-            
-            return false;   //do not use } else { in this instance as it will make the values the same and not run through the code. 
-
-        }
-
-        palindrome('eye')
+            return true;       //return true value for !false
+          }
     </pre>
 
     <pre>
@@ -972,9 +967,51 @@
         console.log(solution(inputString)); //confirmed result
     </pre>
 
+    <h3>Mutation Array</h3>
+    <p>n is a number; a is an array; mutation = changes to the array. Need b to be sum of a[i-1], a[0], a[i+1]. In the case where one of those is not true, then b[0] needs to be 0.</p>
 
+    <pre>
+        function solution(n, a) { //n is a number; a is an array; mutation = changes to the array
+        var b = []; // array type n.length
+        for(i=0; i &lt; n; i++) {
+            if (n==1) {
+                b[0] = a[0]
+            }else if (i==0) {     //condition if index is 0
+                b[0] = a[0] + a[1]   // b first number = a first number + number to right
+            } else if (i==n-1){     //condition for index is at the end
+                b[i] = a[i-1] + a[i]    //b next number + number to left
+            } else {    //conditon for ints being present left and right.
+                b[i] = a[i-1] + a[i] + a[i+1]     //b index plus left right and self
+            
+                }
+                return b
+            }
+        }
 
+        n = 5
+        a = [4, 0, 1, -2, 3]
+        console.log(solution(n,a))
+    </pre>
 
+    <pre>
+        function solution(n, a) { //n is a number that represents the array.length; a is an array; mutation = changes to the array
+            for (i=0; i &lt; n; i++) {
+                b[i] = a[i]; // not empty array container, pushes value for 'a' array with same index 
+                
+                if (i-1 >=0) {  // index -1 is greater than or equal to 0
+                    b[i] = b[i] + a[i-1];   //then add number to the left
+                }
+                if(i + 1 &lt; n) {   // if index +1 less than length of array
+                    b[i] += a[i+1]   //then add number to the right
+                }
+            }
+            return b
+        }
+
+        n = 5
+        a = [4, 0, 1, -2, 3]
+        console.log(solution(n,a))
+    </pre>
     
 </body>
 </html>
