@@ -1104,6 +1104,49 @@
           
           console.log(titleCase("I'm a little tea pot"))
     </pre>
+
+    <h3>Largest Numbers in Array</h3>
+    <p>Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays. </p>
+    <p>Remember, you can iterate through an array with a simple for loop, and access each memember with array syntax arr[i]</p>
+    <p>Two dimensional arrays are arrays that are stored within arrays. Note: Expected outcome should be [5, 27, 39, 1001]</p>
+
+    <pre>
+        function largestOfFour(array) {
+            var maxArray = [];
+          
+            for (i=0; i &lt; array.length; i++) { //goes through each array
+                var max = array[i][0];  //everytime loop runs, make outter loop = first number in each inner array.
+                for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
+                var currentElement = array[i][j];
+                if (currentElement >= max) {//Selects through each number to the array. 
+                    max = currentElement; //if true then it reassigns nax value to = currentElement. 
+                }
+            }
+            maxArray.push(max); //adds the max number into the set outter array container. This runs until there's no new array indicated by array.length.
+            }
+            return maxArray;  //once inner loop executes, then the stored values are returned.
+        }
+        
+        console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+    </pre>
+
+    <pre>
+        function largestOfFour(array) {
+            var maxArray = [0, 0, 0, 0];  //predetermine array container with values
+          
+            for (i=0; i &lt; array.length; i++) { //goes through each array
+                for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
+                var currentElement = array[i][j]; //creates element to go through and select new current index location
+                if (currentElement >= maxArray[i]) {  //Selects through each array. 
+                    maxArray[i] = currentElement; //if true then it reassigns max value to = currentElement. 
+                }
+            }    
+        }
+        return maxArray;  //once inner loop executes, then the stored values are returned.
+        }
+        
+        console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+    </pre>
     
 </body>
 </html>
