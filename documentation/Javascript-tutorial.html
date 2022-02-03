@@ -877,9 +877,9 @@
     <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
 
 
-    <h3>Coding Challenge Logic</h3>
+    <h2>Coding Challenge Logic</h2>
 
-    <h4>Reverse a String</h4>
+    <h3>Reverse a String</h3>
     <p>Challenge; Create a function to reverse a string.</p>
 
     <pre>
@@ -1034,6 +1034,29 @@
     <pre>
         function findLongestWord(string) {
             var words = string.split(" ");   //creates an array of words as a string based on spaces.
+            var longest = 0;  
+          
+            for(i=0; i &lt; words.length; i++) {    //initiates loop
+          
+              if (words[i].length > longest)
+              {  
+                longest = words[i].length;
+              }
+              
+          }
+          
+          return longest;
+          }
+
+          string = 'The quick brown fox jumped over the lazy dog';
+          console.log(findLongestWord(string));
+          console.log(findLongestWord("abc a"));
+          console.log(findLongestWord("a"));
+    </pre>
+
+    <pre>
+        function findLongestWord(string) {
+            var words = string.split(" ");   //creates an array of words as a string based on spaces.
             var longest ="";    //indicates empty string
           
             for (var word of words) {   //of goes over the elements without indexing.
@@ -1041,6 +1064,17 @@
               }
               return longest.length;
             }
+    </pre>
+
+    <pre>
+        function findLongestWord(string) {
+            return string.split(" ").sort(function(a, b) {return b.length - a.length})[0].length;  //splits the string then sorts it using the sort method. the function makes it sort in descending order and will provide the first index which should be longest word. 
+        }
+
+        string = 'The quick brown fox jumped over the lazy dog';
+          console.log(findLongestWord(string));
+          console.log(findLongestWord("abc a"));
+          console.log(findLongestWord("a"));
     </pre>
 
     <h3>Title Case</h3>
@@ -1063,9 +1097,7 @@
         function titleCase(string) {
             var titled = string.toLowerCase().split(' ').map(function(elem) {
               return elem[0].toUpperCase() + elem.slice(1);
-            })
-          
-          //converts everything to lower case then splits each word seperated by a space. Map method then takes the function then goes through an array and loops through an array of elements and returns the changes specified in the return 
+            }) //converts everything to lower case then splits each word seperated by a space. Map method then takes the function then goes through an array and loops through an array of elements and returns the changes specified in the return 
           
             return titled.join(" "); //joins array back together as a string with a space in between. 
           }
