@@ -419,10 +419,36 @@
                 <p>todo could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
             </li>
         </ul>
+
         <h3>High Order Array Methods</h3>
-        <p><i>forEach</i></p>
-        <p><i>map</i> allows us to create a new array from an array</p>
-        <p><i>filter</i> allows us to create a new array based on a condition.</p>
+        <p><i>'forEach'</i> is a built in function. If you use a loop that needs an 'i++'</p>
+        <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array</p>
+        <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array</p>
+
+        <pre>
+            let numbers = [1, 2, 3, 4]
+            console.log('original array: ', numbers)
+            console.log ('-----')
+
+            let forEachNumbers = numbers.forEach(function(element, index){
+                console.log(`.forEach Loop ${index}: `, element)
+            })
+
+            let mappedNumbers = numbers.map(function(element, index) {
+                console.log(`.map Loop ${index}: `, element)
+                return element * 2
+            })
+
+            let filteredNumbers = numbers.filter(function(element) {
+                return element > 2
+            })
+
+            console.log('-------')
+            console.log('.forEach Array: ', forEachNumbers)
+            console.log('.mapp Array: ', mappedNumbers)
+            console.log('.filter Array: ', filteredNumbers)
+            console.log('Final Array: ', numbers)
+        </pre>
         
         <h3>Conditional Statements (if, ternary &amp; switch)</h3>
         <ul>
@@ -471,7 +497,7 @@
             <li><p>Things to take note of: '=' functions as an operator and will just redeclare a value, so in order to do comparisons, you would have to use '==' for a loose comparison that doesn't take the primitive type into consideration or '===' that will strictly compare and needs the object types to be the same.</p></li>
         </ul>
         
-        <h3>Loops in jJavascript</h3>
+        <h3>Loops in Javascript</h3>
         <p>JavaScript Loops are used to run a block of code repeatedly until a certain condition is met</p>
         <ul>
             <li>
@@ -1144,7 +1170,7 @@
         }
         return maxArray;  //once inner loop executes, then the stored values are returned.
         }
-        
+
         console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
     </pre>
     
