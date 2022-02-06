@@ -125,7 +125,43 @@ section a {
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 2px;     
+  perspective: 10px;
+}
+
+header{
+  position: relative;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
+  height: 100%;
+  transform-style: preserve-3d; /*let's 3d animations work properly*/
+  z-index: -1;
+}
+
+.layer-4{
+  transform: translateZ(-10px) scale(2)
+}
+
+.layer-3{
+  transform: translateZ(-5px) scale(1.5)
+}
+
+.layer-2{
+  transform: translateZ(0px) scale(1)
+}
+
+.layer-1{
+  transform: translateZ(5px) scale(.5)
+}
+
+.layer-4, .layer-3, .layer-2, .layer-1{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 #company-name{
