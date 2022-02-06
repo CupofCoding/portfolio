@@ -422,8 +422,9 @@
 
         <h3>High Order Array Methods</h3>
         <p><i>'forEach'</i> is a built in function. If you use a loop that needs an 'i++'</p>
-        <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array</p>
-        <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array</p>
+        <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array. 'map' can make a copy of the original array with each element transformed in some way. For example, we have an array of names and want to have a copy of the array but with the names capitalized </p>
+        <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array. 'filter' is array iterator function that should be used when we want to make a copy of the array that has only a subset of items of the original. For example, we have an array of names and want to keep only names that do not contain the letter "e".</p>
+        <p><i>reduce</i> is an array iterator function should be used when we want to condense the array down to a single value. For example, we have an array of numbers and we want the sum (a single value).</p>
 
         <pre>
             let numbers = [1, 2, 3, 4]
