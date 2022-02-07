@@ -594,7 +594,7 @@
                     <p>Outputs: 0; 1; 2; 3; 4; </p>
                     <p>'for' is the keyword to call the function to initiate the forloop. 'let i = 0;' is the loop control variable where 'i' generally stands for the index. 'i &lt; 10' is the conditon that's being checked if true or false. 'i++' is the incrementing loop control variable.</p>
                     <p>Note: if you do not have a checking condition or you're trying to divide by 0, the machines will error out due to lack of memory when there's no limiter to end the loop. </p>
-                </li>            
+                </li>
             </ul>
         </ul>
 
@@ -826,6 +826,89 @@
             </pre>
         </ul>
 
+        <h3>High Order Array Functions</h3>
+        <p>Function that takes another function as a parameter. There following are commonly used functions that apply to arrays and are used oten to iterate through and manipulate data.</p>
+        <p>Arrays are objects stored in javascript which has keys that are assigned to functions/object methods.</p>
+        <ul>
+            <li>
+                <p>forEach() - Basic iteration/looping function that's built in javascript but called in a specific manners; similar to a for loop, doesn't return any data. Use '.forEach' to iterate over an array. Prior to this, 'for' loops were the main tool for iteration. You would use forEach in place of any loops that require 'i++'</p>
+                <ul>
+                    <li>
+                        <pre>
+                            for(let i = 0; i &lt; array.length; i++) {
+                                let element = array[i]
+                            }
+                        </pre>
+                        <p>instead of the default 'for' loop, you use the following syntax:</p>
+                        <pre>
+                            function forEach(array, callback){
+                                for(let i = 0; i &lt; array.length; i++) {
+                                    let element = array[i]
+                                    callback(element)
+                                }
+                            }
+                        </pre>
+                    </li>
+                    <li>
+                        <p>Another example:</p>
+                        <pre>
+                            let numbers = [2, 4, 6, 8];
+                            for(let i = 0; i &lt; numbers.length; i++) {
+                                let number = numbers[i]
+                                console.log (number)
+                            }
+                        </pre>
+                        <p>becomes the following:</p>
+                        <pre>
+                            let numbers = [2, 4, 6, 8];
+                            forEach(numbers, function(number){      //numbers array is passed in as the first argument, callback is the second argument. 
+                                console.log(number)        //callback function in this case is telling us to console.log the number. 
+                            }
+                        </pre>
+                    </li>
+                    <li>
+                        <pre>
+                            function forEach(array, callback){      //callback is the second argument
+                                for(let i = 0; i &lt; array.length; i++) {
+                                    let element = array[i]
+                                    callback(element)
+                                }
+                            }
+
+                            let numbers = [2, 4, 6, 8]; 
+                            forEach(numbers, function(number){      //essentially replacing callback(element)
+                                console.log(number)        //console.logs 2, then 4, then 6, then 8
+                            }
+                        </pre>
+                    </li>
+                    <li>
+                        <p>another way of calling the function</p>
+                        <pre>
+                            let numbers = [2, 4, 6, 8]; 
+                            numbers.forEach(function(number))
+                            console.log(number)
+                        </pre>
+                    </li>
+
+
+
+            </li>
+
+            <li>
+                <p>map() - Manipulating data to create a new array. Used in react to create an array from another array with specific manipulations. It transforms and results in an array based on another array. For example, you can have a 'User' as an object and there is a specific property you want to create an array for such as age or location.</p>
+                <pre>
+
+                </pre>
+            </li>
+
+            <li>
+                <p>filter()- Used in a lot of state reducers. Used to filter out certain pieces of data based on a condition or select a subset of an array.</p>
+                <pre>
+
+                </pre>
+            </li>
+        </ul>
+
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
         <li>DOM - Document Object Model Selection</li>
         <li>DOM - Document Object Model Manipulation</li>
@@ -894,13 +977,7 @@
     </pre>
     <p>This user state has one property of 'name' that represented by Jane and you add a new user state using the spread operator (...) to make a copy of the userState then add the age property.</p>
     
-    <h3>High Order Array Functions</h3>
-     <p>Function that takes another function as a parameter. There following are commonly used functions that apply to arrays and are used oten to iterate through and manipulate data.</p>
-    <ul>
-        <li>forEach() - Basic iteration/looping; similar to a for loop, doesn't return any data.</li>
-        <li>map() - Manipulating data to create a new array. Used in react to create an array from another array with specific manipulations. For example, you can have a 'User' as an object and there is a specific property you want to create an array for such as age or location.</li>
-        <li>filter()- Used in a lot of state reducers. Used to filter out certain pieces of data based on a condition.</li>
-    </ul>
+    
     <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
 
 

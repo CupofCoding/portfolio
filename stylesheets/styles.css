@@ -140,23 +140,27 @@ header{
   z-index: -1;
 }
 
+.layer-5{
+  transform: translateZ(-40px) scale(3)
+}
+
 .layer-4{
-  transform: translateZ(-10px) scale(2)
+  transform: translateZ(-30px) scale(2.5)
 }
 
 .layer-3{
-  transform: translateZ(-5px) scale(1.5)
+  transform: translateZ(-20px) scale(2)
 }
 
 .layer-2{
-  transform: translateZ(0px) scale(1)
+  transform: translateZ(-10px) scale(1.5)
 }
 
 .layer-1{
-  transform: translateZ(5px) scale(.5)
+  transform: translateZ(0px) scale(1)
 }
 
-.layer-4, .layer-3, .layer-2, .layer-1{
+.layer-5, .layer-4, .layer-3, .layer-2, .layer-1{
   position: absolute;
   height: 100%;
   width: 100%;
