@@ -412,31 +412,116 @@
                 <p>This will display the number of items and the using the <i>For</i> loop option.</p>
                 <p>There is the <i>For...Of</i> loop that is structured similar to the <i>For</i> loop but it is easier to read in comparison.</p>
                 <pre>
-                    for(let todo of todos) {
-                        console.log(todo.text);
+                    let array = [2, 4, 6, 8]
+                    for(let element of array) {
+                        console.log(element);
                     }
                 </pre>
-                <p>todo could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
+                <p>'element' could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
             </li>
         </ul>
 
         <h3>High Order Array Methods</h3>
-        <p><i>'forEach'</i> is a built in function. If you use a loop that needs an 'i++'</p>
-        <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array. 'map' can make a copy of the original array with each element transformed in some way. For example, we have an array of names and want to have a copy of the array but with the names capitalized </p>
-        <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array. 'filter' is array iterator function that should be used when we want to make a copy of the array that has only a subset of items of the original. For example, we have an array of names and want to keep only names that do not contain the letter "e".</p>
-        <p><i>reduce</i> is an array iterator function should be used when we want to condense the array down to a single value. For example, we have an array of numbers and we want the sum (a single value).</p>
+        <ul>
+            <li>
+                <p><i>'forEach'</i> is a built in function. If you use a loop that needs an 'i++'</p>
+                <pre>
+                    let numbers = [2, 4, 6, 8]
+                    console.log('original array: ', numbers)    //returns Original Array: [2, 4, 6, 8]
+                    console.log ('-----')
+        
+                    let forEachNumbers = numbers.forEach(function(element, index){
+                        console.log(`.forEach Loop ${index}: `, element)        //returns .forEach Loop 0: 2; .forEach Loop 1: 4; .forEach Loop 2: 6; .forEach Loop 3: 8;
+                    })
+                    
+                    console.log('-------')
+                    console.log('.forEach Array: ', forEachNumbers)     //returns value as undefined because it's not set to return anything. It's a tool to perform operations in the array, not to perform on the array itself. 
+                    console.log('Final Array: ', numbers)       //returns Final Array: [2, 4, 6, 8] as there were no changes. 
+                </pre>
+            </li>
+            <li>
+                <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array. 'map' can make a copy of the original array with each element transformed in some way. For example, we have an array of names and want to have a copy of the array but with the names capitalized, or turn an array of numbers into an array of strings, or an array of objects into an array of DOM elements. </p>
+                <pre>
+                    let transformedArray = [];      //empty array
+                    for (let i = 0; i &lt; array.length; i++) {     //looping 
+                        let element = elements[i]       //accessing each element within the array
+                        let transformedElement = //transformation of some kind
+                        transformedArray.push(transformedElement)       //pushing value into the empty array. forEach doesn't return anything. 
+                    }
+
+                    is the same as
+
+                    function map(array, callback) {     //creates map function with array as first parameter and callback as the second
+                        let transformedArray = [];      //create empty array
+                        for (let i = 0; i &lt; array.length; i++) {     //loops
+                            let element = elements[i]       // accesses each element within array
+                            let transformedElement = callback(element)  //transforms the element in the array
+                            transformedArray.push(transformedElement)   //pushes the element into the array 
+                        }
+                        return transformedArray //needed to return the callback(element)
+                    }
+                </pre>
+
+                <pre>
+                    let numbers = [2, 4, 6];    //original array numbers
+                    let doubled = [];       //empty array that we're pushing items to
+
+                    for(let i = 0; i &lt; numbers.length; i++) {    //'for' loop to iterate throught the array; for of would also work in this instance since we're going through each. 
+                        let number = numbers[i]     //new variable with each number in the array 
+                        let doubledNumber = number * 2      //grab the element then double it
+                        doubled.push(doubledNumber)     //push result into the empty array
+                    }
+                    console.log(doubled)    //returns [4, 8, 12]
+                </pre>
+                <p>instead of doing that, do the following</p>
+
+                <pre>let numbers = [2, 4, 6];    //original array numbers
+                    
+                    let doubled = numbers.map(function(number) {
+                        return number*2     //need to specify what we want to happen as a statement. if there's no return statement, it will not work. 
+                    })
+                    
+                    console.log(doubled)    //returns [4, 8, 12]
+                </pre>
+
+                <pre>
+                    let numbers = [2, 4, 6, 8]
+                    console.log('original array: ', numbers)
+                    console.log ('-----')
+                    
+                    let mappedNumbers = numbers.map(function(element, index) {
+                        console.log(`.map Loop ${index}: `, element)        //returns .map Loop 0: 2; .map Loop 1: 4; .map Loop 2: 6; .map Loop 3: 8;
+                        return element * 2
+                    })
+        
+                    console.log('-------')
+                    console.log('.map Array: ', mappedNumbers)      //returns .map Array: [4, 8, 12, 16]
+                    console.log('.filter Array: ', filteredNumbers)
+                    console.log('Final Array: ', numbers)       //returns Final Array: [2, 4, 6, 8] as there were no changes. 
+                </pre>
+            </li>
+            <li>
+                <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array. 'filter' is array iterator function that should be used when we want to make a copy of the array that has only a subset of items of the original. For example, we have an array of names and want to keep only names that do not contain the letter "e".</p>
+                
+
+            </li>
+            <li>
+                <p><i>reduce</i> is an array iterator function should be used when we want to condense the array down to a single value. For example, we have an array of numbers and we want the sum (a single value).</p>
+
+            </li>
+        </ul>
 
         <pre>
-            let numbers = [1, 2, 3, 4]
+            let numbers = [2, 4, 6, 8]
             console.log('original array: ', numbers)
             console.log ('-----')
 
             let forEachNumbers = numbers.forEach(function(element, index){
-                console.log(`.forEach Loop ${index}: `, element)
+                console.log(`.forEach Loop ${index}: `, element)        //returns Original Array: [2, 4, 6, 8]
             })
 
             let mappedNumbers = numbers.map(function(element, index) {
-                console.log(`.map Loop ${index}: `, element)
+                console.log(`.map Loop ${index}: `, element)        //returns .forEach Loop 0: 2; .forEach Loop 1: 4; .forEach Loop 2: 6; .forEach Loop 3: 8;
                 return element * 2
             })
 
@@ -445,10 +530,10 @@
             })
 
             console.log('-------')
-            console.log('.forEach Array: ', forEachNumbers)
-            console.log('.mapp Array: ', mappedNumbers)
+            console.log('.forEach Array: ', forEachNumbers)     //returns value as undefined because it's not set to return anything. It's a tool to perform operations in the array, not to perform on the array itself. 
+            console.log('.map Array: ', mappedNumbers)
             console.log('.filter Array: ', filteredNumbers)
-            console.log('Final Array: ', numbers)
+            console.log('Final Array: ', numbers)       //returns Final Array: [2, 4, 6, 8] as there were no changes. 
         </pre>
         
         <h3>Conditional Statements (if, ternary &amp; switch)</h3>
@@ -889,8 +974,7 @@
                             console.log(number)
                         </pre>
                     </li>
-
-
+                    <li></li>
 
             </li>
 
