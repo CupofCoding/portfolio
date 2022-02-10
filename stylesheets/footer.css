@@ -45,7 +45,7 @@ footer {
   border-color: transparent;
 }
 
-.social-grid:active{
+.social-grid:hover{
   transform: translateX(0%);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
@@ -55,10 +55,9 @@ footer {
   color: black;
   top: 50%;
   border-color: transparent;
-  left: -60px;
-  /* width: 24px;
-  height: 2px; */
-  background: #000;
+  left: -50px;
+  width: 24px;
+  height: 2px;  
   transform: rotate(0);
   transition: all 0.5s;
 }
@@ -72,11 +71,6 @@ footer {
   background: #000;
   transform: rotate(0);
   transition: all 0.5s;
-}
-
-.social-menu-outter:hover,
-.social-menu-inner:hover{
-color: transparent
 }
 
 .social-menu-inner {
