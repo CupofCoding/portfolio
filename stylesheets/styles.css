@@ -286,6 +286,11 @@ section[class*="text"] {
   text-shadow: 6px, 6px, black;
 }
 
+/*See full list and links*/
+section .drop-down a{ 
+  color: black;
+}
+
 /* Grid Styles */
 .grid-col-2 {
   display: grid;

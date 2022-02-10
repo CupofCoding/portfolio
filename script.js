@@ -1,4 +1,4 @@
-// mobile menu toggle
+//mobile-menu toggle
 const button = document.getElementById('menu-button')
 const nav = document.getElementById('menu')
 
@@ -9,6 +9,19 @@ function navToggle() {
 }
 
 button.addEventListener('click', navToggle)
+
+//social-menu toggle
+const socialbutton = document.getElementById('social-button')
+const socialnav = document.getElementById('social-menu')
+
+function socialToggle() {
+    socialbutton.classList.toggle('open')
+    socialnav.classList.toggle('hidden')
+    document.body.classList.toggle('no-scroll')
+}
+
+button.addEventListener('click', socialToggle)
+
 
 //pull-down menu 
 document.addEventListener('click', e => {
