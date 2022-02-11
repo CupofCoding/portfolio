@@ -1,4 +1,11 @@
 /* Left Side Menu */
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
 .side-menu {
   cursor: pointer;
   align-self: left;
@@ -25,13 +32,6 @@
   background: #000;
   transform: rotate(0);
   transition: all 0.5s;
-}
-
-.grow {
-  transition: all 0.2s ease-in-out;
-}
-.grow:hover {
-  transform: scale(1.1);
 }
 
 .side-menu-second {
@@ -75,6 +75,15 @@
   position: absolute;
   top: 110%;
   left: 45%;
+}
+
+.sideline .inactive {
+  transition: all 0.25s ease-in-out;
+}
+
+.sideline .active {
+  width: 40px;
+  transition: all 0.25s ease-in-out;
 }
 
 @media (max-width: 360px) {

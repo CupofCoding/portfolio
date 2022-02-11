@@ -73,5 +73,81 @@ $toggler.addEventListener('click', function () {
     }
 })*/
 
-
+function loadActive() {
+    setTimeout(activate, 0);
+    clearTimeout(activate);
+  }
+  
+  function swapActive() {
+    setTimeout(activate, 100);
+    clearTimeout(activate);
+  }
+  
+  function activate() {
+    let windowHeight = Math.round(window.innerHeight);
+    let windowWidth = Math.round(window.innerWidth);
+    let aspectRatio = windowHeight / windowWidth;
+    let distanceScrolledY = Math.round(window.scrollY);
+    let distanceScrolledX = Math.round(window.scrollX);
+    let sideLine = document.getElementsByClassName("side-line");
+    let slideArray = Array.from(document.getElementsByClassName("box"));
+    let sideLineArray = Array.from(sideLine);
+    let sideLineContainer = document.getElementById("side-line-container");
+    let allCBs = document.querySelectorAll(".box");
+    if (aspectRatio >= 0.95) {
+      let indexer = Math.round(distanceScrolledX / windowWidth);
+      for (let i = 0; i < slideArray.length; i++) {
+        let i = indexer;
+        let activesideLines = [];
+        activesideLines.shift();
+        activesideLines.unshift(sideLineArray[i]);
+        let inactivesideLines = sideLineArray.slice();
+        // inactivesideLines.splice(i, 1);
+        sideLineArray[i].classList.remove("inactive");
+        sideLineArray[i].classList.add("active");
+        inactivesideLines[0].classList.remove("active");
+        inactivesideLines[0].classList.add("inactive");
+        inactivesideLines[1].classList.remove("active");
+        inactivesideLines[1].classList.add("inactive");
+        inactivesideLines[2].classList.remove("active");
+        inactivesideLines[2].classList.add("inactive");
+        inactivesideLines[3].classList.remove("active");
+        inactivesideLines[3].classList.add("inactive");
+        function flexsideLines() {
+          if (i == 1 || i == 3) {
+            sideLineContainer.classList.remove("side-button");
+            sideLineContainer.classList.add("side-box");
+          } else {
+            sideLineContainer.classList.remove("side-button");
+            sideLineContainer.classList.add("side-box");
+          }
+        }
+        flexsideLines();
+      }
+    } else {
+      let indexer = Math.round(distanceScrolledY / windowHeight);
+      for (let i = 0; i < slideArray.length; i++) {
+        let i = indexer;
+        let activesideLines = [];
+        activesideLines.shift();
+        activesideLines.unshift(sideLineArray[i]);
+        let inactivesideLines = sideLineArray.slice();
+        inactivesideLines.splice(i, 1);
+        sideLineArray[i].classList.remove("inactive");
+        sideLineArray[i].classList.add("active");
+        inactivesideLines[0].classList.remove("active");
+        inactivesideLines[0].classList.add("inactive");
+        inactivesideLines[1].classList.remove("active");
+        inactivesideLines[1].classList.add("inactive");
+        inactivesideLines[2].classList.remove("active");
+        inactivesideLines[2].classList.add("inactive");
+        inactivesideLines[3].classList.remove("active");
+        inactivesideLines[3].classList.add("inactive");
+      }
+    }
+  }
+  
+  window.addEventListener("load", loadActive);
+  document.addEventListener("scroll", swapActive);
+  window.addEventListener("resize", loadActive);
 

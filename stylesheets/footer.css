@@ -185,6 +185,14 @@ footer .divider{
     align-items: center;
     flex-shrink: 0;
   }
+
+  .social-grid{
+    width: 100%;
+  }
+
+  .company-profile{
+    min-width: 30%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -235,7 +243,7 @@ footer .divider{
   }
 
   footer .divider{
-    height: inherit;
+    height: 75px;
     margin: inherit;
   }
 }
