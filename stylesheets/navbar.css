@@ -431,7 +431,10 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 960px) {
+  .mobile-menu{
+    display: none;
+  }
 }
 
 @media (min-height: 700px) {
