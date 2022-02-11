@@ -125,13 +125,16 @@ section a {
 }
 
 header{
-  position: relative;
-  display: flex;
+  position: fixed;
+  /* top: 10vh;   */
+  left: 5vw;
+  width: 88vw;
+  /* display: flex;
   justify-self: center;
   align-items: center;
   flex-direction: column;
   min-height: 80vh;
-  height: 100%;
+  height: 100%; */
   transform-style: preserve-3d; /*let's 3d animations work properly*/
   z-index: -1;
 }
@@ -325,6 +328,36 @@ section .drop-down a{
   margin: 1em;
 }
 
+/* Box Colors */
+.box {
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+  text-shadow: 2px, 2px, 8px, black;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.bg-secondary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.bg-extra {
+  background-color: var(--color-primary);
+  color: #000;
+}
+
+.bg-dark {
+  background-color: var(--color-primary);
+  color: #000;
+}
+
 /*Buttons*/
 button {
   cursor: pointer;
@@ -369,35 +402,6 @@ button {
 
 .button-light:hover {
   background: #333;
-}
-
-/* Box Colors */
-.box {
-  background: radial-gradient(
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.3)
-  );
-  text-shadow: 2px, 2px, 8px, black;
-}
-.bg-primary {
-  background-color: var(--color-primary);
-  color: #fff;
-}
-
-.bg-secondary {
-  background-color: var(--color-primary);
-  color: #fff;
-}
-
-.bg-extra {
-  background-color: var(--color-primary);
-  color: #000;
-}
-
-.bg-dark {
-  background-color: var(--color-primary);
-  color: #000;
 }
 
 /* Text Styling */

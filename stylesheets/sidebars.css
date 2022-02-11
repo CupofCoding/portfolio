@@ -50,14 +50,16 @@
 }
 
 .scroll-down-text {
+  position: absolute;
   pointer-events: none;
-  position: fixed;
   font-size: 1.5em;
-  bottom: 80px;
-  left: 30px;
+  bottom: -45vh;
+  height: 20vh;
+  min-height: 185px;
   writing-mode: vertical-rl;
   transform: translateY(0%);
   color: #000;
+  transition: all 0.25s ease-in-out;
 }
 
 .scroll-down-text p {
@@ -70,11 +72,11 @@
 .scroll-down-text::after {
   content: "";
   width: 2px;
-  height: 75px;
+  height: 20vh;
   background: #000;
   position: absolute;
-  top: 110%;
-  left: 45%;
+  top: 80%;
+  left: 40%;
 }
 
 .sideline .inactive {
@@ -83,6 +85,11 @@
 
 .sideline .active {
   width: 40px;
+  transition: all 0.25s ease-in-out;
+}
+
+.sideline .active > .scroll-down-text{
+  opacity: 0;
   transition: all 0.25s ease-in-out;
 }
 

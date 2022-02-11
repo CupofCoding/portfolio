@@ -73,6 +73,7 @@ $toggler.addEventListener('click', function () {
     }
 })*/
 
+//Side-Bar Growth (active/inactve toggle)
 function loadActive() {
     setTimeout(activate, 0);
     clearTimeout(activate);
@@ -92,6 +93,7 @@ function loadActive() {
     let sideLine = document.getElementsByClassName("side-line");
     let slideArray = Array.from(document.getElementsByClassName("box"));
     let sideLineArray = Array.from(sideLine);
+    let scrollDown = document.getElementsByClassName("scroll-down-text");
 
     if (aspectRatio >= 0.95) {
       let indexer = Math.round(distanceScrolledX / windowWidth);
