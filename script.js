@@ -79,7 +79,7 @@ function loadActive() {
   }
   
   function swapActive() {
-    setTimeout(activate, 100);
+    setTimeout(activate, 0);
     clearTimeout(activate);
   }
   
@@ -92,8 +92,7 @@ function loadActive() {
     let sideLine = document.getElementsByClassName("side-line");
     let slideArray = Array.from(document.getElementsByClassName("box"));
     let sideLineArray = Array.from(sideLine);
-    let sideLineContainer = document.getElementById("side-line-container");
-    let allCBs = document.querySelectorAll(".box");
+
     if (aspectRatio >= 0.95) {
       let indexer = Math.round(distanceScrolledX / windowWidth);
       for (let i = 0; i < slideArray.length; i++) {
@@ -102,7 +101,7 @@ function loadActive() {
         activesideLines.shift();
         activesideLines.unshift(sideLineArray[i]);
         let inactivesideLines = sideLineArray.slice();
-        // inactivesideLines.splice(i, 1);
+        inactivesideLines.splice(i, 1);
         sideLineArray[i].classList.remove("inactive");
         sideLineArray[i].classList.add("active");
         inactivesideLines[0].classList.remove("active");
@@ -113,16 +112,6 @@ function loadActive() {
         inactivesideLines[2].classList.add("inactive");
         inactivesideLines[3].classList.remove("active");
         inactivesideLines[3].classList.add("inactive");
-        function flexsideLines() {
-          if (i == 1 || i == 3) {
-            sideLineContainer.classList.remove("side-button");
-            sideLineContainer.classList.add("side-box");
-          } else {
-            sideLineContainer.classList.remove("side-button");
-            sideLineContainer.classList.add("side-box");
-          }
-        }
-        flexsideLines();
       }
     } else {
       let indexer = Math.round(distanceScrolledY / windowHeight);
