@@ -795,8 +795,7 @@
             </li>
         </ul>
 
-        <h3>High Order Array Methods</h3>
-        <h3>High Order Array Functions</h3>
+        <h3>High Order Array Methods/Functions</h3>
         <p>Function that takes another function as a parameter. There following are commonly used functions that apply to arrays and are used oten to iterate through and manipulate data.</p>
         <p>Arrays are objects stored in javascript which has keys that are assigned to functions/object methods. You can call high order array functions as a function or using '.' notation.</p>
         <ul>
@@ -1056,15 +1055,17 @@
         <pre>
             let numbers = [2, 4, 6, 8]
             console.log('original array: ', numbers)
-            console.log ('-----')
-
+            console.log ('-----'
+            
+            let eachArray = []  //creates empty array
             let forEachNumbers = numbers.forEach(function(element, index){
                 console.log(`.forEach Loop ${index}: `, element)        //returns Original Array: [2, 4, 6, 8]
+                eachArray.push(element * 2)     //creates a function that performms the same as map 
             })
 
             let mappedNumbers = numbers.map(function(element, index) {
                 console.log(`.map Loop ${index}: `, element)        //returns .forEach Loop 0: 2; .forEach Loop 1: 4; .forEach Loop 2: 6; .forEach Loop 3: 8;
-                return element * 2
+                return element * 2      //* is an operator so that you can multiply by the integer. '**' would make it squared. Equivalent of the superscript. If you don't have return then no data is saved.
             })
 
             let filteredNumbers = numbers.filter(function(element) {
@@ -1073,13 +1074,79 @@
 
             console.log('-------')
             console.log('.forEach Array: ', forEachNumbers)     //returns value as undefined because it's not set to return anything. It's a tool to perform operations in the array, not to perform on the array itself. 
-            console.log('.map Array: ', mappedNumbers)
-            console.log('.filter Array: ', filteredNumbers)
+            console.log('.map Array: ', mappedNumbers)      //returns [4, 8, 12, 16];  
+            console.log('.filter Array: ', filteredNumbers)     //returns elements greater than 2; returns result [4, 6, 8]
             console.log('Final Array: ', numbers)       //returns Final Array: [2, 4, 6, 8] as there were no changes. 
         </pre>
 
-        
+        <p>None of the high order array methods affect the original array. They create a new array based on the parameter passed. 'map' loops through the array exactly like how 'forEach' functions and is meant to operate on the element but cannot determine if an element satisfies a certain condition, that's what filter is for.</p>
+        <p>High order array methods are built into Javascript and are called after the array's been declared.</p>
 
+        <pre>
+            Array Iterator Practice
+            let users =[
+                ( id firstName: 'John', lastName: 'Doe', age: 36 ),
+                ( id firstName: 'Jane', lastName: 'Doe', age: 24 ),
+                ( id firstName: 'Stephen', lastName: 'Lynch', age: 27 ),
+                ( id firstName: 'Briar', lastName: 'Rose', age: 14 )
+            ]
+
+
+            //Using .forEach & .map
+
+            function getFirstNames(users){
+                let firstNameList = []  //empty array
+                users.forEach(function(user){
+                    firstNameList.push(user.firstName)
+                })
+                return firstNameList    //returns array after function runs. [ 'John', 'Jane', 'Stephen', 'Briar']
+            }
+
+            console.log(getFirstNames(Users))
+            
+            //which is the same as: 
+
+            function getFirstNames(users){
+                let firstNameList = users.map(function(user){       //we don't need to declare an empty array container using '.map'
+                    return user.firstName       //required for the function to return a result
+                })
+                return firstNameList    //returns array after function runs. [ 'John', 'Jane', 'Stephen', 'Briar']
+            }
+
+            console.log(getFirstNames(Users))
+
+
+            //More .map Practice
+            
+            function getFullNames(users){
+                return users.map(function(user){
+                    return `${user.firstName} $user.lastName`
+                })  
+            }
+
+            console.log(getFullNames(Users)) //returns array[ 'John Doe', 'Jane Doe', 'Stephen Lynch', 'Briar Rose']
+
+            //which is the same as: 
+
+            console.log(users.map(function(user) {return `${user.firstName} $user.lastName`}))
+
+
+            //filter practice
+
+            function getAdults(users){
+                let adults = users.filter(function () {
+                    return adults.age > 18      //when looking for teenages, teens.age >=13 && teens.age &lt;=18
+                })
+            }
+
+            console.log(getAdults(users))
+            
+
+
+
+        </pre>
+
+        
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
         <li>DOM - Document Object Model Selection</li>
         <li>DOM - Document Object Model Manipulation</li>
