@@ -36,8 +36,8 @@
         <li>Multi Line Comment /* Enclosed text */</li>
     </ul>
     
-    <ul>
-        <h3>Basic Syntax</h3>        
+    <section>
+        <h3>Basic Syntax</h3>
         <pre>
             Syntax Example; 
             var firstNumber = 7;
@@ -146,114 +146,123 @@
         <p>In order to check of an array is in an array, use the following console command:</p>
         <pre>console.log(Array.isArray(variableName));</pre>
         <p>This creates a boolean that will return a true or false value. Generally used in conjuctions with conditionals.</p>
-        
-        <h3>Data Types &amp; Methods for Strings, Arrays, Objects, etc</h3>
-        <p>Data types are types of data assigned to variables. There are primitive data types where the data is directly assigned to memory and not a resource.</p>
-        <ul>
-        <li>String - Sequence of text, must be enclosed in quotes.
-        <br> Ex: myData='Cars';
-            <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings from end to end.
-            <p>Old Method uses the '+' operator. Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
-        <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
-        <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
-        <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
-        <pre>
-            const greeting = `My name is ${name} and I am ${age}`;
-            
-            console.log(greeting);
-        </pre>
-        <p>'Substring' is a method used to call the range of letters within the string. Multiple methods can be applied.</p>
-            <pre>
-                const var = 'Hello World!';
-                console.log(var.substring(0,5).toUpperCase());
-                
-                This returns: HELLO
-            </pre>
+    </section>
         </li>
-            
-        <li>Number - Numerical number. No quotes required. There are no float or decimal data types in javascript. It's just a number.
-        <br>Ex: myData = 7</li>
-            
-        <li>Boolean - True of false value. No quotes required.
-        <br>4 > 3 will evaluate as true</li>
-        
-        <li>Object - Everything in JavaScript is an object. An object within an object is called an embedded object.
-        <br>Ex: var person = {firstName:”John”,lastName:”Doe”};</li>            
-            
-        <li>Array - Object/Structure that stores multiple values as one
-        <br>Ex: var myCars=[“Ford”,”Toyota”]
-        <br>Ex: var x = [“john”,7]; 
-        
-        <p>Often times, you will be using arrays of objects.</p>
-            
-            <pre> 
-                For Example: 
-                const todos = [
-                {
-                    id: 1,
-                    text: 'Pick up dry cleaning',
-                    isCompleted: true
-                },
-                {
-                    id: 2,
-                    text: 'Pick up groceries',
-                    isCompleted: true
-                },
-                {
-                    id: 3,
-                    text: 'Return borrowed gym equipment',
-                    isCompleted: false
-                },
-                ];
-            </pre>
-        <p>This creates an array with 3 objects that can be checked in the console using the following: 
-            
-            <br>console.log(todos); - if you want to list all the objects
-            <br>console.log(todos[1].text); - if you want to display only the text 'Pick up groceries' for the second object</p>
-        
-        <p>JSON is a data format that is used a lot in Full Stack developement when using API's when sending data to a server. It's sent and recieved in JSON format. Very similar to <i>Object Literals</i> There are multiple online resources you can use to find JSON online formatters. JSON uses only double quotes(") instead of single quotes(') around the ids and the object names.</p>
-            
-            <pre>
-                The following converts the Object Literal array so that it's ready to send the data to a server.
-                const todoJSON = JSON.stringify(todos);
-                console.log(todoJSON);
-            </pre>
 
-        <p>'Split' method is used to create an array based on a string</p>
-            <pre>const var = 'startDate, endDate, payRate'
-            console.log(var.split(', '));
+        <li>
+            <h3>Data Types &amp; Methods for Strings, Arrays, Objects, etc</h3>
+            <p>Data types are types of data assigned to variables. There are primitive data types where the data is directly assigned to memory and not a resource.</p>
+            <ul>
+                <li>String - Sequence of text, must be enclosed in quotes.
+                    <br> Ex: myData='Cars';
+                    <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings from end to end.</p>
+                    <p>Old Method uses the '+' operator. Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+                    <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
+                        <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+                    <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
+                    <pre>
+                        const greeting = `My name is ${name} and I am ${age}`;
+                        
+                        console.log(greeting);
+                    </pre>
+                    <p>'Substring' is a method used to call the range of letters within the string. Multiple methods can be applied.</p>
+                    <pre>
+                        const var = 'Hello World!';
+                        console.log(var.substring(0,5).toUpperCase());
+                        
+                        This returns: HELLO
+                    </pre>
+                </li>
+                
+                <li>Number - Numerical number. No quotes required. There are no float or decimal data types in javascript. It's just a number.
+                    <br>Ex: myData = 7</li>
+    
+                <li>Boolean - True of false value. No quotes required.
+                    <br>4 > 3 will evaluate as true</li>
+    
+                <li>Object - Everything in JavaScript is an object. An object within an object is called an embedded object.
+                    <br>Ex: var person = {firstName:”John”,lastName:”Doe”};</li>
+                    
+                <li>Array - Object/Structure that stores multiple values as one
+                    <br>Ex: var myCars=[“Ford”,”Toyota”]
+                    <br>Ex: var x = [“john”,7]; </li>
+                <p>Often times, you will be using arrays of objects.</p>
+                
+                <pre> 
+                    For Example: 
+                    const todos = [
+                    {
+                        id: 1,
+                        text: 'Pick up dry cleaning',
+                        isCompleted: true
+                    },
+                    {
+                        id: 2,
+                        text: 'Pick up groceries',
+                        isCompleted: true
+                    },
+                    {
+                        id: 3,
+                        text: 'Return borrowed gym equipment',
+                        isCompleted: false
+                    },
+                    ];
+                </pre>
+                
+                <p>This creates an array with 3 objects that can be checked in the console using the following: 
+                
+                <br>console.log(todos); - if you want to list all the objects
+                <br>console.log(todos[1].text); - if you want to display only the text 'Pick up groceries' for the second object</p>
             
-            This will return an array with 4 values and each word is in each array value and this can to insert data into a database or search the values.</pre>
-            
+                <p>JSON is a data format that is used a lot in Full Stack developement when using API's when sending data to a server. It's sent and recieved in JSON format. Very similar to <i>Object Literals</i> There are multiple online resources you can use to find JSON online formatters. JSON uses only double quotes(") instead of single quotes(') around the ids and the object names.</p>
+                    
+                <pre>
+                    The following converts the Object Literal array so that it's ready to send the data to a server.
+                    const todoJSON = JSON.stringify(todos);
+                    console.log(todoJSON);
+                </pre>
+
+                <p>'Split' method is used to create an array based on a string</p>
+                <pre>const var = 'startDate, endDate, payRate'
+                console.log(var.split(', '));
+                
+                This will return an array with 4 values and each word is in each array value and this can to insert data into a database or search the values.</pre>
+                
+                <li>**Note: When mixing data types, it's outcome can be different.
+                <br>var x = “7” + 7; will return the value 77 when you call “x” as a string 
+                <br>var y = 7 + 7; will return 14 as both data types are number values </li>    
+                
+                <li>Null - container that does that exist however the data is missing or empty; 
+                <br>Ex: var name = null; </li>
+                    
+                <li>Undefined - Identical to null in value but differs in data type; not an object data type
+                <br>Ex: 'var name' for undefined or 'let z;' to initialize something but it's still undefined </li>
+                    
+                <li>Symbol - a built-in object or value </li>
+            </ul>
+                
+                <p>In order to test and identify data types in javascript use the following:</p>
+                <pre>console.log(typeof variablename);</pre>
+                <p>**the only exception is that NULL values are defined as an object data type due to it being a typetag and objects being 0. As a result, null had 0 as a type tag which returns it as an object in the console. </p>
+                
+                <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
+                <br>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+                <p>Template Stings or Literals were introduced as a new method during ES6 or ES2015
+                <br>Newer Method Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+                <p>This can also be used to define a variable.</p>
+                <pre>
+                    const greeting = `My name is ${name} and I am ${age}`;
+                    
+                    console.log(greeting);
+                </pre>
             </li>
-            
-        <li>**Note: When mixing data types, it's outcome can be different.
-        <br>var x = “7” + 7; will return the value 77 when you call “x” as a string 
-        <br>var y = 7 + 7; will return 14 as both data types are number values </li>    
-        
-        <li>Null - container that does that exist however the data is missing or empty; 
-        <br>Ex: var name = null; </li>
-            
-        <li>Undefined - Identical to null in value but differs in data type; not an object data type
-        <br>Ex: 'var name' for undefined or 'let z;' to initialize something but it's still undefined </li>
-            
-        <li>Symbol - a built-in object or value </li>
-        </ul>
-        
-        <p>In order to test and identify data types in javascript use the following:</p>
-        <pre>console.log(typeof variablename);</pre>
-        <p>**the only exception is that NULL values are defined as an object data type due to it being a typetag and objects being 0. As a result, null had 0 as a type tag which returns it as an object in the console. </p>
-        
-        <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
-        <br>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
-        <p>Template Stings or Literals were introduced as a new method during ES6 or ES2015
-        <br>Newer Method Ex: console.log(`My name is ${name} and I am ${age}`);</p>
-        <p>This can also be used to define a variable.</p>
-        <pre>
-            const greeting = `My name is ${name} and I am ${age}`;
-            
-            console.log(greeting);
-        </pre>
+
+        <li>
+
+        </li>
+    
+
+                
         
         <h3>Operators</h3>
         <ul>
@@ -1140,10 +1149,35 @@
             }
 
             console.log(getAdults(users))
-            
 
 
+            //getOldest user
 
+            let moreHelp = true; 
+
+            function getOldest(users){
+                let oldestUser = users[0]       //set location for variable with index value
+                users.forEach(function(user){       //set iteration using .forEach
+                    if (user.age > oldestUser.age) {        //set condition using if
+                        oldestUser = user       //we've set the user to override oldestUser variable every time the loop encounters a user older than the current oldestUser.
+                    }
+                })
+                return oldestUser
+            }
+
+            console.log(getOldest(users))
+
+            //which is the same as this 'sort' function: 
+
+            let moreHelp = true; 
+
+            function getOldest(users){
+                return users.sort(function(user1, user2){       //checks the 2 users in the array and keeps iterating through the array and compares the users. 
+                    return user1.age - user2.age    //figures out which of the 2 is greater; there's math going on behind the scene. this is specific to sorting syntax
+                })[users.length-1]
+            }
+
+            console.log(getOldest(users))
         </pre>
 
         
