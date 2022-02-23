@@ -8,35 +8,37 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
 </head>
 <body>
-    <h2>Javascript Fundamentals</h2>
-    <p>Javascript is a High level, interpreted programming language that doesn't have to run through a compilier. The language controls the interactivity of a page such as showing or hiding objects, scrolling, pop ups, whatever you can click or control or animate objects on a page, submit info or respond to small queries such as form validation. Javascript is case sensitive. Keep the javascript content at the bottom before the &lt;/body&gt; part of the document so the HTML portion can load faster. syntax follows [prompt ();] would be the verbs.</p>
-    <p>It doesn't take consideration of any memory manage on the machine. It's multi-paradigm, meaning that you can write your code in many different ways and is flexible in how you write your code. It can run on the client/bbrowser or on a server(javascript runtime Node.js) to interact with databases.</p>
-    <p>Javascript is the programming langauge of the browser and is a good focus if you want to learn client-side programming. Other languages generally don't run things clientside unless there's a library for the language to reference that generates the code for the browser. Generally used to build interactive user interfaces with frameworks like React, Angular, VueJS.</p>
-    <p>The language can be used to build very fast server side and full stack applications using Node.JS. Can be used to build mobile apps like React Native, NativeScript, or Ionic or build desktop apps with frameworks like Electron JS. </p>
-    <p>Javascript functions different from other languages as its arrays are not statically typed, as in it doesn't differentiate between data types. You can have the data type is a strings or numbers and you don't have to categorize them like other languages unless you're using Typescript.</p>
-    <p>Javascript can be placed internally inside an HTML document using &lt;script&gt; tag </p>
-    <p>Javascript Linting Tools; code quality checking tools. Brackets text editor uses JSLint and ESLint. Will highlight errors, could be syntax errors. </p>
-    <p>Javascript Events are things a browser or user does to have HTML elements have interactivity to occur. 
-	<br>Event listeners wait for an event to occur to respond. Could be onclick.</p>
+    <section> <!--Intro-->
+        <h2>Javascript Fundamentals</h2>
+        <p>Javascript is a High level, interpreted programming language that doesn't have to run through a compilier. The language controls the interactivity of a page such as showing or hiding objects, scrolling, pop ups, whatever you can click or control or animate objects on a page, submit info or respond to small queries such as form validation. Javascript is case sensitive. Keep the javascript content at the bottom before the &lt;/body&gt; part of the document so the HTML portion can load faster. syntax follows [prompt ();] would be the verbs.</p>
+        <p>It doesn't take consideration of any memory manage on the machine. It's multi-paradigm, meaning that you can write your code in many different ways and is flexible in how you write your code. It can run on the client/bbrowser or on a server(javascript runtime Node.js) to interact with databases.</p>
+        <p>Javascript is the programming langauge of the browser and is a good focus if you want to learn client-side programming. Other languages generally don't run things clientside unless there's a library for the language to reference that generates the code for the browser. Generally used to build interactive user interfaces with frameworks like React, Angular, VueJS.</p>
+        <p>The language can be used to build very fast server side and full stack applications using Node.JS. Can be used to build mobile apps like React Native, NativeScript, or Ionic or build desktop apps with frameworks like Electron JS. </p>
+        <p>Javascript functions different from other languages as its arrays are not statically typed, as in it doesn't differentiate between data types. You can have the data type is a strings or numbers and you don't have to categorize them like other languages unless you're using Typescript.</p>
+        <p>Javascript can be placed internally inside an HTML document using &lt;script&gt; tag </p>
+        <p>Javascript Linting Tools; code quality checking tools. Brackets text editor uses JSLint and ESLint. Will highlight errors, could be syntax errors. </p>
+        <p>Javascript Events are things a browser or user does to have HTML elements have interactivity to occur. 
+        <br>Event listeners wait for an event to occur to respond. Could be onclick.</p>
+        
+        <p>** A good place to learn about Javascript is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a></p>
+        
+        <h4>Commands &amp; Commenting in Javascript:</h4> 
+        <p>Console commands are formatted as console.<i>command</i>('String');</p>
+        <p>'Properties' do not have parenthesis, if there is parenthesis than it is a 'method'. Methods are functions associated with an object.
+            <br>console.log(var.length); only has a property while console.log(var.toUpperCase()); includes a method</p>
+        <p>Syntax for the console log is as follows:    
+            <br>console.log(container.varName.embeddedObject[index#]
+            <br> or you can do the following 'destructuring' method to create a variable out of existing object: const {firstName, lastName, address: { city }} = person; </p>
+        <p>You can add properties that weren't included in container:
+            <br>Ex: varName.email = 'johndoe@mail.com';</p> 
+        
+        <ul>
+            <li>In line commenting is started with '//'</li>
+            <li>Multi Line Comment /* Enclosed text */</li>
+        </ul>
+    </section>
     
-    <p>** A good place to learn about Javascript is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a></p>
-    
-    <h4>Commands &amp; Commenting in Javascript:</h4> 
-    <p>Console commands are formatted as console.<i>command</i>('String');</p>
-    <p>'Properties' do not have parenthesis, if there is parenthesis than it is a 'method'. Methods are functions associated with an object.
-        <br>console.log(var.length); only has a property while console.log(var.toUpperCase()); includes a method</p>
-    <p>Syntax for the console log is as follows:    
-        <br>console.log(container.varName.embeddedObject[index#]
-        <br> or you can do the following 'destructuring' method to create a variable out of existing object: const {firstName, lastName, address: { city }} = person; </p>
-    <p>You can add properties that weren't included in container:
-        <br>Ex: varName.email = 'johndoe@mail.com';</p> 
-    
-    <ul>
-        <li>In line commenting is started with '//'</li>
-        <li>Multi Line Comment /* Enclosed text */</li>
-    </ul>
-    
-    <section>
+    <section><!--Syntax, Terms, & Concepts-->
         <h3>Basic Syntax</h3>
         <pre>
             Syntax Example; 
@@ -146,124 +148,168 @@
         <p>In order to check of an array is in an array, use the following console command:</p>
         <pre>console.log(Array.isArray(variableName));</pre>
         <p>This creates a boolean that will return a true or false value. Generally used in conjuctions with conditionals.</p>
-    </section>
-        </li>
-
-        <li>
-            <h3>Data Types &amp; Methods for Strings, Arrays, Objects, etc</h3>
-            <p>Data types are types of data assigned to variables. There are primitive data types where the data is directly assigned to memory and not a resource.</p>
-            <ul>
-                <li>String - Sequence of text, must be enclosed in quotes.
-                    <br> Ex: myData='Cars';
-                    <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings from end to end.</p>
-                    <p>Old Method uses the '+' operator. Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
-                    <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
-                        <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
-                    <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
-                    <pre>
-                        const greeting = `My name is ${name} and I am ${age}`;
-                        
-                        console.log(greeting);
-                    </pre>
-                    <p>'Substring' is a method used to call the range of letters within the string. Multiple methods can be applied.</p>
-                    <pre>
-                        const var = 'Hello World!';
-                        console.log(var.substring(0,5).toUpperCase());
-                        
-                        This returns: HELLO
-                    </pre>
-                </li>
-                
-                <li>Number - Numerical number. No quotes required. There are no float or decimal data types in javascript. It's just a number.
-                    <br>Ex: myData = 7</li>
     
-                <li>Boolean - True of false value. No quotes required.
-                    <br>4 > 3 will evaluate as true</li>
-    
-                <li>Object - Everything in JavaScript is an object. An object within an object is called an embedded object.
-                    <br>Ex: var person = {firstName:”John”,lastName:”Doe”};</li>
-                    
-                <li>Array - Object/Structure that stores multiple values as one
-                    <br>Ex: var myCars=[“Ford”,”Toyota”]
-                    <br>Ex: var x = [“john”,7]; </li>
-                <p>Often times, you will be using arrays of objects.</p>
-                
-                <pre> 
-                    For Example: 
-                    const todos = [
-                    {
-                        id: 1,
-                        text: 'Pick up dry cleaning',
-                        isCompleted: true
-                    },
-                    {
-                        id: 2,
-                        text: 'Pick up groceries',
-                        isCompleted: true
-                    },
-                    {
-                        id: 3,
-                        text: 'Return borrowed gym equipment',
-                        isCompleted: false
-                    },
-                    ];
-                </pre>
-                
-                <p>This creates an array with 3 objects that can be checked in the console using the following: 
-                
-                <br>console.log(todos); - if you want to list all the objects
-                <br>console.log(todos[1].text); - if you want to display only the text 'Pick up groceries' for the second object</p>
+        <h3>Modules</h3>
+        <p>Used to bring everything together and import files, packets, or pieces of code into another file. They are not supported in browsers directly so you have to use tools such as Parcel or Webpack with Babel.</p>
+        <ul>
+            <li>ES6 Modules, TypeScript (Angular)</li>
+            <li>Parcel, Webpack &amp; Babel</li>
+            <li>Export &amp; Export Default</li>
+        </ul>
+        
+        <h3>Classes</h3>
+        <p>Classes are a term used in multiple languages. Used mostly in React &amp; Angular</p>
+        <ul>
+            <li>Structuring a class</li>
+            <li>Constructors</li>
+            <li>Methods &amp; properties</li>
+            <li>Instantiation - creating objects from the class</li>
+            <li>Extending classes &amp; inheritance</li>
+        </ul>
+        
+        <h3>Destructuring</h3>
+        <p>Preferred when you look at most frameworks, makes for cleaner and more readable code. Unpack values from objects and arrays.</p>
+        <pre>
+            Examples: 
+            const { name, email } = user;
             
-                <p>JSON is a data format that is used a lot in Full Stack developement when using API's when sending data to a server. It's sent and recieved in JSON format. Very similar to <i>Object Literals</i> There are multiple online resources you can use to find JSON online formatters. JSON uses only double quotes(") instead of single quotes(') around the ids and the object names.</p>
-                    
-                <pre>
-                    The following converts the Object Literal array so that it's ready to send the data to a server.
-                    const todoJSON = JSON.stringify(todos);
-                    console.log(todoJSON);
-                </pre>
+            const { name, email, address: {city} } = user;
+        </pre>
+        <p>We have a user object with some fields to put into a variable. The first example is done so you can get a name and email for a variable in the user object. The second is done so you can pull the address object and you can pull the city which is the property of the address object within the 'user'</p>
+            
+        <h3>Concept of Components &amp; State</h3>
+        <p>UIs are broken up into individual components which has some sort of state associated with them. You are taught about separation of concerns for the HTML mark up, CSS stying, and the Javascript for any dynamic type functionality where you select elements from the DOM. The difference for mindsets using Frameworks is that you start thinking of each user interface as individual components that are encapsulated entities that include both markup/disply and the functionality. Each component can have its own data and state of being.</p>
+        <p>Application level states are usually implement using a state manager like Redux, Vuex, etc</p>
+        <p>Nested components (Parent &amp; children)</p>
+        <p>Can be directly inserted or used in a router. 'State' is a React object that is used to contain information about the component. When the component's state changes, then the component re-renders.</p>
+        
+        <p>For example, if you look at a website, there can be a search bar as a component, another one that tracks statistics, another one that tracks activities, or suggestions for other users for UI when dealing with frameworks. When you share state you look into something like React for Redux or Vuex for Vue for state level management when sharing data for a single source of truth or context API, Graph QL &amp; Apollo. There are different technologies to use.</p>
+        
+        <h3>Spread Operator (...)</h3>
+        <p>State is usually unchangeable or immutable so it cannot be direclty changed. The spread operator allows us to make a copy to add what we want and change what we want and then send it to the application or component.</p>
+        
+        <pre>
+            Examples: 
+            const userState = {
+                name: 'Jane'
+            }
+            
+            const newUserState = {
+                ...userState,
+                age: 28
+            }
+        </pre>
+        <p>This user state has one property of 'name' that represented by Jane and you add a new user state using the spread operator (...) to make a copy of the userState then add the age property.</p>
+    </section>
 
-                <p>'Split' method is used to create an array based on a string</p>
-                <pre>const var = 'startDate, endDate, payRate'
-                console.log(var.split(', '));
-                
-                This will return an array with 4 values and each word is in each array value and this can to insert data into a database or search the values.</pre>
-                
-                <li>**Note: When mixing data types, it's outcome can be different.
-                <br>var x = “7” + 7; will return the value 77 when you call “x” as a string 
-                <br>var y = 7 + 7; will return 14 as both data types are number values </li>    
-                
-                <li>Null - container that does that exist however the data is missing or empty; 
-                <br>Ex: var name = null; </li>
-                    
-                <li>Undefined - Identical to null in value but differs in data type; not an object data type
-                <br>Ex: 'var name' for undefined or 'let z;' to initialize something but it's still undefined </li>
-                    
-                <li>Symbol - a built-in object or value </li>
-            </ul>
-                
-                <p>In order to test and identify data types in javascript use the following:</p>
-                <pre>console.log(typeof variablename);</pre>
-                <p>**the only exception is that NULL values are defined as an object data type due to it being a typetag and objects being 0. As a result, null had 0 as a type tag which returns it as an object in the console. </p>
-                
-                <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
-                <br>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
-                <p>Template Stings or Literals were introduced as a new method during ES6 or ES2015
-                <br>Newer Method Ex: console.log(`My name is ${name} and I am ${age}`);</p>
-                <p>This can also be used to define a variable.</p>
+    <section><!--Data Types-->
+        <h3>Data Types &amp; Methods for Strings, Arrays, Objects, etc</h3>
+        <p>Data types are types of data assigned to variables. There are primitive data types where the data is directly assigned to memory and not a resource.</p>
+        <ul>
+            <li>String - Sequence of text, must be enclosed in quotes.
+                <br> Ex: myData='Cars';
+                <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings from end to end.</p>
+                <p>Old Method uses the '+' operator. Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+                <p>Newer Method from Template Stings or Literals were introduced as a new method during ES6 or ES2015.
+                    <br>Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+                <p>This can also be used to define a variable. They use back ticks to initiate with the dollar sign and curly brackets to call the variable.</p>
                 <pre>
                     const greeting = `My name is ${name} and I am ${age}`;
                     
                     console.log(greeting);
                 </pre>
+                <p>'Substring' is a method used to call the range of letters within the string. Multiple methods can be applied.</p>
+                <pre>
+                    const var = 'Hello World!';
+                    console.log(var.substring(0,5).toUpperCase());
+                    
+                    This returns: HELLO
+                </pre>
             </li>
-
-        <li>
-
-        </li>
+            
+            <li>Number - Numerical number. No quotes required. There are no float or decimal data types in javascript. It's just a number.
+                <br>Ex: myData = 7</li>
     
-
+            <li>Boolean - True of false value. No quotes required.
+                <br>4 > 3 will evaluate as true</li>
+    
+            <li>Object - Everything in JavaScript is an object. An object within an object is called an embedded object.
+                <br>Ex: var person = {firstName:”John”,lastName:”Doe”};</li>
                 
+            <li>Array - Object/Structure that stores multiple values as one
+                <br>Ex: var myCars=[“Ford”,”Toyota”]
+                <br>Ex: var x = [“john”,7]; </li>
+            <p>Often times, you will be using arrays of objects.</p>
+            
+            <pre> 
+                For Example: 
+                const todos = [
+                {
+                    id: 1,
+                    text: 'Pick up dry cleaning',
+                    isCompleted: true
+                },
+                {
+                    id: 2,
+                    text: 'Pick up groceries',
+                    isCompleted: true
+                },
+                {
+                    id: 3,
+                    text: 'Return borrowed gym equipment',
+                    isCompleted: false
+                },
+                ];
+            </pre>
+            
+            <p>This creates an array with 3 objects that can be checked in the console using the following: 
+            
+            <br>console.log(todos); - if you want to list all the objects
+            <br>console.log(todos[1].text); - if you want to display only the text 'Pick up groceries' for the second object</p>
         
+            <p>JSON is a data format that is used a lot in Full Stack developement when using API's when sending data to a server. It's sent and recieved in JSON format. Very similar to <i>Object Literals</i> There are multiple online resources you can use to find JSON online formatters. JSON uses only double quotes(") instead of single quotes(') around the ids and the object names.</p>
+                
+            <pre>
+                The following converts the Object Literal array so that it's ready to send the data to a server.
+                const todoJSON = JSON.stringify(todos);
+                console.log(todoJSON);
+            </pre>
+    
+            <p>'Split' method is used to create an array based on a string</p>
+            <pre>const var = 'startDate, endDate, payRate'
+            console.log(var.split(', '));
+            
+            This will return an array with 4 values and each word is in each array value and this can to insert data into a database or search the values.</pre>
+            
+            <li>**Note: When mixing data types, it's outcome can be different.
+            <br>var x = “7” + 7; will return the value 77 when you call “x” as a string 
+            <br>var y = 7 + 7; will return 14 as both data types are number values </li>    
+            
+            <li>Null - container that does that exist however the data is missing or empty; 
+            <br>Ex: var name = null; </li>
+                
+            <li>Undefined - Identical to null in value but differs in data type; not an object data type
+            <br>Ex: 'var name' for undefined or 'let z;' to initialize something but it's still undefined </li>
+                
+            <li>Symbol - a built-in object or value </li>
+        </ul>
+        <p>In order to test and identify data types in javascript use the following:</p>
+        <pre>console.log(typeof variablename);</pre>
+        <p>**the only exception is that NULL values are defined as an object data type due to it being a typetag and objects being 0. As a result, null had 0 as a type tag which returns it as an object in the console. </p>
+        
+        <p>Concatenation is a series of interconnected things or events. When used in relation to language theory and computer programming, string concacternation is the combination of character strings rom end to end.
+        <br>Old Method Ex: console.log('My name is ' + name + 'and my favourite color is ' + color);</p>
+        <p>Template Stings or Literals were introduced as a new method during ES6 or ES2015
+        <br>Newer Method Ex: console.log(`My name is ${name} and I am ${age}`);</p>
+        <p>This can also be used to define a variable.</p>
+        <pre>
+            const greeting = `My name is ${name} and I am ${age}`;
+            
+            console.log(greeting);
+        </pre>
+    </section>
+
+    <section><!--Operators-->
         <h3>Operators</h3>
         <ul>
             <li>Arithmetic - The usual +, -, *, /; </li>
@@ -370,7 +416,9 @@
                 </p>
             </li>
         </ul>
+    </section>
 
+    <section><!--Booleans; if & switch-->
         <h3>Conditional Statements (if, ternary &amp; switch)</h3>
         <ul>
             <li>
@@ -417,114 +465,16 @@
             </li>
             <li><p>Things to take note of: '=' functions as an operator and will just redeclare a value, so in order to do comparisons, you would have to use '==' for a loose comparison that doesn't take the primitive type into consideration or '===' that will strictly compare and needs the object types to be the same.</p></li>
         </ul>
-        
-        <h3>Loops in Javascript</h3>
-        <p>JavaScript Loops are used to run a block of code repeatedly until a certain condition is met</p>
-        <ul>
-            <li>
-                <h3>While Loops</h3>
-                <p>while loops have a condition set and the statements run while an action is being run. They will check a condition first then check if the statement inside the loop is true or false.</p>
-                <pre>
-                    let i =0;
-                    while (i &lt; 5) { 
-                        console.log(i)
-                        i++;
-                    }
-                    console.log(go to the end)
-
-                    this will print 1; 2; 3; 4; 5;
-                    note: '++' functions the same is +1 and is called 'incrementing'
-                </pre>
-                <p>An example of a while loop:</p>
-                <pre>
-                    let numbers = [2, 4, 6, 8];
-                    var counter = 0
-                    var sum = 0;
-                    while (counter &lt; numbers.length) {
-                        sum += numbers[counter];
-                        counter++;
-                    }
-
-                    console.log(sum);
-                    
-                    Follows logic: 
-                    Loop 1: (0+2)->
-                    Loop 2: (2+4)->
-                    Loop 3: (6+6)->
-                    Loop 4: (12+8) RESULT = 20
-                </pre>
-            </li>
-            <li>
-                <h3>Do While Loops</h3>
-                <p>while loops have a condition set and the statements run while an action is being run. They will run the loop around statements inside the loop then check if the condition is true or false.</p>
-                <pre>
-                    let value = '';
-                    let x = 0;
-
-                    do {
-                        x = x + 1;
-                        value = value + x;
-                        console.log("current do value: " + value)
-                    } while (x &lt; 5); 
-
-                    console.log("the final value is: " + value);
-
-                    this will print out 12345
-
-                    note: the first loop will always run the first block of code. not used very often.
-                </pre>
-                <p>An example of 'Do While'</p>
-                <pre>
-                    var sum = 0;
-                    var number = 1; 
-                    do {
-                        sum += number;
-                        number++;
-                    } while (number &lt;= 10);
-                    console.log("Sum = " + sum);
-
-                    Logic will follow: 
-                    Loop 1: (1+0)->​
-                    Loop 2: (2+1)->​
-                    Loop 3: (3+3)->​
-                    Loop 4: (4+6)->​
-                    Loop 5: (5+10)->​
-                    Loop 6: (6+15)->​
-                    Loop 7: (7+21)->​
-                    Loop 8: (8+28)->​
-                    Loop 9: (9+36)->​
-                    Loop 10: (10+45) RESULT = 55
-                </pre>
-            </li>
-
-            <h3>For Loops</h3>
-            <ul>
-                <li>For Loops are comprised of the following: 
-                    <ul>
-                        <li>variable initialization/declaration</li>
-                        <li>termination condition; if true then run loop, if false then stop loop</li>
-                        <li>checks condition/statements inside the loop</li>
-                        <li>incrementing/decrementing loop control variable</li>
-                    </ul>
-                    <pre>
-                        for (let i=0; x &lt; 5; i++) {
-                            console.log(x)
-                        }
-                    </pre>
-                    <p>Outputs: 0; 1; 2; 3; 4; </p>
-                    <p>'for' is the keyword to call the function to initiate the forloop. 'let i = 0;' is the loop control variable where 'i' generally stands for the index. 'i &lt; 10' is the conditon that's being checked if true or false. 'i++' is the incrementing loop control variable.</p>
-                    <p>Note: if you do not have a checking condition or you're trying to divide by 0, the machines will error out due to lack of memory when there's no limiter to end the loop. </p>
-                </li>
-            </ul>
-        </ul>
-
+    </section>
+    
+    <section><!--Functions-->
         <h3>Functions (normal &amp; arrow)</h3>
         <ul>
             <li>
                 <p>Functions in JavaScript function similar to recipes. A set of statements that performs a task based on taking an input and returning an output based on the statements.</p>
                 <p>They are reusable code that run when called on.</p>
                 <p>Functions are comprised of the following: keyword, functionName, parenthesis for parameters, followed by the function body.</p>
-
+    
                 <pre>
                 function functionName ('parameter') {
                     console.log(functionName('parameter query'));
@@ -595,14 +545,14 @@
                     function add(number1, number2) {
                         return = number1 + number2                    
                     }
-
+    
                     is the same as:
-
+    
                     function add(number1, number2) {
                         let total = number1 + number2
                         return total
                     }
-
+    
                     let sum1 = add (5,10)
                     let sum2 = add (sum1, 15)
                     console.log(sum2) //will return a value of 30
@@ -642,36 +592,36 @@
                     function createFood (innerIngredient, outterIngredient) {
                         return {Filling: innerIngredient, Outside: outterIngredient}
                     }
-
+    
                     const makeFood = createFood;
                     const food = makeFood('Chicken', 'Sandwhich')
-
+    
                     console.log(food); //will return value Chicken Sandwhich
                 </pre>
-
+    
                 <pre>Example of a string contained in an object:
-
+    
                     function logFilling () {
                         console.log('Apple')
                     }
-
+    
                     const bakedGood = {
                         type: 'Pie'
                         filling: logFilling
                     }
-
+    
                     bakedGood.filling() // will return Apple
                 </pre>
-
+    
                 <pre>Example of Inline function same as above function to replace string contained in an object:
-
+    
                     const bakedGood = {
                         type: 'Pie'
                         filling: function() {
                             console.log('Apple')
                         } 
                     }
-
+    
                     bakedGood.filling() // will return Apple
                 </pre>
                 <p>Functions can be stored in an array and can be called when referenced as an index</p>
@@ -679,136 +629,244 @@
                     function logFilling () {
                         console.log('Apple')
                     }
-
+    
                     function logType () {
                         console.log('Pie')
                     }
-
+    
                     const bakedGood = {logFilling, logType}
-
+    
                     for(let i = 0; i &lt; bakedGood.length; i++) {
                         bakedGood[i]() // will return 'Apple' then 'Pie'
                     }
                 </pre>
             </li>
-            <h3>Callback Functions & Event Listeners</h3>
-            <p>'callback' functions are functions that have been nested into another function as an argument which is then called inside the outter or parent function to complete. </p> 
-            <p>When you want to create a 'callback' function, you pass the function inside another function as a parameter. Javascript loads the full script first then runs code sequentially from top to bottom.</p>
-            <p>Callbacks make sure that a function will not run before a task is completed and will run after a task or condition is met. This is called asynchronous programming.</p>
-            <pre>
-                function first () {} //declares the function name
-                function second (callback) {  //received first function as a parameter
-                    console.log(callback){}  //logs function first () {}
-                }
-
-                second(first)
-            </pre>
-
-            <pre>
-                function logWord () {
-                    console.log('Something')
-                }
-                run(logWord)
-
-                is the same as: 
-                run(function() {
-                    console.log('Something')
-                })
-            </pre>
+    </section>
             
-            <p>'Anonymous' functions are functions that have been defined in another function that don't require calling.</p>
-            <pre>
-                setTimeout(function() {
-                    console.log('Response not received from server. Request timed out (30 seconds)');
-                }, 30000);
+    <section><!--Callbacks & Event Listeners--> 
+        <h3>Callback Functions & Event Listeners</h3>
+        <p>'callback' functions are functions that have been nested into another function as an argument which is then called inside the outter or parent function to complete. </p> 
+        <p>When you want to create a 'callback' function, you pass the function inside another function as a parameter. Javascript loads the full script first then runs code sequentially from top to bottom.</p>
+        <p>Callbacks make sure that a function will not run before a task is completed and will run after a task or condition is met. This is called asynchronous programming.</p>
+        <pre>
+            function first () {} //declares the function name
+            function second (callback) {  //received first function as a parameter
+                console.log(callback){}  //logs function first () {}
+            }
 
-                which is the same as: 
-                setTimeout(() => {
-                    console.log('Response not received from server. Request timed out (30 seconds)');
-                }, 30000);
-            </pre>
+            second(first)
+        </pre>
 
-            <pre>Another Example: 
-                function name(first, last) {
-                    return first + ' ' + last
-                }
-                let first = 'John'
-                let last = 'Doe'
-                console.log('My name is ' + (name(first, last)));
-            </pre>
-            <p>Event-listeners are methods or functions that exist generally pending user input or activity.</p>
-            <p>Callback functions can be used in conjunction with event-listeners.</p>
-            <pre>
-                document.queryselector('#button-clicked')
-                .addEventListener('click', function() { // function() would be the callback function.
-                    console.log('User clicked button.');
-                });
-            </pre>
-        </ul>
-        <h3>Loops - for, while, for...of, forEach, map</h3>
+        <pre>
+            function logWord () {
+                console.log('Something')
+            }
+            run(logWord)
+
+            is the same as: 
+            run(function() {
+                console.log('Something')
+            })
+        </pre>
+        
+        <p>'Anonymous' functions are functions that have been defined in another function that don't require calling.</p>
+        <pre>
+            setTimeout(function() {
+                console.log('Response not received from server. Request timed out (30 seconds)');
+            }, 30000);
+
+            which is the same as: 
+            setTimeout(() => {
+                console.log('Response not received from server. Request timed out (30 seconds)');
+            }, 30000);
+        </pre>
+
+        <pre>Another Example: 
+            function name(first, last) {
+                return first + ' ' + last
+            }
+            let first = 'John'
+            let last = 'Doe'
+            console.log('My name is ' + (name(first, last)));
+        </pre>
+        <p>Event-listeners are methods or functions that exist generally pending user input or activity.</p>
+        <p>Callback functions can be used in conjunction with event-listeners.</p>
+        <pre>
+            document.queryselector('#button-clicked')
+            .addEventListener('click', function() { // function() would be the callback function.
+                console.log('User clicked button.');
+            });
+        </pre>
+    </ul>
+    </section>
+
+    <section><!--Loops: for, while, for...of-->
+        <h3>Loops in Javascript</h3>
+        <p>JavaScript Loops are used to run a block of code repeatedly until a certain condition is met</p>
         <ul>
-            <li>'For' loops exist in may different languages. You include 3 parameters within the () that will assign the iterator or the variable and separated by ';' instead of ',', followed by the condition that needs to be met, then followed by the increment.
-                <pre>
-                    Example: 
-                    for(let a = 0; a &lt; 10; a++) {
-                        console.log(`For Loop Number: ${a}`);
-                    }
-                </pre>
-                <p>This example sets the starting variable 'a' as '0'. i++ will add 1 to the 'a' value and the condition 'a &lt; 10;' will run the loop until the value is equal to 9 because the condition is no longer true at 10. Console Log will display 'For Loop Number: #'</p>
-            </li>
-            <li>'While' Loops are an older method. The major difference is that the variable is defined outside of the loop. 
-                <pre>
-                    Example:
-                    let a = 0; 
-                    while(a &lt; 10) {
-                        console.log(`For Loop Number: ${a}`);
-                        a++;        
-                    }
-                </pre>
-                <p>It's very important to include the line 'a++' to set the increment otherwise it will keep looping the same value. Also important to have the condition to limit the amount of times the loop is run.</p>
-            </li>
-            <li>Looping through Arrays
-                <pre>
-                    For Example:
-                    const todos = [
-                    {
-                        id: 1,
-                        text: 'Pick up dry cleaning',
-                        isCompleted: true
-                    },
-                    {
-                        id: 2,
-                        text: 'Pick up groceries',
-                        isCompleted: true
-                    },
-                    {
-                        id: 3,
-                        text: 'Return borrowed gym equipment',
-                        isCompleted: false
-                    },
-                    ];
-                    
-                    for(let a = 0; a &lt;todos.length; a++) {
-                        console.log(todos[a].text);            
-                    }
-                </pre>
-                <p>This will display the number of items and the using the <i>For</i> loop option.</p>
-                <p>There is the <i>For...Of</i> loop that is structured similar to the <i>For</i> loop but it is easier to read in comparison.</p>
-                <pre>
-                    let array = [2, 4, 6, 8]
-                    for(let element of array) {
-                        console.log(element);
-                    }
-                </pre>
-                <p>'element' could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
+            <li>
+                <ul>
+                    <li>
+                        <h3>For Loops</h3>
+                        <p>'For' loops exist in may different languages. You include 3 parameters within the () that will assign the iterator or the variable and separated by ';' instead of ',', followed by the condition that needs to be met, then followed by the increment.</p>
+                        <p>For Loops are comprised of the following: </p>
+                        <ul>
+                            <li>variable initialization/declaration</li>
+                            <li>termination condition; if true then run loop, if false then stop loop</li>
+                            <li>checks condition/statements inside the loop</li>
+                            <li>incrementing/decrementing loop control variable</li>
+                        </ul>
+                        <pre>
+                            for (let i=0; x &lt; 5; i++) {
+                                console.log(x)
+                            }
+                        </pre>
+                        <p>Outputs: 0; 1; 2; 3; 4; </p>
+                        <p>'for' is the keyword to call the function to initiate the forloop. 'let i = 0;' is the loop control variable where 'i' generally stands for the index. 'i &lt; 10' is the conditon that's being checked if true or false. 'i++' is the incrementing loop control variable.</p>
+                        <p>Note: if you do not have a checking condition or you're trying to divide by 0, the machines will error out due to lack of memory when there's no limiter to end the loop. </p>
+                        <pre>
+                            Example: 
+                            for(let a = 0; a &lt; 10; a++) {
+                                console.log(`For Loop Number: ${a}`);
+                            }
+                        </pre>
+                        <p>This example sets the starting variable 'a' as '0'. i++ will add 1 to the 'a' value and the condition 'a &lt; 10;' will run the loop until the value is equal to 9 because the condition is no longer true at 10. Console Log will display 'For Loop Number: #'</p>
+                    </li>
+                    <li>
+                        <h3>While Loops</h3>
+                        <p>while loops have a condition set and the statements run while an action is being run. They will check a condition first then check if the statement inside the loop is true or false.</p>
+                        <pre>
+                            let i =0;
+                            while (i &lt; 5) { 
+                                console.log(i)
+                                i++;
+                            }
+                            console.log(go to the end)
+                            
+                            this will print 1; 2; 3; 4; 5;
+                            note: '++' functions the same is +1 and is called 'incrementing'
+                        </pre>
+                        
+                        <p>An example of a while loop:</p>
+                        <pre>
+                            let numbers = [2, 4, 6, 8];
+                            var counter = 0
+                            var sum = 0;
+                            while (counter &lt; numbers.length) {
+                                sum += numbers[counter];
+                                counter++;
+                            }
+                            
+                            console.log(sum);
+                            
+                            Follows logic: 
+                            Loop 1: (0+2)->
+                            Loop 2: (2+4)->
+                            Loop 3: (6+6)->
+                            Loop 4: (12+8) RESULT = 20
+                        </pre>
+
+                        <p>'While' Loops are an older method. The major difference is that the variable is defined outside of the loop.</p>
+                        <pre>
+                            Example:
+                            let a = 0; 
+                            while(a &lt; 10) {
+                                console.log(`For Loop Number: ${a}`);
+                                a++;
+                            }
+                        </pre>
+                        <p>It's very important to include the line 'a++' to set the increment otherwise it will keep looping the same value. Also important to have the condition to limit the amount of times the loop is run.</p>
+                    </li>
+                    <li>
+                        <h3>Do While Loops</h3>
+                        <p>while loops have a condition set and the statements run while an action is being run. They will run the loop around statements inside the loop then check if the condition is true or false.</p>
+                        <pre>
+                            let value = '';
+                            let x = 0;
+        
+                            do {
+                                x = x + 1;
+                                value = value + x;
+                                console.log("current do value: " + value)
+                            } while (x &lt; 5); 
+        
+                            console.log("the final value is: " + value);
+        
+                            this will print out 12345
+        
+                            note: the first loop will always run the first block of code. not used very often.
+                        </pre>
+                        <p>An example of 'Do While'</p>
+                        <pre>
+                            var sum = 0;
+                            var number = 1; 
+                            do {
+                                sum += number;
+                                number++;
+                            } while (number &lt;= 10);
+                            console.log("Sum = " + sum);
+        
+                            Logic will follow: 
+                            Loop 1: (1+0)->​
+                            Loop 2: (2+1)->​
+                            Loop 3: (3+3)->​
+                            Loop 4: (4+6)->​
+                            Loop 5: (5+10)->​
+                            Loop 6: (6+15)->​
+                            Loop 7: (7+21)->​
+                            Loop 8: (8+28)->​
+                            Loop 9: (9+36)->​
+                            Loop 10: (10+45) RESULT = 55
+                        </pre>
+                    </li>
+                    <li>
+                        <h3>Looping through Arrays</h3>
+                        <pre>
+                            For Example:
+                            const todos = [
+                            {
+                                id: 1,
+                                text: 'Pick up dry cleaning',
+                                isCompleted: true
+                            },
+                            {
+                                id: 2,
+                                text: 'Pick up groceries',
+                                isCompleted: true
+                            },
+                            {
+                                id: 3,
+                                text: 'Return borrowed gym equipment',
+                                isCompleted: false
+                            },
+                            ];
+                            
+                            for(let a = 0; a &lt;todos.length; a++) {
+                                console.log(todos[a].text);
+                            }
+                        </pre>
+                        <p>This will display the number of items and the using the <i>For</i> loop option.</p>
+                        <p>There is the <i>For...Of</i> loop that is structured similar to the <i>For</i> loop but it is easier to read in comparison.</p>
+                        <pre>
+                            let array = [2, 4, 6, 8]
+                            for(let element of array) {
+                                console.log(element);
+                            }
+                        </pre>
+                        <p>'element' could be any assigned name for the variable and it will display the To Do list in the console. The benefit is that you do not have to have an index number.</p>
+                    </li>
+                </ul>
             </li>
         </ul>
+    </section>
 
+    <section> <!--Loop Methods: forEach, map, filter-->
         <h3>High Order Array Methods/Functions</h3>
         <p>Function that takes another function as a parameter. There following are commonly used functions that apply to arrays and are used oten to iterate through and manipulate data.</p>
         <p>Arrays are objects stored in javascript which has keys that are assigned to functions/object methods. You can call high order array functions as a function or using '.' notation.</p>
         <ul>
             <li>
+                <h3>forEach Method</h3>
                 <p>forEach() - Basic iteration/looping function that's built in javascript but called in a specific manners; similar to a for loop, doesn't return any data. Use '.forEach' to iterate over an array. Prior to this, 'for' loops were the main tool for iteration. You would use forEach in place of any loops that require 'i++'</p>
                 <ul>
                     <li>
@@ -852,7 +910,7 @@
                                     callback(element)
                                 }
                             }
-
+    
                             let numbers = [2, 4, 6, 8]; 
                             forEach(numbers, function(number){      //essentially replacing callback(element)
                                 console.log(number)        //console.logs 2, then 4, then 6, then 8
@@ -912,7 +970,7 @@
                                     callback(element)
                                 }
                             }
-
+    
                             let numbers = [2, 4, 6, 8]; 
                             forEach(numbers, function(number){      //essentially replacing callback(element)
                                 console.log(number)        //console.logs 2, then 4, then 6, then 8
@@ -945,6 +1003,7 @@
                 </ul>
             </li>
             <li>
+                <h3>Map Method</h3>
                 <p><i>map</i> allows us to create a new array from an array. You need to have a 'return' at the end of the call back function. Doesn't affect original array. 'map' can make a copy of the original array with each element transformed in some way. For example, we have an array of names and want to have a copy of the array but with the names capitalized, or turn an array of numbers into an array of strings, or an array of objects into an array of DOM elements. </p>
                 <ul>
                     <li>
@@ -1012,55 +1071,56 @@
                 </ul>
             </li>
             <li>
-                <li>
-                    <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array. 'filter' is array iterator function that should be used when we want to make a copy of the array that has only a subset of items of the original. For example, we have an array of names and want to keep only names that do not contain the letter "e".</p>
-                    <p>filter()- Used in a lot of state reducers. It's  Used to filter out certain pieces of data based on a condition or select a subset of an array. For example you can use this function to find all strings that include a substring or objects where the value is equal to a boolean.</p>
-                    <p>The filter function will return a new array with the result, it needs to be saved to a variable if you want to modify it later. It doesn't modify the original array. Essentially how the function runs if written out is:</p>
-                    <ul>
-                        <li>
-                            <pre>
-                                function filter(array, callback) {      //set function name & parameters; when using '.'' notation it would be array.filter
-                                    let searchResults = []      //empty array
-                                    for(let i = 0; i &lt; array.length; i++) {      //array iteration
-                                        let element = array[i]      //select each element in the array
-                                        if(callback(element)){      //sets the condition
-                                            searchResults.push(element)     //pushes results that follow condition into array
+                <h3>Filter Method</h3>
+                <p><i>filter</i> allows us to create a new array based on a condition. Also needs a 'return' function as part of the call back function. Doesn't affect original array. 'filter' is array iterator function that should be used when we want to make a copy of the array that has only a subset of items of the original. For example, we have an array of names and want to keep only names that do not contain the letter "e".</p>
+                <p>filter()- Used in a lot of state reducers. It's  Used to filter out certain pieces of data based on a condition or select a subset of an array. For example you can use this function to find all strings that include a substring or objects where the value is equal to a boolean.</p>
+                <p>The filter function will return a new array with the result, it needs to be saved to a variable if you want to modify it later. It doesn't modify the original array. Essentially how the function runs if written out is:</p>
+                <ul>
+                    <li>
+                        <pre>
+                            function filter(array, callback) {      //set function name & parameters; when using '.'' notation it would be array.filter
+                            let searchResults = []      //empty array
+                            for(let i = 0; i &lt; array.length; i++) {      //array iteration
+                                let element = array[i]      //select each element in the array
+                                if(callback(element)){      //sets the condition
+                                    searchResults.push(element)     //pushes results that follow condition into array
+                                }
+                            }
+                            return searchResults        //HAVE to have return otherwise results aren't logged. 
+                        }
+                        </pre>
+                    </li>
+                    <li>
+                        <pre>
+                            Example:
+                            let numbers = [2, 4, 6, 8]
+                            let lessThan2 = [];     //empty array
+                                    for(let i = 0; i &lt; numbers.length; i++) {    //array iteration
+                                        let number = numbers[i]     //selecting each element in array
+                                        if(number &lt; 2) {     //if set condition is true
+                                            lessThan2.push(number)      //then return result to empty array
                                         }
                                     }
-                                    return searchResults        //HAVE to have return otherwise results aren't logged. 
-                                }
-                            </pre>
-                        </li>
-                        <li>
-                            <pre>
-                                Example:
-                                let numbers = [2, 4, 6, 8]
-                                let lessThan2 = [];     //empty array
-                                        for(let i = 0; i &lt; numbers.length; i++) {    //array iteration
-                                            let number = numbers[i]     //selecting each element in array
-                                            if(number &lt; 2) {     //if set condition is true
-                                                lessThan2.push(number)      //then return result to empty array
-                                            }
-                                        }
-                                        console.log(lessThan2)      //returns 4, 6, 8
-                            </pre>
-                            <p>is the same as:</p>
-                            <pre>
-                                let numbers = [2, 4, 6, 8]
-                                let lessThan2 = filter(numbers, function(number){
-                                    return element &lt; 2      //needs to return followed by condition or logic (replacement for if)
-                                })
-                            console.log(lessThan2)      //returns 4, 6, 8
-                            </pre>
-                        </li>
-                    </ul>
-                </li>
+                                    console.log(lessThan2)      //returns 4, 6, 8
+                        </pre>
+                        <p>is the same as:</p>
+                        <pre>
+                            let numbers = [2, 4, 6, 8]
+                            let lessThan2 = filter(numbers, function(number){
+                                return element &lt; 2      //needs to return followed by condition or logic (replacement for if)
+                            })
+                        console.log(lessThan2)      //returns 4, 6, 8
+                        </pre>
+                    </li>
+                </ul>
+            </li>
             <li>
+                <h3>Other array methods</h3>
                 <p><i>reduce</i> is an array iterator function should be used when we want to condense the array down to a single value. For example, we have an array of numbers and we want the sum (a single value).</p>
-
+                <p><i>sort</i> is another method that sorts the elements of an array in place and returns the sorted array.</p>
             </li>
         </ul>
-
+    
         <pre>
             let numbers = [2, 4, 6, 8]
             console.log('original array: ', numbers)
@@ -1071,38 +1131,38 @@
                 console.log(`.forEach Loop ${index}: `, element)        //returns Original Array: [2, 4, 6, 8]
                 eachArray.push(element * 2)     //creates a function that performms the same as map 
             })
-
+    
             let mappedNumbers = numbers.map(function(element, index) {
                 console.log(`.map Loop ${index}: `, element)        //returns .forEach Loop 0: 2; .forEach Loop 1: 4; .forEach Loop 2: 6; .forEach Loop 3: 8;
                 return element * 2      //* is an operator so that you can multiply by the integer. '**' would make it squared. Equivalent of the superscript. If you don't have return then no data is saved.
             })
-
+    
             let filteredNumbers = numbers.filter(function(element) {
                 return element > 2
             })
-
+    
             console.log('-------')
             console.log('.forEach Array: ', forEachNumbers)     //returns value as undefined because it's not set to return anything. It's a tool to perform operations in the array, not to perform on the array itself. 
             console.log('.map Array: ', mappedNumbers)      //returns [4, 8, 12, 16];  
             console.log('.filter Array: ', filteredNumbers)     //returns elements greater than 2; returns result [4, 6, 8]
             console.log('Final Array: ', numbers)       //returns Final Array: [2, 4, 6, 8] as there were no changes. 
         </pre>
-
+    
         <p>None of the high order array methods affect the original array. They create a new array based on the parameter passed. 'map' loops through the array exactly like how 'forEach' functions and is meant to operate on the element but cannot determine if an element satisfies a certain condition, that's what filter is for.</p>
         <p>High order array methods are built into Javascript and are called after the array's been declared.</p>
-
+    
+        <h3>Array Iteration Practice</h3>
         <pre>
-            Array Iterator Practice
             let users =[
                 ( id firstName: 'John', lastName: 'Doe', age: 36 ),
                 ( id firstName: 'Jane', lastName: 'Doe', age: 24 ),
                 ( id firstName: 'Stephen', lastName: 'Lynch', age: 27 ),
                 ( id firstName: 'Briar', lastName: 'Rose', age: 14 )
             ]
-
-
+    
+    
             //Using .forEach & .map
-
+    
             function getFirstNames(users){
                 let firstNameList = []  //empty array
                 users.forEach(function(user){
@@ -1110,21 +1170,21 @@
                 })
                 return firstNameList    //returns array after function runs. [ 'John', 'Jane', 'Stephen', 'Briar']
             }
-
+    
             console.log(getFirstNames(Users))
             
             //which is the same as: 
-
+    
             function getFirstNames(users){
                 let firstNameList = users.map(function(user){       //we don't need to declare an empty array container using '.map'
                     return user.firstName       //required for the function to return a result
                 })
                 return firstNameList    //returns array after function runs. [ 'John', 'Jane', 'Stephen', 'Briar']
             }
-
+    
             console.log(getFirstNames(Users))
-
-
+    
+    
             //More .map Practice
             
             function getFullNames(users){
@@ -1132,29 +1192,29 @@
                     return `${user.firstName} $user.lastName`
                 })  
             }
-
+    
             console.log(getFullNames(Users)) //returns array[ 'John Doe', 'Jane Doe', 'Stephen Lynch', 'Briar Rose']
-
+    
             //which is the same as: 
-
+    
             console.log(users.map(function(user) {return `${user.firstName} $user.lastName`}))
-
-
+    
+    
             //filter practice
-
+    
             function getAdults(users){
                 let adults = users.filter(function () {
                     return adults.age > 18      //when looking for teenages, teens.age >=13 && teens.age &lt;=18
                 })
             }
-
+    
             console.log(getAdults(users))
-
-
+    
+    
             //getOldest user
-
+    
             let moreHelp = true; 
-
+    
             function getOldest(users){
                 let oldestUser = users[0]       //set location for variable with index value
                 users.forEach(function(user){       //set iteration using .forEach
@@ -1164,365 +1224,312 @@
                 })
                 return oldestUser
             }
-
+    
             console.log(getOldest(users))
-
+    
             //which is the same as this 'sort' function: 
-
+    
             let moreHelp = true; 
-
+    
             function getOldest(users){
                 return users.sort(function(user1, user2){       //checks the 2 users in the array and keeps iterating through the array and compares the users. 
                     return user1.age - user2.age    //figures out which of the 2 is greater; there's math going on behind the scene. this is specific to sorting syntax
                 })[users.length-1]
             }
-
+    
             console.log(getOldest(users))
         </pre>
-
+    </section>
         
         <li>OOP - Object oriented programming (protypes &amp; classes)</li>
         <li>DOM - Document Object Model Selection</li>
         <li>DOM - Document Object Model Manipulation</li>
         <li>Events</li>
+            <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
         <li>Basic Form Validation</li>
     </ul>
-    
-    <h3>Modules</h3>
-    <p>Used to bring everything together and import files, packets, or pieces of code into another file. They are not supported in browsers directly so you have to use tools such as Parcel or Webpack with Babel.</p>
-    <ul>
-        <li>ES6 Modules, TypeScript (Angular)</li>
-        <li>Parcel, Webpack &amp; Babel</li>
-        <li>Export &amp; Export Default</li>
-    </ul>
-    
-    <h3>Classes</h3>
-    <p>Classes are a term used in multiple languages. Used mostly in React &amp; Angular</p>
-    <ul>
-        <li>Structuring a class</li>
-        <li>Constructors</li>
-        <li>Methods &amp; properties</li>
-        <li>Instantiation - creating objects from the class</li>
-        <li>Extending classes &amp; inheritance</li>
-    </ul>
-    
+
     <h3>Promises/Asynchronus Requests</h3>
-    <p>ES6 utilizes promises as a solution instead of callbacks for asynchronous coding. This allows you to make a request for a server and anything that could take a while, you are able to perform other processes on the application without having to wait for a response.</p>
-    <ul>
-        <li>Learn how to create and recieve promises</li>
-        <li>Standard .then() to get the data back after making the request and .catch() syntax to catch any possible errors</li>
-        <li>Async/Await was introduced in ES7 which can handle promises in more of a synchronus function</li>
-        <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
-    </ul>
-    
-    <h3>Destructuring</h3>
-    <p>Preferred when you look at most frameworks, makes for cleaner and more readable code. Unpack values from objects and arrays.</p>
-    <pre>
-        Examples: 
-        const { name, email } = user;
-        
-        const { name, email, address: {city} } = user;
-    </pre>
-    <p>We have a user object with some fields to put into a variable. The first example is done so you can get a name and email for a variable in the user object. The second is done so you can pull the address object and you can pull the city which is the property of the address object within the 'user'</p>
-        
-    <h3>Concept of Components &amp; State</h3>
-    <p>UIs are broken up into individual components which has some sort of state associated with them. You are taught about separation of concerns for the HTML mark up, CSS stying, and the Javascript for any dynamic type functionality where you select elements from the DOM. The difference for mindsets using Frameworks is that you start thinking of each user interface as individual components that are encapsulated entities that include both markup/disply and the functionality. Each component can have its own data and state of being.</p>
-    <p>Application level states are usually implement using a state manager like Redux, Vuex, etc</p>
-    <p>Nested components (Parent &amp; children)</p>
-    <p>Can be directly inserted or used in a router. 'State' is a React object that is used to contain information about the component. When the component's state changes, then the component re-renders.</p>
-    
-    <p>For example, if you look at a website, there can be a search bar as a component, another one that tracks statistics, another one that tracks activities, or suggestions for other users for UI when dealing with frameworks. When you share state you look into something like React for Redux or Vuex for Vue for state level management when sharing data for a single source of truth or context API, Graph QL &amp; Apollo. There are different technologies to use.</p>
-    
-    <h3>Spread Operator (...)</h3>
-    <p>State is usually unchangeable or immutable so it cannot be direclty changed. The spread operator allows us to make a copy to add what we want and change what we want and then send it to the application or component.</p>
-    
-    <pre>
-        Examples: 
-        const userState = {
-            name: 'Jane'
-        }
-        
-        const newUserState = {
-            ...userState,
-            age: 28
-        }
-    </pre>
-    <p>This user state has one property of 'name' that represented by Jane and you add a new user state using the spread operator (...) to make a copy of the userState then add the age property.</p>
-    
-    
-    <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
+        <p>ES6 utilizes promises as a solution instead of callbacks for asynchronous coding. This allows you to make a request for a server and anything that could take a while, you are able to perform other processes on the application without having to wait for a response.</p>
+        <ul>
+            <li>Learn how to create and recieve promises</li>
+            <li>Standard .then() to get the data back after making the request and .catch() syntax to catch any possible errors</li>
+            <li>Async/Await was introduced in ES7 which can handle promises in more of a synchronus function</li>
+            <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
+        </ul>
 
-
-    <h2>Coding Challenge Logic</h2>
-
-    <h3>Reverse a String</h3>
-    <p>Challenge; Create a function to reverse a string.</p>
-
-    <pre>
-        function reverseString(string) {
-            var final; 
-            for(var i = string.length - 1; i >=0; i--) {    // done in a bit differently to get the descending values as we need to start from the end. loop control has the '-1' is there since javascript index's start at 0 so you need to subtract 1 to get the last index. condition is going down so '>='' for the condition and '--' for the increments.
-                final += string[i];
+    <section><!--Coding Challenges-->
+        <h2>Coding Challenge Logic</h2>
+        <h3>Reverse a String</h3>
+        <p>Challenge; Create a function to reverse a string.</p>
+    
+        <pre>
+            function reverseString(string) {
+                var final; 
+                for(var i = string.length - 1; i >=0; i--) {    // done in a bit differently to get the descending values as we need to start from the end. loop control has the '-1' is there since javascript index's start at 0 so you need to subtract 1 to get the last index. condition is going down so '>='' for the condition and '--' for the increments.
+                    final += string[i];
+                }
+                return final; 
+            }
+    
+            console.log(reverseString('hello'));    //returns olleh
+        </pre>
+    
+        <pre>
+            function reverseString(string) {
+                var stringArray = string.split('');
+                var reverseStringArray = string.reverse();
+                var reversedString = reverseStringArray.join('');
+                return reversed string
+            }
+    
+            console.log(reverseString('hello'));    //returns olleh
+        </pre>
+    
+        <pre>
+            function reverseString(string) {
+                return string.split('').reverse().join(''); //shorthand using built in methods
+            }
+    
+            console.log(reverseString('hello'));    //returns olleh
+        </pre>
+    
+        <h3>Factorialize a Number</h3>
+        <p>Return the factorial of the provided integer. If the integer is represented with the letter n, a factorial is the product of all ppositive integers less than or equal to n.</p>
+        <p>Factorials are the product of an integer and all the integers below it. Often represented with the shorthand notation 'n!'. ie 5! = 1 * 2 * 3 * 4 * 5 = 120</p>
+    
+        <pre>
+            function factorialize(num) {
+                var result = 1;     // provide variable container
+                for (i = 1; i&lt;=num, i++){  //we have to start the count at '1' since '0' multiplied by anything is 0. We can use num as that's the parameter that is being passed.
+                    result = result * i; //same as 'result *= i;''
+                }
+                return result;
+            }
+    
+            factorialize(5);
+        </pre>
+    
+        <h3>Palindrome Check</h3>
+        <p>Given the string, check if it is a palindrome. Palindromes are a string that doesn't changed when reversed (it reads the same backward and forward).</p>
+        <p>Note: remove all non-alphanumeric characters(punctuation, spaces, and symbols) and turn everything to lowercase in order to check for palindromes</p>
+    
+        <pre>
+            function solution(inputString) {
+                const length = inputString.length;
+                const center = length / 2;     //starting point and end point should meet in the center
+              
+                for (let i = 0; i &lt; center; i++) {     
+                  if (inputString[i] !== inputString[length - 1 - i]) {        //if start and end do not equal each other 
+                    return false;      //return !true value for false
+                  }
+                }
+                return true;       //return true value for !false
+              }
+        </pre>
+    
+        <pre>
+            function reverseString(inputString) {
+                var final = '';  //required to confirm type = 'string'. 
+                for(var i = inputString.length - 1; i >=0; i--) {    // done in a bit differently to get the descending values as we need to start from the end. loop control has the '-1' is there since javascript index's start at 0 so you need to subtract 1 to get the last index. condition is going down so '>='' for the condition and '--' for the increments.
+                final += inputString[i];
             }
             return final; 
         }
-
-        console.log(reverseString('hello'));    //returns olleh
-    </pre>
-
-    <pre>
-        function reverseString(string) {
-            var stringArray = string.split('');
-            var reverseStringArray = string.reverse();
-            var reversedString = reverseStringArray.join('');
-            return reversed string
-        }
-
-        console.log(reverseString('hello'));    //returns olleh
-    </pre>
-
-    <pre>
-        function reverseString(string) {
-            return string.split('').reverse().join(''); //shorthand using built in methods
-        }
-
-        console.log(reverseString('hello'));    //returns olleh
-    </pre>
-
-    <h3>Factorialize a Number</h3>
-    <p>Return the factorial of the provided integer. If the integer is represented with the letter n, a factorial is the product of all ppositive integers less than or equal to n.</p>
-    <p>Factorials are the product of an integer and all the integers below it. Often represented with the shorthand notation 'n!'. ie 5! = 1 * 2 * 3 * 4 * 5 = 120</p>
-
-    <pre>
-        function factorialize(num) {
-            var result = 1;     // provide variable container
-            for (i = 1; i&lt;=num, i++){  //we have to start the count at '1' since '0' multiplied by anything is 0. We can use num as that's the parameter that is being passed.
-                result = result * i; //same as 'result *= i;''
-            }
-            return result;
-        }
-
-        factorialize(5);
-    </pre>
-
-    <h3>Palindrome Check</h3>
-    <p>Given the string, check if it is a palindrome. Palindromes are a string that doesn't changed when reversed (it reads the same backward and forward).</p>
-    <p>Note: remove all non-alphanumeric characters(punctuation, spaces, and symbols) and turn everything to lowercase in order to check for palindromes</p>
-
-    <pre>
-        function solution(inputString) {
-            const length = inputString.length;
-            const center = length / 2;     //starting point and end point should meet in the center
-          
-            for (let i = 0; i &lt; center; i++) {     
-              if (inputString[i] !== inputString[length - 1 - i]) {        //if start and end do not equal each other 
-                return false;      //return !true value for false
-              }
-            }
-            return true;       //return true value for !false
-          }
-    </pre>
-
-    <pre>
-        function reverseString(inputString) {
-            var final = '';  //required to confirm type = 'string'. 
-            for(var i = inputString.length - 1; i >=0; i--) {    // done in a bit differently to get the descending values as we need to start from the end. loop control has the '-1' is there since javascript index's start at 0 so you need to subtract 1 to get the last index. condition is going down so '>='' for the condition and '--' for the increments.
-            final += inputString[i];
-        }
-        return final; 
-    }
-    
-        function solution(inputString){
-            if (reverseString(inputString) === inputString)
-            return true;        // can be on the same line as it's only one argument.
-        return false;   //do not use } else { in this instance as it will make the values the same and not run through the code.
-        }
         
-        var inputString = 'eye' //test
-        console.log(reverseString(inputString)) //test
-        console.log(solution(inputString)); //confirmed result
-    </pre>
-
-    <p>Regular expressions are expressions that define a specific or match a search pattern.</p>
-    <pre>
-        function palindrome(string) {
-            var reg = /[\W_]/g    // '/' initiates the regular expression. '[]' is the container, '\W_' stands for non-alphanumeric values, '/g' for global to go through the whole string.
-            var smallString = string.toLowerCase().replace(reg, "");    //removes all non-alphanumeric characters and replaces it with nothing ("").
-
-            var reversed = smallString.split("").reverse().join("");    //splits parameter, reverses string, recombines it.
-            if (reversed === smallString) return true;       // if type & value is equal, return true
-
-            return false;       //else return false
-        }
-        
-        palindrome("racecar");
-    </pre>
-
-    <h3>Mutation Array</h3>
-    <p>n is a number; a is an array; mutation = changes to the array. Need b to be sum of a[i-1], a[0], a[i+1]. In the case where one of those is not true, then b[0] needs to be 0.</p>
-
-    <pre>
-        function solution(n, a) { //n is a number; a is an array; mutation = changes to the array
-        var b = []; // array type n.length
-        for(i=0; i &lt; n; i++) {
-            if (n==1) {
-                b[0] = a[0]
-            }else if (i==0) {     //condition if index is 0
-                b[0] = a[0] + a[1]   // b first number = a first number + number to right
-            } else if (i==n-1){     //condition for index is at the end
-                b[i] = a[i-1] + a[i]    //b next number + number to left
-            } else {    //conditon for ints being present left and right.
-                b[i] = a[i-1] + a[i] + a[i+1]     //b index plus left right and self
+            function solution(inputString){
+                if (reverseString(inputString) === inputString)
+                return true;        // can be on the same line as it's only one argument.
+            return false;   //do not use } else { in this instance as it will make the values the same and not run through the code.
+            }
             
+            var inputString = 'eye' //test
+            console.log(reverseString(inputString)) //test
+            console.log(solution(inputString)); //confirmed result
+        </pre>
+    
+        <p>Regular expressions are expressions that define a specific or match a search pattern.</p>
+        <pre>
+            function palindrome(string) {
+                var reg = /[\W_]/g    // '/' initiates the regular expression. '[]' is the container, '\W_' stands for non-alphanumeric values, '/g' for global to go through the whole string.
+                var smallString = string.toLowerCase().replace(reg, "");    //removes all non-alphanumeric characters and replaces it with nothing ("").
+    
+                var reversed = smallString.split("").reverse().join("");    //splits parameter, reverses string, recombines it.
+                if (reversed === smallString) return true;       // if type & value is equal, return true
+    
+                return false;       //else return false
+            }
+            
+            palindrome("racecar");
+        </pre>
+    
+        <h3>Mutation Array</h3>
+        <p>n is a number; a is an array; mutation = changes to the array. Need b to be sum of a[i-1], a[0], a[i+1]. In the case where one of those is not true, then b[0] needs to be 0.</p>
+    
+        <pre>
+            function solution(n, a) { //n is a number; a is an array; mutation = changes to the array
+            var b = []; // array type n.length
+            for(i=0; i &lt; n; i++) {
+                if (n==1) {
+                    b[0] = a[0]
+                }else if (i==0) {     //condition if index is 0
+                    b[0] = a[0] + a[1]   // b first number = a first number + number to right
+                } else if (i==n-1){     //condition for index is at the end
+                    b[i] = a[i-1] + a[i]    //b next number + number to left
+                } else {    //conditon for ints being present left and right.
+                    b[i] = a[i-1] + a[i] + a[i+1]     //b index plus left right and self
+                
+                    }
+                    return b
+                }
+            }
+    
+            n = 5
+            a = [4, 0, 1, -2, 3]
+            console.log(solution(n,a))
+        </pre>
+    
+        <pre>
+            function solution(n, a) { //n is a number that represents the array.length; a is an array; mutation = changes to the array
+                for (i=0; i &lt; n; i++) {
+                    b[i] = a[i]; // not empty array container, pushes value for 'a' array with same index 
+                    
+                    if (i-1 >=0) {  // index -1 is greater than or equal to 0
+                        b[i] = b[i] + a[i-1];   //then add number to the left
+                    }
+                    if(i + 1 &lt; n) {   // if index +1 less than length of array
+                        b[i] += a[i+1]   //then add number to the right
+                    }
                 }
                 return b
             }
-        }
-
-        n = 5
-        a = [4, 0, 1, -2, 3]
-        console.log(solution(n,a))
-    </pre>
-
-    <pre>
-        function solution(n, a) { //n is a number that represents the array.length; a is an array; mutation = changes to the array
-            for (i=0; i &lt; n; i++) {
-                b[i] = a[i]; // not empty array container, pushes value for 'a' array with same index 
-                
-                if (i-1 >=0) {  // index -1 is greater than or equal to 0
-                    b[i] = b[i] + a[i-1];   //then add number to the left
-                }
-                if(i + 1 &lt; n) {   // if index +1 less than length of array
-                    b[i] += a[i+1]   //then add number to the right
-                }
-            }
-            return b
-        }
-
-        n = 5
-        a = [4, 0, 1, -2, 3]
-        console.log(solution(n,a))
-    </pre>
-
-    <h3>Finding the length of the longest word</h3>
-    <p>Return the length of the longest word in the provided sentence. Response should be a number.</p>
-
-    <pre>
-        function findLongestWord(string) {
-            var words = string.split(" ");   //creates an array of words as a string based on spaces.
-            var longest = 0;  
-          
-            for(i=0; i &lt; words.length; i++) {    //initiates loop
-          
-              if (words[i].length > longest)
-              {  
-                longest = words[i].length;
+    
+            n = 5
+            a = [4, 0, 1, -2, 3]
+            console.log(solution(n,a))
+        </pre>
+    
+        <h3>Finding the length of the longest word</h3>
+        <p>Return the length of the longest word in the provided sentence. Response should be a number.</p>
+    
+        <pre>
+            function findLongestWord(string) {
+                var words = string.split(" ");   //creates an array of words as a string based on spaces.
+                var longest = 0;  
+              
+                for(i=0; i &lt; words.length; i++) {    //initiates loop
+              
+                  if (words[i].length > longest)
+                  {  
+                    longest = words[i].length;
+                  }
+                  
               }
               
-          }
-          
-          return longest;
-          }
-
-          string = 'The quick brown fox jumped over the lazy dog';
-          console.log(findLongestWord(string));
-          console.log(findLongestWord("abc a"));
-          console.log(findLongestWord("a"));
-    </pre>
-
-    <pre>
-        function findLongestWord(string) {
-            var words = string.split(" ");   //creates an array of words as a string based on spaces.
-            var longest ="";    //indicates empty string
-          
-            for (var word of words) {   //of goes over the elements without indexing.
-              if (word.length > longest.length) longest = word;
+              return longest;
               }
-              return longest.length;
-            }
-    </pre>
-
-    <pre>
-        function findLongestWord(string) {
-            return string.split(" ").sort(function(a, b) {return b.length - a.length})[0].length;  //splits the string then sorts it using the sort method. the function makes it sort in descending order and will provide the first index which should be longest word. 
-        }
-
-        string = 'The quick brown fox jumped over the lazy dog';
-          console.log(findLongestWord(string));
-          console.log(findLongestWord("abc a"));
-          console.log(findLongestWord("a"));
-    </pre>
-
-    <h3>Title Case</h3>
-    <p>Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case. </p>
-    <pre>
-        function titleCase(string) {
-            var words = string.toLowerCase().split(" ");  //converts to lowercase then splits each word seperated by a space.
-          
-            for (i=0; i&lt;words.length; i++) {
-              words[i] = words[i][0].toUpperCase() + words[i].slice(1)  //Sets each word to select first letter and convert it to Uppercase with a method then rejoins it with the rest of the word.
-            }
-          
-            return words.join(" "); //joins array back together as a string with a space in between. 
-          }
-          
-          console.log(titleCase("I'm a little tea pot"))
-    </pre>
-
-    <pre>
-        function titleCase(string) {
-            var titled = string.toLowerCase().split(' ').map(function(elem) {
-              return elem[0].toUpperCase() + elem.slice(1);
-            }) //converts everything to lower case then splits each word seperated by a space. Map method then takes the function then goes through an array and loops through an array of elements and returns the changes specified in the return 
-          
-            return titled.join(" "); //joins array back together as a string with a space in between. 
-          }
-          
-          console.log(titleCase("I'm a little tea pot"))
-    </pre>
-
-    <h3>Largest Numbers in Array</h3>
-    <p>Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays. </p>
-    <p>Remember, you can iterate through an array with a simple for loop, and access each memember with array syntax arr[i]</p>
-    <p>Two dimensional arrays are arrays that are stored within arrays. Note: Expected outcome should be [5, 27, 39, 1001]</p>
-
-    <pre>
-        function largestOfFour(array) {
-            var maxArray = [];
-          
-            for (i=0; i &lt; array.length; i++) { //goes through each array
-                var max = array[i][0];  //everytime loop runs, make outter loop = first number in each inner array.
-                for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
-                var currentElement = array[i][j];
-                if (currentElement >= max) {//Selects through each number to the array. 
-                    max = currentElement; //if true then it reassigns nax value to = currentElement. 
+    
+              string = 'The quick brown fox jumped over the lazy dog';
+              console.log(findLongestWord(string));
+              console.log(findLongestWord("abc a"));
+              console.log(findLongestWord("a"));
+        </pre>
+    
+        <pre>
+            function findLongestWord(string) {
+                var words = string.split(" ");   //creates an array of words as a string based on spaces.
+                var longest ="";    //indicates empty string
+              
+                for (var word of words) {   //of goes over the elements without indexing.
+                  if (word.length > longest.length) longest = word;
+                  }
+                  return longest.length;
                 }
+        </pre>
+    
+        <pre>
+            function findLongestWord(string) {
+                return string.split(" ").sort(function(a, b) {return b.length - a.length})[0].length;  //splits the string then sorts it using the sort method. the function makes it sort in descending order and will provide the first index which should be longest word. 
             }
-            maxArray.push(max); //adds the max number into the set outter array container. This runs until there's no new array indicated by array.length.
+    
+            string = 'The quick brown fox jumped over the lazy dog';
+              console.log(findLongestWord(string));
+              console.log(findLongestWord("abc a"));
+              console.log(findLongestWord("a"));
+        </pre>
+    
+        <h3>Title Case</h3>
+        <p>Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case. </p>
+        <pre>
+            function titleCase(string) {
+                var words = string.toLowerCase().split(" ");  //converts to lowercase then splits each word seperated by a space.
+              
+                for (i=0; i&lt;words.length; i++) {
+                  words[i] = words[i][0].toUpperCase() + words[i].slice(1)  //Sets each word to select first letter and convert it to Uppercase with a method then rejoins it with the rest of the word.
+                }
+              
+                return words.join(" "); //joins array back together as a string with a space in between. 
+              }
+              
+              console.log(titleCase("I'm a little tea pot"))
+        </pre>
+    
+        <pre>
+            function titleCase(string) {
+                var titled = string.toLowerCase().split(' ').map(function(elem) {
+                  return elem[0].toUpperCase() + elem.slice(1);
+                }) //converts everything to lower case then splits each word seperated by a space. Map method then takes the function then goes through an array and loops through an array of elements and returns the changes specified in the return 
+              
+                return titled.join(" "); //joins array back together as a string with a space in between. 
+              }
+              
+              console.log(titleCase("I'm a little tea pot"))
+        </pre>
+    
+        <h3>Largest Numbers in Array</h3>
+        <p>Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays. </p>
+        <p>Remember, you can iterate through an array with a simple for loop, and access each memember with array syntax arr[i]</p>
+        <p>Two dimensional arrays are arrays that are stored within arrays. Note: Expected outcome should be [5, 27, 39, 1001]</p>
+    
+        <pre>
+            function largestOfFour(array) {
+                var maxArray = [];
+              
+                for (i=0; i &lt; array.length; i++) { //goes through each array
+                    var max = array[i][0];  //everytime loop runs, make outter loop = first number in each inner array.
+                    for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
+                    var currentElement = array[i][j];
+                    if (currentElement >= max) {//Selects through each number to the array. 
+                        max = currentElement; //if true then it reassigns nax value to = currentElement. 
+                    }
+                }
+                maxArray.push(max); //adds the max number into the set outter array container. This runs until there's no new array indicated by array.length.
+                }
+                return maxArray;  //once inner loop executes, then the stored values are returned.
+            }
+            
+            console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+        </pre>
+    
+        <pre>
+            function largestOfFour(array) {
+                var maxArray = [0, 0, 0, 0];  //predetermine array container with values
+              
+                for (i=0; i &lt; array.length; i++) { //goes through each array
+                    for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
+                    var currentElement = array[i][j]; //creates element to go through and select new current index location
+                    if (currentElement >= maxArray[i]) {  //Selects through each array. 
+                        maxArray[i] = currentElement; //if true then it reassigns max value to = currentElement. 
+                    }
+                }    
             }
             return maxArray;  //once inner loop executes, then the stored values are returned.
-        }
-        
-        console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
-    </pre>
+            }
+    
+            console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+        </pre>
+    </section>
 
-    <pre>
-        function largestOfFour(array) {
-            var maxArray = [0, 0, 0, 0];  //predetermine array container with values
-          
-            for (i=0; i &lt; array.length; i++) { //goes through each array
-                for (j=0; j &lt; array[i].length; j++) { // 'j' or 'ii' for nested loops. This will go through each number in the array.
-                var currentElement = array[i][j]; //creates element to go through and select new current index location
-                if (currentElement >= maxArray[i]) {  //Selects through each array. 
-                    maxArray[i] = currentElement; //if true then it reassigns max value to = currentElement. 
-                }
-            }    
-        }
-        return maxArray;  //once inner loop executes, then the stored values are returned.
-        }
-
-        console.log(largestOfFour([[4, 5, 1, 3], [13, 27 ,18 ,26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
-    </pre>
     
 </body>
 </html>
