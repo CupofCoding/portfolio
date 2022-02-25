@@ -614,54 +614,109 @@
         top: 0%;
         }
     </pre>    
-    <p>will create a home button that stays fixed to the upper left of the screen. </p>            
+    <p>will create a home button that stays fixed to the upper left of the screen. </p>
+    <section>
+        <h3>CSS Reset</h3>
+        <p>Styling meant to be used for 'boiler-plates' to remove page presets.</p>
+        <pre>
+            html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+                box-sizing: border-box
+            }
+
+            article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            
+            body {
+                line-height: 1;
+            }
+            
+            ol, ul {
+                list-style: none;
+            }
+            
+            blockquote, q {
+                quotes: none;
+            }
+            
+            blockquote:before, blockquote:after, q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            html {
+                box-sizing:border-box
+            }
+
+            * {
+                box-sizing:inherit
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Styling example</h2>
+        <pre>
+            &lt;html>
+            &lt;head>
+                &lt;title>Sample Site&lt;/title>
+                &lt;link rel="samplestyle" type="text/css" href="css/samplestyle.css">
+            &lt;/head>
+            &lt;body>
+                &lt;header id="main-header">
+                    &lt;div class="container">
+                    &lt;h1>Sample Site&lt;/h1>
+                    &lt;/div>
+                &lt;/header>
+                
+                &lt;nav id="navbar">
+                    &lt;div class="container">
+                        &lt;ul>
+                            &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Services&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+                        &lt;/ul>        
+                    &lt;/div>
+                &lt;/nav>
+                
+                &lt;!--Showcase Area-->
+                &lt;section id="showcase">
+                &lt;div class="container">
+                    &lt;h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/h1>
+                &lt;/div>
+                &lt;/section>
+                
+                &lt;!--Main Area-->
+                &lt;div class="container">
+                &lt;section id="main-header">
+                    &lt;h1>Welcome&lt;/h1>
+                    &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p>
+                &lt;/section> 
+                &lt;!--Side Bar-->
+                &lt;aside id="sidebar">
+                    &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p>
+                &lt;/aside>
+                &lt;/div>
+                
+                &lt;footer id="main-footer">
+                        &lt;p>Copyright &copy;2021: My Website&lt;/p>
+                &lt;/footer>
+            &lt;/body>
+            &lt;/html>
+        </pre>
+    </section>
 </body>
 </html>
 
-<html>
-<head>
-    <title>Sample Site</title>
-    <link rel="samplestyle" type="text/css" href="css/samplestyle.css">
-</head>
-<body>
-    <header id="main-header">
-        <div class="container">
-        <h1>Sample Site</h1>
-        </div>
-    </header>
-    
-    <nav id="navbar">
-        <div class="container">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>        
-        </div>
-    </nav>
-    
-    <!--Showcase Area-->
-    <section id="showcase">
-    <div class="container">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
-    </div>
-    </section>
-    
-    <!--Main Area-->
-    <div class="container">
-    <section id="main-header">
-        <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </section> 
-    <!--Side Bar-->
-    <aside id="sidebar">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </aside>
-    </div>
-    
-    <footer id="main-footer">
-            <p>Copyright &copy;2021: My Website</p>
-    </footer>
-</body>
-</html>
