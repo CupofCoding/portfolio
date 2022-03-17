@@ -1353,13 +1353,238 @@
         </ul>
     </section>
 
-    <section>
+    <section> <!-- Promises/Asynchronus Requests -->
         <h3>Promises/Asynchronus Requests</h3>
+        <p>Asynchronus programming is a form of programming that allows work to run seperately or parallel from the primary application and returns a notification to the main application if the process completed or failed.</p>
+        <p>Asynchronus programming is important as it enables your program to continue to be responsive as opposed to waiting for a potentially long running task to finish. Many functions provided by browswers can potentially take a long time and are set as asynchronous.</p>
+        <p>For example: 
+            <ul>
+                <li>fetch() - for making HTTP requests. '.fetch()' always returns a list, while '.get()' returns the first result, or 'None' if there are no results.</li>
+                <li>getUserMedia() - accessing user's microphone or camera</li>
+                <li>showOpenFilePIcker() - pending user response to select files for acecess</li>
+            </ul>
+        </p>
+        <p>Asynchronus programming will also help with waiting for pending changes before performing a follow up action in case there is a process that is supposed to happen sequentially.</p>
+        <p>While forcing the page to wait, we essentially stop the browser from performing any other processes including viewable changes or responding to events. Asynchronous programming solves this problem by scheduling codes to run in the meantime while waiting for a response or scheduling code to run later. </p>
+        <p>Javascript primarily uses callback functions, promises, and 'async'/'await'.
+            <ul>
+                <li>Callbacks:
+                    asyncFunction(() => { 
+                        //run later
+                    })</li>
+                <li>Promises:
+                    asyncFunction() 
+                    .then(() => {
+                         //run later
+                        })
+                </li>
+                <li>async/await     //'await' is a keyword
+                    await asyncFunction()
+                    //run later
+                </li>
+            </ul>
+        </p>
+        <li>Standard .then() to get the data back after making the request and .catch() syntax to catch any possible errors</li>        
+        
         <p>ES6 utilizes promises as a solution instead of callbacks for asynchronous coding. This allows you to make a request for a server and anything that could take a while, you are able to perform other processes on the application without having to wait for a response.</p>
+        <p>For Example: 
+            <pre>
+                function wait(duration){
+                    let start = new Date().getTime()
+                    let now = start; 
+                    while(now &lt; start + duration){
+                        now = new Date.getTime()
+                    }
+                }
+            </pre>
+        </p>
+
+        <h4>'setTimeout' Functions</h4>
+        <p>'setTimeout' is a built-in javascript function that waits for the time set in milliseconds before invoking the callback function. The functions that we define can also accept callback functions.
+            <pre>
+                setTimeout(() =>{
+                    console.log('wait 10 seconds')
+                }, 10000)
+            </pre>
+        </p>
+
+        <p>Asynchronous functions are able to accept callbacks as parameters. Typically bad practice to have excessive nesting which makes code harder to read.</p>
+        <p>For Example:
+            <pre>
+                setTimeout(() => {
+                    object.firstFunction()
+                    setTimeout(() => {
+                        object.secondFunction()
+                        setTimeout(() => {
+                            object.stop()
+                        }, 500)     //runs first function and waits 500 milliseconds before next function
+                    },500)      //then runs second function and waits 500 milliseconds before next function
+                },500)      //then runs last function after waiting 500 milliseconds
+            </pre>
+
+            better practice to refactor the code so that it has the time first as a parameter then the arrow functions as a callback:
+
+            <pre>//Invoking
+                object.firstFunction(500, () => {
+                    object.secondFunction(500, <i>() => {
+                        object.firstFunction(500)
+                    }</i>)
+                })
+            </pre>
+
+            <pre>//Defining
+                function objectAction(time, callback){
+                    action = 'name of action'
+                    element.src = './url'
+                    setTimeout(() =>{
+                        stop()
+                        callback()
+                    }, time)
+                }
+            </pre>
+            callback in this case would be equal to the italics when invoked. 
+        </p>
+
+        <h4>Promises and '.then'</h4>
+        <p>Promises are objects that wait for a result to be returned. They were created as a solution to excessive callback function nesting for cleaner code.</p>
+        <p>Promise objects support two properties, 'state' and 'result'. While a promise is in the middle of the process, the result is undefined or 'pending.' If the promise is 'fulfilled' then the result is a value, else the 'rejected' result is returned as an error.</p>
+        <p>When using a promise as a constructor, the callback function parameter is typically named 'resolve'.
+            <pre>
+                function functionName(parameter/objectName){
+                    return new Promise(function(resolve) {       //create new promise using the 'new' keyword, pass the new constructor a callback function that accepts a parameter
+                        setTimeout(function() {
+                            resolve('condition')
+                        }, time)
+                    })
+                }
+            </pre>
+        </p>        
+        <p>'.then' is a method for waiting until a promise has been fulfilled.
+            <pre>
+                functionName('object/product name')     
+                    .then(function(parameter){  //parameter can be cost or payment required and is based on promise condition
+                        //runs based on time when promise was created.
+                        console.log(parameter)
+                    })
+            </pre>
+        </p>
+
+        <h4>Chaining using Methods</h4>
+        <p>You're able to invoke multiple object methods in a row. 
+            <pre>
+                let counter = {
+                    value: 0
+                    increment: function() {
+                        counter.value++
+                        return counter;
+                    }
+                }
+
+                counter
+                .increment()    //calls increment function, value becomes 1
+                .increment()    //value becomes 2
+                .increment()    //value becomes 3
+
+                console.log(counter.value)  //returns 3
+            </pre>
+
+            in the same way that you're able to chain methods, you're able to chain ''.then'
+            <pre>
+                functionName('object')
+                    .then( condition => functionName('objectName'))     //runs based on time set when promise was created.
+                    .then( condition => console.log(condition))     //runs at the end of the last .then statement based on time set by promise.
+
+            </pre>
+        </p>
+
+        <p>When using promises to refactor code                            
+            <pre>
+                object.firstFunction(500, () => {
+                    object.secondFunction(500, () => {
+                        object.thirdFunction(500, () =>{
+                            object.fourthFunction(500, () => {
+                                object.firstFunction(500)   //creates a loop from the starting function
+                            })
+                        })
+                    })
+                })
+            </pre>
+
+            becomes:             
+            <pre>
+                object.firstFunction(500)
+                    .then (() => object.secondFunction(500))
+                    .then (() => object.thirdFunction(500))
+                    .then (() => object.fourthFunction(500))
+                    .then (() => object.firstFunction(500))
+            </pre>
+
+            if you have .then on multiple lines, syntax REQUIRES you to have the 'return' function otherwise it will not work:
+            <pre>
+                object.firstFunction(500)
+                    .then (() => {
+                        return object.secondFunction(500)
+                    })
+                    .then (() => 
+                    {
+                        return object.thirdFunction(500)
+                    })
+                    .then (() => {
+                        return object.fourthFunction(500)
+                    })
+                    .then (() => {
+                        return object.firstFunction(500)
+                    })
+            </pre>
+        </p>
+
+        <h4>Async and Await</h4>
+        <p>New keywords 'async' and 'await' was introduced in ES7 which can handle promises in more of a synchronus function. The newer methods were built using promises and can be used for asynchronous coding.</p>
+        <p>Pain points are essentially any specific or recurring problems that the user may experience, such as repetitive coding. Solutions to those various issues that implement new language features are considered 'Syntatic Sugar.' Specifically in computer science where the syntax within a programming language becomes easier to express concisely, read clearly, or provide an alternative way of writing code.</p>
+        <p>'async' is a keyword that can be applied before the function keyword and arrow functions. All 'async' functions prioritize waiting for any other functions that return promises manually. 
+            <pre>
+                async function functionName(parameter){
+                    //behavior
+                }
+            </pre>
+
+            is the same as:
+            <pre>
+                function functionName(parameter){
+                    return new Promise( resolve => {
+                        //behavior
+                    })
+                }
+            </pre>
+        </p>
+        <p>'await' is a keyword that can only be used when nested inside an async function before a promise. Await will not allow the function to continue until the promise has been resolved.
+            <pre>
+                async function functionName(parameter){
+                    await action(time)  //behavior and time in milliseconds inside the parameter
+                    return 'condition'
+                }
+            </pre>
+
+            which is the same as: 
+            <pre>
+                function functionName(parameter){
+                    return new Promise( resolve => {
+                        action(time)
+                            .then(() => {       //same as: .then(function(condition)(console.log(condition))
+                                resolve('condition')    //which is the same as "console.log(condition)" and "return 'condition'"
+                            })
+                    })
+                }
+            </pre>
+        </p>
+        
+
+
+
+
+
         <ul>
             <li>Learn how to create and recieve promises</li>
-            <li>Standard .then() to get the data back after making the request and .catch() syntax to catch any possible errors</li>
-            <li>Async/Await was introduced in ES7 which can handle promises in more of a synchronus function</li>
             <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
         </ul>
     </section>
