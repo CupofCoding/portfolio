@@ -1577,6 +1577,20 @@
                 }
             </pre>
         </p>
+
+        <h4>Concurrency with Promises</h4>
+        <p>Concurrency is running multiple processes at the same time using asynchronous logic. 'Concurrency' is implemented by software, whereas 'Parallelism' uses hardware to execute multiple processes at the same time using different CPU Cores.
+            <pre>
+                async function functionName(){
+                    await condition1()      //pauses code to run this condition
+                    await condition2()      //waits for first condition to finish before running
+                    await condition3()      //waits for second condition to finish before running
+                }
+            </pre>
+            Each function essentially stops at a checkpoint before proceeding in a long sequence. Each asynchronuous function will run at the same time if 'await' is removed.
+        </p>
+        <p>Promise.all</p>
+        <p>async/await with Promise.all</p>
         
 
 
