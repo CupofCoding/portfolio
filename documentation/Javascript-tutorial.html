@@ -1355,6 +1355,19 @@
 
     <section> <!-- Promises/Asynchronus Requests -->
         <h3>Promises/Asynchronus Requests</h3>
+        <p>Promises function like the general use of the term promise. Either the promise is fulfilled or rejected when the result is unable to be completed or has failed. They're similar to callback functions.
+            <pre>
+                let p = new Promise((resolve, reject) => {      //2 parameters are passed into the promise. 
+                    let a = 1 + 1
+                    if (a == 2 ) {
+                        resolve('Success')
+                    } else {
+                        reject('Failed')
+                    }
+                })
+            </pre>
+        </p>
+        
         <p>Asynchronus programming is a form of programming that allows work to run seperately or parallel from the primary application and returns a notification to the main application if the process completed or failed.</p>
         <p>Asynchronus programming is important as it enables your program to continue to be responsive as opposed to waiting for a potentially long running task to finish. Many functions provided by browswers can potentially take a long time and are set as asynchronous.</p>
         <p>For example: 
@@ -1468,6 +1481,31 @@
                     })
             </pre>
         </p>
+
+        <p>Another example: 
+            <pre>
+                let p = new Promise((resolve, reject) => {      //2 parameters are passed into the promise. 
+                    let a = 1 + 1
+                    if (a == 2 ) {
+                        resolve('Success')
+                    } else {
+                        reject('Failed')
+                    }
+                })
+
+                //.then will be called when promise resolves successfully
+                p.then((message) => {      //anything inside a .then is going to run for resolve because it will look at the first promise THEN do this after completion.
+                    console.log('Then this ' + message)
+
+                //.catch will be called when promise is rejected or fails
+                }).catch((message) = > {    //'.catch' is to catch any errors like the reject states. 
+                    console.log('Catch this ' + message)
+                })
+            })
+            </pre>
+        </p>
+
+        <p>Promises are great to use when waiting for images to load or pending data requests to be fulfilled by another server instead so we can define actions for what to do when it has failed. We can choose to either retry it or notify the user of a failure.</p>
 
         <h4>Chaining using Methods</h4>
         <p>You're able to invoke multiple object methods in a row. 
@@ -1587,15 +1625,54 @@
                     await condition3()      //waits for second condition to finish before running
                 }
             </pre>
-            Each function essentially stops at a checkpoint before proceeding in a long sequence. Each asynchronuous function will run at the same time if 'await' is removed.
+            Each function essentially stops at a checkpoint before proceeding in a long sequence. Each asynchronuous function will run at the same time if 'await' is removed. Concurrency occurs when the functions are being performed at the same time. 
         </p>
-        <p>Promise.all</p>
-        <p>async/await with Promise.all</p>
-        
+        <p>'Promise.all' is a method that accepts promise objects as an array and returns a promise. It's essentially a promise that will wait for the promises in the array to complete.
+            <pre>
+                function makeSomething(){
+                    let promisesPromises = Promise.all([
+                        doSomething1(),
+                        doSomething2(),
+                        doSomething3()
+                    ])
 
+                    console.log(promisesPromises)   //passes promise as the parameter
 
+                    promisesPromises.then(() => {
+                        fulfilledPromise()
+                    })
+                }
+            </pre>
 
+            which is the same as: 
 
+            <pre>
+                function makeSomething(){
+                    let promisesPromises = Promise.all([
+                        doSomething1(),
+                        doSomething2(),
+                        doSomething3()
+                    ]).then(() => {
+                        fulfilledPromise()
+                    })
+                }
+            </pre>
+            
+            or instead, you can use async/await with Promise.all: 
+
+            <pre>
+                function makeSomething(){
+                    let results = await Promise.all([   //'let results =' is optional if you don't want to log it on the console
+                        doSomething1(),
+                        doSomething2(),
+                        doSomething3()
+                    ])
+                    
+                    console.log(results)    //will return result of 3 doSomethings
+                    fulfilledPromise()  //implied return
+                }
+            </pre>
+        </p>
 
         <ul>
             <li>Learn how to create and recieve promises</li>
