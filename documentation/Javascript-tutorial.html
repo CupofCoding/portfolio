@@ -1505,7 +1505,65 @@
             </pre>
         </p>
 
-        <p>Promises are great to use when waiting for images to load or pending data requests to be fulfilled by another server instead so we can define actions for what to do when it has failed. We can choose to either retry it or notify the user of a failure.</p>
+        <p>Promises are great to use when waiting for images to load or pending data requests to be fulfilled by another server instead so we can define actions for what to do when it has failed. We can choose to either retry it or notify the user of a failure.
+            General Callback Function: 
+            <pre>
+                const condition1 = false
+                const condition2 = false
+
+                function doingSomethingCallback(callback, errorCallback){   //passed variables as parameters to check and if either of them are true than an error occurs
+                    if (condition1) {
+                        errorCallback({
+                            name: 'First Condition',
+                            message: 'This wasn't supposed to happen'
+                        })
+                    } else if (condition2) {
+                        errorCallback({
+                            name: 'Second Condition',
+                            message: 'Neither was this'
+                        })
+                    } else {
+                        callback('This is fine')
+                    }
+                }
+
+                doingSomethingCallback((message) => {
+                    console.log('Success: ' + message)      //Neither parameter was true so error wasn't an issue. This message is returned. 
+                }, (error) => {
+                    console.log(error.name + ' ' error.message)     //There was an issue. Error name with message. 
+                }
+            </pre>
+
+            Same callback function using promises instead: 
+            <pre>
+                const condition1 = false
+                const condition2 = false
+
+                function doingSomethingPromise(){   //parameters aren't needed here and we just need to return a promise instead of a callback
+                    return new Promise((resolve, reject) => {
+                        if (condition1) {
+                            reject({
+                                name: 'First Condition',
+                                message: 'This wasn't supposed to happen'
+                            })
+                        } else if (condition2) {
+                            reject({
+                                name: 'Second Condition',
+                                message: 'Neither was this'
+                            })
+                        } else {
+                            resolve('This is fine')
+                        }
+                    })
+                }
+
+                doingSomethingPromise().then(message) => {  //No parameters in the promise but you still need () to call it followed by .then to return something
+                    console.log('Success: ' + message)      //.then message for success
+                }), .catch(error) => {      //have to close .then ',' before .catch
+                    console.log(error.name + ' ' error.message)     //.catch message for error
+                })
+            </pre>
+        </p>
 
         <h4>Chaining using Methods</h4>
         <p>You're able to invoke multiple object methods in a row. 
