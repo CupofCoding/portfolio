@@ -36,6 +36,23 @@
             <li>In line commenting is started with '//'</li>
             <li>Multi Line Comment /* Enclosed text */</li>
         </ul>
+
+        <p>Javascript like CSS can be added to a webpage internally, externally, or inline. They're linked either in the head or at the end of the body just before the closing tag using the '&lt;script>' tag. Like CSS, it will load sequentially line by line.
+            <pre>
+                &lt;script src="./location/script.js">&lt;/script>      //an example of linking JS externally
+            </pre>
+
+            <pre>
+                &lt;buttonhref="#" onClick="alert ('Clicked')"> Click Here &lt;/button>    //inline JS
+            </pre>
+        </p>
+
+        <p>Just like CSS, it's easier to read and maintain external Javascript files. It is faster for cached JS files to load and helpful for reuseable code. The downsides to have the external JS file are that the browser must make an extra HTTP request to get the code, the JS file can be downloaded using the URL, and if there are dependant files and then when one of the dependencies fails, it may affect the other files. Pages will load faster the less script tags there are on a page.</p>
+        <p>Even in inline JavaScript, HTML code is prioritized. However, when there's both internal and external Javascript being presented, the internal embedded code will be overridden. The positive side is that Inline and Internal javascript will be executed immediately and is helpful using server-side dynamic rendering but not not allow for reusable code.
+            <pre>
+                &lt;noscript>Browser does not support Javascript&lt;noscript>
+            </pre>
+        </p>
     </section>
     
     <section><!--Syntax, Terms, & Concepts-->
@@ -1756,12 +1773,31 @@
         </p>
     </section>
 
+    <section>
+        <h3>DOM - Document Object Model Selection</h3>
+        <p>'DOM' is an acronym that stands for Document Object Model and is the term used to describe the interaction between HTML and the Javascript interface. The DOM is essentially a representation of HTML as a tree structure seperated by nested tags for children.</p>
+        <p>DOM Trees stem from the root 'Document' which is the &lt;html> element and branch off into the &lt;head> and &lt;body> elements. The &lt;head> branch is a parent that contains the title element as a child, and text elements as child of the title. Whereas the &lt;body> element contains more branches based on the independant child elements with a similar relationship structure.</p>
+        
+        <h3>Nodes</h3>
+        <p>Nodes are a form of data structure that can be linked to other nodes or data structures while the trees are conceptual structures used to illustrate and depict relationships between nodes/objects.</p>
+        <p>Nodes in the DOM are essentially the individual parts of the document which essentially are the relationships or cluster between the parents, child, and siblings.</p>
+        <p>Browsers have preset behaviors to handle specific situations such as; 
+            <ul>
+                <li>Autocorrection - browsers will automatically include obvious closing tags or process general errors (ignoring tables); this is bad practice to let the browser handle this.</li>
+                <li>'Space' management - tools generally hide or omit irrelevant white spaces for text so code fits on the screen</li>
+                <li>Comments - are a type of node with defined behavior and are intentially omitted</li>                
+            </ul>
+        </p>
+
+        
+        <h3>DOM - Document Object Model Manipulation</h3>
+        <p>Selecting and manipulating the DOM</p>
+    </section>
+
         
         <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
         
         
-        <li>DOM - Document Object Model Selection</li>
-        <li>DOM - Document Object Model Manipulation</li>
         <li>Events</li>
             <p>Do not use the 'alert' function as it will stop the rest of your script from running. Just use the console command or run javascript in the console. </p>
         <li>Basic Form Validation</li>
