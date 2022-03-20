@@ -1731,12 +1731,34 @@
                 }
             </pre>
         </p>
+        <p>Code snippet starts all processes without waiting for one to finish before starting the next process. 
+            <pre>
+                const actionOne = new Promise((resolve, reject) => {
+                    resolve('Completed first action')
+                })
 
-        <ul>
-            <li>Learn how to create and recieve promises</li>
-            <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
-        </ul>
+                const actionTwo = new Promise((resolve, reject) => {
+                    resolve('Completed second action')
+                })
+
+                const actionThree = new Promise((resolve, reject) => {
+                    resolve('Completed third action')
+                })
+
+                Promise.all([   //array containing the 3 promises. 
+                    actionOne,
+                    actionTwo,
+                    actionThree
+                ]).then((messages) => {     //all the promises should resolve
+                    console.log(messages)   //the messages will be returned in an array. If '.race' is used instead of '.all' then the message is returned by the first one completed and the parameter should be 'message' instead as it would be returned in single instance.
+                })  
+            </pre>
+        </p>
     </section>
+
+        
+        <li>Learn the Fetch API for making HTTP requests, you can look for a tool for this</li>
+        
         
         <li>DOM - Document Object Model Selection</li>
         <li>DOM - Document Object Model Manipulation</li>
