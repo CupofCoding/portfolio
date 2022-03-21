@@ -1797,11 +1797,11 @@
         </p>
 
         <h3>DOM - Document Object Model Selection</h3>
-        <p>Selecting and manipulating elements in the DOM. There are five generally used options: 
+        <p>Selecting and manipulating elements in the DOM. There are five generally used methods: 
             <ul>
-                <li>getElementById("") - accesses element that has been assigned a specific ID. If for some reason there is more than one element with the id, then it will select the first element found.</li>
-                <li>getElementsByClassName("") - looks for all elements with a specific assigned class.</li>
-                <li>getElementsByTagName("") - looks for the tag type</li>
+                <li>.getElementById("") - accesses element that has been assigned a specific ID. If for some reason there is more than one element with the id, then it will select the first element found.</li>
+                <li>.getElementsByClassName("") - looks for all elements with a specific assigned class.</li>
+                <li>.getElementsByTagName("") - looks for the tag type</li>
                 <li>.querySelector("") - returns the first value that matches the given selector. Accepts tag, class, or ids. When searching by id, the '#' needs to be present. </li>
                 <li>.querySelectorAll() - works like .querySelector, however it will return a node list collection of all matching elements instead of just the first value.</li>
             </ul>
@@ -1848,7 +1848,90 @@
                 </ul>
             </pre>
         </p>
-        <p>Apending DOM Elements</p>
+
+        <p>Appending DOM Elements nests elements with a parent element, they follow specific syntax; 
+            <pre>
+                parentNode.append(nodes/DOMStrings);
+            </pre>
+        </p>
+            
+        <p>DOM elements is similar to appending and removes the association
+            <pre>
+                parentNode.remove(nodes/DOMStrings);
+            </pre>
+        </p>
+
+        <p>textContent will essentially show the text content contained in the selected element. 
+            <pre>
+                let text = node.textContent;
+            </pre>
+            
+            <pre>Source HTML
+                &lt;div id="footNote">
+                textContent for footnote.
+                &lt;span style="display: none">Hidden Text&lt;/span>
+                &lt;!--Commented text-->
+                &lt;/div>
+            </pre>
+
+            <pre>Javascript
+                let note = document.getElementById('note');
+                console.log(note.textContent)
+            </pre>
+
+            <pre>Returns the following HTML
+                textContent for footnote.
+                Hidden Text
+            </pre>
+            Still ignores the comments
+        </p>
+
+        <p>.createElement("tag") - is another method used to create an element. 
+            <pre>
+                let section = document.createElement('section');     //creates new section tag
+                section.id = 'content';  //adds id
+                section.innerHTML '&lt;div>Create div element&lt;/div>'; //creates element inside element
+                
+                div.className = 'contentWrapper'    //adds class name
+                section.appendChild(div);    //appends div as a child of the section element
+
+                let h3 = document.createElement('h3');
+                h3.innerHTML = 'Add h3 element to the div';
+                div.appendChild(h3);    //nests h3 title as child of div element
+
+                document.body.appendChild(section)  //if not appended, then not attached to the document. No parents.
+            </pre> 
+            
+            <p>
+                <pre> Source HTML
+                    <ul id="navbar"></ul>
+                </pre>
+
+                <pre>
+                    let navbar = document.querySelector('#navbar');
+                    navbar.append('append() Text Link'); 
+                    console.log(navbar.textContent);
+                </pre>
+
+                <pre>HTML returns
+                    &lt;ul id='navbar'>append() Text Link&lt;ul>
+                </pre>
+            </p>
+        </p>
+
+        <p>.setAttribute is used to set attributes inside HTML element tags. 
+            <pre>
+                let header = document.createElement('h1')
+                let paragraph = document.createElement('p')
+                header.setAttribute('class', 'textHeaderLg')
+            </pre>
+
+            Results in the following: 
+            <pre>
+                &lt;h1 class="textHeaderLg">&lt;&lt;h1>
+                &lt;p>&lt;/p>
+            </pre>
+        </p>
     </section>
 
         
