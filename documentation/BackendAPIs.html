@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Servers & APIs</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
+</head>
+<body>
+    <section>
+        <h3>Client-Server Architecture</h3>
+        <p>The internet functions the general interaction between clients and servers, which is based on a client-server model.</p>            
+        <p>Clients are the computers we use to send requests through an internet service provider to a server.</p>
+        <p>Servers are computers that are connected to the internet and respond to requests by returning a response. </p>
+        <p>HTTP stands for Hypertext Transfer Protocol and is the standard application-level client-server protocol for allowing the web to be interactive or exchanging files on the internet. The S in HTTPS stands for Secure and that uses separate protocols called SSL (Secure Sockets Layer) and TLS (Transport Layer Security). Sites without the certificate do not encrypt the information that's being sent.</p>
+        
+        <h4>Request-Response Cycle</h4>
+        <p>Requests and responses function similar to sending letters by postal service. Header functions like postage, the path is the address, and the body is the content being sent or recieved.</p>
+        <p>HTTP headers allow the client and server to pass additional information with the request or response.
+            <ul>
+                <li>General Header: includes date and connection status</li>
+                <li>Response Header: server and accept-ranges</li>
+                <li>Entity Header: content-type, content-length, last-modified</li>
+                <li>Document Body: DOM elements</li>
+            </ul> 
+        </p>
+        <p>Activity initiation for the HTTP message cycle is essentially as follows:
+            <pre>
+                [APIs(script) + UI-Activity(browser-side) + HTML Forms(browser-side) + Config file(server)] -> converted into HTTP/1.x message -> Binary Framing = [Frame Type=HEADERS + Frame Type=CONTINUATION sets + Frame Type=DATA sets]
+            </pre>
+        </p>
+
+        <p>Requests are formatted using the GET method and a file path.
+            <pre>
+                GET/domain/path HTTP/1.1
+                Host: domain.org
+                Accept: application/json, text/javascript, */*
+                Accept-Language: en-us
+                {
+                    "color": purple,
+                    "quantity": 1
+                }
+            </pre>
+            <p>GET is the method followed by the domain path.</p>
+            <p>Host and accept are included in the header of the request while anything included in the curly braces is the body of the request. N</p>
+        </p>
+        <p>Responses are formatted as follows:
+            <pre>
+                HTTP/1.1 200 OK
+                Date: Thurs, 01 Jan 1990 18:28:02 GMT
+                Server: Apache
+                content-Type: text/html
+                {
+                    "item": "burger"
+                    "price": 5
+                }
+            </pre>
+            <p>200 OK is the status message, followed but the header and body with the same formatting as the request.</p>
+        </p>
+
+        <h4>CRUD Applications</h4>
+        <p>Clients generally request four types of actions using methods, they are known as CRUD applications:
+            <ul>
+                <li>Create data - Post method</li>
+                <li>Read data - Get method</li>
+                <li>Update data - Put/Patch method</li>
+                <li>Delete data - Delete method</li>
+            </ul>
+        </p>
+        <h4>Parts of a URL</h4>
+        <p>URLs are comprised of 5 main parts
+            <pre>https://domain.org/path/search?course=topic=url#example</pre>
+            <ul>
+                <li>Protocol 'https:' - determines what type of protocol is used.</li>
+                <li>Host/Domain '//domain.org' - address of server providing resources. Can be IP for local machine.</li>
+                <li>Path '/path/search' - server resource path, similar to a file path</li>
+                <li>Query String: '?course=topic=url' - parameter passed to the server to provide specific information</li>
+                <li>Fragment: '#example' - located at the end, specific section of the response identified by an id.</li>
+            </ul>
+        </p>
+
+
+        <h3>Node.js</h3>
+        <p>Javascript on the server-side</p>
+
+        <h3>Web Server Setup</h3>
+    </section>
+
+    <section>
+        <h3>Express Framework</h3>
+        <p>Scaling</p>
+        <h3>Routing</h3>
+        
+    </section>
+    
+</body>
+</html>
