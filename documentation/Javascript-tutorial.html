@@ -1366,7 +1366,7 @@
             <li>POP programming functions more like the waterfall methodology, where you have the parts and then an order that leads to a result. It affords less flexibility as it follows a series of steps, the programming style consists of functions where each function is specific to different tasks that are arranged in a sequence. OOP divides the program into objects, where there are properties and behaviors per object.</li>
             <li>POP is not scalable as it is suitable for smaller tasks since the difficulty of debugging scales as the length and complexity of the code increases. OOP allows for reusable code due to its less complex structure and allows for inheritance.</li>
             <li>POP is less secure in terms of needing to access all data and is not able to restrict what's being shared. OOP uses 'encapsulation' to obscure data and provides more security.</li>
-            <li>C, Pascal, BASIC follow POP mehtodolgies, whereas Java, Javascript, Python, PHP, and C++ follow OOP.</li>
+            <li>C, Pascal, BASIC follow POP methodolgies, whereas Java, Javascript, Python, PHP, and C++ follow OOP.</li>
         </ul>
     </section>
 
@@ -1773,25 +1773,82 @@
         </p>
     </section>
 
-    <section>
-        <h3>DOM - Document Object Model Selection</h3>
+    <section> <!-- About DOM, Nodes, & Element Manipulation -->
+        <h3>About DOM - Document Object Model </h3>
         <p>'DOM' is an acronym that stands for Document Object Model and is the term used to describe the interaction between HTML and the Javascript interface. The DOM is essentially a representation of HTML as a tree structure seperated by nested tags for children.</p>
         <p>DOM Trees stem from the root 'Document' which is the &lt;html> element and branch off into the &lt;head> and &lt;body> elements. The &lt;head> branch is a parent that contains the title element as a child, and text elements as child of the title. Whereas the &lt;body> element contains more branches based on the independant child elements with a similar relationship structure.</p>
         
         <h3>Nodes</h3>
         <p>Nodes are a form of data structure that can be linked to other nodes or data structures while the trees are conceptual structures used to illustrate and depict relationships between nodes/objects.</p>
-        <p>Nodes in the DOM are essentially the individual parts of the document which essentially are the relationships or cluster between the parents, child, and siblings.</p>
+        <p>Nodes in the DOM are essentially the individual parts of the document which essentially are the relationships or cluster between the parents, child, and siblings. There are twelve node types, but we usually only work with four of them.
+            <ul>
+                <li>document - the DOM starting point.</li>
+                <li>element nodes - HTML-tags, the blocks of code that form branches on the DOM tree.</li>
+                <li>text nodes - like the name implies, only contain text</li>
+                <li>comments - are a type of node with defined behavior and are intentially omitted, but JS can read it from the DOM.</li>
+            </ul>
+        </p>
         <p>Browsers have preset behaviors to handle specific situations such as; 
             <ul>
                 <li>Autocorrection - browsers will automatically include obvious closing tags or process general errors (ignoring tables); this is bad practice to let the browser handle this.</li>
                 <li>'Space' management - tools generally hide or omit irrelevant white spaces for text so code fits on the screen</li>
-                <li>Comments - are a type of node with defined behavior and are intentially omitted</li>                
+                <li>Comments - intentially hidden from view.</li>                
             </ul>
         </p>
 
-        
+        <h3>DOM - Document Object Model Selection</h3>
+        <p>Selecting and manipulating elements in the DOM. There are five generally used options: 
+            <ul>
+                <li>getElementById("") - accesses element that has been assigned a specific ID. If for some reason there is more than one element with the id, then it will select the first element found.</li>
+                <li>getElementsByClassName("") - looks for all elements with a specific assigned class.</li>
+                <li>getElementsByTagName("") - looks for the tag type</li>
+                <li>.querySelector("") - returns the first value that matches the given selector. Accepts tag, class, or ids. When searching by id, the '#' needs to be present. </li>
+                <li>.querySelectorAll() - works like .querySelector, however it will return a node list collection of all matching elements instead of just the first value.</li>
+            </ul>
+        </p>
+
         <h3>DOM - Document Object Model Manipulation</h3>
-        <p>Selecting and manipulating the DOM</p>
+        <p>Javascript is able to create static and dynamic content by creating and inserting HTML elements to a page.</p>
+        <p>Javascript is able to create and edit HTML elements with the 'innerHTML' & 'outerHTML' properties
+            <p>innerHTML will select the nested elements within an element</p>
+            <pre>Source HTML
+                <ul id="list">
+                    <li>Object 1</li>
+                    <li>Object 2</li>
+                    <li>Object 3</li>
+                </ul>
+            </pre>
+            <pre>Javascript
+                let list = document.getElementById("list")
+                console.log(list.innerHTML)
+            </pre>
+            <pre>Selects the following: 
+                <li>Object 1</li>
+                <li>Object 2</li>
+                <li>Object 3</li>
+            </pre>
+
+            <p>outerHTML will select the nested elements within an element</p>
+            <pre>Source HTML
+                <ul id="list">
+                    <li>Object 1</li>
+                    <li>Object 2</li>
+                    <li>Object 3</li>
+                </ul>
+            </pre>
+            <pre>Javascript
+                let list = document.getElementById("list")
+                console.log(list.outerHTML)
+            </pre>
+            <pre>Selects the following: 
+                <ul id="list">
+                    <li>Object 1</li>
+                    <li>Object 2</li>
+                    <li>Object 3</li>
+                </ul>
+            </pre>
+        </p>
+        <p>Apending DOM Elements</p>
     </section>
 
         
