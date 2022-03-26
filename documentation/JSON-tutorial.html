@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to JSON</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
+</head>
+<body>
+    <section>
+        <h2>JSON - Javascript Object Notation</h2>
+        <p>JSON is a superset of JavaScript which allows it to integrate nicely as the code is still valid Javascript code. Data Representation Format similar to XML or yamo. Used for most APIs and configuration files.</p>
+        <p>Most major languages will have a library or built-in functionality to parse or convert JSON strings into classes or objects in that language.  Used because it's lightweight and easy to read compared to XML. It's cleaner code that doesn't use as many open and closing tags.</p>
+        <p>Since JSON is a Data Representation Format, it has to be able to represent certain data types. JSON natively supports strings, numbers(including scientific notation and percentages), booleans, null value, arrays (lists of any of the native data types), objects. JSON does not support octal and hexdecimal values. </p>
+        
+        <h3>Syntax</h3> 
+        <p>Objects are the most used data type within JSON as it allows you to represent values that are key value pairs(you assign a key to the object and a value with a native datatype as a matching key.)</p>
+        <p>In order to use JSON, it requires a new file with the .json extension/filetype. Inside of the file you have the valid native datatype. Most of the time you will have an array or an object as the top level of the file and nested inside that will be other values(that can include other objects or arrays).</p>
+        <p>To create an object in JSON, you need to open with '{' and close file with a '}' with the key value pairs within them. The format is similar to creating an array in other programming langagues. 'Keys' must always be surrounded by double quotes, followed by a colon, and then a value for that key. Commas are needed when separation separate sets of key-value pairs. 
+            <pre>
+                object.json     //file
+                {
+                    "key":  "value",
+                    "key":  "value"
+                }
+            </pre>
+        </p>
+        <p>JSON is able to nest different properties to show an hierarchy of data so it's easier to read than other data formats. For Example: 
+            <pre>
+                user.json       //file name
+                {
+                    "username": "john.doe",     //initial object
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "isFullTime":   true,
+                    "position": "supervisor"
+                    "permissions": ["view", "edit", "create", "delete"]     //nested array
+                    "suboordinate": [{
+                        "username": "jane.doe",     //nested object
+                        "firstName": "Jane",
+                        "lastName": "Doe",
+                        "isFullTime":   false,
+                        "position": "assistant"
+                        "permissions": ["view", "edit", "delete"],
+                        "suboordinate": [{
+                            "username": "jane.doe",     //nested object within an object
+                            "firstName": "Jane",
+                            "lastName": "Doe",
+                            "isFullTime":   false,
+                            "position": "assistant"
+                            "permissions": ["view", "edit", "delete"], 
+                            "suboordinate": [...]
+                    }]
+                }
+            </pre>
+        </p>
+        <h3>Parsing a JSON file in Javascript</h3>
+        <p>Like in Javascript, array containers are brackets '[]' and you're able to include JSON in the HTML file as it's still valid Javascript. 
+            Majority of the time, information requests are returned as strings and not as Javascript objects. To convert the use the built-in method of 'JSON.parse' with the declared variable as the parameter.
+            <pre>
+                <body>
+                    <script type="text/javascript">
+                        let companies = 
+                        `[   //array of objects
+                            {
+                                "name": "Fresh Farms",
+                                "numberOfEmployees": 5000,
+                                "consumerRating": 4.2,
+                                "employeeRating": 3.6
+                            },
+                            {
+                                "name": "Hydro Fields",
+                                "numberOfEmployees": 3500,
+                                "consumerRating": null,
+                                "employeeRating": 3.1
+                            },
+                            {
+                                "name": "Sunshine Produce",
+                                "numberOfEmployees": 2750,
+                                "consumerRating": 3.2,
+                                "employeeRating": 4.6
+                            }
+                        ]`
+
+                        console.log(JSON.parse(companies)[0].name)  //will return name of first company
+                    </script>
+                </body>
+            </pre>
+            In order to get the information from the array as not an object, you would use backticks(`) around the array to have it logged as a string. Alternatively you can use the stringify method.
+        </p>
+    </section>
+</body>
+</html>
