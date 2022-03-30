@@ -95,10 +95,59 @@
         </p>
 
         <h3>Using the Terminal</h3>
-        <p>'npm' to install and require third-party code.</p>
-        <p>'npm init' command creates a package.json file. </p>
+        <p>'npm' to install and require third-party code. 'npm install' can be abbreviated to 'npm i' to acheive the same effect. 
+            <pre>
+                npm install module-name
+            </pre>
+            After the command finishes running, there will be a new folder labled 'node_modules', a file named 'package-lock.json', and changes to the 'package.json' file. All of the third-party code is copied and stored in the 'node_modules' folder. 'package-lock.json' file is there for Node.js to keep track of all versions of each dependency and is automatically updated. 
+        </p>
+        <p>'npm init' command creates a package.json file which contains metadeta about a project.</p>
+        <p>'require' keyword is used to add modules by declaring it in a variable
+            <pre>
+                const moduleName = require ('module-name')
+
+                console.log(moduleName.random())
+            </pre> 
+        </p>
 
         <h3>Web Server Setup</h3>
+        <p>
+            <ul>
+                <li>Using the terminal, create a project folder using 'mkdir' and use 'cd with the URL' navigate to that directory.</li>
+                <li>Create index.js using 'touch' in the project folder</li>
+                <li>Run the command 'npm init-y' </li>
+                <li>Run the next command 'npm install express' or 'npm i express'</li>
+                <li>Run 'open index.js' to open the file and insert the following to require Express: 
+                    <pre>
+                        // Require needed modules
+                        const express = require('express')
+                    </pre>
+                </li>
+                <li>Initialize the app variable in the index.js file.
+                    <ul>
+                        <li>Call 'app.get()' - the get() method accepts two arguments, a path(string '/') and a callback function(two parameters for require/'req' and resolve/'res') which represent the HTTP request and response.</li>
+                        <li>In the inline callback function, call res.send(). The code in this callback function is what runs when someone visits that path on the website!
+                            <pre>
+                                // Require needed modules.
+                                const express = require('express')
+                                
+                                // Initialize the app object.
+                                const app = express()
+                                
+                                // Create a homepage route.
+                                app.get('/', function (req, res) {
+                                    // This gets sent to the client 
+                                    // (your web browser most likely!)
+                                    res.send('This is on the page')
+})
+                            </pre>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </p>
     </section>
 
     <section>
