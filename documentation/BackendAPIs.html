@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
 </head>
 <body>
-    <section>
+    <section> <!-- Client-Server Architecture & Server Setup -->
         <h3>Client-Server Architecture</h3>
         <p>The internet functions the general interaction between clients and servers, which is based on a client-server model.</p>            
         <p>Clients are the computers we use to send requests through an internet service provider to a server.</p>
@@ -58,6 +58,15 @@
             </pre>
             <p>200 OK is the status message, followed but the header and body with the same formatting as the request.</p>
         </p>
+        <p>HTTP Status Codes are shown in the debugger tab in developer tools. 
+            <ul>
+                <li>100 range - informational response</li>
+                <li>200 range - default status code for wworking response</li>
+                <li>300 range - redirect notice</li>
+                <li>400 range - client-side issue</li>
+                <li>500 range - server-side issue</li>
+            </ul>
+        </p>
 
         <h4>CRUD Applications</h4>
         <p>Clients generally request four types of actions using methods, they are known as CRUD applications:
@@ -68,6 +77,7 @@
                 <li>Delete data - Delete method</li>
             </ul>
         </p>
+
         <h4>Parts of a URL</h4>
         <p>URLs are comprised of 5 main parts
             <pre>https://domain.org/path/search?course=topic=url#example</pre>
@@ -93,6 +103,12 @@
             global 'process' variable to access the environment
             npm has to be installed to access and interpret code that other developers wrote. 
         </p>
+        <p>Nodemon is a replacement wrapper for node tool used to monitor changes to your code and automatically restarts your server as needed. To install the tool globally:
+            <pre>
+                npm install -g nodemon
+            </pre>
+            then you just run the 'nodemon' command in the terminal to start the server from the project folder directory
+        </p>
 
         <h3>Using the Terminal</h3>
         <p>'npm' to install and require third-party code. 'npm install' can be abbreviated to 'npm i' to acheive the same effect. 
@@ -101,6 +117,7 @@
             </pre>
             After the command finishes running, there will be a new folder labled 'node_modules', a file named 'package-lock.json', and changes to the 'package.json' file. All of the third-party code is copied and stored in the 'node_modules' folder. 'package-lock.json' file is there for Node.js to keep track of all versions of each dependency and is automatically updated. 
         </p>
+        <p>'npm install -g' will install the package globally and the package will be available to access from anywhere on the machine. Unless it's a tool you like to use during development, you generally don't want to do this.</p>
         <p>'npm init' command creates a package.json file which contains metadeta about a project.</p>
         <p>'require' keyword is used to add modules by declaring it in a variable
             <pre>
@@ -111,6 +128,30 @@
         </p>
 
         <h3>Web Server Setup</h3>
+        <p>Core Modules are built-in modules that contain essential functionality that doesn't need to be installed. Just need to require the module name in an associated variable.</p>
+        <p>Important Core Modules
+            <ul>
+                <li>http - used in creating web servers</li>
+                <li>url - URL parsing methods</li>
+                <li>path - methods for parsing file paths</li>
+                <li>fs - methods for dealing with file inputs/outputs</li>
+            </ul>
+        </p>
+        <p>Simple web server using HTTP core module
+            <pre>
+                let http = require('http')
+
+                let server = http.createServer(function (req, res) {
+                    //callback handles incoming requests when client connects to a server
+                    res.write('&lt;h1>Welcome!&lt;/h1>')      //sends data for response
+
+                    res.end()   //closes the connection
+                })
+
+                server.listen(3000)     //.listen method is used to watch for connections
+            </pre>
+            console messages will be displayed in the terminal when the server starts
+        </p>
         <p>
             <ul>
                 <li>Using the terminal, create a project folder using 'mkdir' and use 'cd with the URL' navigate to that directory.</li>
@@ -158,10 +199,21 @@
                         http://localhost:3000/
                     </pre>
                 </li>
-
-
             </ul>
         </p>
+    </section>
+
+    <section> <!-- JavaScript XML - JSX -->
+        <h3>JSX - JavaScript XML</h3>
+        <p>A newer syntax that utilizes a cross between JavaScript and HTML to make it easier to build dynamic webpages based on data</p>
+        <p>Key Javascript concepts and syntaxes used: 
+            <ul>
+                <li>regular functions using the 'function' keyword and arrow functions</li>
+                <li>ternary operators</li>
+                <li>.map() array method</li>
+            </ul>
+        </p>
+
     </section>
 
     <section>
