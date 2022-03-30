@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/samplestyle.css">
 </head>
 <body>
-    <section> <!-- Client-Server Architecture & Server Setup -->
+    <section> <!-- Client-Server Architecture & Server Setup using NPM & NodeJS -->
         <h3>Client-Server Architecture</h3>
         <p>The internet functions the general interaction between clients and servers, which is based on a client-server model.</p>            
         <p>Clients are the computers we use to send requests through an internet service provider to a server.</p>
@@ -203,25 +203,64 @@
         </p>
     </section>
 
-    <section> <!-- JavaScript XML - JSX -->
+    <section>
+        <h3>Express Framework</h3>
+        <p>Scaling</p>
+        <h3>Routing</h3>
+    </section>
+
+    <section> <!-- Serverside Rendering with JSX -->
         <h3>JSX - JavaScript XML</h3>
         <p>A newer syntax that utilizes a cross between JavaScript and HTML to make it easier to build dynamic webpages based on data</p>
         <p>Key Javascript concepts and syntaxes used: 
             <ul>
                 <li>regular functions using the 'function' keyword and arrow functions</li>
-                <li>ternary operators</li>
-                <li>.map() array method</li>
+                <li>ternary operators are shortcut syntax replacements for 'if' statements and 'if' statements are not available.
+                    <pre>
+                        let ifStatement = true
+
+                        if (ifStatement) {
+                            console.log('is True')
+                        } else {
+                            console.log('is False')
+                        }
+                    </pre>
+                    would be replaced with:
+                    <pre>
+                        let ifStatement = true  //what you want to evaluate
+                        let activity =  
+                        ifStatement
+                        ? 'is True'     //if true do this
+                        : 'is False'    //else do this
+
+                        console.log(activity)
+                    </pre>
+                </li>
+                <li>.map() array method that returns new array after taking a callback as a parameter. It replaces 'for' loops and 'for' loops are not available.</li>
             </ul>
         </p>
 
     </section>
 
-    <section>
-        <h3>Express Framework</h3>
-        <p>Scaling</p>
-        <h3>Routing</h3>
-        
+    <section> <!-- RESTful Routing -->
     </section>
+
+    <section> <!-- MVC Architecture -->
+    </section>
+
+    <section> <!-- MongoDB & NoSQL -->
+    </section>
+
+    <section> <!-- Mongoose & ODMs -->
+    </section>
+
+    <section> <!-- APIs & Documentation -->
+    </section>
+
+    <section> <!-- Cloud Deployment -->
+    </section>
+
+
     
 </body>
 </html>
