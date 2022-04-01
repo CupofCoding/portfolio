@@ -231,7 +231,56 @@
         </p>
         <p>Setting up a local web server with Express.</p>
         <p>Scaling</p>
+        
         <h3>Routing</h3>
+        <p>Environment variables are dynamically named values that affect behavior of running computer and operating systems. They protect private data(like API keys), abstract machine-specific settings(like port choices), avoid hard-coded data in code. They are typically written in all caps like constants. </p>
+        <p>Using Environment Variables
+            <ul>
+                <li>Install node module 'dotenv'</li>
+                <li>Create '.env' file</li>
+                <li>In the .js file, require and call the config method. Access the .env variable using the global variable process.
+                    <pre>
+                        require('dotenv').config()
+                        const express = require('express')
+                        const app = express()
+
+                        app.listen(process.env.PORT)
+                    </pre>
+                </li>
+            </ul>
+        </p>
+        <p>Creating multiple routes
+            <pre>
+                //First Route accessible via base URL: http://localhost:3000/
+                app.get('/', function (req, res) {
+                    res.send('HOME')
+                })
+
+                //Second Route accessible via base URL plus path: http://localhost:3000/contact
+                app.get('/contact', function (req, res) {
+                    res.send('CONTACT US')
+                })                
+            </pre>
+
+            On a server, instead of defining routes for three separate pages, the process can be combined into one route. 
+            <pre>
+                app.get('/about/:staff', (req, res) => {
+                    res.send(Research ' + req.params.staff')
+                })
+            </pre>
+
+            Query Parameter Example
+            <pre>
+                app.get(/square/:x', function (req,res){
+                    let x = Number(req.params.x)
+                    let result = x * x
+
+                    res.send(`${x} squared is ${result}`)
+                })
+            </pre>
+            //visiting the http://localhost:3000/square/2 yields a page that states 2 squared is 4
+        </p>
+        <p>utilizing query parameters within routes</p>
     </section>
 
     <section> <!-- Serverside Rendering with JSX -->
