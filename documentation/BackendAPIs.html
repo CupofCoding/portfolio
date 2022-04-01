@@ -203,8 +203,33 @@
         </p>
     </section>
 
-    <section>
-        <h3>Express Framework</h3>
+    <section> <!-- About Express & Frameworks -->
+        <h3>Frameworks</h3>
+        <p>Frameworks are chunks of code and software that make it easier to write, maintain, and scale web applications by providing tools and libraries to simplify common web tasks or necessary features.</p>
+        <p>Popular Frameworks are generally affiliated with a programming language.
+            <ul>
+                <li>Express - affiliated with Node.js</li>
+                <li>Flask - affiliated with Python</li>
+                <li>Django - affiliated with Python</li>
+                <li>Spring Boot - affiliated with Java</li>
+                <li>Laravel - affiliated with PHP</li>
+            </ul>
+        </p>
+        <p>There are two types of frameworks. Monolithic frameworks are prebuilt frameworks that have many built-in features with preset configurations. Modular frameworks similar to building blocks as they are customizable with configuration choices.</p>
+        <p>Express is a modular framework that can be installed  like any other node module using 'npm install express' command in the terminal. Like any other node modules, express needs to be required.
+            <pre>
+                const express = require('express')      //require express
+                const app = express()       //initialize express app
+
+                app.get('/', (req, res) => {    ///'.get' method ('path', (http request, http response) callback runs while someone visits page)
+                    console.log('Connected to server')
+                    res.send('WEB Content')
+                })
+
+                app.listen(3000)        //connection to web server port that stays open to listen for connections
+            </pre>
+        </p>
+        <p>Setting up a local web server with Express.</p>
         <p>Scaling</p>
         <h3>Routing</h3>
     </section>
