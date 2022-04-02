@@ -230,7 +230,125 @@
             </pre>
         </p>
         <p>Setting up a local web server with Express.</p>
-        <p>Scaling</p>
+
+        <h3>Scaling using Express</h3>
+        <p>'GET' and 'POST' are methods. 'GET' provides public information as unencrypted visible data. 'POST' method on the other hand provides more secure encrypted not visible data. </p>
+        <p>On the client-side, there are multiple ways to generate a GET request.
+            <ul>
+                <li>Submitting a form that uses the "GET" method
+                    <pre>
+                        &lt;form action="/search" method="GET">     //"/path" followed invoked method
+                            &lt;label for="query">Query&lt;/label>
+                            &lt;input id="query" name="term">      //term = queried data
+                        &lt;/form>
+                    </pre>
+                    In the Express app: 
+                    <pre>
+                        app.get('/search', (req, res) =>{
+                            let item = req.query.term
+                            res.send('Search Results for ', item)
+                        })
+                    </pre>
+                </li>
+                <li>Using a hyperlink
+                    <pre>
+                        &lt;a href="/contact">Contact Us&lt;/a>
+                    </pre>
+                </li>
+                <li>Typing into browser's address bar</li>
+            </ul>
+        </p>
+        <p>'POST' method is meant for server-side. The 'app.post() method is used to recieve a POST request.
+            <pre>
+                &lt;form action="/auth/login" method="POST">
+                    &lt;label for="">Login&lt;/label>
+                    &lt;input type="text" name="username">
+                &lt;/form>
+            </pre>
+            In the Express app:
+            <pre>
+                app.post('/auth/login', (req, res) =>{
+                    res.send('POST Route')
+                })
+            </pre>
+
+            Using both GET and POST route for the /auth/login path provides different functionality. 'GET' will render the page with a login form while 'POST' will accept and process data from the login form.
+        </p>
+        <p>You're able to add routes as needed but it's not best practice as it gets progressively messy when you try to scale an app with more routes. 
+            <pre>
+                app.get('/auth/login', (req, res) => {
+                    res.send('GET route')
+                })
+
+                app.post('/auth/login', (req, res) =>{
+                    res.send('POST route')
+                })
+
+                app.get('/auth/signup', (req, res) => {
+                    res.send('GET route')
+                })
+
+                app.post('/auth/signup', (req, res) => {
+                    res.send('POST route')
+                })
+            </pre>
+            As opposed to creating multiple routes, you can organize or access related routes from a controller. Controllers allow you to organize the routes by purpose in other files besides the index.js file.
+        </p>
+        <p>Making Controllers
+            <ul>
+                <li>Create seperate folder named controllers</li>
+                <li>Create file 'auth.js'</li>
+                <li>In the 'auth.js' file, call express.Router() and attach routes</li>
+                <li>'module.exports = router' exports the router from auth.js and import it in index.js
+                    <pre>
+                        const router = express.Router()
+
+                        router.get('/login', (req, res) => {        //GET method to render page with login form
+                            res.send('GET  route')
+                        })
+
+                        //Misc Other Routes
+                        app.post('/auth/login', (req, res) =>{      //POST method that accepts and processes data from the login form
+                            res.send('POST route')
+                        })
+        
+                        app.get('/auth/signup', (req, res) => {     //GET method that renders page with sign-up form.
+                            res.send('GET route')
+                        })
+        
+                        app.post('/auth/signup', (req, res) => {        //POST metthod accepts and processes data from the sign-up form
+                            res.send('POST route')
+                        })
+
+                        module.exports = router     //exports the route to be accessible in other files
+                    </pre>
+                </li>
+                <li>In the index.js file, require the './controllers/auth' path
+                    <pre>
+                        const express = require('express')
+                        const app = express()
+
+                        app.get('/', (req, res) => {        //GET method to send you to the home page.
+                            res.send('HOME')
+                        })
+
+                        app.use('/auth', require('./controllers/auth'))     //imports the routes into the files
+
+                        app.listen(3000)
+                    </pre>
+                </li>
+            </ul>
+        </p>
+
+        <p>As an application becomes larger, more routes may be required. If you visit a route that doesn't exist, you recieve a 404 error in the developer tools debugger tab and the page crashes. To avoid these issues, you create a 'catch-all' route
+            <pre>
+                app.get('*', (req, res) => {
+                    res.send('404 Page; Page under construction or redirect page notice')
+                })
+            </pre>
+            'Catch-all' routes come last, otherwise it will appear instead of the valid routes.
+        </p>
+        <p>Testing an app's functionality using Postman</p>
         
         <h3>Routing</h3>
         <p>Environment variables are dynamically named values that affect behavior of running computer and operating systems. They protect private data(like API keys), abstract machine-specific settings(like port choices), avoid hard-coded data in code. They are typically written in all caps like constants. </p>
@@ -269,7 +387,7 @@
                 })
             </pre>
 
-            Query Parameter Example
+            Utilizing query parameters allows passing variables as part of the URL path. Query Parameter Example:
             <pre>
                 app.get(/square/:x', function (req,res){
                     let x = Number(req.params.x)
@@ -280,8 +398,20 @@
             </pre>
             //visiting the http://localhost:3000/square/2 yields a page that states 2 squared is 4
         </p>
+
         <h3>Utilizing query parameters and Strings within routes</h3>
-        <p></p>
+        <p>Query strings are the part of the URL that comes after the question mark. Similar to query parameters, the query strings will only contain public information.
+            <pre>
+                app.get('/square', function (req, res) {
+                    let x = Number(req.query.x)
+                    let result = x * X-UA-Compatible
+
+                    res.send(`${x} squared is ${result}`)
+                })
+            </pre>
+
+            page would be accessed by visiting: http://localhost:3000/square?x=2
+        </p>
     </section>
 
     <section> <!-- Serverside Rendering with JSX -->
