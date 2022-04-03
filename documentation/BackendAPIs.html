@@ -77,6 +77,40 @@
                 <li>Delete data - Delete method</li>
             </ul>
         </p>
+        <p>CRUD usage in a fullstack-web application
+            <ul>
+                <li>Create - make a new account</li>
+                <li>Read - account details</li>
+                <li>Update - edit the account information</li>
+                <li>Delete - remove or delete the account</li>
+            </ul>
+        </p>
+        <p>Webpage Interaction Flow
+            <ul>
+                <li>User requests to see profile</li>
+                <li>Server gets request and requests data from the database</li>
+                <li>Database locates data then sends the data back to the server
+                    <pre>
+                        member = {
+                            name: 'John',
+                            image: 'Profile-John.jpg',
+                            dateJoined: 'April 1, 2022'
+                        }
+                    </pre>
+                </li>
+                <li>Server gets data and combines it with HTML
+                    <pre>
+                        &lt;section>
+                            &lt;img src="{member.image}" alt="{member.name}">
+                            &lt;h4>{member.name}&lt;/h4>
+                            &lt;h5>&lt;span>Date Joined: &lt;/span>{member.dateJoined}&lt;/h5>
+                        &lt;/section>
+                    </pre>
+                </li>
+                <li>Server sees their profile. Will return card with Picture, name, and date joined.</li>
+            </ul>
+        </p>
+
 
         <h4>Parts of a URL</h4>
         <p>URLs are comprised of 5 main parts
@@ -229,7 +263,68 @@
                 app.listen(3000)        //connection to web server port that stays open to listen for connections
             </pre>
         </p>
-        <p>Setting up a local web server with Express.</p>
+
+        <h3>Setting up a local web server with Express. Express for Server-Side Rendering(SSR)</h3>
+        <p>Model - data that is provided to be combined with HTML</p>
+        <p>Views - make views of HTML for users to be able to use a website to perform CRUD process</p>
+        <p>Controllers - how the other mentioned processes work in an organized and reusable way</p>
+
+        <h3>Creating a Full-Stack Application</h3>
+        <p>Using Express for the server, using JSX to embed data in HTML, plain arrays and objects to simulate data</p>
+        <p>Create a new object, Read an index of all objects, Read details of individual objects, Update details about the object, Delete object</p>
+        <p>
+            <ul>
+                <li>Creating a Welcome/Landing Page view with '/' route or path</li>
+                <li>Index - List of all objects view with '/objects' path
+                    <ul>
+                        <li>Create New Object view with '/objects/new' path; Form with Submit button</li>
+                        <li>Show Object Details view with show details '/objects/:id' with edit and delete button options
+                            <ul>
+                                <li>Edit Object view with '/objects/:id/edit' path; edit form and submit button</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <p>Project Folder format
+            <ul>
+                <li>'controllers' folder
+                    <ul>
+                        <li>'controller.js' file</li>
+                    </ul>
+                </li>
+                <li>'models' folder
+                    <ul>
+                        <li>'object.js' file</li>
+                    </ul>
+                </li>
+                <li>'public' folder
+                    <ul>
+                        <li>'main.css' file</li>
+                    </ul>
+                </li>
+                <li>'views' folder
+                    <ul>
+                        <li>'components' folder
+                            <ul>
+                                <li>'form.jsx' file</li>
+                            </ul>
+                        </li>
+                        <li>'layouts' folder</li>
+                        <li>404.jsx</li>
+                        <li>edit.jsx</li>
+                        <li>index.jsx</li>
+                        <li>new.jsx</li>
+                        <li>show.jsx</li>
+                    </ul>
+                </li>
+                <li>'.gitignore' file</li>
+                <li>'package-lock.json' file</li>
+                <li>'server.js' file</li>
+
+            </ul>
+        </p>
 
         <h3>Scaling using Express</h3>
         <p>'GET' and 'POST' are methods. 'GET' provides public information as unencrypted visible data. 'POST' method on the other hand provides more secure encrypted not visible data. </p>
@@ -348,7 +443,14 @@
             </pre>
             'Catch-all' routes come last, otherwise it will appear instead of the valid routes.
         </p>
-        <p>Testing an app's functionality using Postman</p>
+        <p>Postman is an app we can use to test routes without writing a full app. Testing an app's functionality using <a href="https://www.postman.com/downloads/">Postman</a>
+            <ul>
+                <li>Test a route without writing the full app. Download Postman and create an account</li>
+                <li>From the home tab, Create New or Create a 'Workspace' if one hasn't been created yet.</li>
+                <li>Create a Request</li>
+                <li>Select a Method and paste a Route. Wait for response </li>
+            </ul>
+        </p>
         
         <h3>Routing</h3>
         <p>Environment variables are dynamically named values that affect behavior of running computer and operating systems. They protect private data(like API keys), abstract machine-specific settings(like port choices), avoid hard-coded data in code. They are typically written in all caps like constants. </p>
