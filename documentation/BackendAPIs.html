@@ -547,9 +547,40 @@
             </ul>
         </p>
 
+        <h3>Server-Side Rendering Views</h3>
+        <p>Adding and showing CSS by making a show view</p>
+        <p>Adding CSS</p>
+        <p>Making a 404 page/handler for a possible error</p>
+
     </section>
 
     <section> <!-- RESTful Routing -->
+        <h3>RESTful routes - New & Create</h3>
+        <p>REST is an acronym that stands for Representational, State, Transfer. REST applications follow a pattern of creating webpages that perform CRUD.
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
+                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
+                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
+                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
+            </pre>
+        </p>
+        <p>RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.</p>
+        <p>New & Create; creating new items using a form</p>
+        <p>Creating Routes following REST</p>
+
+        <h3>RESTful Routes - Update & Edit</h3>
+        <p>Editing an item using a form</p>
+        <p>Using 'PUT' action to update an item.</p>
+
+        <h3>RESTful Routes - Delete</h3>
+        <p>Deleting an item using a form.
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
+            </pre>
+        </p>
+        <p>Using 'method-override' to allow a form to make a delete action</p>
     </section>
 
     <section> <!-- MVC Architecture -->
