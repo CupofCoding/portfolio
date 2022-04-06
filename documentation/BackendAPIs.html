@@ -238,7 +238,7 @@
     </section>
 
     <section> <!-- About Express & Frameworks -->
-        <h3>Frameworks</h3>
+        <h3>About Express & Frameworks</h3>
         <p>Frameworks are chunks of code and software that make it easier to write, maintain, and scale web applications by providing tools and libraries to simplify common web tasks or necessary features.</p>
         <p>Popular Frameworks are generally affiliated with a programming language.
             <ul>
@@ -560,9 +560,7 @@
             <pre>
                 Action ->   HTTP Method ->  Route ->        View ->         Description
                 INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
-                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
                 SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
-                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
             </pre>
         </p>
         <p>RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.</p>
@@ -570,13 +568,25 @@
         <p>Creating Routes following REST</p>
 
         <h3>RESTful Routes - Update & Edit</h3>
-        <p>Editing an item using a form</p>
+        <p>Editing an item using a form
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
+                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
+                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
+                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
+            </pre>
+        </p>
         <p>Using 'PUT' action to update an item.</p>
 
         <h3>RESTful Routes - Delete</h3>
         <p>Deleting an item using a form.
             <pre>
                 Action ->   HTTP Method ->  Route ->        View ->         Description
+                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
+                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
+                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
+                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
                 DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
             </pre>
         </p>
@@ -584,21 +594,53 @@
     </section>
 
     <section> <!-- MVC Architecture -->
+        <h3>MVC Architecture</h3>
     </section>
 
     <section> <!-- MongoDB & NoSQL -->
+        <h3>MongoDB & NoSQL</h3>
+        <p>MongoDB stores data as document objects and is classified as a non-relational database. By storing data as objects, this allows for flexibility with custom data structures that don't conform to tables and allows documents within same collections to have different fields.</p>
+        <p>MongoDB allows users to create validation rules to avoid formatting variances due to different data sets.
+            <pre>
+                {_id: ObjectID("109e284fa3401984"),
+                name: 'ReadyPlayerOne',
+                type: 'Player',
+                gender: 'Male',
+            </pre>
+
+            <pre>
+                {_id: ObjectID("109e284fa335798"),
+                name: 'Jarl Banzo',
+                type: 'NPC',
+                gender: 'Male',
+                aggro: false
+                catchphrase: 'Welcome to Bratwurst',
+            </pre>
+
+            Both documents can be in the same collection of 'characters'
+        </p>
     </section>
 
     <section> <!-- Mongoose & ODMs -->
+        <h3>Mongoose & ODMs</h3>
+        <p>ODMs are defined as Object Data Mappers. They help with model data while making document validation easier with built-in methods by providing structure and consistency to documents. They allow for queries and CRUD operations to perform within an application code instead of in the Mongo shell. </p>
+        <p>'mongoose' is an ODM for MongoDB that simplifies interactions with a Mongo database within node apps by converting Mongo documents into Javascript objects and vice versa.
+            <pre>
+                JSX(Client application) &lt;--> node.js(server)/express(server) &lt;--> mongoose(server) &lt;--> mongoDB(database) 
+            </pre>
+        </p>
+        
+        
+        <p>Install and connect Mongoose to an Express App</p>
     </section>
 
     <section> <!-- APIs & Documentation -->
+        <h3>APIs & Documentation</h3>
     </section>
 
     <section> <!-- Cloud Deployment -->
+        <h3>Cloud Deployment</h3>
     </section>
-
-
     
 </body>
 </html>
