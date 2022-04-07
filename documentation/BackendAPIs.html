@@ -624,14 +624,55 @@
     <section> <!-- Mongoose & ODMs -->
         <h3>Mongoose & ODMs</h3>
         <p>ODMs are defined as Object Data Mappers. They help with model data while making document validation easier with built-in methods by providing structure and consistency to documents. They allow for queries and CRUD operations to perform within an application code instead of in the Mongo shell. </p>
-        <p>'mongoose' is an ODM for MongoDB that simplifies interactions with a Mongo database within node apps by converting Mongo documents into Javascript objects and vice versa.
+        <p>'mongoose' is an npm package and also an ODM for MongoDB that simplifies interactions with a Mongo database within node apps by converting Mongo documents into Javascript objects and vice versa.
             <pre>
                 JSX(Client application) &lt;--> node.js(server)/express(server) &lt;--> mongoose(server) &lt;--> mongoDB(database) 
             </pre>
         </p>
+        <p>Install and connect Mongoose to an Express App in the 'server.js' file
+            <pre>
+                const mongoose = require('mongoose')
+            </pre>
+        </p>
+
+        <h3>Mongoose Models and Schemas</h3>
+        <p>Models are objects that provide access to the matching collections in Mongo. Mongoose models allow users to interact with the Mongo database.
+            <pre>
+                Ex: MongoDB Collection "Users" &lt;--> Mongoose Model "User"
+            </pre>
+        </p>
+        <p>Schemas determine the structure of documents within a collection and function like a blueprint.</p>
+        <p>Documents are the basic unit of data for Mongo while schemas are the basic building block in Mongoose.</p>
+        <p>Creating a model based on Mongoose schema
+            <pre>
+                //require mongoose
+                const mongoose = require('mongoose')
+                const { Schema } = mongoose
+                
+                //defining schema syntax
+                const userSchema = new Schema({
+                    username: { type: String },
+                    password: String    //same as declaring 'type: String'
+                })
+
+                //convert schema into model to interact with Mongo database
+                const User = mongoose.model('User', userSchema)
+            </pre>
+        </p>
         
-        
-        <p>Install and connect Mongoose to an Express App</p>
+        <h3>Mongoose Helper Methods</h3>
+        <p>Mongoose models are objects with built-in helper methods that can perform database actions thru using Mongoose.</p>
+        <p>New Mongoose models will also generate an object and each object contains helper methods for performing database actions. Each model will link with a corresponding collection in Mongo (ex: User.findOne() will try to find a document within the Users collection). 
+            <pre>
+                const User = mongoose.model('User', userSchema)
+
+                //Helper methods are similar to prebuilt methods or functions
+                User.findOne()
+                User.create()
+                User.deleteOne()
+                User.updateOne()
+            </pre>
+        </p>
     </section>
 
     <section> <!-- APIs & Documentation -->
