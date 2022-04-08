@@ -642,8 +642,8 @@
             </pre>
         </p>
         <p>Schemas determine the structure of documents within a collection and function like a blueprint.</p>
-        <p>Documents are the basic unit of data for Mongo while schemas are the basic building block in Mongoose.</p>
-        <p>Creating a model based on Mongoose schema
+        <p>Documents are the basic unit of data for Mongo while schemas are the basic building block in Mongoose. 
+            <br>Creating a model based on Mongoose schema
             <pre>
                 //require mongoose
                 const mongoose = require('mongoose')
@@ -659,8 +659,29 @@
                 const User = mongoose.model('User', userSchema)
             </pre>
         </p>
+        <p>Schemas have built-in validators that are set as a property for a field's object. Built-in validators depend on the field type.
+            <pre>
+                Data Type       Available Validator
+                All             required
+                Number          min, max
+                String          enum, match, minLength, maxLength
+            </pre>
+
+            Usage:
+            <pre>
+                const objectSchema = new Schema{(
+                    name: {
+                        type: String, 
+                        required: true,     //'required:' property is a validator 
+                        min: [0, "Desired string for custom error message when validation fails"],
+                        max: 25,        //multiple validators can be used on on one property
+                        unique: true    //built-in helper option that checks if value is unique, it accepts the boolean value. If not, then false is the default.
+                    }       
+                })
+            </pre>
+        </p>
         
-        <h3>Mongoose Helper Methods</h3>
+        <h4>Mongoose Helper Methods</h4>
         <p>Mongoose models are objects with built-in helper methods that can perform database actions thru using Mongoose.</p>
         <p>New Mongoose models will also generate an object and each object contains helper methods for performing database actions. Each model will link with a corresponding collection in Mongo (ex: User.findOne() will try to find a document within the Users collection). 
             <pre>
@@ -672,7 +693,29 @@
                 User.deleteOne()
                 User.updateOne()
             </pre>
+
+            Similar to functions, the parameter or argument passed to the method would still be the conditions for the action and once the action is completed, a promise where you can access the data is returned. 
+            <pre>
+                User.find({ age: 18 })
+                    .then(foundUsers => {
+                        console.log(foundUsers)     //returns users that are 18
+                    })
+            </pre>
         </p>
+
+        <p>All helper methods can take additional arguments as options objects to customize an action as an optional argument. The available options will vary depending on the helper method that was used.
+            <pre>
+                Destination.find({}, [], { sort: { available_tickets: 4 } })    //{ sort: } is an options object to sort the returned data in ascending numerical order of available_tickets
+            </pre>
+
+            <pre>
+                Destination.findByIDAndUpdate(req.params.id, { available_tickets: 0 }, { new: true })   //{ new: true } is another options object to return an updated document. 
+            </pre>
+        </p>
+
+        <h3>Custom Helper Methods: Instance & Static Methods</h3>
+
+
     </section>
 
     <section> <!-- APIs & Documentation -->
