@@ -714,6 +714,46 @@
         </p>
 
         <h3>Custom Helper Methods: Instance & Static Methods</h3>
+        <p>Instance methods are methods that can only be used on instances of a model(document) and also only on documents that have been retreived from a database.</p>
+
+        <p>Static methods are methods that can only be utlized on a model(collection) and able to be used prior to documents being retrieved from the database.</p>
+        <p>
+            <pre>
+                Mongoose Term   -> Mongo DB Equivalent
+                Instance        -> Document
+                Model           -> Collection
+            </pre>
+
+            <pre>//Inside the models/user.js file
+                const userSchema = new Schema({     //Define the schema
+                    firstName: String,
+                    lastName: String,
+                    score: Number
+                })
+
+                userSchema.methods.fullName = function() {      //Defining instance method: userSchema(affected schema).methods(Mongoose keyword to define instance method).fullName(what to set method name to)
+                    return this.firstName + this.lastName
+                }
+
+                userSchema.static.getHighScorers = function() {     //Defining static method: userSchema(affected schema).static(Mongoose keyword to define static method).getHighScorers(what to set method name to)
+                    return this.find({ score: {$gte: 1000 }})
+
+                }
+            </pre>
+            
+            <pre>//Inside the user_controller.js file 
+                User.findByID(id)       //query collection for a user document
+                    .then(foundUser => {
+                        console.log(foundUser.fullName())   //invoke defined .fullName instance method
+                    })
+
+                User.getHighScorers()   //query collection using defined static method
+                    .then(foundUsers => {
+                        console.log(foundUsers)
+                    })
+            </pre>
+        </p>
+        <p>Use case for helper methods</p>
 
 
     </section>
