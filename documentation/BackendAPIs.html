@@ -595,25 +595,84 @@
 
     <section> <!-- Model-View-Controller Architecture -->
         <h3>MVC Architecture</h3>
-        <p>MVC is an acronym for Model View Controller which is a software architecture that is commonly used to create easily readable and maintainable codes. 
-            discipline and fundamental structure of a software system(web app)
-        </p>
+        <p>MVC is an acronym for Model View Controller which is a software architecture that is commonly used to create easily readable and maintainable codes. </p>
         <p>Separation of concerns is a design principle that allows for better sustainability by separating blocks of code by similar functions or affects specific sets of data.
             <ul>
                 <li>Data and Data Logic - user information, user info validation, back-end features</li>
                 <li>UI & UX - information displayed webpage, alerts and error messages, front-end features</li>
                 <li>Controllers - interaction between models and views, provides the error or alert message</li>
             </ul>
+        </p> 
+        <p>discipline and fundamental structure of a software system(web app)
+            <li>Users interact with the <i>views</i></li>
+            <li><i>Models</i> define and contain logic and interactive data along with conversions, validations, computed properties, and access control.</li>
+            <li><i>Controllers</i> function as the point of contact between the views and models.</li>
+        </p>
+
+        <p>REST is an acronym that stands for Representational, State, Transfer. RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
+                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
+                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
+                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
+                EDIT ->     GET ->          /home/:id/edit  edit.jsx ->     form created from existing object
+                UPDATE ->   PUT ->          /home/:id       update.jsx ->   update data for existing form
+                DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
+            </pre>
         </p>
         <p>Best practices or Code Refactoring
             <pre>
+                var nameFunction = (x) -> {
+                    let y = '';
+                    if (x == 0 ) y = false; 
+                    else if (x === 1) {
+                        y = True
+                    }else if (x === 2 ) {
+                        y = false
+                    } else if (x === 4) {
+                        y = true
+                    } else if ( x == 5 ) {
+                        y = false
+                    }   //continues to 1000 or more 
+                    return y; 
+                    }
+                }
+            </pre>
 
+            <pre>
+                let ifEven = number => {
+                    console.log(number, number &lt; 0);
+                    if (number &lt; 0) {
+                        return false
+                    } else {
+                        return (
+                            number == 0
+                            ||
+                            ifEven(number - 2)
+                        )
+                    }
+                }
+            </pre>
+            
+            <pre>
+                const ifEven = (num) => {
+                    return num % 2 === 0
+                }
+            </pre>
+
+            <pre>
+                const e = n => n % 2 === 0
             </pre>
         </p>
     </section>
 
     <section> <!-- MongoDB & NoSQL -->
         <h3>MongoDB & NoSQL</h3>
+        <p>Databases are collections of organized and structured data that's stored electronically in a computer and provides high performance in accessing data.</p>
+        <p>SQL & NonSQL databases</p>
+        <p>MongoDB database structure</p>
+
         <p>MongoDB stores data as document objects and is classified as a non-relational database. By storing data as objects, this allows for flexibility with custom data structures that don't conform to tables and allows documents within same collections to have different fields.</p>
         <p>MongoDB allows users to create validation rules to avoid formatting variances due to different data sets.
             <pre>
