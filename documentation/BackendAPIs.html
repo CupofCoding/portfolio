@@ -68,50 +68,6 @@
             </ul>
         </p>
 
-        <h4>CRUD Applications</h4>
-        <p>Clients generally request four types of actions using methods, they are known as CRUD applications:
-            <ul>
-                <li>Create data - Post method</li>
-                <li>Read data - Get method</li>
-                <li>Update data - Put/Patch method</li>
-                <li>Delete data - Delete method</li>
-            </ul>
-        </p>
-        <p>CRUD usage in a fullstack-web application
-            <ul>
-                <li>Create - make a new account</li>
-                <li>Read - account details</li>
-                <li>Update - edit the account information</li>
-                <li>Delete - remove or delete the account</li>
-            </ul>
-        </p>
-        <p>Webpage Interaction Flow
-            <ul>
-                <li>User requests to see profile</li>
-                <li>Server gets request and requests data from the database</li>
-                <li>Database locates data then sends the data back to the server
-                    <pre>
-                        member = {
-                            name: 'John',
-                            image: 'Profile-John.jpg',
-                            dateJoined: 'April 1, 2022'
-                        }
-                    </pre>
-                </li>
-                <li>Server gets data and combines it with HTML
-                    <pre>
-                        &lt;section>
-                            &lt;img src="{member.image}" alt="{member.name}">
-                            &lt;h4>{member.name}&lt;/h4>
-                            &lt;h5>&lt;span>Date Joined: &lt;/span>{member.dateJoined}&lt;/h5>
-                        &lt;/section>
-                    </pre>
-                </li>
-                <li>Server sees their profile. Will return card with Picture, name, and date joined.</li>
-            </ul>
-        </p>
-
-
         <h4>Parts of a URL</h4>
         <p>URLs are comprised of 5 main parts
             <pre>https://domain.org/path/search?course=topic=url#example</pre>
@@ -203,11 +159,9 @@
                         <li>Call 'app.get()' - the get() method accepts two arguments, a path(string '/') and a callback function(two parameters for require/'req' and resolve/'res') which represent the HTTP request and response.</li>
                         <li>In the inline callback function, call res.send(). The code in this callback function is what runs when someone visits that path on the website!
                             <pre>
-                                //Require needed modules.
-                                const express = require('express')
+                                const express = require('express')  //Require needed modules.
                                 
-                                //Initialize the app object.
-                                const app = express()
+                                const app = express()   //Initialize the app object.
                                 
                                 //Create a homepage route that gets sent to the client/web browser
                                 app.get('/', function (req, res) {
@@ -250,9 +204,42 @@
             </ul>
         </p>
         <p>There are two types of frameworks. Monolithic frameworks are prebuilt frameworks that have many built-in features with preset configurations. Modular frameworks similar to building blocks as they are customizable with configuration choices.</p>
-        <p>Express is a modular framework that can be installed  like any other node module using 'npm install express' command in the terminal. Like any other node modules, express needs to be required.
+        <p>Express is a modular framework that can be installed  like any other node module using 'npm install express' command in the terminal. Like any other node modules, express needs to be required.</p>
+
+        <h3>Setting up a local web server with Express. Express for Server-Side Rendering(SSR)</h3>
+        <p>Model - data that is provided to be combined with HTML</p>
+        <p>Views - make views of HTML for users to be able to use a website to perform CRUD process</p>
+        <p>Controllers - how the other mentioned processes work in an organized and reusable way</p>
+        <p>Steps to setup and build an Express app:
+            <ul>
+                <li>Create new project directory or navigate to existing project directory or local storage</li>
+                <li>Inside the folder create an 'index.js' file</li>
+                <li>In the command terminal, navigate to the project folder then run following commands: 
+                    <ul>
+                        <li>Run the command “npm init -y”</li>
+                        <li>Run the command “npm install express”</li>
+                    </ul>
+                </li>
+                <li>Open file 'index.js' and require and initialize the app variable express at the top of the file
+                    <pre>
+                        const express = require('express')      //require express
+                    </pre>
+                </li>
+                <li>Create the home page route
+                    <ul>
+                        <li>Call app.get()</li>
+                        <li>Set '/' as the path (first arg)</li>
+                        <li>Write callback function with req, res</li>
+                        <li>Call res.send('hello world') </li>
+                    </ul>
+                </li>
+                <li>Call app.listen(process.env.PORT) to keep server open</li>
+                <li>Create a '.env' file with 'PORT = 3000' in the first line.</li>
+            </ul>
+
+            Results in the following code inside 'index.js' file: 
             <pre>
-                const express = require('express')      //require express
+                const express = require('express')      //require express as needed node module
                 const app = express()       //initialize express app
 
                 app.get('/', (req, res) => {    //'.get' method ('path', (http request, http response) callback runs while someone visits page)
@@ -260,14 +247,9 @@
                     res.send('WEB Content')
                 })
 
-                app.listen(3000)        //connection to web server port that stays open to listen for connections
+                app.listen(process.env.PORT)        //connection to web server port that stays open to listen for connections defined as PORT = 3000 defined by local environment variable.
             </pre>
         </p>
-
-        <h3>Setting up a local web server with Express. Express for Server-Side Rendering(SSR)</h3>
-        <p>Model - data that is provided to be combined with HTML</p>
-        <p>Views - make views of HTML for users to be able to use a website to perform CRUD process</p>
-        <p>Controllers - how the other mentioned processes work in an organized and reusable way</p>
 
         <h3>Creating a Full-Stack Application</h3>
         <p>Using Express for the server, using JSX to embed data in HTML, plain arrays and objects to simulate data</p>
@@ -289,14 +271,14 @@
         </p>
         <p>Project Folder format
             <ul>
-                <li>'controllers' folder
+                <li>'controllers' folder    //function as the point of contact between the views and models
                     <ul>
-                        <li>'controller.js' file</li>
+                        <li>'controller.js' file    //contains functions you write to control your data. For example convert strings or numbers, round, change or calculate values.</li>
                     </ul>
                 </li>
-                <li>'models' folder
+                <li>'models' folder 
                     <ul>
-                        <li>'object.js' file</li>
+                        <li>'object.js' file    //define and contain logic and interactive data along with conversions, validations, computed properties, and access control</li>
                     </ul>
                 </li>
                 <li>'public' folder
@@ -304,7 +286,7 @@
                         <li>'main.css' file</li>
                     </ul>
                 </li>
-                <li>'views' folder
+                <li>'views' folder  //Defines User Interaction and what they see as a response
                     <ul>
                         <li>'components' folder
                             <ul>
@@ -319,10 +301,9 @@
                         <li>show.jsx</li>
                     </ul>
                 </li>
-                <li>'.gitignore' file</li>
-                <li>'package-lock.json' file</li>
-                <li>'server.js' file</li>
-
+                <li>'.gitignore' file   //files listed will not be uploaded to github. Generally includes node modules and API keys</li>
+                <li>'package-lock.json' file    //automatically generated for any operations where npm modifies either the node_modules tree, or package.json</li>
+                <li>'server.js' file    //Using Node.js(JavaScript framework for writing server-side applications) to trigger small JavaScript programs from the command line without any browser involved.</li>
             </ul>
         </p>
 
@@ -392,7 +373,7 @@
         <p>Making Controllers
             <ul>
                 <li>Create seperate folder named controllers</li>
-                <li>Create file 'auth.js'</li>
+                <li>Create file './controllers/auth.js'</li>
                 <li>In the 'auth.js' file, call express.Router() and attach routes</li>
                 <li>'module.exports = router' exports the router from auth.js and import it in index.js
                     <pre>
@@ -453,18 +434,35 @@
         </p>
         
         <h3>Routing</h3>
-        <p>Environment variables are dynamically named values that affect behavior of running computer and operating systems. They protect private data(like API keys), abstract machine-specific settings(like port choices), avoid hard-coded data in code. They are typically written in all caps like constants. </p>
+        <p>Environment variables are dynamically named values that affect behavior of running computer and operating systems. They protect private data(like API keys), abstract machine-specific settings(like port choices), avoid hard-coded data in code. They are typically written in all caps like constants. Environment variables are useful as they protect private data like API keys, avoid hard-coded data in code, and allow for abstracting machine-specific settings such as port choice or configurations.
+            <pre>
+                const express = require('express')
+                const app = express()
+
+                app.get('/', function (req, res) {
+                    res.send('Hello World!')
+                })
+
+                app.listen(3000)
+            </pre>
+        </p>
         <p>Using Environment Variables
             <ul>
                 <li>Install node module 'dotenv'</li>
-                <li>Create '.env' file</li>
+                <li>Create '.env' file. DO NOT END IN SEMICOLONS.
+                    <pre>
+                        PORT = 3000
+                    </pre>
+                </li>
                 <li>In the .js file, require and call the config method. Access the .env variable using the global variable process.
                     <pre>
-                        require('dotenv').config()
+                        require('dotenv').config()      //requires and calls the config method
                         const express = require('express')
                         const app = express()
 
-                        app.listen(process.env.PORT)
+                        //... any other code goes here
+
+                        app.listen(process.env.PORT)    //accesses the environment variable in the .env file using global variable process.
                     </pre>
                 </li>
             </ul>
@@ -511,47 +509,8 @@
                     res.send(`${x} squared is ${result}`)
                 })
             </pre>
-
             page would be accessed by visiting: http://localhost:3000/square?x=2
         </p>
-    </section>
-
-    <section> <!-- Serverside Rendering with JSX -->
-        <h3>JSX - JavaScript XML</h3>
-        <p>A newer syntax that utilizes a cross between JavaScript and HTML to make it easier to build dynamic webpages based on data</p>
-        <p>Key Javascript concepts and syntaxes used: 
-            <ul>
-                <li>regular functions using the 'function' keyword and arrow functions</li>
-                <li>ternary operators are shortcut syntax replacements for 'if' statements and 'if' statements are not available.
-                    <pre>
-                        let ifStatement = true
-
-                        if (ifStatement) {
-                            console.log('is True')
-                        } else {
-                            console.log('is False')
-                        }
-                    </pre>
-                    would be replaced with:
-                    <pre>
-                        let ifStatement = true  //what you want to evaluate
-                        let activity =  
-                        ifStatement
-                        ? 'is True'     //if true do this
-                        : 'is False'    //else do this
-
-                        console.log(activity)
-                    </pre>
-                </li>
-                <li>.map() array method that returns new array after taking a callback as a parameter. It replaces 'for' loops and 'for' loops are not available.</li>
-            </ul>
-        </p>
-
-        <h3>Server-Side Rendering Views</h3>
-        <p>Adding and showing CSS by making a show view</p>
-        <p>Adding CSS</p>
-        <p>Making a 404 page/handler for a possible error</p>
-
     </section>
 
     <section> <!-- RESTful Routing -->
@@ -593,6 +552,180 @@
         <p>Using 'method-override' to allow a form to make a delete action</p>
     </section>
 
+    <section> <!-- Serverside Rendering with JSX -->
+        <h3>JSX - JavaScript XML</h3>
+        <p>A newer syntax that utilizes a cross between JavaScript and HTML to make it easier to build dynamic webpages based on data</p>
+        <p>Key Javascript concepts and syntaxes used: 
+            <ul>
+                <li>regular functions using the 'function' keyword and arrow functions</li>
+                <li>ternary operators are shortcut syntax replacements for 'if' statements and 'if' statements are not available.
+                    <pre>
+                        let ifStatement = true
+
+                        if (ifStatement) {
+                            console.log('is True')
+                        } else {
+                            console.log('is False')
+                        }
+                    </pre>
+                    would be replaced with:
+                    <pre>
+                        let ifStatement = true  //what you want to evaluate
+                        let activity =  
+                        ifStatement
+                        ? 'is True'     //if true do this
+                        : 'is False'    //else do this
+
+                        console.log(activity)
+                    </pre>
+                </li>
+                <li>.map() array method that returns new array after taking a callback as a parameter. It replaces 'for' loops and 'for' loops are not available.</li>
+            </ul>
+        </p>
+
+        <h4>CRUD Applications & Serverside Rendering(SSR)</h4>
+        <p>Clients generally request four types of actions using methods, they are known as CRUD applications:
+            <ul>
+                <li>Create data - Post method</li>
+                <li>Read data - Get method</li>
+                <li>Update data - Put/Patch method</li>
+                <li>Delete data - Delete method</li>
+            </ul>
+        </p>
+        <p>CRUD usage in a fullstack-web application
+            <ul>
+                <li>Create - Create data using Post method; make a new account</li>
+                <li>Read - Read data  using Get method; allows looking at account details</li>
+                <li>Update - Update data using Put/Patch method; edit the account information</li>
+                <li>Delete - Delete data using Delete method; remove or delete the account</li>
+            </ul>
+        </p>
+        <p>Webpage Interaction Flow
+            <ul>
+                <li>User requests to see profile</li>
+                <li>Server gets request and requests data from the database</li>
+                <li>Database locates data then sends the data back to the server
+                    <pre>
+                        member = {
+                            name: 'John',
+                            image: 'Profile-John.jpg',
+                            dateJoined: 'April 1, 2022'
+                        }
+                    </pre>
+                </li>
+                <li>Server gets data and combines it with HTML
+                    <pre>
+                        &lt;section>
+                            &lt;img src="{member.image}" alt="{member.name}">
+                            &lt;h4>{member.name}&lt;/h4>
+                            &lt;h5>&lt;span>Date Joined: &lt;/span>{member.dateJoined}&lt;/h5>
+                        &lt;/section>
+                    </pre>
+                </li>
+                <li>Server sees their profile. Will return card with Picture, name, and date joined.</li>
+            </ul>
+        </p>
+
+        <h3>Server-Side Rendering Views</h3>
+        <p>Models contain data that combines with HTML</p>
+        <p>Views of HTML allow for users to be able to interact with a website to perform CRUD methods. Defined behaviors for Routes included in .jsx files
+            <pre>//Navigation layout  to add CSS libraries located in './views/layouts/default.jsx'
+                <body>
+                    function Default(html) {
+                        return (
+                            <html>
+                                <head>
+                                    <title>{html.title || 'Default'}</title>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossOrigin="anonymous" />
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossOrigin="anonymous" />
+                                </head>
+                                <body>
+                                    <div className="wrapper">
+                                        <header>
+                                            <h1><a href="/objects">ObjectCRUD</a></h1>
+                                        </header>
+                                        <div className="container">
+                                            {html.children}
+                                        </div>
+                                    </div>
+                                </body>
+                            </html>
+                        )
+                    }
+            </pre>
+            
+            <pre>//Set up View for Show Route inside './views/show.jsx' basic setup code. 'views' folder is located on same level as package.json.
+                const React = require('react')      //require and initialize react variable
+                const Default = require('./layouts/Default')    //require and initialize default layout
+                
+                function Show ({object}) {       //create Show function
+                    console.log(object.name)    //confirms object data being recieved in the terminal
+                    return (
+                        <Default>
+                            <h2>Show Page</h2>
+                            <h3>{object.name}</h3>      //data added to the view
+                            <img src="{object.image}" alt="{object.name}"/>     //image data added to the view
+                        </Default>
+                        )
+                    }
+                    module.exports = Show
+            </pre>
+
+            when conditionally rendering HTML based on Data:
+            <pre>
+                const React = require('react')      //require and initialize react variable
+                const Default = require('./layouts/Default')    //require and initialize default layout
+                
+                function Show ({object}) {       //create Show function
+                    console.log(object.name)    //confirms object data being recieved in the terminal
+                    return (
+                        <Default>
+                            <h2>Show Page</h2>
+                            <h3>{object.name}</h3>      //data added to the view
+                            <p>
+                                and it
+                                //ternary operator(?/:) is used as there are no if/else statements in JSX
+                                {
+                                    object.hasAttribute
+                                    ? <span> does </span>
+                                    : <span> does NOT </span>
+                                  }
+                                  contain Attribute.
+                                </p>
+
+                            </p>
+                            <img src="{object.image}" alt="{object.name}"/>     //image data added to the view
+                            <li><a href="/objects">Go home</a></li>
+                        </Default>
+                        )
+                    }
+                    module.exports = Show
+            </pre>
+        </p>
+        <p>Controllers define Model and Views behavior.
+            <pre>//inside '.controllers/objects_controller.js' to update arguments
+                objects.get('/:arrayIndex', (req, res) => {
+                    res.render('Show', {
+                        object: Object[req.params.arrayIndex]
+                    })
+                })
+            </pre>
+
+            then adding a view to handle 404 errors to redirect back to index
+            <pre>
+                objects.get('/:arrayIndex', (req, res) => {
+                    if (Object[req.params.arrayIndex]) {
+                      res.render('Show', {
+                        object:Object[req.params.arrayIndex]
+                      })
+                    } else {
+                      res.render('404')
+                    }
+                  })
+            </pre>
+        </p>
+    </section>
+
     <section> <!-- Model-View-Controller Architecture -->
         <h3>MVC Architecture</h3>
         <p>MVC is an acronym for Model View Controller which is a software architecture that is commonly used to create easily readable and maintainable codes. </p>
@@ -603,7 +736,7 @@
                 <li>Controllers - interaction between models and views, provides the error or alert message</li>
             </ul>
         </p> 
-        <p>discipline and fundamental structure of a software system(web app)
+        <p>Discipline and fundamental structure of a software system(web app)
             <li>Users interact with the <i>views</i></li>
             <li><i>Models</i> define and contain logic and interactive data along with conversions, validations, computed properties, and access control.</li>
             <li><i>Controllers</i> function as the point of contact between the views and models.</li>
@@ -622,7 +755,7 @@
             </pre>
         </p>
         <p>Best practices or Code Refactoring
-            <pre>
+            <pre>//Rough Initial coding without loops using if & else statements
                 var nameFunction = (x) -> {
                     let y = '';
                     if (x == 0 ) y = false; 
@@ -640,7 +773,7 @@
                 }
             </pre>
 
-            <pre>
+            <pre>//Next function 
                 let ifEven = number => {
                     console.log(number, number &lt; 0);
                     if (number &lt; 0) {
@@ -655,13 +788,13 @@
                 }
             </pre>
             
-            <pre>
+            <pre>//Ideal as descriptive variable naming
                 const ifEven = (num) => {
                     return num % 2 === 0
                 }
             </pre>
 
-            <pre>
+            <pre>//Single line function using modular operater, single character variable
                 const e = n => n % 2 === 0
             </pre>
         </p>
