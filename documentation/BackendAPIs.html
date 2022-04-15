@@ -514,42 +514,149 @@
     </section>
 
     <section> <!-- RESTful Routing -->
-        <h3>RESTful routes - New & Create</h3>
-        <p>REST is an acronym that stands for Representational, State, Transfer. REST applications follow a pattern of creating webpages that perform CRUD.
-            <pre>
-                Action ->   HTTP Method ->  Route ->        View ->         Description
-                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
-                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
-            </pre>
-        </p>
+        <h3>RESTful Routing</h3>
         <p>RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.</p>
-        <p>New & Create; creating new items using a form</p>
-        <p>Creating Routes following REST</p>
-
-        <h3>RESTful Routes - Update & Edit</h3>
-        <p>Editing an item using a form
+        <p>REST is an acronym that stands for Representational, State, Transfer. RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.
             <pre>
                 Action ->   HTTP Method ->  Route ->        View ->         Description
                 INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
                 SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
-                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
                 CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
-            </pre>
-        </p>
-        <p>Using 'PUT' action to update an item.</p>
-
-        <h3>RESTful Routes - Delete</h3>
-        <p>Deleting an item using a form.
-            <pre>
-                Action ->   HTTP Method ->  Route ->        View ->         Description
-                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
-                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
                 NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
-                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
+                EDIT ->     GET ->          /home/:id/edit  edit.jsx ->     form created from existing object
+                UPDATE ->   PUT ->          /home/:id       update.jsx ->   update data for existing form
                 DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
             </pre>
         </p>
-        <p>Using 'method-override' to allow a form to make a delete action</p>
+        <h3>RESTful routes - Index & Show</h3>
+        <p>Index & Show; using GET method
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
+                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
+            </pre>
+
+            <pre>//INDEX route inside './controllers/objects.js'
+                object.get("/", (req, res) => {
+                    db.Object.find()
+                      // Render index page
+                      .then((objects) => {
+                        res.render("objects/index", { objects });
+                      })
+                      // to catch any errors
+                      .catch((err) => {
+                        console.log(err);
+                        res.render("error404"); //renders error 404 page
+                      });
+                  });
+            </pre>
+
+            <pre>//SHOW route inside './controllers/objects.js'
+                object.get("/:id", (req, res) => {
+                    db.Object.findById(req.params.id)
+                      .then((object) => {
+                        res.render("objects/show", { object });
+                      })
+                      // to catch any errors
+                      .catch((err) => {
+                        console.log(err);
+                        res.render("error404"); //renders error 404 page
+                      });
+                  });
+            </pre>
+        </p>
+
+        <h3>RESTful Routes - New, Create, Update, & Edit</h3>
+        <p>New & Create; creating new items using a form or editing an item using a form using GET or POST
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
+                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
+            </pre>
+
+            <pre>//NEW route inside './controllers/objects.js'
+                object.get("/new", (req, res) => {
+                    res.render("objects/new");
+                  });
+            </pre>
+
+            <pre>//CREATE route inside './controllers/objects.js'
+                object.post("/", (req, res) => {
+                    db.Object.create(req.body)
+                      .then(() => {
+                        res.redirect("/objects");
+                      })
+                        res.render("objects/index", { objects });
+                      })
+                      // to catch any errors
+                      .catch((err) => {
+                        console.log(err);
+                        res.render("error404"); //renders error 404 page
+                      });
+                  });
+            </pre>
+        </p>
+
+        <p>Using 'PUT' method to update an item & Edit 
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                UPDATE ->   PUT ->          /home/:id       update.jsx ->   update data for existing form
+                EDIT ->     GET ->          /home/:id/edit  edit.jsx ->     form created from existing object
+            </pre>
+
+            <pre>//UPDATE route inside './controllers/objects.js'
+                object.put('/:id', (req,res) => {
+                    console.log(req.body)
+                    if(req.body.pic === ""){
+                        req.body.pic = undefined;
+                    }
+                    if(req.body.city === ""){
+                        req.body.city = undefined;
+                    }
+                    if(req.body.state === ""){
+                        req.body.state = undefined;
+                    }
+                    console.log(req.body)
+                    db.Object.findByIdAndUpdate(req.params.id, req.body, {new: true})
+                        .then(updatedObject => {
+                            res.redirect(`/objects/${req.params.id}`)
+                        })
+                  })
+            </pre>
+
+            <pre>//EDIT route inside './controllers/objects.js'
+                object.get("/:id/edit", (req, res) => {
+                    db.Object.findById(req.params.id)
+                      .then((object) => {
+                        res.render("objects/edit", { object });
+                      })
+                      .catch((err) => {
+                        res.render("error404");
+                      });
+                  });
+            </pre>
+        </p>
+
+        <h3>RESTful Routes - Delete</h3>
+        <p>Using 'method-override' to allows a form to make a delete action
+            <pre>
+                Action ->   HTTP Method ->  Route ->        View ->         Description
+                DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
+            </pre>
+
+            <pre>//DELETE route inside './controllers/objects.js'
+                object.delete("/:id", (req, res) => {
+                    db.Object.findByIdAndDelete(req.params.id)
+                      .then((object) => {
+                        res.redirect("/objects");
+                      })
+                      .catch((err) => {
+                        console.log("err", err);
+                        res.render("error404");
+                      });
+                  });
+            </pre>
+        </p>
     </section>
 
     <section> <!-- Serverside Rendering with JSX -->
@@ -624,32 +731,49 @@
                 </li>
                 <li>Server sees their profile. Will return card with Picture, name, and date joined.</li>
             </ul>
-        </p>
+        </p>        
+    </section>
+
+    <section> <!-- Model-View-Controller Architecture -->
+        <h3>MVC Architecture</h3>
+        <p>MVC is an acronym for Model View Controller which is a software architecture that is commonly used to create easily readable and maintainable codes. </p>
+        <p>Separation of concerns is a design principle that allows for better sustainability by separating blocks of code by similar functions or affects specific sets of data.
+            <ul>
+                <li>Data and Data Logic - user information, user info validation, back-end features</li>
+                <li>UI & UX - information displayed webpage, alerts and error messages, front-end features</li>
+                <li>Controllers - interaction between models and views, provides the error or alert message</li>
+            </ul>
+        </p> 
+        <p>Discipline and fundamental structure of a software system(web app)
+            <li>Users interact with the <i>views</i></li>
+            <li><i>Models</i> define and contain logic and interactive data along with conversions, validations, computed properties, and access control.</li>
+            <li><i>Controllers</i> function as the point of contact between the views and models.</li>
+        </p>        
 
         <h3>Server-Side Rendering Views</h3>
         <p>Models contain data that combines with HTML</p>
         <p>Views of HTML allow for users to be able to interact with a website to perform CRUD methods. Defined behaviors for Routes included in .jsx files
             <pre>//Navigation layout  to add CSS libraries located in './views/layouts/default.jsx'
-                <body>
+                &lt;body>
                     function Default(html) {
                         return (
-                            <html>
-                                <head>
-                                    <title>{html.title || 'Default'}</title>
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossOrigin="anonymous" />
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossOrigin="anonymous" />
-                                </head>
-                                <body>
-                                    <div className="wrapper">
-                                        <header>
-                                            <h1><a href="/objects">ObjectCRUD</a></h1>
-                                        </header>
-                                        <div className="container">
+                            &lt;html>
+                                &lt;head>
+                                    &lt;title>{html.title || 'Default'}&lt;/title>
+                                    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossOrigin="anonymous" />
+                                    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossOrigin="anonymous" />
+                                &lt;/head>
+                                &lt;body>
+                                    &lt;div className="wrapper">
+                                        &lt;header>
+                                            &lt;h1>&lt;a href="/objects">ObjectCRUD&lt;/a>&lt;/h1>
+                                        &lt;/header>
+                                        &lt;div className="container">
                                             {html.children}
-                                        </div>
-                                    </div>
-                                </body>
-                            </html>
+                                        &lt;/div>
+                                    &lt;/div>
+                                &lt;/body>
+                            &lt;/html>
                         )
                     }
             </pre>
@@ -661,11 +785,11 @@
                 function Show ({object}) {       //create Show function
                     console.log(object.name)    //confirms object data being recieved in the terminal
                     return (
-                        <Default>
-                            <h2>Show Page</h2>
-                            <h3>{object.name}</h3>      //data added to the view
-                            <img src="{object.image}" alt="{object.name}"/>     //image data added to the view
-                        </Default>
+                        &lt;Default>
+                            &lt;h2>Show Page&lt;/h2>
+                            &lt;h3>{object.name}&lt;/h3>      //data added to the view
+                            &lt;img src="{object.image}" alt="{object.name}"/>     //image data added to the view
+                        &lt;/Default>
                         )
                     }
                     module.exports = Show
@@ -679,24 +803,24 @@
                 function Show ({object}) {       //create Show function
                     console.log(object.name)    //confirms object data being recieved in the terminal
                     return (
-                        <Default>
-                            <h2>Show Page</h2>
-                            <h3>{object.name}</h3>      //data added to the view
-                            <p>
+                        &lt;Default>
+                            &lt;h2>Show Page&lt;/h2>
+                            &lt;h3>{object.name}&lt;/h3>      //data added to the view
+                            &lt;p>
                                 and it
                                 //ternary operator(?/:) is used as there are no if/else statements in JSX
                                 {
                                     object.hasAttribute
-                                    ? <span> does </span>
-                                    : <span> does NOT </span>
+                                    ? &lt;span> does &lt;/span>
+                                    : &lt;span> does NOT &lt;/span>
                                   }
                                   contain Attribute.
-                                </p>
+                                &lt;/p>
 
-                            </p>
-                            <img src="{object.image}" alt="{object.name}"/>     //image data added to the view
-                            <li><a href="/objects">Go home</a></li>
-                        </Default>
+                            &lt;/p>
+                            &lt;img src="{object.image}" alt="{object.name}"/>     //image data added to the view
+                            &lt;li>&lt;a href="/objects">Go home&lt;/a>&lt;/li>
+                        &lt;/Default>
                         )
                     }
                     module.exports = Show
@@ -724,36 +848,7 @@
                   })
             </pre>
         </p>
-    </section>
 
-    <section> <!-- Model-View-Controller Architecture -->
-        <h3>MVC Architecture</h3>
-        <p>MVC is an acronym for Model View Controller which is a software architecture that is commonly used to create easily readable and maintainable codes. </p>
-        <p>Separation of concerns is a design principle that allows for better sustainability by separating blocks of code by similar functions or affects specific sets of data.
-            <ul>
-                <li>Data and Data Logic - user information, user info validation, back-end features</li>
-                <li>UI & UX - information displayed webpage, alerts and error messages, front-end features</li>
-                <li>Controllers - interaction between models and views, provides the error or alert message</li>
-            </ul>
-        </p> 
-        <p>Discipline and fundamental structure of a software system(web app)
-            <li>Users interact with the <i>views</i></li>
-            <li><i>Models</i> define and contain logic and interactive data along with conversions, validations, computed properties, and access control.</li>
-            <li><i>Controllers</i> function as the point of contact between the views and models.</li>
-        </p>
-
-        <p>REST is an acronym that stands for Representational, State, Transfer. RESTful Routes create a readable and maintainable patterns while being flexible utilizing HTTP verbs to minimalize the amount of unique paths.
-            <pre>
-                Action ->   HTTP Method ->  Route ->        View ->         Description
-                INDEX ->    GET ->          /home ->        index.jsx ->    list of objects
-                SHOW ->     GET ->          /home/:id ->    show.jsx ->     show details view for object
-                CREATE ->   POST ->         /home ->        none ->         Creates a route to the new object in the database and redirects it to another view
-                NEW ->      GET ->          /home/new ->    new.jsx ->      form to create object
-                EDIT ->     GET ->          /home/:id/edit  edit.jsx ->     form created from existing object
-                UPDATE ->   PUT ->          /home/:id       update.jsx ->   update data for existing form
-                DESTROY ->  DELETE ->       /home/:id       none ->         Deletes route
-            </pre>
-        </p>
         <p>Best practices or Code Refactoring
             <pre>//Rough Initial coding without loops using if & else statements
                 var nameFunction = (x) -> {
@@ -773,7 +868,7 @@
                 }
             </pre>
 
-            <pre>//Next function 
+            <pre>//Next function written with the if statement and condition
                 let ifEven = number => {
                     console.log(number, number &lt; 0);
                     if (number &lt; 0) {
@@ -788,25 +883,108 @@
                 }
             </pre>
             
-            <pre>//Ideal as descriptive variable naming
+            <pre>//Ideal as descriptive variable naming and simplest solution
                 const ifEven = (num) => {
                     return num % 2 === 0
                 }
             </pre>
 
-            <pre>//Single line function using modular operater, single character variable
+            <pre>//Single line function using modular operater, single character variable. Harder to read. 
                 const e = n => n % 2 === 0
             </pre>
         </p>
     </section>
 
-    <section> <!-- MongoDB & NoSQL -->
-        <h3>MongoDB & NoSQL</h3>
-        <p>Databases are collections of organized and structured data that's stored electronically in a computer and provides high performance in accessing data.</p>
-        <p>SQL & NonSQL databases</p>
-        <p>MongoDB database structure</p>
+    <section> <!--JSON, MongoDB, & NoSQL -->
+        <h3>JSON - Javascript Object Notation</h3>
+        <p>JSON stands for Javascript Object Notation and is a text-based data structure based on key-value pairs that allow for documents and arrays to be nested within each other.</p>
+        <p>JSON is a superset of JavaScript which allows it to integrate nicely as the code is still valid Javascript code. Data Representation Format similar to XML or yamo. Used for most APIs and configuration files.</p>
+        <p>Most major languages will have a library or built-in functionality to parse or convert JSON strings into classes or objects in that language.  Used because it's lightweight and easy to read compared to XML. It's cleaner code that doesn't use as many open and closing tags.</p>
+        <p>Since JSON is a Data Representation Format, it has to be able to represent certain data types. JSON natively supports strings, numbers(including scientific notation and percentages), booleans, null value, arrays (lists of any of the native data types), objects. JSON does not support octal and hexdecimal values. </p>
+        
+        <h3>Syntax</h3> 
+        <p>Objects are the most used data type within JSON as it allows you to represent values that are key value pairs(you assign a key to the object and a value with a native datatype as a matching key.)</p>
+        <p>In order to use JSON, it requires a new file with the .json extension/filetype. Inside of the file you have the valid native datatype. Most of the time you will have an array or an object as the top level of the file and nested inside that will be other values(that can include other objects or arrays).</p>
+        <p>To create an object in JSON, you need to open with '{' and close file with a '}' with the key value pairs within them. The format is similar to creating an array in other programming langagues. 'Keys' must always be surrounded by double quotes, followed by a colon, and then a value for that key. Commas are needed when separation separate sets of key-value pairs. 
+            <pre>
+                object.json     //file
+                {
+                    "key":  "value",
+                    "key":  "value"
+                }
+            </pre>
+        </p>
+        <p>JSON is able to nest different properties to show an hierarchy of data so it's easier to read than other data formats. For Example: 
+            <pre>
+                user.json       //file name
+                {
+                    "username": "john.doe",     //initial object
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "isFullTime":   true,
+                    "position": "supervisor"
+                    "permissions": ["view", "edit", "create", "delete"]     //nested array
+                    "suboordinate": [{
+                        "username": "jane.doe",     //nested object
+                        "firstName": "Jane",
+                        "lastName": "Doe",
+                        "isFullTime":   false,
+                        "position": "assistant"
+                        "permissions": ["view", "edit", "delete"],
+                        "suboordinate": [{
+                            "username": "jane.doe",     //nested object within an object
+                            "firstName": "Jane",
+                            "lastName": "Doe",
+                            "isFullTime":   false,
+                            "position": "assistant"
+                            "permissions": ["view", "edit", "delete"], 
+                            "suboordinate": [...]
+                    }]
+                }
+            </pre>
+        </p>
 
-        <p>MongoDB stores data as document objects and is classified as a non-relational database. By storing data as objects, this allows for flexibility with custom data structures that don't conform to tables and allows documents within same collections to have different fields.</p>
+        <h3>Parsing a JSON file in Javascript</h3>
+        <p>Like in Javascript, array containers are brackets '[]' and you're able to include JSON in the HTML file as it's still valid Javascript. 
+            Majority of the time, information requests are returned as strings and not as Javascript objects. To convert the use the built-in method of 'JSON.parse' with the declared variable as the parameter.
+            <pre>
+                &lt;body>
+                    &lt;script type="text/javascript">
+                        let companies = 
+                        `[   //array of objects
+                            {
+                                "name": "Fresh Farms",
+                                "numberOfEmployees": 5000,
+                                "consumerRating": 4.2,
+                                "employeeRating": 3.6
+                            },
+                            {
+                                "name": "Hydro Fields",
+                                "numberOfEmployees": 3500,
+                                "consumerRating": null,
+                                "employeeRating": 3.1
+                            },
+                            {
+                                "name": "Sunshine Produce",
+                                "numberOfEmployees": 2750,
+                                "consumerRating": 3.2,
+                                "employeeRating": 4.6
+                            }
+                        ]`
+
+                        console.log(JSON.parse(companies)[0].name)  //will return name of first company
+                    &lt;/script>
+                &lt;/body>
+            </pre>
+            In order to get the information from the array as not an object, you would use backticks(`) around the array to have it logged as a string. Alternatively you can use the stringify method.
+        </p>
+
+        <h3>MongoDB & NoSQL</h3>
+        <p>Databases are collections of organized and structured data that's stored electronically in a computer and provides high performance in accessing data. Databases allow for stored data where any changes persist and allow for the creation of dynamic applications.</p>
+        <p>SQL stands for Structured Query Language that function as relational databases that stores data in tables and rows. NonSQL or No SQL are non-relational databases that store data in other formats besides tables.</p>
+        <p><a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/">MongoDB</a> stores data as document objects and is classified as a non-relational database. By storing data as objects, this allows for flexibility with custom data structures that don't conform to tables and allows documents within same collections to have different fields.</p>
+        <p>MongoDB is a NoSQL database structured to store data in a JSON-like document structure with a built-in query language designed to make data easy to access and scale.</p>
+        <p>Binary JSON was developed for use by MongoDB to store JSON data that has been encoded into binary language and allows for the usage of data types JSON does not natively support(ie dates and binary values). BSON was developed add functionality to JSON by being more lightweight and easily traverseable.</p>
         <p>MongoDB allows users to create validation rules to avoid formatting variances due to different data sets.
             <pre>
                 {_id: ObjectID("109e284fa3401984"),
@@ -826,6 +1004,20 @@
 
             Both documents can be in the same collection of 'characters'
         </p>
+        <p>Mongo's Database Structure follows a tree structure. 
+            <pre>
+                Starting: Mongo -> Database -> Collection -> Document
+            </pre>
+            <ul>
+                <li>Mongo can store many Databases where each database is comprised of many collections.</li>
+                <li>Collections are a set of documents with parent-child relationships, similar to tables as containers.</li>
+                <li>Documents are basic data types or units that function similar to rows of a table.</li>
+            </ul>
+        </p>
+        
+        <h3>MongoDB Compass and Queries</h3>
+        <p>MongoDB can be installed on a <a href="https://www.mongodb.com/try/download/community?tck=docs_server">local</a> machine utilizing the terminal or a GUI like Compass where the data is also stored locally. There is also a cloud version of MongoDB called <a href="https://www.mongodb.com/try">Atlas</a> where the data resides online on MongoDB's servers.</p>
+
     </section>
 
     <section> <!-- Mongoose & ODMs -->
@@ -879,7 +1071,7 @@
                 const objectSchema = new Schema{(
                     name: {
                         type: String, 
-                        required: true,     //'required:' property is a validator 
+                        required: true,     //'required:' property is a built-in validator 
                         min: [0, "Desired string for custom error message when validation fails"],
                         max: 25,        //multiple validators can be used on on one property
                         unique: true    //built-in helper option that checks if value is unique, it accepts the boolean value. If not, then false is the default.
