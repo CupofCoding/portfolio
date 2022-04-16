@@ -1017,6 +1017,27 @@
         
         <h3>MongoDB Compass and Queries</h3>
         <p>MongoDB can be installed on a <a href="https://www.mongodb.com/try/download/community?tck=docs_server">local</a> machine utilizing the terminal or a GUI like Compass where the data is also stored locally. There is also a cloud version of MongoDB called <a href="https://www.mongodb.com/try">Atlas</a> where the data resides online on MongoDB's servers.</p>
+        <p>Connect to a local Mongo database on Compass.</p>
+        <p>Compass is a MongoDB GUI to provide an interface for the user to interact with the Mongo database. Connection Strings identify the path to connect to specific databases.</p>
+        <p>Compass UI Layout
+            <ul>
+                <li>Local Mongo Database List - displays database name, size, amount of collections, and indexes</li>
+                <li>Host - displays Database location and port </li>
+                <li>MongoSH Beta - built in Mongo shell terminal that makes it easy to manage and query data from a local machine database. </li>
+            </ul>
+        </p>
+        <h4>MongoDB Compass Guide</h4>
+        <ul>
+            <li>If Compass isn't installed already, follow the documentation on their <a href="https://www.mongodb.com/try/download/community?tck=docs_server">site</a></li>
+            <li>Open Compass and connect to Mongo via Connect button.</li>
+            <li>MONGOSH is the terminal and can be accessed at the bottom of the app. 
+                <ul>Terminal commands:
+                    <li>'show dbs' - lists the local Mongo databases</li>
+                    <li>'db' - will show current database</li>
+                    <li>'use dbnamehere' - used to switch to the database, but if a database doesn't exist, Compass will create a new database then switch to it.</li>
+                </ul>
+            </li>
+        </ul>
 
     </section>
 
