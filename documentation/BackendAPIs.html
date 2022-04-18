@@ -1035,6 +1035,57 @@
                     <li>'show dbs' - lists the local Mongo databases</li>
                     <li>'db' - will show current database</li>
                     <li>'use dbnamehere' - used to switch to the database, but if a database doesn't exist, Compass will create a new database then switch to it.</li>
+                    <li>'db.createCollection('collectionName')' - Each database can have multiple collections that contains data similar to an array.</li>
+                    <li>'show collections' - will list all collections contained within current database</li>
+                    <ul>Terminal Commands with Methods: 
+                        <li>'db.collectionName.insertOne()' - method that will create data by inserting a document under a collection with the specified name. Shift + Enter moves down a line.
+                            <pre>
+                                db.collectionName.insertOne({
+                                    city: "North Hollywood",
+                                    county: "Los Angeles",
+                                    state: "California",
+                                    country: "United States of America"
+                                })
+                            </pre>
+                        </li>
+                        <li>'db.collectionName.find()' - locates all documents within a collection similar to file explorer with search parameters</li>
+                        <li>Update Operations
+                            <li>'db.collectionName.updateOne()', 'db.collection.updateMany()', 'db.collection.findAndModify()' - command tells Mongo intention of updating document, needs at least two arguments as parameters.
+                                <ul>Update Operators process document fields with string-based names in order. 
+                                    <li>Query object that Mongo will use to find exact document to update</li>
+                                    <li>Object that includes data to be updated in the document including update operator prefex.</li>
+                                </ul>
+                                <ul><a href="https://www.mongodb.com/docs/manual/reference/operator/update/#fields">Fields</a>
+                                    <li>$currentDate - Sets the value of a field to current date, either as a Date or a Timestamp.</li>
+                                    <li>$inc - Increments the value of the field by the specified amount.</li>
+                                    <li>$min - Only updates the field if the specified value is less than the existing field value.</li>
+                                    <li>$max - Only updates the field if the specified value is greater than the existing field value.</li>
+                                    <li>$mul - Multiplies the value of the field by the specified amount.</li>
+                                    <li>$rename - Renames a field.</li>
+                                    <li>$set - Sets the value of a field in a document.</li>
+                                    <li>$setOnInsert - Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents.</li>
+                                    <li>$unset - Removes the specified field from a document.</li>
+                                </ul>
+                                <ul><a href="https://www.mongodb.com/docs/manual/reference/operator/update/#operators">Array Operators</a>
+                                    <li>$ - Acts as a placeholder to update the first element that matches the query condition.</li>
+                                    <li>$[] - Acts as a placeholder to update all elements in an array for the documents that match the query condition.</li>
+                                    <li>$[&lt;identifier>] - Acts as a placeholder to update all elements that match the arrayFilters condition for the documents that match the query condition.</li>
+                                    <li>$addToSet - Adds elements to an array only if they do not already exist in the set.</li>
+                                    <li>$pop - Removes the first or last item of an array.</li>
+                                    <li>$pull - Removes all array elements that match a specified query.</li>
+                                    <li>$push - Adds an item to an array.</li>
+                                    <li>$pullAll - Removes all matching values from an array.</li>
+                                </ul>
+                                <ul><a href="https://www.mongodb.com/docs/manual/reference/operator/update/#modifiers">Array Modifiers</a>
+                                    <li>$each - Modifies the $push and $addToSet operators to append multiple items for array updates.</li>
+                                    <li>$position - Modifies the $push operator to specify the position in the array to add elements.</li>
+                                    <li>$slice - Modifies the $push operator to limit the size of updated arrays.</li>
+                                    <li>$sort - Modifies the $push operator to reorder documents stored in an array.</li>
+                                </ul>
+                                <li>$bit - Performs bitwise AND, OR, and XOR updates of integer values.</li>
+                            </li>
+                        </li>
+                    </ul>
                 </ul>
             </li>
         </ul>
@@ -1156,7 +1207,8 @@
                 }
 
                 userSchema.static.getHighScorers = function() {     //Defining static method: userSchema(affected schema).static(Mongoose keyword to define static method).getHighScorers(what to set method name to)
-                    return this.find({ score: {$gte: 1000 }})
+                    return this.find({ score: {
+                        $gte: 1000 }})
 
                 }
             </pre>
