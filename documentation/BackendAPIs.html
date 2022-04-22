@@ -853,15 +853,15 @@
             <pre>//Rough Initial coding without loops using if & else statements
                 var nameFunction = (x) -> {
                     let y = '';
-                    if (x == 0 ) y = false; 
+                    if (x === 0 ) y = true;     //if == then it will return false since javascript thinks 0 == is falsey
                     else if (x === 1) {
-                        y = True
+                        y = false
                     }else if (x === 2 ) {
-                        y = false
-                    } else if (x === 4) {
                         y = true
-                    } else if ( x == 5 ) {
+                    } else if (x === 3) {
                         y = false
+                    } else if ( x === 4 ) {
+                        y = true
                     }   //continues to 1000 or more 
                     return y; 
                     }
@@ -876,7 +876,7 @@
                     } else {
                         return (
                             number == 0
-                            ||
+                            ||      //logical OR assignment operator
                             ifEven(number - 2)
                         )
                     }
@@ -1047,14 +1047,62 @@
                                     country: "United States of America"
                                 })
                             </pre>
+
+                            <pre>
+                                //will return following status/response
+                                {
+                                    acknowledged: true,
+                                    insertedID: ObjectID("randomID value")
+                                }
+                            </pre>
                         </li>
-                        <li>'db.collectionName.find()' - locates all documents within a collection similar to file explorer with search parameters</li>
+                        <li>'db.collectionName.find()' - locates all documents within a collection similar to file explorer with search parameters. It's also considered an 'equality condition' which allows you to filter data according to a key and value pair.
+                            <pre>
+                                db.collectionName.find({ timezone: "GMT-5" })
+                                //returns {_id: ObjectID("Assigned Number"), ... }
+                            </pre>
+                            If we didn't want every single key-value pair when we queried the data to avoid parsing large sets of data, we use projection and pass a second argument object to the .find() method. Object needs to include key(s) that have a value that functions as the filter for the field to omit or include to be returned in the query.
+                        </li>
                         <li>Update Operations
-                            <li>'db.collectionName.updateOne()', 'db.collection.updateMany()', 'db.collection.findAndModify()' - command tells Mongo intention of updating document, needs at least two arguments as parameters.
+                            <li>'db.collectionName.updateOne(arguments)' - command tells Mongo intention of updating document, needs at least two arguments as parameters.</li>
+                            <li>'db.collection.updateMany(filter, update, options)' - updates all documents that match the specified filter for a collection
+                                <pre>
+                                    db.collection.updateMany(
+                                        &lt;filter>,
+                                        &lt;update>,
+                                        {
+                                            upsert: &lt;boolean>,
+                                            writeConcern: &lt;document>,
+                                            collation: &lt;document>,
+                                            arrayFilters: [ &lt;filterdocument1>, ... ],
+                                            hint:  &lt;document|string>        // Available starting in MongoDB 4.2.1
+                                        }
+                                    )
+                                </pre>
+                                <ul></ul>
+                            </li>
+                            <li>'db.collection.findAndModify()'</li>
+
                                 <ul>Update Operators process document fields with string-based names in order. 
                                     <li>Query object that Mongo will use to find exact document to update</li>
                                     <li>Object that includes data to be updated in the document including update operator prefex.</li>
                                 </ul>
+                                <pre>
+                                    //Example
+                                    db.collectionName.updateOne(
+                                        { city: "North Hollywood" },
+                                        { $set: { city: "Burbank"} }
+                                    )
+                                </pre>
+
+                                <pre>
+                                    //will return following status/response
+                                    { acknowledged: true,
+                                        insertedID: null, 
+                                        matchedCount: 1,
+                                        modifiedCount: 1, 
+                                        upsertedCount: 0 }
+                                </pre>
                                 <ul><a href="https://www.mongodb.com/docs/manual/reference/operator/update/#fields">Fields</a>
                                     <li>$currentDate - Sets the value of a field to current date, either as a Date or a Timestamp.</li>
                                     <li>$inc - Increments the value of the field by the specified amount.</li>
@@ -1084,6 +1132,15 @@
                                 </ul>
                                 <li>$bit - Performs bitwise AND, OR, and XOR updates of integer values.</li>
                             </li>
+                        </li>
+                        <li>'db.destinations.deleteOne()' - only requires one argument. 
+                            <pre>
+                                db.destinations.deleteOne({ city: "Burbank" })
+                            </pre>
+                            <pre>
+                                //will return following status/response
+                                { acknowledged: true, deletedCount: 1 }
+                            </pre>
                         </li>
                     </ul>
                 </ul>
@@ -1236,6 +1293,16 @@
 
     <section> <!-- Cloud Deployment -->
         <h3>Cloud Deployment</h3>
+    </section>
+
+    <section> useEffect Hook -> dependency array stops the infinite loop as it expect nothing or state variables. it can be empty and is good practice to be empty for API calls.
+        <pre>
+            useEffect(() => {
+                console.log('call useEffect');
+              }); // by default useEffect runs after every re-render
+            
+            console.log('render here');            
+        </pre>
     </section>
     
 </body>
