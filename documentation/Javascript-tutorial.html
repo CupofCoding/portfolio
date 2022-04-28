@@ -1946,6 +1946,53 @@
         <li>Basic Form Validation</li>
     </ul>
 
+
+
+    rr-6 
+
+import './App.css';
+import Button from "react-bootstrap/Button"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+
+
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar bg="dark" expand="lg">
+        <Nav activeKey="/home">
+          <Nav.Item>
+            <Nav.Link href="/home">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+          <Nav.Link eventKey="/about">About Us</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <h1>Bootstrap Website</h1>
+        <Button variant="dark">DARK MODE</Button>
+      </Navbar>
+    </div>
+  );
+}
+
+export default App;
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+        </Form.Group>
+
+
     
 
     <section><!--Coding Challenges-->
