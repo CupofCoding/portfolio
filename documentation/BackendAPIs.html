@@ -1283,10 +1283,58 @@
         </p>
         <p>Use case for helper methods</p>
 
-        <h3>Multiple Mongoose Models and Relationships</h3>
-        <p>Describe the differences between one-to-many and many-to-many relationships.</p>
-        <p>Write a one-to-many relationship in Mongoose using ID reference.</p>
-        <p>To add a second model, create another schema for it and this will create a second collection in Mongo.</p>
+        <h3>Multiple Mongoose Models and Relationships</h3>        
+        <p>Creating another model requires another schema that will create a second collection in Mongo.</p>
+        <p>There are two common patterns for relating models together. 
+            <ul>
+                <li>Many-to-many relationship - Documents from one collection can have many doucments from another collection. They aren't excusive to each other and could be linked to other parent and children.</li>
+                <li>One-to-many relationship - A document from one collection can exclusively include documents from another collection. Similar to how an object has a parent but the parent can have many children. Models can be related together by utilizing object IDs. One Model would have a schema field to hold the ID of the related model using parent-child references. 
+                    <ul>
+                        <li>The parent model has a related ID field Array to reference and link to all of its children.</li>
+                        <li>The child model has the related "_id: ObjectID" field to reference to its parent.</li>
+                    </ul>
+                    <p>Syntax for a one-to-many relationship in Mongoose using ID reference.</p>
+                    <ul>
+                        <li>"Schema.Types.ObjectID:" defines the Mongoose the datatype for the field to be an ID.</li>
+                        <li>"ref:" tells Mongoose which model the ID belongs to</li>
+                        <pre>
+                            //call Mongoose and the parent model
+                            const mongoose = require('mongoose')
+                            const Library = require('./library.js')
+                            const { Schema } = mongoose
+
+                            //create schema for books
+                            const bookSchema = new Schema({
+                                title: { type: String, required: true },
+                                book: { type: Schema.Types.ObjectID, ref: 'Library'}
+                            })
+                        </pre>
+                    </ul>                    
+                </li>
+            </ul>            
+        </p>
+
+        <h4>Mongoose Populate</h4>
+        <p>".populate()" is Mongoose method that pulls in data from a referenced document by virtually replacing the reference ID field with the related data. The populate method should be used on the model that holds the reference ID field.
+            <pre>// inside the "models/book.js" file
+                Book.findOne({ title: 'All Star'})
+                .populate('library')
+                .then(foundBook => {
+                    console.log(foundBook)
+                })
+
+                //return Output
+                _id: dba20841284ddgaa198025u908124,
+                title: 'Anyone Can Cook'
+                author: 'Auguste Gusteau'
+                library: {
+                    
+                }
+
+            </pre>
+        </p>
+        <p>Describe the syntax of the populate method.</p>
+        <p>Use the populate method to pull in related data in a one-to-many relationship.</p>
     </section>
 
     <section> <!-- APIs & Documentation -->
