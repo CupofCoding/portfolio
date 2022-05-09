@@ -1314,27 +1314,105 @@
             </ul>            
         </p>
 
-        <h4>Mongoose Populate</h4>
-        <p>".populate()" is Mongoose method that pulls in data from a referenced document by virtually replacing the reference ID field with the related data. The populate method should be used on the model that holds the reference ID field.
+        <h4>Mongoose Populate Method</h4>
+        <p>".populate()" is Mongoose method that pulls in data from a referenced document by virtually replacing the reference ID field with the related data. The populate method can be used after any ".find" query method and should be used on the model that holds the reference ID field.
             <pre>// inside the "models/book.js" file
                 Book.findOne({ title: 'All Star'})
-                .populate('library')
+                .populate('library')        //looks for linked id field by checking the argument for the reference field's name on the model on the model being queried
+                .populate('author', 'name location')         //method can be chained onto a single query as needed with a second argument to specify fields
                 .then(foundBook => {
                     console.log(foundBook)
                 })
 
                 //return Output
-                _id: dba20841284ddgaa198025u908124,
-                title: 'Anyone Can Cook'
-                author: 'Auguste Gusteau'
-                library: {
-                    
+                {                    
+                    _id: dba20841284ddgaa198025u908124,
+                    title: 'Anyone Can Cook',
+                    author: {       //returns the data from the referenced document query for 'author'
+                        _id: dba52b5f4gsa54gsdf64ccas265344,
+                        name: 'Auguste Gusteau',
+                        location: France,
+                        //debutYear: 1986 is omitted as the field wasn't specified to be included
+                        
+                    library: {      //returns the data from the referenced document query for 'library'
+                        _id: dba52b36asdg464ccas265344,
+                        name: 'Pixar',
+                        releaseYear: 2007
+                        
+                    }                    
                 }
-
             </pre>
+            The populate method to pulls in related data in a one-to-many relationship.
         </p>
-        <p>Describe the syntax of the populate method.</p>
-        <p>Use the populate method to pull in related data in a one-to-many relationship.</p>
+        <h4>Mongoose Virtuals</h4>
+        <p>Virtuals are a way to create a nonpersistent virtual field onto Mongoose documents while not saving to the database. Use cases include: 
+            <ul>
+                <li>Computing Values - Calculating a value based on an existing field</li>
+                <li>Combining Values - Combining existing fields</li>
+                <li>Finding Related Docs - Populating the parent with its related children documents</li>
+            </ul>
+        </p>
+        <p>Virtual fields do not appear in JSON results by default. In order to include them, there was be an option called toJSON on the schema.</p>
+        <p>Basic Virtual Syntax
+            <pre>
+                //located in "models/user.js"
+                userSchema.virtual('fullName')      //'fullName' is the set name for the virtual field
+                .get (function() {
+                    return `$(this.firstName) ${this.lastName}`     //defines what goes into the field
+                }, { toJSON: { virtuals: true }})       //option to convert virtual field to JSON 
+
+                //Virtual Expected Output:
+                {
+                    firstName: 'Terry'
+                    lastName: 'Crews'
+                    fullName: 'Terry Crews'     //argument is inserted here
+                }
+            </pre>
+            <ul>
+                <li>'userSchema' - schema on which virtual field is created</li>
+                <li>'.virtual' - prebuilt method</li>
+                <li>'fullName' - first argument used to name the virtual field</li>
+                <li>'.get(function())' - method that allows you to get and transfrom document's data</li>
+                <li>'.return[...]' - returns defined value set to the virtual field</li>
+            </ul>
+        </p>
+        <pre>
+            //creating the vitual, located in "models/library.js"
+            librarySchema.virtual('books', {    //schema.vitual('books') follows usual virtual field syntax, {...} is the second argument defining values
+                ref: 'Book',        // related schema model
+                localField: '_id',      //matching field to the parent model 
+                foreignField: 'library'       //reference field to the child model
+            })
+
+            //invoking populate on the model, located in "librarys_controller.js"
+            Library.find()
+                .populate('books')      //invoked populate where the argument passed is the name of the virtual field
+                .then(foundLibrarys => {
+                    res.send(foundLibrarys)
+                })
+
+            //Virtual fields and Populate method expected output
+            {
+                name: 'Harry Potter'
+                Author: 'J. K. Rowling'
+                books: [
+                    {
+                        name: 'Harry Potter and the Sorcerer's Stone'
+                        releaseDate: 'June 26, 1997'
+                    },
+                    {
+                        name: 'Harry Potter and the Chamber of Secrets'
+                        releaseDate: 'July 2, 1998'
+                    },
+                    [ ... ]
+                ]
+
+            }
+
+        </pre>
+        <p>Define Mongoose virtuals and their utility.</p>
+        <p>how to use virtuals with populate</p>
+        <p>Write a virtual to populate related children data on a parent document</p>
     </section>
 
     <section> <!-- APIs & Documentation -->
