@@ -1408,11 +1408,91 @@
                 ]
 
             }
-
         </pre>
-        <p>Define Mongoose virtuals and their utility.</p>
-        <p>how to use virtuals with populate</p>
-        <p>Write a virtual to populate related children data on a parent document</p>
+        <p>Virtuals are used to add temporary attributes to a document. Generally very useful for values that are constantly referenced. Custom Helper Methods on the other hand, are used when writing custom utility methods on a document. Good for things used often but not constantly.</p>
+        
+        <h4>Mongoose Hooks</h4>
+        <p>Hooks are a way to allow for running custom code before or after an event happens.</p>
+        <p>Subscription Anology; 
+            <pre>Subscribing to a channel/newsletter saves or triggers based on a 'save' event -> new content is uploaded so the 'save' event is triggered -> view content runs custom code in hook</pre>
+        </p>
+        <p>'Pre Hook' would execute the custom code before the event it's following occurs. 'Post Hook' will execute the custom code after the event it's following. Hooks can subscribe to any <a href="https://mongoosejs.com/docs/middleware.html#types-of-middleware">database action</a>
+            <li>Example Events: save, validate, find, findOneAndDelete, findOneAndUpdate</li>
+            <pre>userSchema.pre('save', function() {        //'userSchema' is the name of the schema model the hook is linked to. '.pre' or '.post' hook will define when code is executed. 'save' is the first argument and event to follow. 'function(){}' is the second argument with the custom code that runs.
+                console.log('This will trigger before saving a user document')
+            </pre>
+        </p>
+        <p>MongoDB is not a relational database after all. You need to implement your own cleaning mechanism. If you remove documents as a parent, generally you delete referenced documents of it's children to avoid extraneous clutter in the database
+            parent gets deleted. There are 2 ways
+            <pre>
+                //remove() mehtod is deprecated
+                Person.pre('remove', function(next) {
+                    // Remove all the assignment docs that reference the removed person.
+                    this.model('Assignment').remove({ person: this._id }, next);
+                });
+            </pre>
+
+            <pre>
+                //Mongoose has created updates to provide hooks for deleteMany() and deleteOne(). These are best practice.
+                Person.pre('deleteMany', function(next) {
+                    var person = this;
+                    person.model('Assignment').deleteOne({ person: person._id }, next);
+                });
+            </pre>
+        </p>
+
+        <h4>Mongoose Query Optimization</h4>
+        <p>Mongoose is a Node.js Package that is written in JavaScript, so built-in modern functions such as async/await are still accessible
+            <pre>
+                //Mongoose Query with Promises
+                app.get('/', (req, res) => {
+                    Book.find()
+                    .then(foundBooks => {
+                        res.render('index', { users: foundusers })
+                    })
+                    .catch(err ->{
+                        res.status(404).render('404')
+                    })
+                })
+            </pre>
+            <pre>
+                //Mongoose Query with Async/Await
+                app.get('/', async (req, res) => {
+                    try {
+                        let foundBooks = await Book.find()
+                        res.render('index', { books: foundBooks })
+                    } catch (e) {
+                        res.status(404).render('404')
+                    }
+                })
+            </pre>
+        </p>
+        <p>'limit' is a Query Option that limits the amount of documents returned. 
+            <pre>
+                //located in 'books_controller.js'
+                let books = await Book.find({}, {
+                    limit: 2
+                })
+                console.log(books)
+            </pre>
+            
+            <pre>
+                //Expected output returned in the terminal
+                [
+                    {
+                        name: 'Harry Potter and the Sorcerer's Stone'
+                        releaseDate: 'June 26, 1997'
+                    },
+                    {
+                        name: 'Harry Potter and the Chamber of Secrets'
+                        releaseDate: 'July 2, 1998'
+                    }
+                ]
+            </pre>
+        </p>
+        <p>Mongoose queries using query building syntax.</p>
+        <p>Write less memory intensive queries using the lean option.</p>
+        
     </section>
 
     <section> <!-- APIs & Documentation -->
