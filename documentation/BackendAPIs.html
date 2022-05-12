@@ -1467,11 +1467,12 @@
                 })
             </pre>
         </p>
-        <p>'limit' is a Query Option that limits the amount of documents returned. 
+        <p>'limit' is a Query Option that limits the amount of documents returned. 'skip' is another Query Option that skips over the specified amount of documents. 
             <pre>
                 //located in 'books_controller.js'
                 let books = await Book.find({}, {
-                    limit: 2
+                    limit: 2        //limits returned document to 2
+                    skip: 1     //skips the first document
                 })
                 console.log(books)
             </pre>
@@ -1480,18 +1481,30 @@
                 //Expected output returned in the terminal
                 [
                     {
+                        //this document would be skipped
                         name: 'Harry Potter and the Sorcerer's Stone'
                         releaseDate: 'June 26, 1997'
                     },
                     {
                         name: 'Harry Potter and the Chamber of Secrets'
                         releaseDate: 'July 2, 1998'
+                    },
+                    {
+                        name: 'Harry Potter and the Prisoner of Azkaban'
+                        releaseDate: 'July 8, 1999'
                     }
+
                 ]
             </pre>
+        </p>        
+        <p>'lean()' is a Query Option method that returns documents as plain JavaScript objects. 
+            <pre>
+                let users = await Book.find().lean
+                console.log(books)
+            </pre>
+            When using the 'lean' method the queries are faster and less memory intensive, however there's no longer access custom helper methods or virtuals(with the exception of populate).
         </p>
-        <p>Mongoose queries using query building syntax.</p>
-        <p>Write less memory intensive queries using the lean option.</p>
+        
         
     </section>
 
