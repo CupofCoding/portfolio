@@ -1505,6 +1505,23 @@
             When using the 'lean' method the queries are faster and less memory intensive, however there's no longer access custom helper methods or virtuals(with the exception of populate).
         </p>
         
+        <h4>Mongoose Overview</h4>
+        <p>'Mongoose' is a Node based Object Document Mapping(ODM) for MongoDB that acts as a translator between MongoDB and Javascript.</p>
+        <p>'Schemas' are a Mongoose component that defines what the document looks like. They function like blueprints and can be used to make an indefinite amount of documents. Document validations are included in the schemas as a field's property.
+            <ul>Data Type -> Available Validators
+                <li>All -> required</li>
+                <li>Number -> min, max</li>
+                <li>String -> enum, match, minLength, maxLength</li>
+            </ul>
+        </p>
+        <p>'Models' are Javascript objects created using schemas. By default, when a 'model' has been created, the object is generated with built-in helper methods that allow for typical CRUD actions. Models allow the user to interact with data in the Mongo Database.</p>
+        <p>There are two types of custom helper methods.
+            <ul>
+                <li>Instance Methods - Best for utility cases such as combining multiple fields or converting a field's value.</li>
+                <li>Static Methods - Best for writing custom queries such as queries that would be used multiple times across several routes like a list.</li>
+            </ul>
+        </p>
+        
         
     </section>
 
