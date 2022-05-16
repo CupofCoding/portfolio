@@ -1522,13 +1522,36 @@
         </p>
         <p>A 'one-to-many' relationship is described as a document that can own many other documents, and those owned documents cannot belong to any other collection.</p>
         <p>'Populate' is a query method that pulls in related data from a reference field. It should be used on a query and replaces the relevant reference field with related data.</p>
-        <p>'Virtuals" are a way to create a 'virtual' field on a document. Used to create a field for computing, combining valuesm or creating fields for the related children documents.</p>
-        
-        
+        <p>'Virtuals" are a way to create a 'virtual' field on a document that is used for computing, combining valuesm or creating fields for the related children documents.</p>
+        <p>Hooks are used to subscribe to Mongoose events. Pre-Hooks runs custom code before the event while Post Hooks run after the event.</p>
     </section>
 
     <section> <!-- APIs & Documentation -->
         <h3>APIs & Documentation</h3>
+        <h3>API</h3>
+        <p>An application is comprised of the front-end interfrace and a back-end defined logic and servers. API stands for Application Programming Interface and is an interface that allows interaction between two applications.</p>
+        <p>Describe how an API works using an analogy.</p>
+        <p>Explain how endpoints are used to interact with an API.</p>
+
+
+        <h3>RESTful APIs</h3>
+        <p>REST stands for Representational State Transfer and is a set of design principles or a pattern for bulding web apps.
+            <pre>
+                Action -> HTTP METHOD -> Route
+            </pre>
+            HTTP is the client-server protocol of the web using requests and responses and is the basis for how data is exchanged on the web. 
+        </p>
+        <p>RESTful API's use RESTful routes which utilizes HTTP methods and they follow the same client-server communication model of HTTP.</p>
+        <p>RESTful API's use JSON as the language to exchange data. 'res.json' is an Express method that will send responses back in JSON format by parsing anything passed to it as an argument and converting the argument to JSON.
+            <pre>
+                app.get('/', (req, res) => {
+                    res.json({
+                        greeting: 'Welcome Home!
+                    })
+                })
+            </pre>
+        </p>
+
     </section>
 
     <section> <!-- Cloud Deployment -->
