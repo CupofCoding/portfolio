@@ -1530,8 +1530,20 @@
         <h3>APIs & Documentation</h3>
         <h3>API</h3>
         <p>An application is comprised of the front-end interfrace and a back-end defined logic and servers. API stands for Application Programming Interface and is an interface that allows interaction between two applications.</p>
-        <p>Describe how an API works using an analogy.</p>
-        <p>Explain how endpoints are used to interact with an API.</p>
+        <p>UI is the User Interface that allows interaction between the user and an application. APIs are Application Programming Interfaces that allow interaction between applications. APIs are considered back-end technology as there is no visible user interface. The executable code or endpoints allow access to parts of an app or stored data.</p>
+        <p>APIs follow a similar workflow
+            <pre>
+                Apps will make a request -> then the API relays the request while the App prepares a response to the request -> then the API relays the response.</p>
+            </pre>        
+        <p>Endpoints are URLs used to make a request to the external app and denote the location of where a service can be accessed. They are one of the ways to interact with an API.
+            An API can have multiple endpoints to access particular services
+            <pre>
+                Endpoint -> Resource
+                /projects -> All project items
+                /projects/1 -> Details of specific project
+            </pre>
+        </p>
+        <p>Third-party APIs have documentation that provide what endpoints are available and where each endpoint leads.</p>
 
 
         <h3>RESTful APIs</h3>
@@ -1551,6 +1563,36 @@
                 })
             </pre>
         </p>
+        <p>REST APIs are a set of rules for web services to send data over the internet. Client requests data from the server and the server returns data, typically in a JSON format as it's best practice to use the standarized format.</p>
+        
+        <h3>Best Practices</h3>
+        <p>Best practice for naming URLs is to only use Plurals and Irregular Plural Nouns. Ex: GET /projects, GET /projects/:id, or POST /sheep, PUT/knives</p>
+        <p>Also best practice to use descriptive HTTP verbs that properly desribe the operation being done. 
+            <ul>
+                <li>CRUD Operation -> Corresponding HTTP Verb</li>
+                <li>CREATE -> POST</li>
+                <li>READ -> GET</li>
+                <li>UPDATE -> PUT/PATCH</li>
+                <li>DESTROY -> DELETE</li>                
+            </ul>
+            GET Routes do not alter data in any way!
+        </p>
+        <p>Error Handling -> Error messages are returned in JSON, use appropriate HTTP status codes with concise errors or general error messages.</p>
+        <p>Sorting and paging ways of presenting data and are not properties of the data itself. Query strings are used to specify.
+            <pre>
+                GET /projects?page=1
+                GET /projects?sort=desc
+            </pre>
+        </p>
+        <p>APIs should be versioned to provide the ability to update the API without service interruptions</p>
+        <p>APIs should be cacheable as most Browsers can store a local copy to allow for better, faster performance</p>
+        <p>APIs use HATEOAS(interlinking data) to allow for easy internal navigation via links. HATEOAS stands for Hypermedia as the Engine of Application State and is a constraint of the REST app architecture that interacts with network applications whose servers provide information dynamically through hypermedia(nonlinier medium of information such as: graphics, audio, video, plain text and hyperlinks)</p>
+        <p>APIs use sub-resources for relations to reflect the data setup.
+            <pre>/hospitals/services/providers -> will return a list of providers that offer services at hospital location</pre>
+        </p>
+        <p>CORS stands for Cross-Origin Resource Sharing. It's important to make distictions in regards to permissions for who can change or share our data.</p>
+        <p>Explain how managing CORS is useful for API security</p>
+        <p></p>
 
     </section>
 
