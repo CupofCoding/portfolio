@@ -1527,8 +1527,7 @@
     </section>
 
     <section> <!-- APIs & Documentation -->
-        <h3>APIs & Documentation</h3>
-        <h3>API</h3>
+        <h3>APIs & Documentation</h3>        
         <p>An application is comprised of the front-end interfrace and a back-end defined logic and servers. API stands for Application Programming Interface and is an interface that allows interaction between two applications.</p>
         <p>UI is the User Interface that allows interaction between the user and an application. APIs are Application Programming Interfaces that allow interaction between applications. APIs are considered back-end technology as there is no visible user interface. The executable code or endpoints allow access to parts of an app or stored data.</p>
         <p>APIs follow a similar workflow
@@ -1590,14 +1589,56 @@
         <p>APIs use sub-resources for relations to reflect the data setup.
             <pre>/hospitals/services/providers -> will return a list of providers that offer services at hospital location</pre>
         </p>
-        <p>CORS stands for Cross-Origin Resource Sharing. It's important to make distictions in regards to permissions for who can change or share our data.</p>
-        <p>Explain how managing CORS is useful for API security</p>
-        <p></p>
-
+        <p>CORS stands for Cross-Origin Resource Sharing. It's important to make distinctions in regards to permissions for who can change or share our data.</p>
+        <p>Some APIs block connections from localhost or have a specific list of domains that are allowed access. Blocklist blocks only those listed and allows everyone else while the Allowlist only allows the domains listed and blocks everyone else.</p>
+        <p>CORS mechanism supports secure cross-origin requests and data transfers between browsers and servers. Managing CORS is useful for API security as modern browsers use CORS in APIs for XMLHTTPRequests or Fetch to mitigate the risks of cross-origin HTTP requests. </p>
     </section>
 
     <section> <!-- Cloud Deployment -->
         <h3>Cloud Deployment</h3>
+        <p>The 'Cloud' is made up of servers connected to the internet and is managed by data centers around the wrold. 'Cloud computing' refers to using the cloud to store and manage data, host applications, access computing power, and more.</p>
+        <p>There are different types of Cloud Computing: 
+            <ul>
+                <li>Infrastructure as a Service (IaaS) - flexible access to servers and storage; Digital Ocea, AWS EC2</li>
+                <li>Platform as a Service (PaaS) - everything needed to deploy and manage applications on the cloud; Heroku, AWS Elastic Beanstalk</li>
+                <li>Software as a Service (SaaS) - provided software service hosted on the cloud and managed by someone else; Google Apps, Mailchimp</li>
+            </ul>
+        </p>
+        <p>Development Workflow Steps: Design process -> development -> Testing and quality assurance -> Deployment/Launch and maintenance</p>
+        <p>Deployment provides and allows other people to use the application. Deployement is typically done by publishing the application to the cloud through IaaS or PaaS platforms.</p>
+        <p>Deployment makes applications more accessible to many users and centralizes the data users enter into the app.</p>
+        
+        <h3>Cloud Databases</h3>
+        <p>A cloud database is hosted and maintained by the database providers and is accessed through the internet rather than local ports. They are essential for deployed applications</p>
+        <p>Local applications are only accessible on the machine running the application and are connected to the machines ports. Cloud-Deployed Applications are accessible to anyone online and are connected to a server in the cloud.</p>
+        <p>MongoDB Compass allows creation and database management on the local machine using a connection string that points to a local port. MongoDB provides a Mongo Cloud Database as a Service that is maintained by MongoDB. Connecting to the MongoDB Atlas database also requires a connection string.
+            <pre>
+                mongodb+srv://username:&lt;password>@cluster0.example.mongodb.net/Database?retryWrites=true&w=majrirty
+            </pre>
+        </p>
+
+        <h3>Monolithic vs Decoupled Architecture</h3>
+        <p>There are multiple ways to structure full-stack applications, Monolithic and Decoupled are commoon ways.
+            <ul>
+                <li>Monolithic architecture has the front-end and back-end development done in one application and only requires deployment of the one application
+                    <pre>
+                        Client(Browser) &lt;- -> Server(back-end & front-end code) &lt;- -> Database(MongoDB)
+                    </pre>
+                </li>
+                <li>Decoupled architecture has the front-end and back-end development development separated and also requires the deployement of both applications separately.
+                    <pre>
+                        Client(Browser) &lt;- -> Servers(front-end code) &lt;- -> Servers(back-end code) &lt;- -> Database(MongoDB)
+                    </pre>
+                </li>
+            </ul>
+        </p>
+        <p>Decoupled Architecture has the advantages of being scalable and maintainable, while allowing multiple front ends to utilize the same back end. The separation of concerns allows developers to focus on their specialty and the code itself is easier to debug and design specific testing.</p>
+        <p>Decoupled Architecture allows for multiple front ends to access the same back-end code for the server. The front end codes can be browser specific or native mobile for smart phones.</p>
+        
+        <!-- <h3>Install Heroku on your machine and use it to deploy an application.</h3>
+        <p>Create a MongoDB Atlas account and cloud database.</p>
+        <p>Deploy BreadCRUD online using Heroku and MongoDB Atlas.</p>
+        <p>Deploy an API on Heroku</p> -->
     </section>
 
     <section> useEffect Hook -> dependency array stops the infinite loop as it expect nothing or state variables. it can be empty and is good practice to be empty for API calls.
