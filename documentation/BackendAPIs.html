@@ -1641,6 +1641,158 @@
         <p>Deploy an API on Heroku</p> -->
     </section>
 
+    <section> <!--React & Redux-->
+        <section> <!--JavaScript Tooling-->
+            <!-- <p>Define Babel and Webpack.
+                Run create-react-app to initialize a project.
+                Export and import five variables using both named and default syntax.
+                List three benefits of using React.</p>
+                <p>https://digitalskills.instructure.com/courses/4542/modules/items/568189</p> -->
+        </section>
+        
+        <section> <!--React Fundamentals-->
+            <!-- <p>https://digitalskills.instructure.com/courses/4542/modules/items/568205</p> -->
+        </section>
+    
+        <section> <!--React Dataflow-->
+            <!-- <p>https://digitalskills.instructure.com/courses/4542/modules/items/568222</p> -->
+        </section>
+    
+        <section> <!--Styling In React-->
+            <!-- <p>https://digitalskills.instructure.com/courses/4542/modules/items/568245</p> -->
+        </section>
+    
+        <section> <!--Testing in React-->
+            <!-- https://digitalskills.instructure.com/courses/4542/modules/items/568266 -->
+        </section>
+    
+        <section> <!--Redux Fundamentals-->
+        </section>
+        
+        <section> <!--React-Redux-->
+            <!-- <p>https://digitalskills.instructure.com/courses/4542/modules/items/568306</p> -->
+        </section>
+    
+        <section> <!--Advanced Redux-->
+            <!-- <p>https://digitalskills.instructure.com/courses/4542/modules/items/568324</p>
+            <p>https://digitalskills.instructure.com/courses/4542/modules/items/568345</p>
+            <p>https://digitalskills.instructure.com/courses/4542/modules/items/568348</p>
+            <p>https://digitalskills.instructure.com/courses/4542/modules/items/568372</p> -->
+        </section>        
+    </section>
+    
+    <section> <!--SQL & Data Modeling-->
+        <!-- History of Relational Databases -->
+        <h3>History and Overview of Databases</h3>
+        <p>Databases function like real life filing cabinets as they store the data in an organized way. There are various types of databases.
+            <ul>
+                <li>SQL -> Relational database that contains data in a set of tables that have columns and rows</li>
+                <li>NoSQL -> Non-relational database that contains unstructured and semistructured data</li>
+                <li>Object-oriented -> Data is represented in the form of objects like in object-oriented programming</li>
+                <li>Distributed ->  database may be in the same physical location, on multiple computers, or scattered over different networks</li>
+                <li>Centralized -> database that operates entirely within a single location</li>
+                <li>Open-source -> free to use for the public</li>
+                <li>Cloud -> database runs on a Cloud Computing platform and access is provided 'as a service'</li>
+            </ul>
+        </p>
+        <p>'Relational databases' are a type of database that allows the developer to identify and access data that are linked to one another.</p>
+        <p>'Relational database management systems(RDBMS)' are management systems designed specifically for managing relational databases by allowing developers to create, update, manage, and interact with the database. (Ex: Oracle, SQL Server, MySQL, <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL</a>)</p>
+        <p>Computerized databases started in the 1960s where Charles W. Bachman designed the first Integrated Database System (American Airlines SABRE System). Then in the 1970s, Edgar F. Codd published a paper that proposed the use of a relational database model for large shared banks. Oracle was founded by Larry Ellison and became the first commercial relational database on the market. Structured Query Language(SQL) became the standard query language used for databases in the 1980s. 1990s introduced an exponential growth of the database industry as more desktop users began to use client-server database systems. NoSQL(Not Only SQL) databases became a viable option in the 2000s as it allowed for faster processing of larger and more varied datasets.
+            <pre>
+                SQL -> Relational(Tables & Columns), Analytical(OLAP); Used in Web, Modules, Enterprise, Gaming, Social media, IoT, Key/value Store, Document database, Column Family Store
+                NonSQL -> Key-Value(key value pairs), Column Family(structure still using columns and rows but not stored in a table), Graph(unstructured & relational), Document(Document Object Model where it follows the tree diagram); Used in Web, Modules, Enterprise, Data Mart, Relational table storage, relationship use joins</pre>
+        </p>
+        <h4>Key components of a relational database</h4>
+        <p>'Tables' are a database object holds the in a relational database and organizes the data in rows and columns.</p>
+        <p>'Rows' are sets of data stored horizontally in a table. 'Columns' are a set of data values of a particular data type.</p>
+        <p>'Entities' are objects that exist, similar to subjects and would normally occupy a row. 'Attributes' are the data we want to collect for the entity and normally occupy a column on the data table. (Ex: _id, _name, _year, category).</p>
+        <p>'Column Data Types' specifies the type of data for a column, typically will be the first cell of a column. 
+            <ul>Common Data Types:
+                <li>Integer -> Whole number that cannot be a fraction or have decimal places</li>
+                <li>Character -> Strings of letters, numbers, and symbols of fixed length</li>
+                <li>Array -> a number of elements in a specific order, usually of the same type</li>
+                <li>Varchar -> variable length of character strings</li>
+                <li>Boolean -> True, False, or null values</li>
+            </ul>
+        </p>
+        <h3>Intro to Basic SQL</h3>
+        <p>Install an administrative and developement application for working with Postgres like <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL(Postgres server & pgAdmin)</a>. Most will have their own Command Line Interface(CLI) for working with Postgres. SQL shell is the CLI for PostgreSQL while pgAdmin is the GUI application.</p>
+        <p>SQL Shell(psql) is a CLI, a terminal window appears when launched pending server name input. "Enter/Return" key for default selection. Password from installation must be entered.
+            <pre>
+                Server [localhost]:     -> default
+                Database [postgres]:
+                Port [5432]:
+                Username [postgres]:
+                Password for user postgres:     ALWAYS Enter Password; there's no character indicator when inputting
+                psql (14.3)     -> psql version number
+                postgres=#      -> to list available databases already within your server, enter \l 
+            </pre>
+
+            <pre> // '/l' command will return server list
+                
+                List of databases
+                Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+             -----------+----------+----------+----------------------------+----------------------------+-----------------------
+              postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+              template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                        |          |          |                            |                            | postgres=CTc/postgres
+              template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                        |          |          |                            |                            | postgres=CTc/postgres
+             (3 rows)
+            </pre>
+
+            <ul>Creating a Database in psql
+                <li>CREATE DATABASE camelCASENAME;</li>
+            </ul>
+        </p>
+        
+        <p>pgAdmin is the GUI that displays server information and aids in developing and maintaining databases.
+            <ul> pgAdmin comes with a default first database called postgres. Under the postgres database will be Schemas. Schemas is where you can access and modify the tables of the database. By default, postgres contains no tables.
+                <li>Application's main screen contains basic application menu items, including File, Object, Tools, and Help. Help will give you access to the online pgAdmin help portals.</li>
+                <li>Selecting File > Reset Layout will reset the application to its default layout.</li>
+                <li>Below the main menu, there's a secondary menu containing commonly used options for working with the database: Dashboard, Properties, SQL, Statistics, Dependencies, and Dependents.</li>
+                <li>On the left, there's a Browser for viewing available Servers and subcategories</li>
+                <li>Creating a Database in pgAdmin
+                    <ul>
+                        <li>Browser, right-click on Databases, select Create, then Database.</li>
+                        <li>Database will now be visible in the Browser. Schemas will be available, but no tables or data exist</li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
+
+        <!-- SQL Basics -->
+        <h3>Dumping and SQL Practice</h3>
+        <h3>Entity Relationship Diagrams</h3>
+        <h3>Table Relationships</h3>
+
+        <!-- Joins, Relationships, and Structure -->
+        <h3>SQL Joins</h3>
+        <h3>SQL Subqueries and Complex Queries</h3>
+        <h3>Aggregate Functions in SQL</h3>
+        <!-- <h3>Advanced SQL Queries for Optimization</h3> -->
+
+        <!-- Advanced SQL -->
+        <h3>Intro to ORMs and Sequelize</h3>
+        <h3>Sequelize Models</h3>
+        <h3>Sequelize CLI and Migrations</h3>
+        <!-- <h3>Generating the Remaining Models</h3> -->
+
+        <!-- SQL with NodeJS -->
+        <h3>Custom Migrations and the Query Interface</h3>
+        <h3>Sequelize Helper Methods</h3>
+        <h3>Advanced Sequelize Queries</h3>
+        <!-- <h3>Creating Controllers With Sequelize</h3> -->
+
+        <h3>Sequelize Associations</h3>
+        <h3>Association Queries</h3>
+
+    </section>
+
+    
+
     <section> useEffect Hook -> dependency array stops the infinite loop as it expect nothing or state variables. it can be empty and is good practice to be empty for API calls.
         <pre>
             useEffect(() => {
