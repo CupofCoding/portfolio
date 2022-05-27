@@ -1742,27 +1742,30 @@
             </pre>
 
             <ul>Creating a Database in psql
-                <li>CREATE DATABASE camelCASENAME;</li>
                 <p>Semicolons are required at the end of each SQL statement</p>
+                <li>CREATE DATABASE camelCASENAME;</li>
             </ul>
         </p>
         <h4>Naming Practices</h4>
-        <p>Naming conventions are good practice as it keeps the data consistent, easily readable and much easier to query.</p>
+        <p>Naming conventions are good practice as it keeps the data consistent, easily readable and much easier to query. Applying rules set for the database when working with others will keep the database organized.</p>
         <ul>
             <li>SQL keywords are typically CAPITALIZED with spaces for seperating arguments</li>
             <li>Database names should always start with a letter and can only use letters a-z along with the '-' and '_' characters.</li>
             <li>Table names are generally lower case nouns with no spaces and '_' to separate words. Tables can be singularly named or plural depending on use. PostgreSQL identifies are usually snake_case.</li>
             <li>For relationships between tables, verbs are sometimes added between the table names. Ex: user_has_role or user_role</li>
             <li>Each table would have a dedicated column functioning as a primary key(PK), generally named id, the PK of the 'table' table would be 'table_pk'</li>
-            <li>Foreign key columns store values from the range of a primary key of a referenced table. Best naming convention would be to use the table name and id to indicate that it's a foreign key column. Ex: product_id</li>
+            <li>Foreign key columns store values from the range of a primary key of a referenced table. Best naming convention would be to use the table name and id to indicate that it's a foreign key column. Ex: product_id; 
+                <br>If you have a foreign key that relates two tables, combine the names of the two tables seperated by a '_'. Ex: 'returned_products' and 'purchased_products' would be 'returned_purchased_products'
+            </li>
             <li>Data columns are attributes that store real-world data. Consider uniqueness to avoid naming conflicts for columns if you want to keep the data separate when doing queries.</li>
+            <li>Stored procedures usually run a set of actions and return a set of data. If the store procedure is only using one table, 'p_&lt;table_name>_&lt;action_name>.
+                <br>If the table is using more than one table, use descriptive naming for the procedure, 'p_&lt;table_name_with_number_min_second_table'
+            </li>
+            <li>Functions perform simple calculations and return values, so best way to name the function would follow what the function does, f_calc_tax or f_east_or_west</li>
             <li>When naming dates, it's best practice to include what the date is pertaining to. Ex: start_date, end_date</li>
             <li>Flags are for marking if some action took place or not. Ie: is_active, is_removed</li>
-
-            
-            
+            <li>Views follow general naming conventions, v_ is at the front just to indicate it's a view.</li>            
         </ul>
-
 
         <p>pgAdmin is the GUI that displays server information and aids in developing and maintaining databases.
             <ul> pgAdmin comes with a default first database called postgres. Under the postgres database will be Schemas. Schemas is where you can access and modify the tables of the database. By default, postgres contains no tables.
