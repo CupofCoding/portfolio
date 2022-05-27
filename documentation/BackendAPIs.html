@@ -1743,8 +1743,26 @@
 
             <ul>Creating a Database in psql
                 <li>CREATE DATABASE camelCASENAME;</li>
+                <p>Semicolons are required at the end of each SQL statement</p>
             </ul>
         </p>
+        <h4>Naming Practices</h4>
+        <p>Naming conventions are good practice as it keeps the data consistent, easily readable and much easier to query.</p>
+        <ul>
+            <li>SQL keywords are typically CAPITALIZED with spaces for seperating arguments</li>
+            <li>Database names should always start with a letter and can only use letters a-z along with the '-' and '_' characters.</li>
+            <li>Table names are generally lower case nouns with no spaces and '_' to separate words. Tables can be singularly named or plural depending on use. PostgreSQL identifies are usually snake_case.</li>
+            <li>For relationships between tables, verbs are sometimes added between the table names. Ex: user_has_role or user_role</li>
+            <li>Each table would have a dedicated column functioning as a primary key(PK), generally named id, the PK of the 'table' table would be 'table_pk'</li>
+            <li>Foreign key columns store values from the range of a primary key of a referenced table. Best naming convention would be to use the table name and id to indicate that it's a foreign key column. Ex: product_id</li>
+            <li>Data columns are attributes that store real-world data. Consider uniqueness to avoid naming conflicts for columns if you want to keep the data separate when doing queries.</li>
+            <li>When naming dates, it's best practice to include what the date is pertaining to. Ex: start_date, end_date</li>
+            <li>Flags are for marking if some action took place or not. Ie: is_active, is_removed</li>
+
+            
+            
+        </ul>
+
 
         <p>pgAdmin is the GUI that displays server information and aids in developing and maintaining databases.
             <ul> pgAdmin comes with a default first database called postgres. Under the postgres database will be Schemas. Schemas is where you can access and modify the tables of the database. By default, postgres contains no tables.
@@ -1759,13 +1777,64 @@
                         <li>After creation of new Database, if not visible then right-click on Databases under Browser and select Refresh.</li>
                     </ul>
                 </li>
-                <li>Importing Schema and Data into pgAdmin</li>
-                <li></li>
+                <!-- <li>Importing Schema and Data into pgAdmin</li>
+                <li></li> -->
             </ul>
         </p>
 
         <!-- SQL Basics -->
         <h3>Dumping and SQL Practice</h3>
+        <p>SQL and why developers should learn SQL.</p>
+        <p>SQL stands for Structured Query Language and is used to set up and communicate with databases.</p>
+        <p>
+            <ul>Basic SQL commands: 
+                <li>CREATE DATABASE database_name  -> creates a database</li>
+                <li>DROP DATABASE database_name  -> deletes a database</li>
+                <li>CREATE TABLE table_name (Column Datatype)   -> syntax for creating tables
+                    <pre>
+                        CREATE TABLE table_name (
+                        Column1 DataType,
+                        Column2 DataType, 
+                        ...
+                        ColumnF Datatype
+                        );
+                    </pre>
+                    <pre>
+                        CREATE TABLE products (
+                            product_id serial,      //creates serialized IDs
+                            food_name varchar(255)      //limits input type to standard characters and (string length)
+                        )
+                    </pre>
+                </li>
+                <li>DROP TABLE table_name   -> deletes an existing table</li>
+                <li>ALTER TABLE tablename -> alters the table
+                    <pre>
+                        ALTER TABLE books
+                        DROP COLUMN book_name;
+                    </pre>
+                    <pre>
+                        ALTER TABLE books
+                        ADD COLUMN book_genre VARCHAR(255);
+                    </pre>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
+        <p>When you create a table, there are rows passed as data and each row in a database needs to have a name and a data type.
+            <ul>Data types:
+                <li>VARCHAR(n)  ->  variable length character string of a maximum length, n</li>
+                <li>INT ->  Whole numbers between -2,147,483,648 and 2,147,483,647</li>
+                <li>SERIAL    ->  Automatically assigned sequential integer from the database server when a new row is inserted; **the default serial starts at 1, but can be assigned an initial value when creating or altering a table.</li>
+                <li>BOOLEAN    ->  Stores true, false, or null data values </li>
+                <li>ARRAY    ->  a number of elements in a specific order, usually of the same type</li>
+            </ul>
+        </p>
+        <p>Create, alter, and drop tables for an SQL database</p>
+        <p>Perform CRUD operations in SQL</p>
+        <p>Write basic SQL queries</p>
+
         <h3>Entity Relationship Diagrams</h3>
         <h3>Table Relationships</h3>
 
