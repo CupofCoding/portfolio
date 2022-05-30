@@ -1789,11 +1789,12 @@
         <h3>Dumping and SQL Practice</h3>
         <p>SQL and why developers should learn SQL.</p>
         <p>SQL stands for Structured Query Language and is used to set up and communicate with databases.</p>
+        <p>Most actions performed on a database utilizes SQL statements and each statement ends with a Semicolon to end the statement. </p>
         <p>
             <ul>Basic SQL commands: 
-                <li>CREATE DATABASE database_name  -> creates a database</li>
-                <li>DROP DATABASE database_name  -> deletes a database</li>
-                <li>CREATE TABLE table_name (Column Datatype)   -> syntax for creating tables
+                <li>CREATE DATABASE database_name;  -> creates a database</li>
+                <li>DROP DATABASE database_name;  -> deletes a database</li>
+                <li>CREATE TABLE table_name (Column Datatype);   -> syntax for creating tables
                     <pre>
                         CREATE TABLE table_name (
                         Column1 DataType,
@@ -1806,11 +1807,11 @@
                         CREATE TABLE products (
                             product_id serial,      //creates serialized IDs
                             food_name varchar(255)      //limits input type to standard characters and (string length)
-                        )
+                        );
                     </pre>
+                    <p>Naming conventions follow the name of the table then the fields. Ex: table_id, table_name, and table_type would be contained in the 'tables' table</p>
                 </li>
-                <li>DROP TABLE table_name   -> deletes an existing table</li>
-                <li>ALTER TABLE tablename -> alters the table
+                <li>ALTER TABLE tablename ...;  -> alters the table
                     <pre>
                         ALTER TABLE books
                         DROP COLUMN book_name;
@@ -1820,9 +1821,63 @@
                         ADD COLUMN book_genre VARCHAR(255);
                     </pre>
                 </li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>DROP TABLE table_name;   -> deletes an existing table</li>
+                <li>INSERT INTO table_name (column_1, column_2) ...; -> statement used to add a new record into a table.
+                    <pre>
+                        INSERT INTO table_name (column_1, column_2)
+                        VALUES (value_1, value_2);
+                    </pre>
+                    <pre>
+                        INSERT INTO books (book_name, book_genre)
+                        VALUES ('dictionary', 'nonfiction');
+                    </pre>
+                </li>
+                <li>SELECT column_name FROM table_name;    ->  statement used to fetch or select data from database, also known as a query.
+                    <pre>
+                        SELECT book_name
+                        FROM books;
+                    </pre>
+                    <p>query results are also known as result-set.
+                        <pre>
+                            book_name
+                            character varying(255)
+                            dictionary  //returned query value/result-set
+                        </pre>
+                    </p>
+                </li>
+                <li>UPDATE tablename ...;   -> statement used to edit records in a table
+                    <pre>
+                        UPDATE table_name
+                        SET column_1 = value_1
+                        WHERE column_1 = value_2;
+                    </pre>
+                    <pre>
+                        UPDATE books
+                        SET book_name = 'dictionary'
+                        WHERE book_name = 'thesaurus'   //replaces dictionary value with thesarus in the book_name column in the books table
+                    </pre>
+                </li>
+                <li>DELETE FROM table_name ...; ->  statement used to remove records from a table.
+                    <pre>
+                        DELETE FROM table_name
+                        WHERE column_1 = value_1
+                    </pre>
+                    <pre>
+                        DELETE FROM books
+                        WHERE book_name = 'dictionary'  //removes dictionary value from the name column in the 'books' table
+                    </pre>
+                </li>
+                <li>like with CSS, '*' will select ALL values.
+                    <pre>
+                        SELECT * FROM books;
+                    </pre>
+                    returns the following result-set
+                    <pre>
+                        book_id     book_name                   book_genre
+                        integer     character varying(255)      character varying(255)
+                        1           dictionary                  informational
+                    </pre>
+                </li>
             </ul>
         </p>
         <p>When you create a table, there are rows passed as data and each row in a database needs to have a name and a data type.
@@ -1834,8 +1889,28 @@
                 <li>ARRAY    ->  a number of elements in a specific order, usually of the same type</li>
             </ul>
         </p>
-        <p>Create, alter, and drop tables for an SQL database</p>
-        <p>Perform CRUD operations in SQL</p>
+        <h4>SQL Commands Summary</h4>
+        <ul> DATABASE commands
+            <li>CREATE DATABASE - creates a new database</li>
+            <li>INSERT INTO - insters new data into a database</li>
+            <li>UPDATE - updates data in a database</li>
+            <li>SELECT - selects or extracts data from a database</li>
+            <li>DELETE - deletes data from a database</li>
+        </ul>
+        <ul> TABLE commands
+            <li>CREATE TABLE - creates a new table</li>            
+            <li>ALTER TABLE - modifies table data</li>
+            <li>DROP TABLE - deletes table</li>
+        </ul>
+        
+        <h4>Perform CRUD operations in SQL</h4>
+        <p>There are corresponding SQL commands to perform CRUD operations in SQL.</p>
+        <ul>CRUD -> SQL
+            <li>Create -> INSERT</li>
+            <li>Read -> SELECT</li>
+            <li>Update -> UPDATE</li>
+            <li>Delete -> DELETE</li>
+        </ul>
         <p>Write basic SQL queries</p>
 
         <h3>Entity Relationship Diagrams</h3>
