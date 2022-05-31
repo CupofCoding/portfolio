@@ -1902,7 +1902,7 @@
             <li>ALTER TABLE - modifies table data</li>
             <li>DROP TABLE - deletes table</li>
         </ul>
-        
+
         <h4>Perform CRUD operations in SQL</h4>
         <p>There are corresponding SQL commands to perform CRUD operations in SQL.</p>
         <ul>CRUD -> SQL
@@ -1913,8 +1913,68 @@
         </ul>
         <p>Write basic SQL queries</p>
 
-        <h3>Entity Relationship Diagrams</h3>
+        <h3>Entity Relationship Diagrams(ERD)</h3>
+        <p>Entity relationship diagrams (ERD) are visual representations that depict an entity relationship model typically using boxes with arrows to indicate relationships amoung people, objects, concepts, or events within a IT system.</p>
+        <p>Primary Keys are unique values set in a table to identify and locate data in queries. Each table can only have one primary key.
+            <pre>
+                CONSTRAINT books_pkey PRIMARY KEY (book_id)
+            </pre>
+        </p>
+        <p>Foreign Keys are fields that refers to the primary key of another table which manages the relationship between the tables.
+            <pre>
+                CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) REFERENCES aisles(aisle_id)
+            </pre>
+            When a primary key is referenced in another table, that key is considered a Foreign Key. 
+        </p>
+        <p>Referential Integrity is a database concept used to build and maintain logical relationships between tables to prevent logical corruption of data.
+            <pre>
+                ON DELETE CASCADE   //option to specify whether you want rows deleted on a child table when corresponding rows are deleted in the parent table.
+            </pre>
+            If cascading deletes aren't specified, then the default behavior of the database server prevents data from deleteing in a table if other tables reference it.
+        </p>
+
         <h3>Table Relationships</h3>
+        <p>One-to-One relationship means that the record in a table is related to only one record in another table and vice versa. EX: when an object is linked only to the single id. One id per book.
+            <pre>Creating a table
+                CREATE TABLE table_name (
+                    Column1 DataType Constraint,
+                    Column2 DataType Constraint,
+                    ...
+                );
+            </pre>
+        </p>
+        <p>One-to-Many relationship means that a record from one table can have multiple matching records in another table. EX: Using primary keys in one table as a foreign key in others. Multiple books can fit in a genre.
+            <pre>
+                CREATE TABLE books (
+                    book_id serial NOT NULL,
+                    book_name varchar(255),
+                    aisle_id integer,
+                    CONSTRAINT books_pkey PRIMARY KEY (book_id),
+                    CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) References aisles(aisle_id)
+                    ON DELETE CASCADE
+                );
+            </pre>
+        </p>
+        <p>Many to Many relationship means that a record from one table can have multiple matching rows in another table and vice versa. Juntions(joining or bridging) tables are needed for many-to-many relationships.
+            <pre>Creating a junction table
+                CREATE TABLE libraries_books
+                (
+                    library_id integer NOT NULL,
+                    book_id integer NOT NULL,
+                    CONSTRAINT libraries_id FOREIGN KEY (library_id)
+                        REFERENCES libraries (library_id),
+                    CONSTRAINT books_id FOREIGN KEY (book_id)
+                        REFERENCES books (book_id)
+                );
+            </pre>
+            Creates a table that takes the id's and references the libraries and the books.
+        </p>
+        
+        <p></p>
+
+        
+        <p>Build databases with various table relationships</p>
+        <p>Add primary and foreign keys in tables.</p>
 
         <!-- Joins, Relationships, and Structure -->
         <h3>SQL Joins</h3>
