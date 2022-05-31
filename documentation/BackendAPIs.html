@@ -1682,303 +1682,474 @@
     </section>
     
     <section> <!--SQL & Data Modeling-->
-        <!-- History of Relational Databases -->
-        <h3>History and Overview of Databases</h3>
-        <p>Databases function like real life filing cabinets as they store the data in an organized way. There are various types of databases.
+        <section> <!-- History of Relational Databases -->
+            <h3>History and Overview of Databases</h3>
+            <p>Databases function like real life filing cabinets as they store the data in an organized way. There are various types of databases.
+                <ul>
+                    <li>SQL -> Relational database that contains data in a set of tables that have columns and rows</li>
+                    <li>NoSQL -> Non-relational database that contains unstructured and semistructured data</li>
+                    <li>Object-oriented -> Data is represented in the form of objects like in object-oriented programming</li>
+                    <li>Distributed ->  database may be in the same physical location, on multiple computers, or scattered over different networks</li>
+                    <li>Centralized -> database that operates entirely within a single location</li>
+                    <li>Open-source -> free to use for the public</li>
+                    <li>Cloud -> database runs on a Cloud Computing platform and access is provided 'as a service'</li>
+                </ul>
+            </p>
+            <p>'Relational databases' are a type of database that allows the developer to identify and access data that are linked to one another.</p>
+            <p>'Relational database management systems(RDBMS)' are management systems designed specifically for managing relational databases by allowing developers to create, update, manage, and interact with the database. (Ex: Oracle, SQL Server, MySQL, <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL</a>)</p>
+            <p>Computerized databases started in the 1960s where Charles W. Bachman designed the first Integrated Database System (American Airlines SABRE System). Then in the 1970s, Edgar F. Codd published a paper that proposed the use of a relational database model for large shared banks. Oracle was founded by Larry Ellison and became the first commercial relational database on the market. Structured Query Language(SQL) became the standard query language used for databases in the 1980s. 1990s introduced an exponential growth of the database industry as more desktop users began to use client-server database systems. NoSQL(Not Only SQL) databases became a viable option in the 2000s as it allowed for faster processing of larger and more varied datasets.
+                <pre>
+                    SQL -> Relational(Tables & Columns), Analytical(OLAP); Used in Web, Modules, Enterprise, Gaming, Social media, IoT, Key/value Store, Document database, Column Family Store
+                    NonSQL -> Key-Value(key value pairs), Column Family(structure still using columns and rows but not stored in a table), Graph(unstructured & relational), Document(Document Object Model where it follows the tree diagram); Used in Web, Modules, Enterprise, Data Mart, Relational table storage, relationship use joins</pre>
+            </p>
+            <h4>Key components of a relational database</h4>
+            <p>'Tables' are a database object holds the in a relational database and organizes the data in rows and columns.</p>
+            <p>'Rows' are sets of data stored horizontally in a table. 'Columns' are a set of data values of a particular data type.</p>
+            <p>'Entities' are objects that exist, similar to subjects and would normally occupy a row. 'Attributes' are the data we want to collect for the entity and normally occupy a column on the data table. (Ex: _id, _name, _year, category).</p>
+            <p>'Column Data Types' specifies the type of data for a column, typically will be the first cell of a column. 
+                <ul>Common Data Types:
+                    <li>Integer -> Whole number that cannot be a fraction or have decimal places</li>
+                    <li>Character -> Strings of letters, numbers, and symbols of fixed length</li>
+                    <li>Array -> a number of elements in a specific order, usually of the same type</li>
+                    <li>Varchar -> variable length of character strings</li>
+                    <li>Boolean -> True, False, or null values</li>
+                </ul>
+            </p>
+            <h3>Intro to Basic SQL</h3>
+            <p>Install an administrative and developement application for working with Postgres like <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL(Postgres server & pgAdmin)</a>. Most will have their own Command Line Interface(CLI) for working with Postgres. SQL shell is the CLI for PostgreSQL while pgAdmin is the GUI application.</p>
+            <p>SQL Shell(psql) is a CLI, a terminal window appears when launched pending server name input. "Enter/Return" key for default selection. Password from installation must be entered.
+                <pre>
+                    Server [localhost]:     -> default
+                    Database [postgres]:
+                    Port [5432]:
+                    Username [postgres]:
+                    Password for user postgres:     ALWAYS Enter Password; there's no character indicator when inputting
+                    psql (14.3)     -> psql version number
+                    postgres=#      -> to list available databases already within your server, enter \l 
+                </pre>
+    
+                <pre> // '/l' command will return server list
+                    
+                    List of databases
+                    Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+                 -----------+----------+----------+----------------------------+----------------------------+-----------------------
+                  postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+                  template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                            |          |          |                            |                            | postgres=CTc/postgres
+                  template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                            |          |          |                            |                            | postgres=CTc/postgres
+                 (3 rows)
+                </pre>
+    
+                <ul>Creating a Database in psql
+                    <p>Semicolons are required at the end of each SQL statement</p>
+                    <li>CREATE DATABASE camelCASENAME;</li>
+                </ul>
+            </p>
+            <h4>Naming Practices</h4>
+            <p>Naming conventions are good practice as it keeps the data consistent, easily readable and much easier to query. Applying rules set for the database when working with others will keep the database organized.</p>
             <ul>
-                <li>SQL -> Relational database that contains data in a set of tables that have columns and rows</li>
-                <li>NoSQL -> Non-relational database that contains unstructured and semistructured data</li>
-                <li>Object-oriented -> Data is represented in the form of objects like in object-oriented programming</li>
-                <li>Distributed ->  database may be in the same physical location, on multiple computers, or scattered over different networks</li>
-                <li>Centralized -> database that operates entirely within a single location</li>
-                <li>Open-source -> free to use for the public</li>
-                <li>Cloud -> database runs on a Cloud Computing platform and access is provided 'as a service'</li>
-            </ul>
-        </p>
-        <p>'Relational databases' are a type of database that allows the developer to identify and access data that are linked to one another.</p>
-        <p>'Relational database management systems(RDBMS)' are management systems designed specifically for managing relational databases by allowing developers to create, update, manage, and interact with the database. (Ex: Oracle, SQL Server, MySQL, <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL</a>)</p>
-        <p>Computerized databases started in the 1960s where Charles W. Bachman designed the first Integrated Database System (American Airlines SABRE System). Then in the 1970s, Edgar F. Codd published a paper that proposed the use of a relational database model for large shared banks. Oracle was founded by Larry Ellison and became the first commercial relational database on the market. Structured Query Language(SQL) became the standard query language used for databases in the 1980s. 1990s introduced an exponential growth of the database industry as more desktop users began to use client-server database systems. NoSQL(Not Only SQL) databases became a viable option in the 2000s as it allowed for faster processing of larger and more varied datasets.
-            <pre>
-                SQL -> Relational(Tables & Columns), Analytical(OLAP); Used in Web, Modules, Enterprise, Gaming, Social media, IoT, Key/value Store, Document database, Column Family Store
-                NonSQL -> Key-Value(key value pairs), Column Family(structure still using columns and rows but not stored in a table), Graph(unstructured & relational), Document(Document Object Model where it follows the tree diagram); Used in Web, Modules, Enterprise, Data Mart, Relational table storage, relationship use joins</pre>
-        </p>
-        <h4>Key components of a relational database</h4>
-        <p>'Tables' are a database object holds the in a relational database and organizes the data in rows and columns.</p>
-        <p>'Rows' are sets of data stored horizontally in a table. 'Columns' are a set of data values of a particular data type.</p>
-        <p>'Entities' are objects that exist, similar to subjects and would normally occupy a row. 'Attributes' are the data we want to collect for the entity and normally occupy a column on the data table. (Ex: _id, _name, _year, category).</p>
-        <p>'Column Data Types' specifies the type of data for a column, typically will be the first cell of a column. 
-            <ul>Common Data Types:
-                <li>Integer -> Whole number that cannot be a fraction or have decimal places</li>
-                <li>Character -> Strings of letters, numbers, and symbols of fixed length</li>
-                <li>Array -> a number of elements in a specific order, usually of the same type</li>
-                <li>Varchar -> variable length of character strings</li>
-                <li>Boolean -> True, False, or null values</li>
-            </ul>
-        </p>
-        <h3>Intro to Basic SQL</h3>
-        <p>Install an administrative and developement application for working with Postgres like <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">PostgreSQL(Postgres server & pgAdmin)</a>. Most will have their own Command Line Interface(CLI) for working with Postgres. SQL shell is the CLI for PostgreSQL while pgAdmin is the GUI application.</p>
-        <p>SQL Shell(psql) is a CLI, a terminal window appears when launched pending server name input. "Enter/Return" key for default selection. Password from installation must be entered.
-            <pre>
-                Server [localhost]:     -> default
-                Database [postgres]:
-                Port [5432]:
-                Username [postgres]:
-                Password for user postgres:     ALWAYS Enter Password; there's no character indicator when inputting
-                psql (14.3)     -> psql version number
-                postgres=#      -> to list available databases already within your server, enter \l 
-            </pre>
-
-            <pre> // '/l' command will return server list
-                
-                List of databases
-                Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
-             -----------+----------+----------+----------------------------+----------------------------+-----------------------
-              postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
-              template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
-                        |          |          |                            |                            | postgres=CTc/postgres
-              template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
-                        |          |          |                            |                            | postgres=CTc/postgres
-             (3 rows)
-            </pre>
-
-            <ul>Creating a Database in psql
-                <p>Semicolons are required at the end of each SQL statement</p>
-                <li>CREATE DATABASE camelCASENAME;</li>
-            </ul>
-        </p>
-        <h4>Naming Practices</h4>
-        <p>Naming conventions are good practice as it keeps the data consistent, easily readable and much easier to query. Applying rules set for the database when working with others will keep the database organized.</p>
-        <ul>
-            <li>SQL keywords are typically CAPITALIZED with spaces for seperating arguments</li>
-            <li>Database names should always start with a letter and can only use letters a-z along with the '-' and '_' characters.</li>
-            <li>Table names are generally lower case nouns with no spaces and '_' to separate words. Tables can be singularly named or plural depending on use. PostgreSQL identifies are usually snake_case.</li>
-            <li>For relationships between tables, verbs are sometimes added between the table names. Ex: user_has_role or user_role</li>
-            <li>Each table would have a dedicated column functioning as a primary key(PK), generally named id, the PK of the 'table' table would be 'table_pk'</li>
-            <li>Foreign key columns store values from the range of a primary key of a referenced table. Best naming convention would be to use the table name and id to indicate that it's a foreign key column. Ex: product_id; 
-                <br>If you have a foreign key that relates two tables, combine the names of the two tables seperated by a '_'. Ex: 'returned_products' and 'purchased_products' would be 'returned_purchased_products'
-            </li>
-            <li>Data columns are attributes that store real-world data. Consider uniqueness to avoid naming conflicts for columns if you want to keep the data separate when doing queries.</li>
-            <li>Stored procedures usually run a set of actions and return a set of data. If the store procedure is only using one table, 'p_&lt;table_name>_&lt;action_name>.
-                <br>If the table is using more than one table, use descriptive naming for the procedure, 'p_&lt;table_name_with_number_min_second_table'
-            </li>
-            <li>Functions perform simple calculations and return values, so best way to name the function would follow what the function does, f_calc_tax or f_east_or_west</li>
-            <li>When naming dates, it's best practice to include what the date is pertaining to. Ex: start_date, end_date</li>
-            <li>Flags are for marking if some action took place or not. Ie: is_active, is_removed</li>
-            <li>Views follow general naming conventions, v_ is at the front just to indicate it's a view.</li>            
-        </ul>
-
-        <p>pgAdmin is the GUI that displays server information and aids in developing and maintaining databases.
-            <ul> pgAdmin comes with a default first database called postgres. Under the postgres database will be Schemas. Schemas is where you can access and modify the tables of the database. By default, postgres contains no tables.
-                <li>Application's main screen contains basic application menu items, including File, Object, Tools, and Help. Help will give you access to the online pgAdmin help portals.</li>
-                <li>Selecting File > Reset Layout will reset the application to its default layout.</li>
-                <li>Below the main menu, there's a secondary menu containing commonly used options for working with the database: Dashboard, Properties, SQL, Statistics, Dependencies, and Dependents.</li>
-                <li>On the left, there's a Browser for viewing available Servers and subcategories</li>
-                <li>Creating a Database in pgAdmin
-                    <ul>
-                        <li>Browser, right-click on Databases, select Create, then Database.</li>
-                        <li>Database will now be visible in the Browser. Schemas will be available, but no tables or data exist</li>
-                        <li>After creation of new Database, if not visible then right-click on Databases under Browser and select Refresh.</li>
-                    </ul>
+                <li>SQL keywords are typically CAPITALIZED with spaces for seperating arguments</li>
+                <li>Database names should always start with a letter and can only use letters a-z along with the '-' and '_' characters.</li>
+                <li>Table names are generally lower case nouns with no spaces and '_' to separate words. Tables can be singularly named or plural depending on use. PostgreSQL identifies are usually snake_case.</li>
+                <li>For relationships between tables, verbs are sometimes added between the table names. Ex: user_has_role or user_role</li>
+                <li>Each table would have a dedicated column functioning as a primary key(PK), generally named id, the PK of the 'table' table would be 'table_pk'</li>
+                <li>Foreign key columns store values from the range of a primary key of a referenced table. Best naming convention would be to use the table name and id to indicate that it's a foreign key column. Ex: product_id; 
+                    <br>If you have a foreign key that relates two tables, combine the names of the two tables seperated by a '_'. Ex: 'returned_products' and 'purchased_products' would be 'returned_purchased_products'
                 </li>
-                <!-- <li>Importing Schema and Data into pgAdmin</li>
-                <li></li> -->
+                <li>Data columns are attributes that store real-world data. Consider uniqueness to avoid naming conflicts for columns if you want to keep the data separate when doing queries.</li>
+                <li>Stored procedures usually run a set of actions and return a set of data. If the store procedure is only using one table, 'p_&lt;table_name>_&lt;action_name>.
+                    <br>If the table is using more than one table, use descriptive naming for the procedure, 'p_&lt;table_name_with_number_min_second_table'
+                </li>
+                <li>Functions perform simple calculations and return values, so best way to name the function would follow what the function does, f_calc_tax or f_east_or_west</li>
+                <li>When naming dates, it's best practice to include what the date is pertaining to. Ex: start_date, end_date</li>
+                <li>Flags are for marking if some action took place or not. Ie: is_active, is_removed</li>
+                <li>Views follow general naming conventions, v_ is at the front just to indicate it's a view.</li>            
             </ul>
-        </p>
+    
+            <p>pgAdmin is the GUI that displays server information and aids in developing and maintaining databases.
+                <ul> pgAdmin comes with a default first database called postgres. Under the postgres database will be Schemas. Schemas is where you can access and modify the tables of the database. By default, postgres contains no tables.
+                    <li>Application's main screen contains basic application menu items, including File, Object, Tools, and Help. Help will give you access to the online pgAdmin help portals.</li>
+                    <li>Selecting File > Reset Layout will reset the application to its default layout.</li>
+                    <li>Below the main menu, there's a secondary menu containing commonly used options for working with the database: Dashboard, Properties, SQL, Statistics, Dependencies, and Dependents.</li>
+                    <li>On the left, there's a Browser for viewing available Servers and subcategories</li>
+                    <li>Creating a Database in pgAdmin
+                        <ul>
+                            <li>Browser, right-click on Databases, select Create, then Database.</li>
+                            <li>Database will now be visible in the Browser. Schemas will be available, but no tables or data exist</li>
+                            <li>After creation of new Database, if not visible then right-click on Databases under Browser and select Refresh.</li>
+                        </ul>
+                    </li>
+                    <!-- <li>Importing Schema and Data into pgAdmin</li>
+                    <li></li> -->
+                </ul>
+            </p>
+        </section>
 
-        <!-- SQL Basics -->
-        <h3>Dumping and SQL Practice</h3>
-        <p>SQL and why developers should learn SQL.</p>
-        <p>SQL stands for Structured Query Language and is used to set up and communicate with databases.</p>
-        <p>Most actions performed on a database utilizes SQL statements and each statement ends with a Semicolon to end the statement. </p>
-        <p>
-            <ul>Basic SQL commands: 
-                <li>CREATE DATABASE database_name;  -> creates a database</li>
-                <li>DROP DATABASE database_name;  -> deletes a database</li>
-                <li>CREATE TABLE table_name (Column Datatype);   -> syntax for creating tables
-                    <pre>
-                        CREATE TABLE table_name (
-                        Column1 DataType,
-                        Column2 DataType, 
-                        ...
-                        ColumnF Datatype
-                        );
-                    </pre>
-                    <pre>
-                        CREATE TABLE products (
-                            product_id serial,      //creates serialized IDs
-                            food_name varchar(255)      //limits input type to standard characters and (string length)
-                        );
-                    </pre>
-                    <p>Naming conventions follow the name of the table then the fields. Ex: table_id, table_name, and table_type would be contained in the 'tables' table</p>
-                </li>
-                <li>ALTER TABLE tablename ...;  -> alters the table
-                    <pre>
-                        ALTER TABLE books
-                        DROP COLUMN book_name;
-                    </pre>
-                    <pre>
-                        ALTER TABLE books
-                        ADD COLUMN book_genre VARCHAR(255);
-                    </pre>
-                </li>
-                <li>DROP TABLE table_name;   -> deletes an existing table</li>
-                <li>INSERT INTO table_name (column_1, column_2) ...; -> statement used to add a new record into a table.
-                    <pre>
-                        INSERT INTO table_name (column_1, column_2)
-                        VALUES (value_1, value_2);
-                    </pre>
-                    <pre>
-                        INSERT INTO books (book_name, book_genre)
-                        VALUES ('dictionary', 'nonfiction');
-                    </pre>
-                </li>
-                <li>SELECT column_name FROM table_name;    ->  statement used to fetch or select data from database, also known as a query.
-                    <pre>
-                        SELECT book_name
-                        FROM books;
-                    </pre>
-                    <p>query results are also known as result-set.
+        <section> <!-- SQL Basics -->
+            <h3>Dumping and SQL Practice</h3>
+            <p>SQL and why developers should learn SQL.</p>
+            <p>SQL stands for Structured Query Language and is used to set up and communicate with databases.</p>
+            <p>Most actions performed on a database utilizes SQL statements and each statement ends with a Semicolon to end the statement. </p>
+            <p>
+                <ul>Basic SQL commands: 
+                    <li>CREATE DATABASE database_name;  -> creates a database</li>
+                    <li>DROP DATABASE database_name;  -> deletes a database</li>
+                    <li>CREATE TABLE table_name (Column Datatype);   -> syntax for creating tables
                         <pre>
-                            book_name
-                            character varying(255)
-                            dictionary  //returned query value/result-set
+                            CREATE TABLE table_name (
+                            Column1 DataType,
+                            Column2 DataType, 
+                            ...
+                            ColumnF Datatype
+                            );
                         </pre>
-                    </p>
-                </li>
-                <li>UPDATE tablename ...;   -> statement used to edit records in a table
-                    <pre>
-                        UPDATE table_name
-                        SET column_1 = value_1
-                        WHERE column_1 = value_2;
-                    </pre>
-                    <pre>
-                        UPDATE books
-                        SET book_name = 'dictionary'
-                        WHERE book_name = 'thesaurus'   //replaces dictionary value with thesarus in the book_name column in the books table
-                    </pre>
-                </li>
-                <li>DELETE FROM table_name ...; ->  statement used to remove records from a table.
-                    <pre>
-                        DELETE FROM table_name
-                        WHERE column_1 = value_1
-                    </pre>
-                    <pre>
-                        DELETE FROM books
-                        WHERE book_name = 'dictionary'  //removes dictionary value from the name column in the 'books' table
-                    </pre>
-                </li>
-                <li>like with CSS, '*' will select ALL values.
-                    <pre>
-                        SELECT * FROM books;
-                    </pre>
-                    returns the following result-set
-                    <pre>
-                        book_id     book_name                   book_genre
-                        integer     character varying(255)      character varying(255)
-                        1           dictionary                  informational
-                    </pre>
-                </li>
+                        <pre>
+                            CREATE TABLE products (
+                                product_id serial,      //creates serialized IDs
+                                food_name varchar(255)      //limits input type to standard characters and (string length)
+                            );
+                        </pre>
+                        <p>Naming conventions follow the name of the table then the fields. Ex: table_id, table_name, and table_type would be contained in the 'tables' table</p>
+                    </li>
+                    <li>ALTER TABLE tablename ...;  -> alters the table
+                        <pre>
+                            ALTER TABLE books
+                            DROP COLUMN book_name;
+                        </pre>
+                        <pre>
+                            ALTER TABLE books
+                            ADD COLUMN book_genre VARCHAR(255);
+                        </pre>
+                    </li>
+                    <li>DROP TABLE table_name;   -> deletes an existing table</li>
+                    <li>INSERT INTO table_name (column_1, column_2) ...; -> statement used to add a new record into a table.
+                        <pre>
+                            INSERT INTO table_name (column_1, column_2)
+                            VALUES (value_1, value_2);
+                        </pre>
+                        <pre>
+                            INSERT INTO books (book_name, book_genre)
+                            VALUES ('dictionary', 'nonfiction');
+                        </pre>
+                    </li>
+                    <li>SELECT column_name FROM table_name;    ->  statement used to fetch or select data from database, also known as a query.
+                        <pre>
+                            SELECT book_name
+                            FROM books;
+                        </pre>
+                        <p>query results are also known as result-set.
+                            <pre>
+                                book_name
+                                character varying(255)
+                                dictionary  //returned query value/result-set
+                            </pre>
+                        </p>
+                    </li>
+                    <li>UPDATE tablename ...;   -> statement used to edit records in a table
+                        <pre>
+                            UPDATE table_name
+                            SET column_1 = value_1
+                            WHERE column_1 = value_2;
+                        </pre>
+                        <pre>
+                            UPDATE books
+                            SET book_name = 'dictionary'
+                            WHERE book_name = 'thesaurus'   //replaces dictionary value with thesarus in the book_name column in the books table
+                        </pre>
+                    </li>
+                    <li>DELETE FROM table_name ...; ->  statement used to remove records from a table.
+                        <pre>
+                            DELETE FROM table_name
+                            WHERE column_1 = value_1
+                        </pre>
+                        <pre>
+                            DELETE FROM books
+                            WHERE book_name = 'dictionary'  //removes dictionary value from the name column in the 'books' table
+                        </pre>
+                    </li>
+                    <li>like with CSS, '*' will select ALL values.
+                        <pre>
+                            SELECT * FROM books;
+                        </pre>
+                        returns the following result-set
+                        <pre>
+                            book_id     book_name                   book_genre
+                            integer     character varying(255)      character varying(255)
+                            1           dictionary                  informational
+                        </pre>
+                    </li>
+                </ul>
+            </p>
+            <p>When you create a table, there are rows passed as data and each row in a database needs to have a name and a data type.
+                <ul>Data types:
+                    <li>VARCHAR(n)  ->  variable length character string of a maximum length, n</li>
+                    <li>INT ->  Whole numbers between -2,147,483,648 and 2,147,483,647</li>
+                    <li>SERIAL    ->  Automatically assigned sequential integer from the database server when a new row is inserted; **the default serial starts at 1, but can be assigned an initial value when creating or altering a table.</li>
+                    <li>BOOLEAN    ->  Stores true, false, or null data values </li>
+                    <li>ARRAY    ->  a number of elements in a specific order, usually of the same type</li>
+                </ul>
+            </p>
+            <h4>SQL Commands Summary</h4>
+            <ul> DATABASE commands
+                <li>CREATE DATABASE - creates a new database</li>
+                <li>INSERT INTO - insters new data into a database</li>
+                <li>UPDATE - updates data in a database</li>
+                <li>SELECT - selects or extracts data from a database</li>
+                <li>DELETE - deletes data from a database</li>
             </ul>
-        </p>
-        <p>When you create a table, there are rows passed as data and each row in a database needs to have a name and a data type.
-            <ul>Data types:
-                <li>VARCHAR(n)  ->  variable length character string of a maximum length, n</li>
-                <li>INT ->  Whole numbers between -2,147,483,648 and 2,147,483,647</li>
-                <li>SERIAL    ->  Automatically assigned sequential integer from the database server when a new row is inserted; **the default serial starts at 1, but can be assigned an initial value when creating or altering a table.</li>
-                <li>BOOLEAN    ->  Stores true, false, or null data values </li>
-                <li>ARRAY    ->  a number of elements in a specific order, usually of the same type</li>
+            <ul> TABLE commands
+                <li>CREATE TABLE - creates a new table</li>            
+                <li>ALTER TABLE - modifies table data</li>
+                <li>DROP TABLE - deletes table</li>
             </ul>
-        </p>
-        <h4>SQL Commands Summary</h4>
-        <ul> DATABASE commands
-            <li>CREATE DATABASE - creates a new database</li>
-            <li>INSERT INTO - insters new data into a database</li>
-            <li>UPDATE - updates data in a database</li>
-            <li>SELECT - selects or extracts data from a database</li>
-            <li>DELETE - deletes data from a database</li>
-        </ul>
-        <ul> TABLE commands
-            <li>CREATE TABLE - creates a new table</li>            
-            <li>ALTER TABLE - modifies table data</li>
-            <li>DROP TABLE - deletes table</li>
-        </ul>
+    
+            <h4>Perform CRUD operations in SQL</h4>
+            <p>There are corresponding SQL commands to perform CRUD operations in SQL.</p>
+            <ul>CRUD -> SQL
+                <li>Create -> INSERT</li>
+                <li>Read -> SELECT</li>
+                <li>Update -> UPDATE</li>
+                <li>Delete -> DELETE</li>
+            </ul>
+        </section>
 
-        <h4>Perform CRUD operations in SQL</h4>
-        <p>There are corresponding SQL commands to perform CRUD operations in SQL.</p>
-        <ul>CRUD -> SQL
-            <li>Create -> INSERT</li>
-            <li>Read -> SELECT</li>
-            <li>Update -> UPDATE</li>
-            <li>Delete -> DELETE</li>
-        </ul>
         <p>Write basic SQL queries</p>
-
-        <h3>Entity Relationship Diagrams(ERD)</h3>
-        <p>Entity relationship diagrams (ERD) are visual representations that depict an entity relationship model typically using boxes with arrows to indicate relationships amoung people, objects, concepts, or events within a IT system.</p>
-        <p>Primary Keys are unique values set in a table to identify and locate data in queries. Each table can only have one primary key.
-            <pre>
-                CONSTRAINT books_pkey PRIMARY KEY (book_id)
-            </pre>
-        </p>
-        <p>Foreign Keys are fields that refers to the primary key of another table which manages the relationship between the tables.
-            <pre>
-                CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) REFERENCES aisles(aisle_id)
-            </pre>
-            When a primary key is referenced in another table, that key is considered a Foreign Key. 
-        </p>
-        <p>Referential Integrity is a database concept used to build and maintain logical relationships between tables to prevent logical corruption of data.
-            <pre>
-                ON DELETE CASCADE   //option to specify whether you want rows deleted on a child table when corresponding rows are deleted in the parent table.
-            </pre>
-            If cascading deletes aren't specified, then the default behavior of the database server prevents data from deleteing in a table if other tables reference it.
-        </p>
-
-        <h3>Table Relationships</h3>
-        <p>One-to-One relationship means that the record in a table is related to only one record in another table and vice versa. EX: when an object is linked only to the single id. One id per book.
-            <pre>Creating a table
-                CREATE TABLE table_name (
-                    Column1 DataType Constraint,
-                    Column2 DataType Constraint,
-                    ...
-                );
-            </pre>
-        </p>
-        <p>One-to-Many relationship means that a record from one table can have multiple matching records in another table. EX: Using primary keys in one table as a foreign key in others. Multiple books can fit in a genre.
-            <pre>
-                CREATE TABLE books (
-                    book_id serial NOT NULL,
-                    book_name varchar(255),
-                    aisle_id integer,
-                    CONSTRAINT books_pkey PRIMARY KEY (book_id),
-                    CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) References aisles(aisle_id)
-                    ON DELETE CASCADE
-                );
-            </pre>
-        </p>
-        <p>Many to Many relationship means that a record from one table can have multiple matching rows in another table and vice versa. Juntions(joining or bridging) tables are needed for many-to-many relationships.
-            <pre>Creating a junction table
-                CREATE TABLE libraries_books
-                (
-                    library_id integer NOT NULL,
-                    book_id integer NOT NULL,
-                    CONSTRAINT libraries_id FOREIGN KEY (library_id)
-                        REFERENCES libraries (library_id),
-                    CONSTRAINT books_id FOREIGN KEY (book_id)
-                        REFERENCES books (book_id)
-                );
-            </pre>
-            Creates a table that takes the id's and references the libraries and the books.
-        </p>
+        <!-- <p>Build databases with various table relationships</p>
+        <p>Add primary and foreign keys in tables.</p> -->
         
-        <p></p>
+        <section><!-- Joins, Relationships, and Structure -->
+            <h3>SQL Joins</h3>
+            <p>JOIN clauses in SQL combines records between related tables from one or more tables based on the values of the common columns. Data may be needed from several tables to create a resulting joined table. Ex: Table_1(products, price); Table_2 (products, quantity); Table_join_1_2(products, price, quantity);</p>
+            <ul>Different types of JOIN clauses:
+                <li>INNER JOIN (also called simple join) keyword selects records that have matching values in both tables. Similar to selecting the intersecting area of a venn diagram.
+                    <pre>
+                        SELECT column_name(s)
+                        FROM table_1
+                        INNER JOIN table_2
+                        ON table_1.column_name = table_2.column_name; 
+                    </pre>
+                    <pre>
+                        SELECT table_1.*, table_2.Quantity 
+                        FROM table_1
+                        INNER JOIN table_2
+                        ON table_1.Product = Table_2.Product    
+                        //will return Products, Price, Quantity from both tables
+                    </pre>
+                    Combines rows from two tables whenever the join condition is met
+                </li>
+                <li>LEFT JOIN (or LEFT OUTER JOIN) returns each row in the left table and only corresponding data from the right table is returned.
+                    <pre>
+                        SELECT column_name(s)
+                        FROM table_1
+                        LEFT JOIN table_2
+                        ON table_1.column_name = table_2.column_name; 
+                    </pre>
+                    <pre>
+                        SELECT table_1.*, table_2.Quantity 
+                        FROM table_1
+                        LEFT JOIN table_2
+                        ON table_1.Product = table_2.Product 
+                        //Returns All Products in table_1, Price, Quantity with a Null Value if there is no corresponding Quantity or value.
+                    </pre>
+                    Same as an inner join, except rows from the first table are added to the join table, regardless of the evaluation of the join condition
+                </li>
+                <li>RIGHT JOIN (or RIGHT OUTER JOIN) returns each row from the right table regardless of if there are any corresponding rows in the first table. Only corresponding data from the left table is returned.
+                    <pre>
+                        SELECT column_name(s)
+                        FROM table_1
+                        RIGHT JOIN table_2
+                        ON table_1.column_name = table_2.column_name; 
+                    </pre>
+                    <pre>
+                        SELECT table_1.*, table_2.Quantity 
+                        FROM table_1
+                        RIGHT JOIN table_2
+                        ON table_1.Product = table_2.Product 
+                        //Returns All Products from table_2, Price, Quantity with a Null Value if there is no corresponding Price or missing value.
+                    </pre>
+                    Same as an inner join, except rows from the second table are added to the join table, regardless of the evaluation of the join condition
+                </li>
+                <li>FULL JOIN (or FULL OUTER JOIN) returns all rows from the joined tables whether or not the tables have corresponding or matching rows. FULL OUTER JOIN is the combination of LEF JOIN and RIGHT JOIN.
+                    <pre>
+                        SELECT column_name(s)
+                        FROM table_1
+                        FULL OUTER JOIN table_2
+                        ON table_1.column_name = table_2.column_name; 
+                    </pre>
+                    <pre>
+                        SELECT table_1.*, table_2.Quantity 
+                        FROM table_1
+                        FULL OUTER JOIN table_2
+                        ON table_1.Product = table_2.Product 
+                        //Returns All Products from both tables, Price & Quantity will have a Null Value if there is no corresponding or missing value.
+                    </pre>
+                    All rows from two tables are added to the join table, regardless of the evaluation of the join condition
+                </li>
+            </ul>
+    
+            <p>Inner Join vs Outter Join
+                <ul>
+                    <li>Inner Join  will return only matching records or values from both database tables when there is a common column. Outer Join returns all records from both database tables wihout needing a common column.</li>
+                    <li>All rows using Inner Join will have a value while Outer Join will leave null values if there's no corresponding or missing value.</li>
+                    <li>INNER JOIN does not have any statement variations while OUTER JOIN can be LEFT, RIGHT, or FULL JOIN.</li>
+                    <li>Entries without a match in another table will not return any output using Inner Join. Null values will be returned if one table doesn't have any matching values with another table.</li>
+                </ul>
+            </p>
 
-        
-        <p>Build databases with various table relationships</p>
-        <p>Add primary and foreign keys in tables.</p>
+            <h3>Entity Relationship Diagrams(ERD)</h3>
+            <p>Entity relationship diagrams (ERD) are visual representations that depict an entity relationship model typically using boxes with arrows to indicate relationships amoung people, objects, concepts, or events within a IT system.</p>
+            <p>Primary Keys are unique values set in a table to identify and locate data in queries. Each table can only have one primary key.
+                <pre>
+                    CONSTRAINT books_pkey PRIMARY KEY (book_id)
+                </pre>
+            </p>
+            <p>Foreign Keys are fields that refers to the primary key of another table which manages the relationship between the tables.
+                <pre>
+                    CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) REFERENCES aisles(aisle_id)
+                </pre>
+                When a primary key is referenced in another table, that key is considered a Foreign Key. 
+            </p>
+            <p>Referential Integrity is a database concept used to build and maintain logical relationships between tables to prevent logical corruption of data.
+                <pre>
+                    ON DELETE CASCADE   //option to specify whether you want rows deleted on a child table when corresponding rows are deleted in the parent table.
+                </pre>
+                If cascading deletes aren't specified, then the default behavior of the database server prevents data from deleteing in a table if other tables reference it.
+            </p>
+    
+            <h3>Table Relationships</h3>
+            <p>One-to-One relationship means that the record in a table is related to only one record in another table and vice versa. EX: when an object is linked only to the single id. One id per book.
+                <pre>Creating a table
+                    CREATE TABLE table_name (
+                        Column1 DataType Constraint,
+                        Column2 DataType Constraint,
+                        ...
+                    );
+                </pre>
+            </p>
+            <p>One-to-Many relationship means that a record from one table can have multiple matching records in another table. EX: Using primary keys in one table as a foreign key in others. Multiple books can fit in a genre.
+                <pre>
+                    CREATE TABLE books (
+                        book_id serial NOT NULL,
+                        book_name varchar(255),
+                        aisle_id integer,
+                        CONSTRAINT books_pkey PRIMARY KEY (book_id),
+                        CONSTRAINT books_aisles_id_fkey FOREIGN KEY (aisle_id) References aisles(aisle_id)
+                        ON DELETE CASCADE
+                    );
+                </pre>
+            </p>
+            <p>Many to Many relationship means that a record from one table can have multiple matching rows in another table and vice versa. Juntions(joining or bridging) tables are needed for many-to-many relationships.
+                <pre>Creating a junction table
+                    CREATE TABLE libraries_books
+                    (
+                        library_id integer NOT NULL,
+                        book_id integer NOT NULL,
+                        CONSTRAINT libraries_id FOREIGN KEY (library_id)
+                            REFERENCES libraries (library_id),
+                        CONSTRAINT books_id FOREIGN KEY (book_id)
+                            REFERENCES books (book_id)
+                    );
+                </pre>
+                Creates a table that takes the id's and references the libraries and the books.
+            </p>
+        </section>
 
-        <!-- Joins, Relationships, and Structure -->
-        <h3>SQL Joins</h3>
+
         <h3>SQL Subqueries and Complex Queries</h3>
+        <p>Subquery expressions are SQL queries that are nested inside another larger SQL query. Subqueries make it easier to write complex query logic and negate the need for JOINs and Unions. They allow for more verbose reporting (displays or gets extended information).
+            <pre>
+                SELECT
+                    order_id
+                    order_date
+                    customer_id
+                FROM
+                    sales.orders    //outer query
+                WHERE
+                    customer_id IN (    //subquery
+                        SELECT
+                            customer_id
+                        FROM
+                            sales.customers
+                        WHERE
+                            city = 'Los Angeles'
+                    )
+                ORDER BY
+                    order_date DESC;    //DESC stands for descending order.
+            </pre>
+            Subquery expressions are unable to SELCT and modify from tables in the same subquery and can cause greater time complexity (amount of time taken to process or run a process given input).
+        </p>
+        <p>Subqueries must be enclosed within parentheses. Only a single SELECT statement is allowed. A subquery cannot be a UNION and ORDER BY cannot be used.</p>
+        
+        <p>SELECT, UPDATE, and DELETE statements that include subqueries.
+            
+            <pre>INSERT subquery syntax
+                SELECT column_name      //'*' if you want to select all
+                FROM table_1
+                WHERE column_name &lt;>     //&lt;> for the condition means not equal or != operators are similar to other langauges. BETWEEN(certain range), LIKE(search for pattern), land IN(specify possible multiplle values for a column) are other operators for the WHERE clause
+                (
+                SELECT column_name
+                FROM table_1 WHERE column_name_2 operator amount/integer value     //WHERE POWER_LEVEL > 9000
+                )
+            </pre>
+            
+            <pre>INSERT subquery syntax
+                INSERT INTO table_1     //SELECT INTO is used to create a table from an existing table by copying the existing table's columns
+                (       //subquery
+                SELECT *        //selects all
+                FROM table_2        
+                WHERE VALUE     //column_name > integer
+                )
+            </pre>
+
+            <pre>UPDATE subquery syntax
+                UPDATE table_1
+                SET column_to_update=new_value
+                WHERE new_value >
+                (
+                SELECT old_value FROM table_2
+                WHERE table_1_columnId=table_2_columnId
+                )
+
+                //Example
+                UPDATE Users
+                SET Users.UserEmail
+                (
+                SELECT AddressList.EmailAddress
+                FROM AddressList
+                WHERE AddressList.PersonId = Persons.PersonId
+                )
+            </pre>
+
+            <pre>DELETE subquery syntax
+                DELETE FROM table_1
+                WHERE column_name1
+                &lt;=
+                (
+                SELECT column_name2
+                FROM table_2
+                )
+
+            </pre>
+        </p>
+        <p>SQL UNIONs allows combining the results of two or more SELECT queries. The UNION operator allows us to aggregate two or more SELECT statements. When you combine 2 or more SELECT queries, the IDs are reassigned as they are unique.
+            <pre>UNION syntax
+                SELECT column_name(s) FROM table_1
+                UNION
+                SELECT column_names(s) FROM table_2;
+            </pre>            
+        </p>
+        <p>Some things to note and keep in mind about UNIONs: 
+            <ul>
+                <li>Both tables columns should have similar data types (string, number, etc). </li>
+                <li>A new table will be generated as a Result with the unique values from both tables.</li>
+                <li>UNION operator selects only distinct values by default.</li>
+                <li>Duplicate rows are displayed only once.</li>
+            </ul>
+        </p>
+        
+
+
         <h3>Aggregate Functions in SQL</h3>
         <!-- <h3>Advanced SQL Queries for Optimization</h3> -->
 
