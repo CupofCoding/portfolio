@@ -2147,10 +2147,51 @@
                 <li>Duplicate rows are displayed only once.</li>
             </ul>
         </p>
-        
-
 
         <h3>Aggregate Functions in SQL</h3>
+        <p>Aggregate functions are a list of functions that perform calculations on data. SQL was used to storing and manipulating data. Aggregate functions are like an advanced calculator for SQL data.</p>
+        <p>Aggregate Function syntax
+            AVG - Returns the average of the values in a group
+            <pre>AVG Function - returns the average of the values in a group
+                SELECT AVG(column_name)
+                FROM table_name.name;
+                //returns column with the average
+            </pre>
+
+            COUNT - Returns the number or rows or  non-null  values for a column
+            <pre>COUNT Function - returns the number of rows in a gorup including null values
+                SELECT AVG(column_name) AS new_column_name
+                FROM table_name.name
+                WHERE column_name operator integer;     //column_name > 9000
+                //returns column with rows with the results.
+            </pre>
+
+            MAX - Returns the largest value of a specific column
+            <pre>MAX Function - returns the maximum value of the expression
+                SELECT MAX(column_name)
+                FROM table_name.name;
+                //returns column with the maximum value
+            </pre>
+
+            MIN - Returns the smallest value of a specific column
+            <pre>MIN Function - returns the minimum value of the expression
+                SELECT MIN(column_name)
+                FROM table_name.name;
+                //returns column with the minimum value
+            </pre>
+
+            SUM - Returns the sum of a selected column
+            <pre>SUM Function - returns the sum of all values in the expression (or DISTINCT values only)
+                SELECT SUM(column_name)
+                FROM table_name.name;
+                //returns column with the minimum value
+            </pre>
+        </p>
+
+        <p>The advantages that aggregate functions provide are helpful when using data.</p>
+        <p>Demonstrate usage of advanced SQL syntax.</p>
+
+
         <!-- <h3>Advanced SQL Queries for Optimization</h3> -->
 
         <!-- Advanced SQL -->
