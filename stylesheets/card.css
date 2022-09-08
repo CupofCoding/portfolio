@@ -1,5 +1,13 @@
+.title-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
 .card-group {
   display: flex;
+  flex: 4;
   max-width: 70vw;
   justify-content: left;
   align-items: center;
