@@ -142,3 +142,8 @@ function loadActive() {
   document.addEventListener("scroll", swapActive);
   window.addEventListener("resize", loadActive);
 
+//Modal functionality
+// function onClick(element) {
+//     document.getElementById("img01").src = element.src;
+//     document.getElementById("modal01").style.display = "block";
+//   }

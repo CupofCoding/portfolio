@@ -452,27 +452,44 @@
                         </div>
                     </div> -->
                     <div class="card">
-                        <a href="#" class="project"><img class="grow" src="./images/portfolio-site.png" alt="projects image"></a>
+                        <button onclick="document.getElementById('project01').style.display='block'" class="project modal-button">
+                            <img class="grow" src="./images/portfolio-site.png" alt="projects image">
+                        </button>
+                        <div id="project01" class="modal">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project01').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/portfolio-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                         <h3 class="title">Web Portfolio</h3>
-                        <p>This page; created using HTML, CSS, and Vanilla Javascript. Deployed using github pages with custom domain.</p>                    
+                        <p>This page; created using HTML, CSS with media queries, and Vanilla Javascript. Deployed using github pages with custom domain.</p>                    
                         <div class="card-links">
                             <a href="https://github.com/CupofCoding/portfolio"><i class="fa fa-github grow"></i></a>
                             <a href="#"><i class="fa fa-window-maximize grow"></i></a>
                         </div>
-                    </div>                
+                    </div>
+                             
                     <div class="card">
-                        <a href="https://cc-react-navbar.herokuapp.com/" class="project"><img class="grow" src="./images/react-navbar-site.png" alt="projects image"></a>
+                        <button href="https://cc-react-navbar.herokuapp.com/" class="project">
+                            <img class="grow" src="./images/react-navbar-site.png" alt="projects image">
+                        </button>
                         <h3 class="title">Four Seasons</h3>
-                        <p>Responsive site done using React and external CSS. Deployed using Heroku.</p>                    
+                        <p>Responsive site done using React, React Router, and external CSS. Deployed using Heroku.</p>                    
                         <div class="card-links">
                             <a href="https://github.com/CupofCoding/react-navbar"><i class="fa fa-github grow"></i></a>
                             <a href="https://cc-react-navbar.herokuapp.com/"><i class="fa fa-window-maximize grow"></i></a>
                         </div>
                     </div>
                     <div class="card">
-                        <a href="https://cupofcoding.github.io/copycat-peas/" class="project"><img class="grow" src="./images/copycat-peas-site.png" alt="projects image"></a>
+                        <button class="project">
+                            <img href="https://cupofcoding.github.io/copycat-peas/" class="grow" src="./images/copycat-peas-site.png" alt="projects image">
+                        </button>
                         <h3 class="title">Peas Product Page</h3>
-                        <p>Rebranded copycat Apple website with responsive features done using HTML, CSS, Vanilla Javascript. Deployed on Github pages.</p>                    
+                        <p>Rebranded copycat Apple website with responsive features done using HTML, CSS with media queries, Vanilla Javascript. Deployed on Github pages.</p>                    
                         <div class="card-links">
                             <a href="https://github.com/CupofCoding/copycat-peas"><i class="fa fa-github grow"></i></a>
                             <a href="https://cupofcoding.github.io/copycat-peas/"><i class="fa fa-window-maximize grow"></i></a>
