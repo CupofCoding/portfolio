@@ -312,12 +312,168 @@
                     <p class="text-med"> Self-taught programmer enrolled in a MERN fullstack bootcamp. Looking to further my career and gain industry experience. </p>
                 </div>
             </div>
-        </section>
-            
+        </section>          
+        
         <!-- Box Two -->
+        <div class="box-padding divider breakpoint" id="projects" divider></div>
+        <!-- hover over panels for flipping and text -->
+        <section class="box box-two bg-secondary grid-col-2 grid-reversed pad-lg">
+            <div class="box-inner">
+                <div class="title-card">
+                    <div>
+                        <img src="https://picsum.photos/500/600" alt="random image">
+                    </div>
+                    <div class="boxtext">
+                        <h2 class="text-xl">Projects</h2>
+                        <p class="text-med">Learn more about the following projects or </p>
+                        <div class="drop-down" data-drop-down>
+                            <a class="link see-full-list" data-drop-down-button>See Full List</a>
+                            <div class="drop-down-menu information-grid">
+                                <div>
+                                    <div class="drop-down-heading">Simple Projects </div>
+                                    <div class="drop-down-links">
+                                        <a href="#" class="links">Project 1</a>
+                                        <a href="#" class="links">Project 2</a>
+                                        <a href="#" class="links">Project 3</a>
+                                        <a href="#" class="links">Project 4</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="drop-down-heading">Capstone Projects</div>
+                                    <div class="drop-down-links">
+                                        <a href="#" class="links">All</a>
+                                        <a href="#" class="links">Latest</a>
+                                        <a href="#" class="links">Popular</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-group">
+                    <!-- <div class="card">
+                        <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="projects image"></a>
+                        <h3 class="title">Project Name</h3>
+                        <p>Project Description/Overview; ie whatever code/frameworks used.</p>                    
+                        <div class="card-links">
+                            <a href="#"><i class="fa fa-github grow"></i></a>
+                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div> -->
+                    <div class="card">
+                        <button onclick="document.getElementById('project01').style.display='block'" class="project modal-button">
+                            <img class="grow" src="./images/portfolio-site.png" alt="projects image">
+                        </button>
+                        <div id="project01" class="modal" onclick="document.getElementById('project01').style.display='none'">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project01').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/portfolio-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <h3 class="title">Web Portfolio</h3>
+                        <p>This page; created using HTML, CSS with media queries, and Vanilla Javascript. Deployed using github pages with custom domain.</p>                    
+                        <div class="card-links">
+                            <a href="https://github.com/CupofCoding/portfolio"><i class="fa fa-github grow"></i></a>
+                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div>
+                             
+                    <div class="card">
+                        <button onclick="document.getElementById('project02').style.display='block'" class="project modal-button">
+                            <img class="grow" src="./images/react-navbar-site.png" alt="projects image">
+                        </button>
+                        <div id="project02" class="modal" onclick="document.getElementById('project02').style.display='none'">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project02').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/react-navbar-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <h3 class="title">Four Seasons</h3>
+                        <p>Responsive site done using React, React Router, and external CSS. Deployed using Heroku.</p>                    
+                        <div class="card-links">
+                            <a href="https://github.com/CupofCoding/react-navbar"><i class="fa fa-github grow"></i></a>
+                            <a href="https://cc-react-navbar.herokuapp.com/"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button onclick="document.getElementById('project03').style.display='block'" class="project modal-button">
+                            <img href="https://cupofcoding.github.io/copycat-peas/" class="grow" src="./images/copycat-peas-site.png" alt="projects image">
+                        </button>
+                        <div id="project03" class="modal" onclick="document.getElementById('project03').style.display='none'">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project03').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/copycat-peas-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <h3 class="title">Peas Product Page</h3>
+                        <p>Rebranded copycat Apple website with responsive features done using HTML, CSS with media queries, Vanilla Javascript. Deployed on Github pages.</p>                    
+                        <div class="card-links">
+                            <a href="https://github.com/CupofCoding/copycat-peas"><i class="fa fa-github grow"></i></a>
+                            <a href="https://cupofcoding.github.io/copycat-peas/"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button onclick="document.getElementById('project04').style.display='block'" class="project modal-button">
+                            <img class="grow" src="./images/react-commerce-site.png" alt="projects image">
+                        </button>
+                        <div id="project04" class="modal" onclick="document.getElementById('project04').style.display='none'">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project04').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/react-commerce-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <h3 class="title">Peas E-Commerce Store</h3>
+                        <p>Responsive website done using React, React-Router, styled components, and Material UI. Deployed on Netlify. Back-end pending.</p>                    
+                        <div class="card-links">
+                            <a href="https://github.com/CupofCoding/react-commerce"><i class="fa fa-github grow"></i></a>
+                            <a href="https://coc-react-commerce.netlify.app/"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button onclick="document.getElementById('project05').style.display='block'" class="project modal-button">
+                            <img class="grow" src="./images/react-reserve-site.png" alt="projects image">
+                        </button>
+                        <div id="project05" class="modal" onclick="document.getElementById('project05').style.display='none'">
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <span onclick="document.getElementById('project05').style.display='none'" class="modal-close">&times;</span>
+                                    <div class="modal-zoom">
+                                        <img src="./images/react-reserve-site.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <h3 class="title">Peas Travel Page</h3>
+                        <p>Responsive website done using React, React-Router, and external CSS. Deployed on Netlify. Back-end pending.</p>                    
+                        <div class="card-links">
+                            <a href="https://github.com/CupofCoding/react-reserve"><i class="fa fa-github grow"></i></a>
+                            <a href="https://coc-react-reserve.netlify.app/"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Box Three -->
         <div class="box-padding divider breakpoint" id="documentation" divider></div>
         <!-- include I have no memory of this place cause meme / hover over panels for flipping and text -->
-        <section class="box box-two bg-secondary grid-col-2 pad-md">
+        <section class="box box-three bg-secondary grid-col-2 pad-md">
             <div class="box-inner">
                 <div class="title-card">
                     <div>
@@ -325,8 +481,8 @@
                     </div>
                     <div class="boxtext">
                         <h2 class="text-xl">Documentation</h2>
-                        <div class="drop-down" data-drop-down>
                         <p class="text-med">Learn more about the following topics or </p>
+                        <div class="drop-down" data-drop-down>
                         <a class="link see-full-list" data-drop-down-button>See Full List</a>
                             <div class="drop-down-menu information-grid">
                                 <div>
@@ -404,118 +560,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Box Three -->
-        <div class="box-padding divider breakpoint" id="projects" divider></div>
-        <!-- hover over panels for flipping and text -->
-        <section class="box box-three bg-secondary grid-col-2 grid-reversed pad-lg">
-            <div class="box-inner">
-                <div class="title-card">
-                    <div>
-                        <img src="https://picsum.photos/500/600" alt="random image">
-                    </div>
-                    <div class="boxtext">
-                        <h2 class="text-xl">Projects</h2>
-                        <p class="text-med">Learn more about the following projects or </p>
-                        <div class="drop-down" data-drop-down>
-                            <a class="link see-full-list" data-drop-down-button>See Full List</a>
-                            <div class="drop-down-menu information-grid">
-                                <div>
-                                    <div class="drop-down-heading">Simple Projects </div>
-                                    <div class="drop-down-links">
-                                        <a href="#" class="links">Project 1</a>
-                                        <a href="#" class="links">Project 2</a>
-                                        <a href="#" class="links">Project 3</a>
-                                        <a href="#" class="links">Project 4</a>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="drop-down-heading">Capstone Projects</div>
-                                    <div class="drop-down-links">
-                                        <a href="#" class="links">All</a>
-                                        <a href="#" class="links">Latest</a>
-                                        <a href="#" class="links">Popular</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-group">
-                    <!-- <div class="card">
-                        <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="projects image"></a>
-                        <h3 class="title">Project Name</h3>
-                        <p>Project Description/Overview; ie whatever code/frameworks used.</p>                    
-                        <div class="card-links">
-                            <a href="#"><i class="fa fa-github grow"></i></a>
-                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div> -->
-                    <div class="card">
-                        <button onclick="document.getElementById('project01').style.display='block'" class="project modal-button">
-                            <img class="grow" src="./images/portfolio-site.png" alt="projects image">
-                        </button>
-                        <div id="project01" class="modal">
-                            <div class="modal-container">
-                                <div class="modal-content">
-                                    <span onclick="document.getElementById('project01').style.display='none'" class="modal-close">&times;</span>
-                                    <div class="modal-zoom">
-                                        <img src="./images/portfolio-site.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                        <h3 class="title">Web Portfolio</h3>
-                        <p>This page; created using HTML, CSS with media queries, and Vanilla Javascript. Deployed using github pages with custom domain.</p>                    
-                        <div class="card-links">
-                            <a href="https://github.com/CupofCoding/portfolio"><i class="fa fa-github grow"></i></a>
-                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div>
-                             
-                    <div class="card">
-                        <button href="https://cc-react-navbar.herokuapp.com/" class="project">
-                            <img class="grow" src="./images/react-navbar-site.png" alt="projects image">
-                        </button>
-                        <h3 class="title">Four Seasons</h3>
-                        <p>Responsive site done using React, React Router, and external CSS. Deployed using Heroku.</p>                    
-                        <div class="card-links">
-                            <a href="https://github.com/CupofCoding/react-navbar"><i class="fa fa-github grow"></i></a>
-                            <a href="https://cc-react-navbar.herokuapp.com/"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="project">
-                            <img href="https://cupofcoding.github.io/copycat-peas/" class="grow" src="./images/copycat-peas-site.png" alt="projects image">
-                        </button>
-                        <h3 class="title">Peas Product Page</h3>
-                        <p>Rebranded copycat Apple website with responsive features done using HTML, CSS with media queries, Vanilla Javascript. Deployed on Github pages.</p>                    
-                        <div class="card-links">
-                            <a href="https://github.com/CupofCoding/copycat-peas"><i class="fa fa-github grow"></i></a>
-                            <a href="https://cupofcoding.github.io/copycat-peas/"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="https://coc-react-commerce.netlify.app/" class="project"><img class="grow" src="./images/react-commerce-site.png" alt="projects image"></a>
-                        <h3 class="title">Peas E-Commerce Store</h3>
-                        <p>Responsive website done using React, React-Router, styled components, and Material UI. Deployed on Netlify. Back-end pending.</p>                    
-                        <div class="card-links">
-                            <a href="https://github.com/CupofCoding/react-commerce"><i class="fa fa-github grow"></i></a>
-                            <a href="https://coc-react-commerce.netlify.app/"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="https://coc-react-reserve.netlify.app/" class="project"><img class="grow" src="./images/react-reserve-site.png" alt="projects image"></a>
-                        <h3 class="title">Peas Travel Page</h3>
-                        <p>Responsive website done using React, React-Router, and external CSS. Deployed on Netlify. Back-end pending.</p>                    
-                        <div class="card-links">
-                            <a href="https://github.com/CupofCoding/react-reserve"><i class="fa fa-github grow"></i></a>
-                            <a href="https://coc-react-reserve.netlify.app/"><i class="fa fa-window-maximize grow"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <p class="copyright">© 2022 CupofCoding. All rights reserved.</p>
 
         <!-- <section class="project-popup">
