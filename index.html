@@ -295,8 +295,10 @@
         <a href="" class="top" id="top"></a>
         <section class="box-first"> <!--add back to class when done 'box'-->
             <div class="box-intro">
-                <h1 class="scroll-left" id="company-name">Cup of Coding</h1>
-                <h2 class="text-med para-quote" id="intro-quote">Rule #32. "Enjoy The Little Things." - Tallahassee (Zombieland)                
+                <div class="first-box-content">
+                    <h1 class="scroll-left" id="company-name">Cup of Coding</h1>
+                    <h2 class="text-med para-quote" id="intro-quote">Rule #32. "Enjoy The Little Things." - Tallahassee (Zombieland)                
+                </div>
             </div>
         </section>
         
@@ -318,8 +320,9 @@
         <div class="box-padding divider breakpoint" id="projects" divider></div>
         <!-- hover over panels for flipping and text -->
         <section class="box box-two bg-secondary grid-col-2 grid-reversed pad-lg">
+            <h2 class="text-xl" id="TempProjectsTitle2">Projects</h2>
             <div class="box-inner">
-                <div class="title-card">
+                <!-- <div class="title-card">
                     <div>
                         <img src="https://picsum.photos/500/600" alt="random image">
                     </div>
@@ -350,7 +353,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="card-group">
                     <!-- <div class="card">
                         <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="projects image"></a>
@@ -475,8 +478,9 @@
         <div class="box-padding divider breakpoint" id="documentation" divider></div>
         <!-- include I have no memory of this place cause meme / hover over panels for flipping and text -->
         <section class="box box-three bg-secondary grid-col-2 pad-md">
+            <h2 class="text-xl" id="TempProjectsTitle3">Documentation</h2>
             <div class="box-inner">
-                <div class="title-card">
+                <!-- <div class="title-card">
                     <div>
                         <img src="https://picsum.photos/500/700" alt="random image">
                     </div>
@@ -507,58 +511,62 @@
                             </div>
                         </div>
                     </div>
-                </div>            
-                <div class="card-group">
-                    <!--300x200-->
-                    <!-- <div class="card">
-                        <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a> 
-                        <h3 class="title">Documentation Name</h3>
-                        <p>Description; Short summary for what it's for.</p>
-                        <a href="#"><i class="fa fa-glasses grow"></i></a>
-                        <a href="#"><i class="fa fa-window-maximize grow"></i></a>
-                    </div> -->
-                    <div class="card">
-                        <a href="./documentation/programming-concepts.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">Programming Concepts</h3>
-                        <p>General programming cencepts and terms used in the industry.</p>
-                        <a href="./documentation/programming-concepts.html"><i class="fa fa-glasses grow"></i></a>
-                        <a href="./documentation/programming-concepts.html"><i class="fa fa-window-maximize grow"></i></a>
+                </div> -->
+                <div class="card-group carousel slide multi-item-carousel" id="theCarousel" >
+                    <div class="carousel-inner">
+                        <!--300x200-->
+                        <!-- <div class="card item active">
+                            <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a> 
+                            <h3 class="title">Documentation Name</h3>
+                            <p>Description; Short summary for what it's for.</p>
+                            <a href="#"><i class="fa fa-glasses grow"></i></a>
+                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
+                        </div> -->
+                        <div class="card item active">
+                            <a href="./documentation/programming-concepts.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">Programming Concepts</h3>
+                            <p>General programming cencepts and terms used in the industry.</p>
+                            <a href="./documentation/programming-concepts.html"><i class="fa fa-glasses grow"></i></a>
+                            <a href="./documentation/programming-concepts.html"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                        <div class="card item">
+                            <a href="./documentation/HTML-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">About HTML</h3>
+                            <p>An introduction and overview to HTML.</p>
+                            <a href="./documentation/HTML-tutorial.html"><i class="fa fa-glasses grow"></i></a>
+                            <a href="./documentation/HTML-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                        <div class="card item">
+                            <a href="./documentation/CSS-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">About CSS</h3>
+                            <p>Learn about the general usage of CSS.</p>
+                            <a href="./documentation/CSS-tutorial.html"><i class="fa fa-glasses grow"></i></a>
+                            <a href="./documentation/CSS-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                        <!-- <div class="card item">
+                            <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">CSS Positioning</h3>
+                            <p>Learn about CSS positioning including Flexbox & Grid.</p>
+                            <a href="#"><i class="fa fa-glasses grow"></i></a>
+                            <a href="#"><i class="fa fa-window-maximize grow"></i></a>
+                        </div> -->
+                        <div class="card item">
+                            <a href="./documentation/Javascript-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">About Javascript</h3>
+                            <p>Learn about Javascript functions.</p>
+                            <a href="./documentation/Javascript-tutorial.html"><i class="fa fa-glasses grow"></i></a>
+                            <a href="./documentation/Javascript-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
+                        <div class="card item">
+                            <a href="./documentation/Git-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
+                            <h3 class="title">How to use Git</h3>
+                            <p>Walkthrough of how to use git to push, pull, and commit.</p>
+                            <a href="./documentation/Git-tutorial.html"><i class="fa fa-glasses grow"></i></a>
+                            <a href="./documentation/Git-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
+                        </div>
                     </div>
-                    <div class="card">
-                        <a href="./documentation/HTML-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">About HTML</h3>
-                        <p>An introduction and overview to HTML.</p>
-                        <a href="./documentation/HTML-tutorial.html"><i class="fa fa-glasses grow"></i></a>
-                        <a href="./documentation/HTML-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
-                    </div>
-                    <div class="card">
-                        <a href="./documentation/CSS-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">About CSS</h3>
-                        <p>Learn about the general usage of CSS.</p>
-                        <a href="./documentation/CSS-tutorial.html"><i class="fa fa-glasses grow"></i></a>
-                        <a href="./documentation/CSS-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
-                    </div>
-                    <!-- <div class="card">
-                        <a href="#" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">CSS Positioning</h3>
-                        <p>Learn about CSS positioning including Flexbox & Grid.</p>
-                        <a href="#"><i class="fa fa-glasses grow"></i></a>
-                        <a href="#"><i class="fa fa-window-maximize grow"></i></a>
-                    </div> -->
-                    <div class="card">
-                        <a href="./documentation/Javascript-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">About Javascript</h3>
-                        <p>Learn about Javascript functions.</p>
-                        <a href="./documentation/Javascript-tutorial.html"><i class="fa fa-glasses grow"></i></a>
-                        <a href="./documentation/Javascript-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
-                    </div>
-                    <div class="card">
-                        <a href="./documentation/Git-tutorial.html" class="project"><img class="grow" src="https://picsum.photos/300/200" alt="random image"></a>
-                        <h3 class="title">How to use Git</h3>
-                        <p>Walkthrough of how to use git to push, pull, and commit.</p>
-                        <a href="./documentation/Git-tutorial.html"><i class="fa fa-glasses grow"></i></a>
-                        <a href="./documentation/Git-tutorial.html"><i class="fa fa-window-maximize grow"></i></a>
-                    </div>
+                    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
             </div>
         </section>

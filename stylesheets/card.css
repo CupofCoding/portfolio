@@ -1,3 +1,20 @@
+/* If this isn't here, card groups overflow nested containers */
+* { 
+  min-width: 0; 
+  min-height: 0; }
+
+
+#TempProjectsTitle2,
+#TempProjectsTitle3{
+  color: black;
+  text-shadow: 0 8px 8px 0 rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+  position: absolute;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  left: 12vw;
+}
+
 .title-card{  
   display: flex;
   justify-content: center;
@@ -18,10 +35,13 @@
 
 .card-group {
   display: flex;
-  flex: 4;
-  max-width: 70%;
+  flex: 1;
+  width: 100%;
+  margin-left: 1em;
+  max-width: 70vw;    
   justify-content: left;
   align-items: center;
+  /* overflow: auto; */
 }
 
 div .card {
@@ -44,7 +64,7 @@ div .card {
 .card-group > div:nth-child(1) > p,
 .card > p{
   color: #000;
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 .card .title {
@@ -129,3 +149,55 @@ a:hover {
 .modal-zoom{
   animation: 0.6s;  
 }
+
+/* Carousel */
+.carousel-inner{
+  display: flex;
+  flex: 1;  
+}
+
+.carousel-inner > *> a> img{
+  display: none;
+}
+
+.multi-item-carousel .carousel-inner > .item {
+  transition: 500ms ease-in-out left;
+}
+.multi-item-carousel .carousel-inner .active.left {
+  left: -33%;
+}
+.multi-item-carousel .carousel-inner .active.right {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .next {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .prev {
+  left: -33%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .item {
+    transition: 500ms ease-in-out left;
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    transform: none !important;
+  }
+}
+.multi-item-carousel .carouse-control.left,
+.multi-item-carousel .carouse-control.right {
+  background-image: none;
+}
+body {
+  background: #333;
+  color: #ddd;
+}
+h1 {
+  color: white;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-shadow: 0px 2px 0px #000000;
+}
+

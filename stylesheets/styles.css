@@ -168,9 +168,9 @@ header{
 }
 
 #company-name{
-  position: absolute;
-  left: 18vw;
-  top: 46vh;
+  /* position: absolute; */
+  /* left: 18vw; */
+  /* top: 46vh; */
   text-transform: uppercase;
   font-family: 'league gothic', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   /* font-family: helvetica, cursive Verdana, Geneva, Tahoma, sans-serif; */
@@ -180,14 +180,15 @@ header{
   color: white;
   opacity: .8;
   text-shadow: 0px -2px 2px black;
+  margin: 0;
 }
 
 
 #intro-quote {
   text-align: left;
-  position: absolute;
-  top: 61vh;
-  left: 18vw;
+  /* position: absolute; */
+  /* top: 61vh;
+  left: 18vw; */
   font-size: var(--size-400);
   /* display: none; */
   color: black;
@@ -259,9 +260,9 @@ header{
   margin: 1em;
 }
 
-.box-two >.box-inner{
+/* .box-two >.box-inner{
   justify-content: left;
-}
+} */
 
 .box-three >.box-inner{
   flex-direction: row-reverse;
@@ -288,9 +289,18 @@ header{
   margin-top: 20px;
 }
 
-.box-intro {
+.box-intro {  
   padding-top: 100%;
   max-height: 80%;
+}
+
+.first-box-content{
+  display: flex;
+  flex-direction: column;  
+  margin: 0;
+  position: absolute; 
+  left: 18vw;
+  top: 46vh;
 }
 
 .box-first {

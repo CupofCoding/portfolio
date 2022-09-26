@@ -53,6 +53,7 @@
   position: absolute;
   pointer-events: none;
   font-size: 1.5em;
+  font-weight: 600;
   bottom: -45vh;
   height: 20vh;
   min-height: 185px;
@@ -67,16 +68,17 @@
   word-wrap: break-word;
   margin: 0;
   padding: 0;
+  text-shadow: none;
 }
 
 .scroll-down-text::after {
   content: "";
-  width: 2px;
+  width: 3px;
   height: 20vh;
   background: #000;
   position: absolute;
-  top: 80%;
-  left: 40%;
+  top: 90%;
+  left: 5%;
 }
 
 .sideline .inactive {
