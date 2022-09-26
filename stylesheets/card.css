@@ -6,7 +6,7 @@
   flex-direction: column;  
   margin: 1rem;
   flex: 1;
-  min-width: 20%;
+  min-width: 10%;
 }
 
 .title-card .see-full-list,
@@ -39,6 +39,12 @@ div .card {
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.3)
   );
+}
+
+.card-group > div:nth-child(1) > p,
+.card > p{
+  color: #000;
+  line-height: 1.5em;
 }
 
 .card .title {
