@@ -63,6 +63,11 @@
   transition: all 0.25s ease-in-out;
 }
 
+#scroll-down {
+  text-shadow: none;
+  font-weight: 700;
+}
+
 .scroll-down-text p {
   display: block;
   word-wrap: break-word;
